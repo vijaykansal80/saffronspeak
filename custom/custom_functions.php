@@ -10,6 +10,37 @@
 // add_action('thesis_hook_before_sidebar_1', 'thesis_widget_recent_posts');
 
 
+// Enable featured images/post thumbnails
+
+add_theme_support('post-thumbnails');
+
+
+function auto_featured_image() {
+    global $post;
+
+    if (!has_post_thumbnail($post->ID)) {
+        $attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+        
+      if ($attached_image) {
+              foreach ($attached_image as $attachment_id => $attachment) {
+                   set_post_thumbnail($post->ID, $attachment_id);
+              }
+         }
+    }
+}
+// Use it temporary to generate all featured images
+add_action('the_post', 'auto_featured_image');
+// Used for new posts
+add_action('save_post', 'auto_featured_image');
+add_action('draft_to_publish', 'auto_featured_image');
+add_action('new_to_publish', 'auto_featured_image');
+add_action('pending_to_publish', 'auto_featured_image');
+add_action('future_to_publish', 'auto_featured_image');
+
+
+
+
+
 // This replaces the header with a custom header to match the catalog site
 
 function custom_header() { ?>
