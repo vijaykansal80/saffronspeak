@@ -39,6 +39,12 @@ add_action('future_to_publish', 'auto_featured_image');
 
 
 
+// Remove sharing links from post excerpts
+add_action( 'init', 'my_remove_filters_func' );
+
+function my_remove_filters_func() {
+     remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
 
 
 // This replaces the header with a custom header to match the catalog site
