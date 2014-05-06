@@ -56,7 +56,7 @@ function my_remove_filters_func() {
 // Add a "more" link to excerpts
 function new_excerpt_more($more) {
     global $post;
-    return '&hellip; (<a class="inline-readmore" href="'. get_permalink($post->ID) . '">Read more &raquo;</a>)';
+    return '&hellip;';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 

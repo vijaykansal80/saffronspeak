@@ -14,7 +14,7 @@ Description: A simple example YARPP template.
             <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
                 <?php the_post_thumbnail('yarpp-thumbnail'); ?></a>
             <h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-            <?php the_excerpt(); ?>
+            <p><?php echo get_the_excerpt(); ?>  (<a class="inline-readmore" href="<?php the_permalink(); ?>">Read more &raquo;</a>)</p>
         </div>
     	<?php endwhile; ?>
 </section>
