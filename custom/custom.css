@@ -152,6 +152,9 @@ input[type="text"] {
 	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
 }
 
+
+
+
 /* Header */
 #header {
 	font-size: 1.4em;
@@ -307,6 +310,25 @@ ul#main-nav ul li:hover > a {
 }
 
 
+/* YARPP Related Posts */
+.related-posts {
+	clear: both;
+}
+.related-posts div {
+	width: 45%;
+	float: left;
+}
+.related-posts div:nth-of-type(odd) {
+	margin-right: 5%;
+	clear: left;
+}
+.related-posts h4 {
+	text-align: center;
+}
+.related-posts h4 a {
+
+}
+
 
 
 /* Customize appearance of post listings on parent or series page into grid structures */
@@ -375,12 +397,13 @@ ul#main-nav ul li:hover > a {
 }
 
 
-.post-listing .column img, .post-listing .section img, .child-post img, img.bordered {
+.post-listing .column img, .post-listing .section img, .child-post img, img.bordered, .related-posts img {
 	background: #fff;
 	padding: 10px;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
 	max-width: 100%;
 	box-sizing: border-box;
+	height: auto;
 }
 img.wp-smiley, .child-post figure img {
 	border: none;
@@ -436,14 +459,14 @@ img.wp-smiley, .child-post figure img {
 	background: #482812;
 }
 
-.post-listing h4, .child-post h4 {
+.post-listing h4, .child-post h4, .related-posts h4 {
 	font-size: 1.2em;
 	font-weight: normal;
 	margin: .5em 0 .5em;
 	padding-bottom: .25em;
 	border-bottom: 1px solid #A15928;
 }
-.post-listing h4 a {
+.post-listing h4 a, .related-posts h4 a {
 	text-decoration: none;
 }
 .post-listing h4 strong {

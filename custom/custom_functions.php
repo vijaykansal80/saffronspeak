@@ -14,6 +14,13 @@
 
 add_theme_support('post-thumbnails');
 
+function add_custom_sizes() {
+    add_image_size('yarpp-thumbnail', 400, auto, true);
+}
+add_action('after_setup_theme','add_custom_sizes');
+
+define('YARPP_GENERATE_THUMBNAILS', true); 
+
 
 function auto_featured_image() {
     global $post;
