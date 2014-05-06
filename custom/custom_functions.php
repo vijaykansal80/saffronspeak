@@ -53,6 +53,13 @@ function my_remove_filters_func() {
      remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
 
+// Add a "more" link to excerpts
+function new_excerpt_more($more) {
+    global $post;
+    return '&hellip; (<a class="inline-readmore" href="'. get_permalink($post->ID) . '">Read more &raquo;</a>)';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 
 // This replaces the header with a custom header to match the catalog site
 
