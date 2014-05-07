@@ -332,6 +332,41 @@ ul#main-nav ul li:hover > a {
 
 
 
+/* Blog titles */
+.headline_area {
+	text-align: center;
+}
+h1.entry-title {
+	font-size: 3em;
+	margin: 0 auto 1.5em;
+}
+.headline-meta {
+	color: #8c927b;
+	font-size: 1.5em;
+	border-top: 1px solid #8c927b;
+	border-bottom: 2px solid #8c927b;
+	padding: .4em 5px;
+	display: inline-block;
+	margin: 2em auto .75em;
+	font-style: italic;
+	word-spacing: 3px;
+}
+.headline-meta:before, .headline-meta:after {
+	content: '\2666';
+	padding: 0 10px;
+	display: inline;
+}
+.headline-meta a, .headline-meta abbr {
+	color: #707956;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: .8em;
+	word-spacing: normal;
+}
+
+
+
 /* Customize appearance of post listings on parent or series page into grid structures */
 .post-listing > p:first-of-type, .post-listing > p.intro {
 	font-size: 1.4em;
