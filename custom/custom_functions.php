@@ -213,6 +213,26 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
 
+// This creates a custom instance of the byline/post meta box
+function custom_byline() {
+if (!is_page()) { ?>
+    <section class="headline-meta">
+        Published 
+        <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
+        by <?php the_author_posts_link(); ?>
+ &middot; <span><a href="<?php the_permalink(); ?>#comments" rel="nofollow">
+        <?php comments_number(__('No comments yet', 'thesis'), __('One comment', 'thesis'), __('% comments', 'thesis')); ?></a></span>
+    </section>
+
+<?php 
+    }
+}
+
+add_action('thesis_hook_before_headline', 'custom_byline');
+
+
+
+
 
 // This replaces the footer with a custom footer and search box
 
