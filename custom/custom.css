@@ -207,7 +207,10 @@ ul#main-nav {
 	clear: both;
 }
 ul#main-nav li {
+	display: -moz-inline-stack;
 	display: inline-block;
+	zoom: 1;
+	*display: inline;	
 	text-align: center;
 	font-size: 2em;
 	line-height: .8em;
