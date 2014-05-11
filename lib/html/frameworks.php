@@ -1,11 +1,9 @@
 <?php
-
 function thesis_html_framework() {
 	global $thesis_design;
-
-	echo apply_filters('thesis_doctype', '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">') . "\n";
+	echo apply_filters('thesis_doctype', '<!DOCTYPE html>') . "\n";
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>>
 <?php
 	thesis_head::build();
 	echo "<body" . thesis_body_classes() . ">\n"; #filter

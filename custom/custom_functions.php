@@ -10,13 +10,6 @@
 // add_action('thesis_hook_before_sidebar_1', 'thesis_widget_recent_posts');
 
 
-// Use a modern doctype
-function custom_doctype() {
-    return '<!DOCTYPE html>';
-}
-add_filter('thesis_doctype','custom_doctype'); 
-
-
 // Enable featured images/post thumbnails
 
 add_theme_support('post-thumbnails');
