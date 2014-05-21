@@ -595,6 +595,61 @@ section::after {
 
 
 
+/* Use custom styles for "Father's Day" posts */
+
+.fathers-day > p:first-of-type:first-letter, .fathers-day > p.intro:first-letter, p.float-left + h3 + p:first-letter {
+	color: #512105;
+	float: left;
+}
+.fathers-day a {
+	color: #8c0038;
+}
+.fathers-day .panel {
+	background: url('images/leather.jpg');
+	background-size: 300px 300px;
+	border-color: #512105;
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+.fathers-day .panel p {
+	margin-top: 75px;
+}
+.fathers-day .panel p:first-letter {
+	font-size: 4em;
+	color: #93765e;
+}
+.fathers-day figure img {
+	max-width: 240px;
+	margin-top: 1em;
+}
+.fathers-day.child-post figure img {
+	max-width: 150px;
+}
+.fathers-day.child-post .panel p {
+	margin-top: 50px;
+}
+
+.fathers-day h3 {
+	color: #93765e;
+	font-size: 2.4em;
+	margin: 1em 0 .5em;
+	text-align: center;
+	clear: both;
+}
+.post-listing .fathers-day h4 {
+	border-color: #8c0038;
+}
+.fathers-day h4 a, .fathers-day h4 {
+	color: #512105;
+}
+.fathers-day .read-more a {
+	color: white;
+	background-color: #512105;
+}
+
+
+
+
 
 /* Use custom styles for "Mother's Day" posts */
 
