@@ -366,6 +366,10 @@ ul#main-nav ul li:hover > a {
 	margin-top: 75px;
 }
 
+.post-listing .panel figure {
+	margin-top: 25px;
+}
+
 .child-post figure img {
 	max-width: 150px;
 }
