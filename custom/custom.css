@@ -645,15 +645,8 @@ section::after {
 }
 
 
-.fathers-day h3 {
-	color: #93765e;
-	font-size: 2.4em;
-	margin: 1em 0 .5em;
-	text-align: center;
-	clear: both;
-}
-.post-listing .fathers-day h4 {
-	border-color: #8c0038;
+.fathers-day h4 {
+	border-color: #512105;
 }
 .fathers-day h4 a, .fathers-day h4 {
 	color: #512105;
@@ -661,6 +654,9 @@ section::after {
 .fathers-day .read-more a {
 	color: white;
 	background-color: #512105;
+}
+.fathers-day .read-more a:hover {
+	background-color: #4e7e97;
 }
 
 
