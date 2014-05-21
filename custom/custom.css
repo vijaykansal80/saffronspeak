@@ -346,10 +346,41 @@ ul#main-nav ul li:hover > a {
 	font-family: 'Lancelot', cursive;
 	font-size: 6em;
 	line-height: 1em;
-	margin: -.05em 4px -.1em 0;
+	margin: 0 10px;
 	color: #7D7556;
 	float: left;
 	text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
+}
+
+.post-listing .panel {
+	border-top: 1px solid #9e5374;
+	border-bottom: 2px solid #9e5374;
+	padding: 1em 2em .5em;
+	margin: 1em 0 4em;
+	background: #fff;
+	font-size: 1.2em;
+	line-height: 1.6em;
+}
+
+.post-listing .panel p {
+	margin-top: 75px;
+}
+
+.child-post figure img {
+	max-width: 150px;
+}
+
+.child-post .panel p {
+	margin-top: 50px;
+}
+
+.post-listing .panel p:first-letter {
+	font-family: 'Lancelot', cursive;
+	font-size: 4em;
+	margin: -.05em 4px -.1em 0;
+	color: #7D7556;
+	float: left;
+	text-shadow: -2px 2px 0px #fff;
 }
 
 
@@ -597,9 +628,8 @@ section::after {
 
 /* Use custom styles for "Father's Day" posts */
 
-.fathers-day > p:first-of-type:first-letter, .fathers-day > p.intro:first-letter, p.float-left + h3 + p:first-letter {
+.fathers-day > p:first-of-type:first-letter, .fathers-day > p.intro:first-letter, p.float-left + h3 + p:first-letter, .fathers-day .panel p:first-letter {
 	color: #512105;
-	float: left;
 }
 .fathers-day a {
 	color: #8c0038;
@@ -608,26 +638,8 @@ section::after {
 	background: url('images/leather.jpg');
 	background-size: 300px 300px;
 	border-color: #512105;
-	font-size: 1.2em;
-	line-height: 1.6em;
 }
-.fathers-day .panel p {
-	margin-top: 75px;
-}
-.fathers-day .panel p:first-letter {
-	font-size: 4em;
-	color: #93765e;
-}
-.fathers-day figure img {
-	max-width: 240px;
-	margin-top: 1em;
-}
-.fathers-day.child-post figure img {
-	max-width: 150px;
-}
-.fathers-day.child-post .panel p {
-	margin-top: 50px;
-}
+
 
 .fathers-day h3 {
 	color: #93765e;
@@ -758,14 +770,10 @@ section::after {
 	color: #9e5374;
 	float: left;
 }
-.panel {
-	border-top: 1px solid #9e5374;
-	border-bottom: 2px solid #9e5374;
-	padding: 1em 2em .5em;
-	margin: 1em 0 4em;
+.sultans-palace .panel {
+	border-color: #9e5374;
 	background: #fff url('images/quatrefoil.png');
 }
-
 
 .sultans-palace h3 {
 	font-family: 'Almendra', cursive;
