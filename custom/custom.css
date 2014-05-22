@@ -380,6 +380,20 @@ ul#main-nav ul li:hover > a {
 	margin-top: 50px;
 }
 
+.child-post h2 {
+	text-align: center;
+	font-size: 2.1em;
+	font-weight: normal;
+	font-style: italic;
+	margin: 2em 0 1em;
+}
+
+.child-post h3 {
+	font-size: 1.6em;
+	font-weight: normal;
+	margin: 1.5em 0 .75em;
+}
+
 .post-listing .panel p:first-letter {
 	font-family: 'Lancelot', cursive;
 	font-size: 4em;
@@ -657,11 +671,10 @@ section::after {
 	border-color: #512105;
 }
 
-
 .fathers-day h4 {
 	border-color: #512105;
 }
-.fathers-day h4 a, .fathers-day h4 {
+.fathers-day h2, .fathers-day h4 a, .fathers-day h4 {
 	color: #512105;
 }
 .fathers-day .read-more a {
