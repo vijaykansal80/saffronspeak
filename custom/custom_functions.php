@@ -162,7 +162,7 @@ function custom_menu() { ?>
 				<li class="cat-item cat-item-7"><a href="http://www.saffronmarigold.com/blog/category/customer-solutions/" title="Enter the world of our customers">Customer Connection</a></li>
 				<li class="cat-item cat-item-6"><a href="http://www.saffronmarigold.com/blog/category/inspirational-ideas/" title="Home decor ideas that inspire">Design Resources</a></li>
 				<li class="cat-item cat-item-5"><a href="http://www.saffronmarigold.com/blog/category/shopping-guides/" title="So many options, so hard to decide - we can help!">Shopping Guides</a></li>
-				<li class="cat-item cat-item-8"><a href="http://www.saffronmarigold.com/blog/category/tradition-technology/" title="A look behind the scenes ">Technology &amp; Tradition</a></li>
+				<li class="cat-item cat-item-8"><a href="http://www.saffronmarigold.com/blog/category/tradition-technology/" title="A look behind the scenes ">Behind the Scenes</a></li>
 				<li class="rss"><a href="http://feeds.feedburner.com/SaffronMarigoldBlog" title="Saffron Marigold Blog RSS Feed" rel="nofollow">Subscribe</a></li>
 			</ul>
 	    </li>
