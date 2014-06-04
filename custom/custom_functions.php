@@ -214,6 +214,7 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
 // This creates a custom instance of the byline/post meta box
+
 function custom_byline() {
 if (!is_page()) { ?>
     <section class="headline-meta">
@@ -229,6 +230,45 @@ if (!is_page()) { ?>
 }
 
 add_action('thesis_hook_before_headline', 'custom_byline');
+
+
+
+// This will register "series" as a custom taxonomy
+
+function add_series() {
+
+    $labels = array(
+        'name'                       => 'Series',
+        'singular_name'              => 'Series',
+        'menu_name'                  => 'Series',
+        'all_items'                  => 'All Series',
+        'parent_item'                => 'Series Parent',
+        'parent_item_colon'          => 'Series Parent:',
+        'new_item_name'              => 'New Series Name',
+        'add_new_item'               => 'Add New Series',
+        'edit_item'                  => 'Edit Series',
+        'update_item'                => 'Update Series',
+        'separate_items_with_commas' => 'Separate series with commas',
+        'search_items'               => 'Search series',
+        'add_or_remove_items'        => 'Add or remove series',
+        'choose_from_most_used'      => 'Choose from the most used series',
+        'not_found'                  => 'Series Not Found',
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'series', array( 'post' ), $args );
+
+}
+
+add_action( 'init', 'add_series', 0 );
+
 
 
 
