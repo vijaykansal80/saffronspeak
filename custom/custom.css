@@ -343,7 +343,7 @@ h1.entry-title {
 	font-size: 3em;
 	margin: 0 auto 1.5em;
 }
-.headline-meta {
+.post-byline, .post-meta {
 	color: #8c927b;
 	font-size: 1.5em;
 	border-top: 1px solid #8c927b;
@@ -354,12 +354,12 @@ h1.entry-title {
 	font-style: italic;
 	word-spacing: 3px;
 }
-.headline-meta:before, .headline-meta:after {
+.post-meta:before, .post-meta:after, .post-byline:before, .post-byline:after {
 	content: '\2666';
 	padding: 0 10px;
 	display: inline;
 }
-.headline-meta a, .headline-meta abbr {
+.post-byline a, .post-byline abbr, .post-meta a {
 	color: #707956;
 	font-style: normal;
 	text-transform: uppercase;
