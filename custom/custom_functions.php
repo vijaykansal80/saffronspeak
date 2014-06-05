@@ -215,20 +215,32 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
-function custom_byline() {
-if (!is_page()): ?>
-    <section class="headline-meta">
-        Published 
-        <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
-        by <?php the_author_posts_link(); ?>
- &middot; 
-    </section>
+function post_byline() {
+    if (!is_page()): ?>
+        <section class="post-byline">
+            Published 
+            <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
+            by <?php the_author_posts_link(); ?> 
+        </section>
 
-<?php
-    endif; 
+    <?php
+        endif; 
 }
 
-add_action('thesis_hook_before_headline', 'custom_byline');
+function post_meta() {
+    if (!is_page()): ?>
+        <section class="post-meta">
+            Categories: <?php echo get_the_category_list(','); ?>
+            &middot;
+            <?php echo get_the_tag_list('Tags: ', ', ', ''); ?>
+        </section>
+
+    <?php
+        endif; 
+}
+
+add_action('thesis_hook_before_headline', 'post_byline');
+add_action('thesis_hook_after_headline', 'post_meta');
 
 
 
