@@ -339,7 +339,13 @@ ul#main-nav ul li:hover > a {
 .headline_area {
 	text-align: center;
 }
-h1.entry-title {
+h2.series-title {
+	display: inline-block;
+	clear: left;
+	font-style: italic;
+}
+h1.entry-title, h2.entry-title {
+	display: inline-block;
 	font-size: 3em;
 	margin: 0 auto 1.5em;
 }

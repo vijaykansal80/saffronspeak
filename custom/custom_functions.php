@@ -213,6 +213,9 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
 
+
+
+
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
 function post_byline() {
@@ -229,17 +232,26 @@ function post_byline() {
 
 function post_meta() {
     if (!is_page()): ?>
+        </section>
         <section class="post-meta">
-            Categories: <?php echo get_the_category_list(','); ?>
-            &middot;
-            <?php echo get_the_tag_list('Tags: ', ', ', ''); ?>
+            Categorized as: <?php echo get_the_category_list(','); ?>
+            <?php echo get_the_tag_list('&middot; Tags: ', ', ', ''); ?>
         </section>
 
     <?php
         endif; 
 }
 
+function show_series() {
+    if (!is_page()): ?>
+        <section class="post-headline">
+            <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
+    <?php
+        endif; 
+}
+
 add_action('thesis_hook_before_headline', 'post_byline');
+add_action('thesis_hook_before_headline', 'show_series');
 add_action('thesis_hook_after_headline', 'post_meta');
 
 
