@@ -252,22 +252,21 @@ add_action('thesis_hook_before_headline', 'post_series');
 add_action('thesis_hook_before_headline', 'post_meta');
 
 
-// This adds tags to the bottom of posts
+
+// This adds tags to the bottom of posts, and moves YARPP below the tags
 
 function post_tags() {
-    if (!is_page()): ?>
+    if (is_single()): ?>
         <section class="post-tags">
-            <span>Find related post by tags: </span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
+            <span>Find related posts by tags: </span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
         </section>
 
     <?php
+    add_action('thesis_hook_after_post', 'related_posts', '2');
         endif; 
 }
+
 add_action('thesis_hook_after_post', 'post_tags', '1');
-
-// And this moves YARPP below the tags
-add_action('thesis_hook_after_post', 'related_posts', '2');
-
 
 // This will register "series" as a custom taxonomy
 
