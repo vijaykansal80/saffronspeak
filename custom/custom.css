@@ -369,7 +369,7 @@ h1.entry-title, h2.entry-title {
 	border-bottom: 2px solid #8c927b;
 	padding: .4em 10px;
 	display: inline-block;
-	margin: .75em auto 1.5em;
+	margin: .75em auto 1em;
 	font-style: italic;
 	word-spacing: 3px;
 }
@@ -377,6 +377,18 @@ h1.entry-title, h2.entry-title {
 	content: '\2666';
 	padding: 0 10px;
 	display: inline;
+}
+.post-tags {
+	color: #8c927b;
+	font-size: 1.4em;
+	margin: .5em auto 2.5em;
+	font-style: italic;
+	text-transform: lowercase;
+}	
+.post-tags a {
+	background: rgba(255, 255, 255, .3);
+	padding: 4px 8px;
+	margin: 0 5px;
 }
 
 
