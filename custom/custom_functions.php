@@ -257,7 +257,7 @@ add_action('thesis_hook_before_headline', 'post_meta');
 function post_tags() {
     if (!is_page()): ?>
         <section class="post-tags">
-            <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
+            <span>Tags (Find related posts):</span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
         </section>
 
     <?php
