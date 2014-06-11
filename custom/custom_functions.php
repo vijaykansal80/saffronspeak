@@ -218,18 +218,6 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
-function post_byline() {
-    if (!is_page()): ?>
-        <section class="post-byline">
-            Published 
-            <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
-            by <?php the_author_posts_link(); ?> 
-        </section>
-
-    <?php
-        endif; 
-}
-
 function post_meta() {
     if (!is_page()): ?>
         </section>
@@ -237,18 +225,13 @@ function post_meta() {
             Published 
             <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
             by <?php the_author_posts_link(); ?> 
-            in <?php echo get_the_category_list(', '); ?>
-        </section>
-
-        <section class="post-tags">
-            <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
         </section>
 
     <?php
         endif; 
 }
 
-function show_series() {
+function post_series() {
     if (!is_page()): ?>
         <section class="post-headline">
             <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
@@ -256,9 +239,22 @@ function show_series() {
         endif; 
 }
 
-add_action('thesis_hook_before_headline', 'show_series');
-add_action('thesis_hook_after_headline', 'post_meta');
+add_action('thesis_hook_before_headline', 'post_series');
+add_action('thesis_hook_before_headline', 'post_meta');
 
+
+// This adds tags to the bottom of posts
+
+function post_tags() {
+    if (!is_page()): ?>
+        <section class="post-tags">
+            <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
+        </section>
+
+    <?php
+        endif; 
+}
+add_action('thesis_hook_after_post', 'post_tags');
 
 
 // This will register "series" as a custom taxonomy
