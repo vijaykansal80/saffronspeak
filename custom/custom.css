@@ -432,16 +432,23 @@ a.sd-button > span {
 
 
 .post-tags {
-	color: #8c927b;
-	font-size: 1.4em;
-	margin: .5em auto 2.5em;
-	font-style: italic;
-	text-transform: lowercase;
-}	
-.post-tags a {
 	background: rgba(255, 255, 255, .3);
 	padding: 4px 8px;
+	color: #8c927b;
+	font-size: 1em;
+	margin: 2em auto 2.5em;
+}
+.post-tags span {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: .9em;
+}	
+.post-tags a {
+	
 	margin: 0 5px;
+	font-style: italic;
+	text-transform: lowercase;
+	text-decoration: none;
 }
 
 
