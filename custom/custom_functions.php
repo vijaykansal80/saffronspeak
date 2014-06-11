@@ -263,7 +263,10 @@ function post_tags() {
     <?php
         endif; 
 }
-add_action('thesis_hook_after_post', 'post_tags');
+add_action('thesis_hook_after_post', 'post_tags', '1');
+
+// And this moves YARPP below the tags
+add_action('thesis_hook_after_post', 'related_posts', '2');
 
 
 // This will register "series" as a custom taxonomy
