@@ -7,7 +7,7 @@ Description: A simple example YARPP template.
 ?>
 
 <section class="related-posts">
-    <h3>Related Posts</h3>
+    <h3>Find related post by content</h3>
     <?php if (have_posts()):?>
     	<?php while (have_posts()) : the_post(); ?>
     	<div class="related-post">
