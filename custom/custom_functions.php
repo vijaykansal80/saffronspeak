@@ -11,6 +11,11 @@
 
 
 // Disable certain plugins' ugly stylesheets
+function remove_plugin_styles() {
+    wp_dequeue_style('yarppRelatedCss');
+    wp_deregister_style('yarppRelatedCss');
+}
+add_action('wp_footer', remove_plugin_styles);
 
 // Re-queue Sharedaddy JS
 function tweakjp_add_sharing_js() {
