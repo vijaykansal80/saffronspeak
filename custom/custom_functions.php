@@ -10,6 +10,15 @@
 // add_action('thesis_hook_before_sidebar_1', 'thesis_widget_recent_posts');
 
 
+// Disable certain plugins' ugly stylesheets
+
+// Re-queue Sharedaddy JS
+function tweakjp_add_sharing_js() {
+    wp_enqueue_script( 'sharing-js', WP_SHARING_PLUGIN_URL . 'sharing.js', array( ), 3 );
+}
+add_action( 'wp_enqueue_scripts', 'tweakjp_add_sharing_js' );
+
+
 // Enable featured images/post thumbnails
 
 add_theme_support('post-thumbnails');

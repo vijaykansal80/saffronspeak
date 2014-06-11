@@ -313,29 +313,9 @@ ul#main-nav ul li:hover > a {
 }
 
 
-/* YARPP Related Posts */
-.related-posts {
-	clear: both;
-}
-.related-posts div {
-	width: 30%;
-	float: left;
-	margin-right: 5%;
-}
-.related-posts div:nth-of-type(3) {
-	margin-right: 0
-}
-.related-posts h4 {
-	text-align: center;
-}
-.related-posts .inline-readmore {
-	text-decoration: none;
-	white-space: nowrap;
-}
 
 
-
-/* Blog titles */
+/* Post headlines */
 .headline_area {
 	text-align: center;
 }
@@ -352,7 +332,6 @@ h1.entry-title, h2.entry-title {
 	font-size: 3em;
 	margin: 0 auto 0;
 }
-
 
 .post-meta abbr, .post-meta a {
 	color: #707956;
@@ -378,6 +357,80 @@ h1.entry-title, h2.entry-title {
 	padding: 0 10px;
 	display: inline;
 }
+
+
+
+/* Post footers */
+
+
+/* Sharedaddy */
+.sharedaddy {
+	border-top: 1px solid #7D7556;
+	border-bottom: 2px solid #7D7556;
+	overflow: auto;
+	padding: 5px 0;
+}
+.sharedaddy::after {
+	clear: both;
+	content: '';
+	display: block;
+}
+.sharedaddy h3 {
+	float: left;
+	width: 30%;
+	margin: 5px 0;
+	font-size: 1em;
+	font-style: italic;
+}
+.sd-content {
+	float: left;
+	width: 65%;
+	margin-left: 5%;
+}
+.sd-content ul {margin: 0;}
+.sd-content li {
+	display: inline-block;
+	list-style-type: none;
+}
+div.sharedaddy a.sd-button {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    background: -moz-linear-gradient(center top , #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
+    border-radius: 3px;
+    border: 1px solid #DDD !important;
+    box-shadow: 0px 1px 0px #FFF inset;
+    color: #000 !important;
+    text-decoration: none;
+    line-height: 1;
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+}
+div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited {
+    font-style: normal;
+}
+li.share-email {
+	margin-right: 10px;
+}
+li.share-email a.sd-button > span {
+    background-image: url('../../../plugins/jetpack/modules/sharedaddy/images/email.png');
+    padding-left: 24px;
+}
+.sd-social-icon-text a.sd-button > span, a.sd-button > span {
+    padding: 1px 5px 1px 23px;
+    background-position: 2px center;
+    background-repeat: no-repeat;
+}
+a.sd-button > span {
+    padding: 1px 8px;
+    display: block;
+    opacity: 0.8;
+    line-height: 1.5em;
+    text-shadow: none;
+}
+
+
 .post-tags {
 	color: #8c927b;
 	font-size: 1.4em;
@@ -390,6 +443,30 @@ h1.entry-title, h2.entry-title {
 	padding: 4px 8px;
 	margin: 0 5px;
 }
+
+
+/* YARPP Related Posts */
+.related-posts {
+	clear: both;
+}
+.related-posts div {
+	width: 30%;
+	float: left;
+	margin-right: 5%;
+}
+.related-posts div:nth-of-type(3) {
+	margin-right: 0
+}
+.related-posts h4 {
+	text-align: center;
+}
+.related-posts .inline-readmore {
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+
+
 
 
 
