@@ -237,8 +237,11 @@ function post_meta() {
             Published 
             <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
             by <?php the_author_posts_link(); ?> 
-            in <?php echo get_the_category_list(','); ?>
-            <?php echo get_the_tag_list('&middot; Tags: ', ', ', ''); ?>
+            in <?php echo get_the_category_list(', '); ?>
+        </section>
+
+        <section class="post-tags">
+            <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
         </section>
 
     <?php
