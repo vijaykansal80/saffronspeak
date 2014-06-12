@@ -319,6 +319,56 @@ ul#main-nav ul li:hover > a {
     margin: 2.4em 1.2em;
 }
 
+.post-list {
+	width: 48%;
+	margin-right: 2%;
+	padding: 1em;
+	background: url('images/low_contrast_linen.png');
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+}
+.post-list:last-of-type {
+	margin-right: 0;
+}
+.post-list h2 {
+	display: inline-block;
+	margin: .25em 0 0 -1em;
+	background: #423C2A;
+	border: 1px solid #FDF2F7;
+	outline: 3px solid #423C2A;
+	padding: 5px 0;
+	color: #FDF2F7;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.post-list h2:before, .post-list h2:after {
+	content: '\00b7';
+	padding: 0 10px;
+	display: inline;
+}
+
+.post-preview {
+	clear: left;
+	margin: 2em 0;
+	font-size: 1.4em;
+}
+.post-preview img {
+	float: left;
+	margin: 0 10px 5px 0;
+	border-radius: 50%;
+	background: #fff;
+	padding: 4px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	max-width: 100px;
+	max-height: 100px;
+}
+.post-preview h3 {
+	font-size: 1.5em;
+	line-height: 1em;
+	margin: .25em 0 .5em 0;
+}
+.post-preview h3 a {color: #423C2A;}
+.post-preview p {font-style: italic;}
 
 
 

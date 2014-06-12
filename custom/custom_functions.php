@@ -246,7 +246,7 @@ add_action('thesis_hook_custom_template', 'new_homepage');
 // Recent posts widget
 function recent_posts($number) {
     ?>
-    <div class="recent-posts">
+    <div class="post-list recent">
         <h2>Latest Posts</h2>
         <?php
             global $post;
@@ -256,7 +256,7 @@ function recent_posts($number) {
                 setup_postdata($post);
                 ?>
                 <div class="post-preview">
-                    <?php if (has_post_thumbnail()) { the_post_thumbnail('thumbnail'); } ?>
+                    <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <p><?php the_excerpt(); ?></p>
                 </div>
