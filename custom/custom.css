@@ -323,7 +323,7 @@ ul#main-nav ul li:hover > a {
 	background: #423C2A;
 	border: 1px solid #FDF2F7;
 	outline: 3px solid #423C2A;
-	padding: 5px 2px;
+	padding: 6px 2px;
 	color: #FDF2F7;
 	font-size: .95em;
 	text-transform: uppercase;
@@ -356,9 +356,25 @@ ul#main-nav ul li:hover > a {
 }
 .category h3 {
 	display: block;
-	margin: -.75em 0 1em;
-	padding-top: .5em;
-	padding-bottom: .25em;
+	margin: -.85em 0 1.25em;
+	padding-top: .75em;
+	padding-bottom: .5em;
+}
+.behind-the-scenes h3 {
+	background-color: #a1414c;
+	outline-color: #a1414c;
+}
+.customer-connection h3 {
+	background-color: #77a2af;
+	outline-color: #77a2af;
+}
+.design-resources h3 {
+	background-color: #5b4c70;
+	outline-color: #5b4c70;
+}
+.shopping-guides h3 {
+	background-color: #838b64;
+	outline-color: #838b64;
 }
 .category p {
 	text-align: justify;
