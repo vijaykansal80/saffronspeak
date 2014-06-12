@@ -274,6 +274,7 @@ ul#main-nav ul {
 	background: #ded3b5;
 	display: none;
 	min-width: 200px;
+	z-index: 100;
 }
 ul#main-nav li#blog-tab ul {
 	top: 54px;
