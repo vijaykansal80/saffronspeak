@@ -349,9 +349,10 @@ ul#main-nav ul li:hover > a {
 }
 
 .post-preview {
-	clear: left;
-	margin: 2em 0;
+	clear: both;
+	margin: 1em 0;
 	font-size: 1.4em;
+	overflow: auto;
 }
 .post-preview img {
 	float: left;
@@ -362,6 +363,10 @@ ul#main-nav ul li:hover > a {
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
 	max-width: 100px;
 	max-height: 100px;
+}
+.post-preview:nth-of-type(odd) img {
+	float: right;
+	margin: 0 0 5px 10px;
 }
 .post-preview h3 {
 	font-size: 1.5em;
