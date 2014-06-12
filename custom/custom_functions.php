@@ -194,32 +194,33 @@ add_action('thesis_hook_after_header', 'custom_menu');
 // add some breadcrumbs
 
 function thesis_breadcrumbs() {
-	if (!is_home()) {
-	echo '<div class="breadcrumbs">';
-	echo '<a href="';
-	echo get_option('home');
-	echo '">';
-	//bloginfo('name');
-	echo 'Blog';
-	echo "</a>";
-		if (is_category() || is_single()) {
-			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-			the_category(' &bull; ');
-				if (is_single()) {
-					echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-					the_title();
-				}
-        } elseif (is_page()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-            echo the_title();
-		} elseif (is_search()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-			echo '"<em>';
-			echo the_search_query();
-			echo '</em>"';
-        }
-	}
-	echo '</div>';
+	if (!is_home() && !is_front_page()): {
+    	echo '<div class="breadcrumbs">';
+    	echo '<a href="';
+    	echo get_option('home');
+    	echo '">';
+    	//bloginfo('name');
+    	echo 'Blog';
+    	echo "</a>";
+    		if (is_category() || is_single()) {
+    			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+    			the_category(' &bull; ');
+    				if (is_single()) {
+    					echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+    					the_title();
+    				}
+            } elseif (is_page()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                echo the_title();
+    		} elseif (is_search()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+    			echo '"<em>';
+    			echo the_search_query();
+    			echo '</em>"';
+            }
+    	}
+    	echo '</div>';
+    endif;
 }
 
 add_action('thesis_hook_after_header','thesis_breadcrumbs');
