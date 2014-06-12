@@ -234,7 +234,9 @@ function new_homepage() {
             <h1>Saffron Speak</h1>
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
         </div>
-        <?php echo recent_posts(4); ?>
+        <?php echo list_posts('latest', 4); ?>
+        <?php echo list_posts('favorite', 4); ?>
+        <?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=weekly&order_by=comments"); ?>
     <?php 
     endif; 
 }
@@ -243,14 +245,18 @@ remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
 add_action('thesis_hook_custom_template', 'new_homepage');
 
 
-// Recent posts widget
-function recent_posts($number) {
+// List posts widget
+function list_posts($type, $number) {
     ?>
-    <div class="post-list recent">
-        <h2>Latest Posts</h2>
+    <div class="post-list <?php echo $type; ?>">
+        <h2><?php echo $type; ?> Posts</h2>
         <?php
             global $post;
-            $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
+            if ($type === "latest") {
+                $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
+            } elseif ($type === "favorite") {
+                $args = array('posts_per_page' => $number, 'orderby' => 'comment_count', 'order' => 'DESC', 'post_type' => 'post');
+            }
             $recent_posts = get_posts($args);
             foreach($recent_posts as $post):
                 setup_postdata($post);
