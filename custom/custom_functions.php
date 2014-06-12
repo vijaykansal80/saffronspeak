@@ -236,7 +236,7 @@ function new_homepage() {
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
             <?php echo show_categories(); ?> 
 
-            <h2>Featured series</h2>
+            <?php echo featured_series('mothers-day'); ?>
 
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
@@ -263,6 +263,15 @@ function show_categories($args = array('orderby' => 'name', 'order' => 'ASC', 'p
         </div>
     <?php 
     endforeach; 
+}
+
+// Show custom HTML for featured series
+function featured_series($slug) {
+    $template = parse_url(get_bloginfo('template_directory'));
+    $path = $template['path']."/custom/series/".$slug;
+    $category = get_category_by_slug($slug);
+    echo '<h2><a href="'.get_category_link($category->term_id).'">Featured series: '. $category->name .'</a></h2>';
+    include(".".$path."/".$slug.".php"); 
 }
 
 // List posts widget
