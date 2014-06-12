@@ -49,7 +49,7 @@ function auto_featured_image() {
          }
     }
 }
-// Use it temporary to generate all featured images
+// Use it temporarily to generate all featured images
 add_action('the_post', 'auto_featured_image');
 // Used for new posts
 add_action('save_post', 'auto_featured_image');
@@ -222,12 +222,24 @@ function thesis_breadcrumbs() {
 	echo '</div>';
 }
 
-
 add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
 
+// This creates an entirely different layout for the homepage
 
+function new_homepage() {
+    if (is_home() || is_front_page()): ?>
+        <div id="home-content" class="hfeed">
+            <h1>Saffron Speak</h1>
+            <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
+        </div>
+    <?php 
+    endif; 
+}
+
+remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
+add_action('thesis_hook_custom_template', 'new_homepage');
 
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
@@ -242,7 +254,7 @@ function post_meta() {
         </section>
 
     <?php
-        endif; 
+    endif; 
 }
 
 function post_series() {
@@ -250,7 +262,7 @@ function post_series() {
         <section class="post-headline">
             <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
     <?php
-        endif; 
+    endif; 
 }
 
 add_action('thesis_hook_before_headline', 'post_series');
@@ -268,7 +280,7 @@ function post_tags() {
 
     <?php
     add_action('thesis_hook_after_post', 'related_posts', '2');
-        endif; 
+    endif; 
 }
 
 add_action('thesis_hook_after_post', 'post_tags', '1');
