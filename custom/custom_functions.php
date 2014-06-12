@@ -268,11 +268,12 @@ function show_categories($args = array('orderby' => 'name', 'order' => 'ASC', 'p
 
 // Show custom HTML for featured series
 function featured_series($slug) {
+    $dir = plugin_dir_path( __FILE__ );
     $template = parse_url(get_bloginfo('template_directory'));
     $path = $template['path']."/custom/series/".$slug;
     $category = get_category_by_slug($slug);
     echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
-    include(".".$path."/".$slug.".php"); 
+    include($dir."/series/".$slug."/".$slug.".php"); 
 }
 
 // List posts widget
