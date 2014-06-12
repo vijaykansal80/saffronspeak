@@ -315,10 +315,57 @@ ul#main-nav ul li:hover > a {
 
 
 /* Homepage */
-#home-content {
+.home-content {
     margin: 2.4em 1.2em;
+    font-size: 1.4em;
+}
+.home-content h3 {
+	background: #423C2A;
+	border: 1px solid #FDF2F7;
+	outline: 3px solid #423C2A;
+	padding: 5px 2px;
+	color: #FDF2F7;
+	font-size: .95em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.home-content h3:before, .home-content h3:after {
+	content: '\00b7';
+	padding: 0 5px;
+	display: inline;
+}
+.home-content h3 a {color: #FDF2F7;}
+
+
+/* Category intros */
+.category {
+	width: 23.5%;
+	margin: 1em 2% 1em 0;
+	float: left;
+	text-align: center;
+}
+.category:nth-of-type(4) {margin-right: 0;}
+.category img {
+	border-radius: 50%;
+	background: #fff;
+	padding: 6px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	max-width: 75%;
+	position: relative;
+	z-index: 10;
+}
+.category h3 {
+	display: block;
+	margin: -.75em 0 1em;
+	padding-top: .5em;
+	padding-bottom: .25em;
+}
+.category p {
+	text-align: justify;
+	font-style: italic;
 }
 
+/* Post listing boxes */
 .post-list {
 	float: left;
 	box-sizing: border-box;
@@ -331,27 +378,13 @@ ul#main-nav ul li:hover > a {
 .post-list:last-of-type {
 	margin-right: 0;
 }
-.post-list h2 {
+.post-list h3 {
 	display: inline-block;
-	margin: .25em 0 0 -1em;
-	background: #423C2A;
-	border: 1px solid #FDF2F7;
-	outline: 3px solid #423C2A;
-	padding: 5px 0;
-	color: #FDF2F7;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	margin: -.25em 0 0 -1.25em;
 }
-.post-list h2:before, .post-list h2:after {
-	content: '\00b7';
-	padding: 0 10px;
-	display: inline;
-}
-
 .post-preview {
 	clear: both;
 	margin: 1em 0;
-	font-size: 1.4em;
 	overflow: auto;
 }
 .post-preview img {
@@ -368,12 +401,13 @@ ul#main-nav ul li:hover > a {
 	float: right;
 	margin: 0 0 5px 10px;
 }
-.post-preview h3 {
+.post-preview h4 {
+	margin: .25em 0 .5em 0;
 	font-size: 1.5em;
 	line-height: 1em;
-	margin: .25em 0 .5em 0;
+	font-weight: normal;
 }
-.post-preview h3 a {color: #423C2A;}
+.post-preview h4 a {color: #423C2A;}
 .post-preview p {font-style: italic;}
 
 

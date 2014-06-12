@@ -230,12 +230,17 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 function new_homepage() {
     if (is_home() || is_front_page()): ?>
-        <div id="home-content" class="hfeed">
+        <div id="content" class="home-content">
             <h1>Saffron Speak</h1>
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
+            <?php echo show_categories(); ?> 
+
+            <h2>Featured series</h2>
+
+            <h2>Read more posts</h2>
+            <?php echo list_posts('latest'); ?>
+            <?php echo list_posts('favorite'); ?>
         </div>
-        <?php echo list_posts('latest'); ?>
-        <?php echo list_posts('favorite'); ?>
     <?php 
     endif; 
 }
@@ -244,11 +249,25 @@ remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
 add_action('thesis_hook_custom_template', 'new_homepage');
 
 
+// Show categories widget
+function show_categories($args = array('orderby' => 'name', 'order' => 'ASC', 'parent' => 0, 'exclude' => 1)) {
+    $categories = get_categories($args);
+    foreach($categories as $category):
+        ?>
+        <div class="category">
+            <a href="<?php echo get_category_link( $category->term_id ); ?>" title="<?php echo sprintf( __( "View all $category->count posts in %s" ), $category->name ); ?>"><img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg"></a>
+            <h3><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h3>
+            <p><?php echo $category->description ?></p>
+        </div>
+    <?php 
+    endforeach; 
+}
+
 // List posts widget
 function list_posts($type, $number=4) {
     ?>
     <div class="post-list <?php echo $type; ?>">
-        <h2><?php echo $type; ?> Posts</h2>
+        <h3><?php echo $type; ?> Posts</h3>
         <?php
             global $post;
             if ($type === "latest") {
@@ -262,7 +281,7 @@ function list_posts($type, $number=4) {
                 ?>
                 <div class="post-preview">
                     <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
-                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                     <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
                 </div>
             <?php endforeach; 
