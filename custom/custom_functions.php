@@ -234,6 +234,7 @@ function new_homepage() {
             <h1>Saffron Speak</h1>
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
         </div>
+        <?php echo recent_posts(4); ?>
     <?php 
     endif; 
 }
@@ -241,6 +242,29 @@ function new_homepage() {
 remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
 add_action('thesis_hook_custom_template', 'new_homepage');
 
+
+// Recent posts widget
+function recent_posts($number) {
+    ?>
+    <div class="recent-posts">
+        <h2>Latest Posts</h2>
+        <?php
+            global $post;
+            $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
+            $recent_posts = get_posts($args);
+            foreach($recent_posts as $post):
+                setup_postdata($post);
+                ?>
+                <div class="post-preview">
+                    <?php if (has_post_thumbnail()) { the_post_thumbnail('thumbnail'); } ?>
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p><?php the_excerpt(); ?></p>
+                </div>
+            <?php endforeach; 
+            wp_reset_postdata(); ?>
+    </div>
+<?php
+}
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
