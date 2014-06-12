@@ -231,6 +231,7 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 function new_homepage() {
     if (is_home() || is_front_page()): ?>
         <div id="content" class="home-content">
+            
             <h1>Saffron Speak</h1>
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
             <?php echo show_categories(); ?> 
@@ -240,6 +241,7 @@ function new_homepage() {
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
             <?php echo list_posts('favorite'); ?>
+
         </div>
     <?php 
     endif; 
@@ -254,7 +256,7 @@ function show_categories($args = array('orderby' => 'name', 'order' => 'ASC', 'p
     $categories = get_categories($args);
     foreach($categories as $category):
         ?>
-        <div class="category">
+        <div class="category <?php echo $category->slug; ?>">
             <a href="<?php echo get_category_link( $category->term_id ); ?>" title="<?php echo sprintf( __( "View all $category->count posts in %s" ), $category->name ); ?>"><img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg"></a>
             <h3><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h3>
             <p><?php echo $category->description ?></p>
