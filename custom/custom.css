@@ -317,8 +317,45 @@ ul#main-nav ul li:hover > a {
 
 /* Homepage */
 .home-content {
-    margin: 2.4em 1.2em;
+    margin: -2em 1.2em 2.4em;
     font-size: 1.4em;
+}
+.home-content h2 {
+	clear: both;
+	line-height: 40px;
+	position: relative;
+	margin: 2.5em auto .75em;
+	text-align: center;
+	color: #93775F;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 2em;
+}
+.home-content h2 a {
+	display: inline;
+}
+.home-content h2:before, .home-content h2:after {
+	content: '';
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	height: 32px;
+	width: 85px;
+	background: url('images/header-vines.png');
+}
+.home-content h2:before {
+	background-position: top left;
+	margin-left: -50%;
+}
+.home-content h2:after {
+	background-position: top right;
+	margin-right: -50%;
+}
+.home-content p.tagline {
+	text-align: center;
+	font-style: italic;
+	font-size: 1.1em;
+	margin: -1em 0 2em;
 }
 .home-content h3 {
 	background: #423C2A;
@@ -341,7 +378,7 @@ ul#main-nav ul li:hover > a {
 /* Category intros */
 .category {
 	width: 23.5%;
-	margin: 1em 2% 1em 0;
+	margin: 1em 2% 4em 0;
 	float: left;
 	text-align: center;
 }

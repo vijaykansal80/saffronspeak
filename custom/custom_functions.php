@@ -232,8 +232,8 @@ function new_homepage() {
     if (is_home() || is_front_page()): ?>
         <div id="content" class="home-content">
             
-            <h1>Saffron Speak</h1>
-            <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
+            <h2>Saffron Speak</h2>
+            <p class="tagline">Creating distinctive spaces at the crossroads of design, decor, and tradition</p>
             <?php echo show_categories(); ?> 
 
             <?php echo featured_series('mothers-day'); ?>
@@ -270,7 +270,7 @@ function featured_series($slug) {
     $template = parse_url(get_bloginfo('template_directory'));
     $path = $template['path']."/custom/series/".$slug;
     $category = get_category_by_slug($slug);
-    echo '<h2><a href="'.get_category_link($category->term_id).'">Featured series: '. $category->name .'</a></h2>';
+    echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
     include(".".$path."/".$slug.".php"); 
 }
 
