@@ -366,6 +366,8 @@ ul#main-nav ul li:hover > a {
 	font-size: .95em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 0;
 }
 .home-content h3:before, .home-content h3:after {
 	content: '\00b7';
