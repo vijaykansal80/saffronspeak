@@ -232,8 +232,8 @@ function new_homepage() {
     if (is_home() || is_front_page()): ?>
         <div id="content" class="home-content">
             
-            <h2>Saffron Speak</h2>
-            <p class="tagline">Creating distinctive spaces at the crossroads of design, decor, and tradition</p>
+            <h2><?php echo bloginfo('title'); ?></h2>
+            <p class="tagline"><?php echo bloginfo('description'); ?></p>
             <?php echo show_categories(); ?> 
 
             <?php echo featured_series('mothers-day'); ?>
