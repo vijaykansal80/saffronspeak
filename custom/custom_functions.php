@@ -234,9 +234,8 @@ function new_homepage() {
             <h1>Saffron Speak</h1>
             <h2>Creating distinctive spaces at the crossroads of design, decor, and tradition</h2>
         </div>
-        <?php echo list_posts('latest', 4); ?>
-        <?php echo list_posts('favorite', 4); ?>
-        <?php if (function_exists('wpp_get_mostpopular')) wpp_get_mostpopular("range=weekly&order_by=comments"); ?>
+        <?php echo list_posts('latest'); ?>
+        <?php echo list_posts('favorite'); ?>
     <?php 
     endif; 
 }
@@ -246,7 +245,7 @@ add_action('thesis_hook_custom_template', 'new_homepage');
 
 
 // List posts widget
-function list_posts($type, $number) {
+function list_posts($type, $number=4) {
     ?>
     <div class="post-list <?php echo $type; ?>">
         <h2><?php echo $type; ?> Posts</h2>
@@ -264,7 +263,7 @@ function list_posts($type, $number) {
                 <div class="post-preview">
                     <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                    <p><?php the_excerpt(); ?></p>
+                    <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
                 </div>
             <?php endforeach; 
             wp_reset_postdata(); ?>
