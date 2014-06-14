@@ -327,9 +327,7 @@ ul#main-nav ul li:hover > a {
 	margin: 2.5em auto .75em;
 	text-align: center;
 	color: #93775F;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 2em;
+	font-size: 2.2em;
 }
 .home-content h2 a {
 	display: inline;
