@@ -253,7 +253,7 @@ add_action('thesis_hook_custom_template', 'new_homepage');
 
 
 // Show categories widget
-function show_categories($args = array('orderby' => 'name', 'order' => 'ASC', 'parent' => 0, 'exclude' => 1)) {
+function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
     $categories = get_categories($args);
     foreach($categories as $category):
         ?>
