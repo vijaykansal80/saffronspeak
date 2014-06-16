@@ -75,6 +75,14 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+
+
+
+
+/*****************************
+           HEADER
+******************************/
+
 // This replaces the header with a custom header to match the catalog site
 
 function custom_header() { ?>
@@ -189,43 +197,49 @@ function custom_menu() { ?>
 remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
-
-
 // add some breadcrumbs
 
 function thesis_breadcrumbs() {
-	if (!is_home() && !is_front_page()): {
-    	echo '<div class="breadcrumbs">';
-    	echo '<a href="';
-    	echo get_option('home');
-    	echo '">';
-    	//bloginfo('name');
-    	echo 'Blog';
-    	echo "</a>";
-    		if (is_category() || is_single()) {
-    			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-    			the_category(' &bull; ');
-    				if (is_single()) {
-    					echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-    					the_title();
-    				}
+    if (!is_home() && !is_front_page()): {
+        echo '<div class="breadcrumbs">';
+        echo '<a href="';
+        echo get_option('home');
+        echo '">';
+        //bloginfo('name');
+        echo 'Blog';
+        echo "</a>";
+            if (is_category() || is_single()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                the_category(' &bull; ');
+                    if (is_single()) {
+                        echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                        the_title();
+                    }
             } elseif (is_page()) {
                 echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
                 echo the_title();
-    		} elseif (is_search()) {
+            } elseif (is_search()) {
                 echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-    			echo '"<em>';
-    			echo the_search_query();
-    			echo '</em>"';
+                echo '"<em>';
+                echo the_search_query();
+                echo '</em>"';
             }
-    	}
-    	echo '</div>';
+        }
+        echo '</div>';
     endif;
 }
 
 add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
+
+
+
+
+
+/*****************************
+           HOMEPAGE
+******************************/
 
 // This creates an entirely different layout for the homepage
 
@@ -302,6 +316,52 @@ function list_posts($type, $number=4) {
     </div>
 <?php
 }
+
+
+
+
+
+
+/*****************************
+           ARCHIVE PAGES
+******************************/
+
+
+class archive_looper extends thesis_custom_loop {
+ 
+    function category() {
+        thesis_archive_intro();
+        echo "<div class=\"post_box top\">\n";
+        echo "\t<div class=\"format_text\">\n";
+        while (have_posts()):
+            the_post();
+            if ( has_post_thumbnail()): ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                    <?php the_post_thumbnail('thumbnail'); ?>
+                </a>
+            <?php endif; ?>
+            <div class="headline-area">
+                <section class="post-meta">Post meta stuff</section>
+                <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+            </div>
+            <div class="format_text entry-content">
+                <?php echo '<p>' . get_the_excerpt() . ''; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read the full article...</a></p>
+            </div>
+        <?php endwhile;
+        echo "\t</div>\n";
+        echo "</div>\n";
+    }
+ 
+}
+$the_looper = new archive_looper;
+
+
+
+
+
+/*****************************
+           POSTS
+******************************/
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
