@@ -344,7 +344,8 @@ class archive_looper extends thesis_custom_loop {
                     <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
                 </div>
                 <div class="format_text entry-content">
-                    <?php echo '<p>' . get_the_excerpt() . ''; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read the full article...</a></p>
+                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
                 </div>
             </div>
         <?php endwhile;
