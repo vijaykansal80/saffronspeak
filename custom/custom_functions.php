@@ -331,25 +331,23 @@ class archive_looper extends thesis_custom_loop {
  
     function category() {
         thesis_archive_intro();
-        echo "<div class=\"post_box top\">\n";
-        echo "\t<div class=\"format_text\">\n";
         while (have_posts()):
             the_post();
-            if ( has_post_thumbnail()): ?>
+            echo '<div class="post-excerpt">';
+            if (has_post_thumbnail()): ?>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail('thumbnail'); ?>
+                    <?php the_post_thumbnail(''); ?>
                 </a>
             <?php endif; ?>
-            <div class="headline-area">
-                <section class="post-meta">Post meta stuff</section>
-                <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
-            </div>
-            <div class="format_text entry-content">
-                <?php echo '<p>' . get_the_excerpt() . ''; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read the full article...</a></p>
+                <div class="headline_area">
+                    <section class="post-meta">Post meta stuff</section>
+                    <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                </div>
+                <div class="format_text entry-content">
+                    <?php echo '<p>' . get_the_excerpt() . ''; ?><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read the full article...</a></p>
+                </div>
             </div>
         <?php endwhile;
-        echo "\t</div>\n";
-        echo "</div>\n";
     }
  
 }
