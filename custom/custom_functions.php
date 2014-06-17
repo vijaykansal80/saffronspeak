@@ -340,7 +340,7 @@ class archive_looper extends thesis_custom_loop {
                 </a>
             <?php endif; ?>
                 <div class="headline_area">
-                    <section class="post-meta">Post meta stuff</section>
+                    <?php echo post_meta(); ?>
                     <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
                 </div>
                 <div class="format_text entry-content">
