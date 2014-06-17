@@ -507,6 +507,7 @@ h2.series-title a {
 }
 h1.entry-title, h2.entry-title {
 	font-size: 3em;
+	line-height: 1.2em;
 	margin: 0 auto 0;
 }
 
