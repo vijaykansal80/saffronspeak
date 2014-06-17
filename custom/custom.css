@@ -489,6 +489,9 @@ ul#main-nav ul li:hover > a {
 .post-excerpt p {
 	text-align: left;
 }
+.post-excerpt p.read-more {
+	text-align: center;
+}
 
 
 
