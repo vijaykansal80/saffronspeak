@@ -255,7 +255,12 @@ function new_homepage() {
 
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
-            <?php echo list_posts('favorite'); ?>
+
+            <div class="post-list favourite">
+            <h3>Most-loved Posts</h3>
+            <?php if (function_exists('wpp_get_mostpopular'))
+                wpp_get_mostpopular();
+            ?>
 
         </div>
     <?php 
@@ -316,6 +321,25 @@ function list_posts($type, $number=4) {
     </div>
 <?php
 }
+
+
+
+
+function my_custom_popular_posts_html_list($mostpopular, $instance) {
+    foreach($mostpopular as $post): ?>
+                <div class="post-preview">
+                    <?php echo get_the_post_thumbnail($post->id); ?>
+                    <h4><a href="<?php echo get_the_permalink($post->id); ?>"><?php echo $post->title ?></a></h4>
+                    <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                </div>
+            
+            <?php endforeach; 
+            wp_reset_postdata(); 
+            return $output;
+
+}
+add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
+
 
 
 
