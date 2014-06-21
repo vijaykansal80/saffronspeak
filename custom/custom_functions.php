@@ -256,13 +256,10 @@ function new_homepage() {
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
 
-            <div class="post-list favourite">
-            <h3>Most-loved Posts</h3>
             <?php if (function_exists('wpp_get_mostpopular'))
                 wpp_get_mostpopular();
             ?>
 
-        </div>
     <?php 
     endif; 
 }
@@ -301,23 +298,23 @@ function list_posts($type, $number=4) {
     <div class="post-list <?php echo $type; ?>">
         <h3><?php echo $type; ?> Posts</h3>
         <?php
-            global $post;
-            if ($type === "latest") {
-                $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
-            } elseif ($type === "favorite") {
-                $args = array('posts_per_page' => $number, 'orderby' => 'comment_count', 'order' => 'DESC', 'post_type' => 'post');
-            }
-            $recent_posts = get_posts($args);
-            foreach($recent_posts as $post):
-                setup_postdata($post);
-                ?>
-                <div class="post-preview">
-                    <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
-                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                    <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                </div>
-            <?php endforeach; 
-            wp_reset_postdata(); ?>
+        global $post;
+        if ($type === "latest") {
+            $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
+        } elseif ($type === "favorite") {
+            $args = array('posts_per_page' => $number, 'orderby' => 'comment_count', 'order' => 'DESC', 'post_type' => 'post');
+        }
+        $recent_posts = get_posts($args);
+        foreach($recent_posts as $post):
+            setup_postdata($post);
+            ?>
+            <div class="post-preview">
+                <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
+                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+            </div>
+        <?php wp_reset_postdata(); 
+        endforeach; ?>
     </div>
 <?php
 }
@@ -325,20 +322,28 @@ function list_posts($type, $number=4) {
 
 
 
-function my_custom_popular_posts_html_list($mostpopular, $instance) {
-    foreach($mostpopular as $post): ?>
-                <div class="post-preview">
-                    <?php echo get_the_post_thumbnail($post->id); ?>
-                    <h4><a href="<?php echo get_the_permalink($post->id); ?>"><?php echo $post->title ?></a></h4>
-                    <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                </div>
+function custom_popular_posts_list($mostpopular, $instance) {
+    ?>
+    <div class="post-list favourite">
+        <h3>Most-loved Posts</h3>
+        <?php 
+        global $post;
+        foreach($mostpopular as $popular):
+            $post = get_post($popular->id); 
+            setup_postdata($post);
+            ?>
+        <div class="post-preview">
+            <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
+            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+            <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+        </div>
             
-            <?php endforeach; 
-            wp_reset_postdata(); 
-            return $output;
-
+        <?php wp_reset_postdata();
+        endforeach; ?>
+    </div> 
+<?php
 }
-add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
+add_filter( 'wpp_custom_html', 'custom_popular_posts_list', 10, 2 );
 
 
 
