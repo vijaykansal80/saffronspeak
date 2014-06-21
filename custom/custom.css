@@ -439,7 +439,6 @@ ul#main-nav ul li:hover > a {
 .post-preview {
 	clear: both;
 	margin: 1em 0;
-	overflow: auto;
 }
 .post-preview img {
 	float: left;
