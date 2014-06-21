@@ -307,7 +307,7 @@ function list_posts($type, $number=4) {
         $recent_posts = get_posts($args);
         foreach($recent_posts as $post):
             setup_postdata($post);
-            post_preview($post);
+            preview_post($post);
             wp_reset_postdata();
         endforeach; ?>
     </div>
@@ -325,7 +325,7 @@ function custom_popular_posts_list($mostpopular, $instance) {
         foreach($mostpopular as $popular):
             $post = get_post($popular->id); 
             setup_postdata($post);
-            post_preview($post);
+            preview_post($post);
             wp_reset_postdata();
         endforeach; ?>
     </div> 
@@ -335,7 +335,7 @@ add_filter( 'wpp_custom_html', 'custom_popular_posts_list', 10, 2 );
 
 
 // Format post previews in lists
-function post_preview($post) {
+function preview_post($post) {
     ?>
     <div class="post-preview">
         <a href="<?php the_permalink(); ?>"><?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?></a>
