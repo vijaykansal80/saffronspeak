@@ -307,21 +307,15 @@ function list_posts($type, $number=4) {
         $recent_posts = get_posts($args);
         foreach($recent_posts as $post):
             setup_postdata($post);
-            ?>
-            <div class="post-preview">
-                <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
-                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-            </div>
-        <?php wp_reset_postdata(); 
+            post_preview($post);
+            wp_reset_postdata();
         endforeach; ?>
     </div>
 <?php
 }
 
 
-
-
+// Show custom popular posts widget
 function custom_popular_posts_list($mostpopular, $instance) {
     ?>
     <div class="post-list favourite">
@@ -331,14 +325,8 @@ function custom_popular_posts_list($mostpopular, $instance) {
         foreach($mostpopular as $popular):
             $post = get_post($popular->id); 
             setup_postdata($post);
-            ?>
-        <div class="post-preview">
-            <?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?>
-            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-            <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-        </div>
-            
-        <?php wp_reset_postdata();
+            post_preview($post);
+            wp_reset_postdata();
         endforeach; ?>
     </div> 
 <?php
@@ -346,7 +334,16 @@ function custom_popular_posts_list($mostpopular, $instance) {
 add_filter( 'wpp_custom_html', 'custom_popular_posts_list', 10, 2 );
 
 
-
+// Format post previews in lists
+function post_preview($post) {
+    ?>
+    <div class="post-preview">
+        <a href="<?php the_permalink(); ?>"><?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?></a>
+        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+        <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+    </div>
+<?php
+}
 
 
 
