@@ -10,6 +10,20 @@
 // add_action('thesis_hook_before_sidebar_1', 'thesis_widget_recent_posts');
 
 
+// Disable certain plugins' ugly stylesheets
+function remove_plugin_styles() {
+    wp_dequeue_style('yarppRelatedCss');
+    wp_deregister_style('yarppRelatedCss');
+}
+add_action('wp_footer', remove_plugin_styles);
+
+// Re-queue Sharedaddy JS
+function tweakjp_add_sharing_js() {
+    wp_enqueue_script( 'sharing-js', WP_SHARING_PLUGIN_URL . 'sharing.js', array( ), 3 );
+}
+add_action( 'wp_enqueue_scripts', 'tweakjp_add_sharing_js' );
+
+
 // Enable featured images/post thumbnails
 
 add_theme_support('post-thumbnails');
@@ -35,7 +49,7 @@ function auto_featured_image() {
          }
     }
 }
-// Use it temporary to generate all featured images
+// Use it temporarily to generate all featured images
 add_action('the_post', 'auto_featured_image');
 // Used for new posts
 add_action('save_post', 'auto_featured_image');
@@ -60,6 +74,14 @@ function new_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+
+
+
+
+
+/*****************************
+           HEADER
+******************************/
 
 // This replaces the header with a custom header to match the catalog site
 
@@ -159,8 +181,8 @@ function custom_menu() { ?>
 	    
 	    <li id="blog-tab" class="active"><a href="/blog">Blog</a>
 	    	<ul>
-				<li class="cat-item cat-item-7"><a href="http://www.saffronmarigold.com/blog/category/customer-solutions/" title="Enter the world of our customers">Customer Connection</a></li>
-				<li class="cat-item cat-item-6"><a href="http://www.saffronmarigold.com/blog/category/inspirational-ideas/" title="Home decor ideas that inspire">Design Resources</a></li>
+				<li class="cat-item cat-item-7"><a href="http://www.saffronmarigold.com/blog/category/customer-connection/" title="Enter the world of our customers">Customer Connection</a></li>
+				<li class="cat-item cat-item-6"><a href="http://www.saffronmarigold.com/blog/category/design-resources/" title="Home decor ideas that inspire">Design Resources</a></li>
 				<li class="cat-item cat-item-5"><a href="http://www.saffronmarigold.com/blog/category/shopping-guides/" title="So many options, so hard to decide - we can help!">Shopping Guides</a></li>
 				<li class="cat-item cat-item-8"><a href="http://www.saffronmarigold.com/blog/category/behind-the-scenes/" title="A look behind the scenes ">Behind the Scenes</a></li>
 				<li class="rss"><a href="http://feeds.feedburner.com/SaffronMarigoldBlog" title="Saffron Marigold Blog RSS Feed" rel="nofollow">Subscribe</a></li>
@@ -175,41 +197,277 @@ function custom_menu() { ?>
 remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
-
-
 // add some breadcrumbs
 
 function thesis_breadcrumbs() {
-	if (!is_home()) {
-	echo '<div class="breadcrumbs">';
-	echo '<a href="';
-	echo get_option('home');
-	echo '">';
-	//bloginfo('name');
-	echo 'Blog';
-	echo "</a>";
-		if (is_category() || is_single()) {
-			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-			the_category(' &bull; ');
-				if (is_single()) {
-					echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-					the_title();
-				}
-        } elseif (is_page()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-            echo the_title();
-		} elseif (is_search()) {
-            echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-			echo '"<em>';
-			echo the_search_query();
-			echo '</em>"';
+    if (!is_home() && !is_front_page()): {
+        echo '<div class="breadcrumbs">';
+        echo '<a href="';
+        echo get_option('home');
+        echo '">';
+        //bloginfo('name');
+        echo 'Blog';
+        echo "</a>";
+            if (is_category() || is_single()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                the_category(' &bull; ');
+                    if (is_single()) {
+                        echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                        the_title();
+                    }
+            } elseif (is_page()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+                echo the_title();
+            } elseif (is_search()) {
+                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+                echo '"<em>';
+                echo the_search_query();
+                echo '</em>"';
+            }
         }
-	}
-	echo '</div>';
+        echo '</div>';
+    endif;
+}
+
+add_action('thesis_hook_after_header','thesis_breadcrumbs');
+
+
+
+
+
+
+
+/*****************************
+           HOMEPAGE
+******************************/
+
+// This creates an entirely different layout for the homepage
+
+function new_homepage() {
+    if (is_home() || is_front_page()): ?>
+        <div id="content" class="home-content">
+            
+            <h2><?php echo bloginfo('title'); ?></h2>
+            <p class="tagline"><?php echo bloginfo('description'); ?></p>
+            <?php echo show_categories(); ?> 
+
+            <?php echo featured_series('summer-series'); ?>
+
+            <h2>Read more posts</h2>
+            <?php echo list_posts('latest'); ?>
+
+            <?php if (function_exists('wpp_get_mostpopular'))
+                wpp_get_mostpopular();
+            ?>
+
+    <?php 
+    endif; 
+}
+
+remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
+add_action('thesis_hook_custom_template', 'new_homepage');
+
+
+// Show categories widget
+function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
+    $categories = get_categories($args);
+    foreach($categories as $category):
+        ?>
+        <div class="category <?php echo $category->slug; ?>">
+            <a href="<?php echo get_category_link( $category->term_id ); ?>" title="<?php echo sprintf( __( "View all $category->count posts in %s" ), $category->name ); ?>"><img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg"></a>
+            <h3><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h3>
+            <p><?php echo $category->description ?></p>
+        </div>
+    <?php 
+    endforeach; 
+}
+
+// Show custom HTML for featured series
+function featured_series($slug) {
+    $dir = plugin_dir_path( __FILE__ );
+    $template = parse_url(get_bloginfo('template_directory'));
+    $path = $template['path']."/custom/series/".$slug;
+    $category = get_category_by_slug($slug);
+    echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
+    include($dir."/series/".$slug."/".$slug.".php"); 
+}
+
+// List posts widget
+function list_posts($type, $number=4) {
+    ?>
+    <div class="post-list <?php echo $type; ?>">
+        <h3><?php echo $type; ?> Posts</h3>
+        <?php
+        global $post;
+        if ($type === "latest") {
+            $args = array('posts_per_page' => $number, 'orderby' => 'post_date', 'order' => 'DESC', 'post_type' => 'post');
+        } elseif ($type === "favorite") {
+            $args = array('posts_per_page' => $number, 'orderby' => 'comment_count', 'order' => 'DESC', 'post_type' => 'post');
+        }
+        $recent_posts = get_posts($args);
+        foreach($recent_posts as $post):
+            setup_postdata($post);
+            preview_post($post);
+            wp_reset_postdata();
+        endforeach; ?>
+    </div>
+<?php
 }
 
 
-add_action('thesis_hook_after_header','thesis_breadcrumbs');
+// Show custom popular posts widget
+function custom_popular_posts_list($mostpopular, $instance) {
+    ?>
+    <div class="post-list favourite">
+        <h3>Most-loved Posts</h3>
+        <?php 
+        global $post;
+        foreach($mostpopular as $popular):
+            $post = get_post($popular->id); 
+            setup_postdata($post);
+            preview_post($post);
+            wp_reset_postdata();
+        endforeach; ?>
+    </div> 
+<?php
+}
+add_filter( 'wpp_custom_html', 'custom_popular_posts_list', 10, 2 );
+
+
+// Format post previews in lists
+function preview_post($post) {
+    ?>
+    <div class="post-preview">
+        <a href="<?php the_permalink(); ?>"><?php if (has_post_thumbnail()) { the_post_thumbnail(''); } ?></a>
+        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+        <p><?php the_advanced_excerpt('length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+    </div>
+<?php
+}
+
+
+
+
+/*****************************
+           ARCHIVE PAGES
+******************************/
+
+
+class archive_looper extends thesis_custom_loop {
+ 
+    function category() {
+        thesis_archive_intro();
+        while (have_posts()):
+            the_post();
+            echo '<div class="post-excerpt">';
+            if (has_post_thumbnail()): ?>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                    <?php the_post_thumbnail(''); ?>
+                </a>
+            <?php endif; ?>
+                <div class="headline_area">
+                    <?php echo post_meta(); ?>
+                    <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                </div>
+                <div class="format_text entry-content">
+                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+                </div>
+            </div>
+        <?php endwhile;
+    }
+ 
+}
+$the_looper = new archive_looper;
+
+
+
+
+
+/*****************************
+           POSTS
+******************************/
+
+// This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
+
+function post_meta() {
+    if (!is_page()): ?>
+        </section>
+        <section class="post-meta">
+            Published 
+            <abbr class="published" title="<?php echo get_the_time('Y-m-d H:i'); ?>"><?php echo get_the_time(get_option('date_format')); ?></abbr>
+            by <?php the_author_posts_link(); ?> 
+        </section>
+
+    <?php
+    endif; 
+}
+
+function post_series() {
+    if (!is_page()): ?>
+        <section class="post-headline">
+            <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
+    <?php
+    endif; 
+}
+
+add_action('thesis_hook_before_headline', 'post_series');
+add_action('thesis_hook_before_headline', 'post_meta');
+
+
+
+// This adds tags to the bottom of posts, and moves YARPP below the tags
+
+function post_tags() {
+    if (is_single()): ?>
+        <section class="post-tags">
+            <span>Find related posts by tags: </span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?>
+        </section>
+
+    <?php
+    add_action('thesis_hook_after_post', 'related_posts', '2');
+    endif; 
+}
+
+add_action('thesis_hook_after_post', 'post_tags', '1');
+
+// This will register "series" as a custom taxonomy
+
+function add_series() {
+
+    $labels = array(
+        'name'                       => 'Series',
+        'singular_name'              => 'Series',
+        'menu_name'                  => 'Series',
+        'all_items'                  => 'All Series',
+        'parent_item'                => 'Series Parent',
+        'parent_item_colon'          => 'Series Parent:',
+        'new_item_name'              => 'New Series Name',
+        'add_new_item'               => 'Add New Series',
+        'edit_item'                  => 'Edit Series',
+        'update_item'                => 'Update Series',
+        'separate_items_with_commas' => 'Separate series with commas',
+        'search_items'               => 'Search series',
+        'add_or_remove_items'        => 'Add or remove series',
+        'choose_from_most_used'      => 'Choose from the most used series',
+        'not_found'                  => 'Series Not Found',
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => true,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'series', array( 'post' ), $args );
+
+}
+
+add_action( 'init', 'add_series', 0 );
+
+
 
 
 
