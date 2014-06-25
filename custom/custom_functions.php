@@ -251,7 +251,7 @@ function new_homepage() {
             <p class="tagline"><?php echo bloginfo('description'); ?></p>
             <?php echo show_categories(); ?> 
 
-            <?php echo featured_series('mothers-day'); ?>
+            <?php echo featured_series('summer-series'); ?>
 
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>

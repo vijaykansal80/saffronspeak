@@ -678,12 +678,33 @@ a.sd-button > span {
 	font-family: 'Lancelot', cursive;
 	font-size: 6em;
 	line-height: 1em;
-	margin: -.05em 4px -.1em 0;
+	margin: -.05em 4px 0 0;
 	color: #7D7556;
 	float: left;
 	text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
 }
 
+/* default panel styles */
+.panel {
+	border-top: 1px solid #9e5374;
+	border-bottom: 2px solid #9e5374;
+	padding: 1em 2em .5em;
+	margin: 1em 0 4em;
+	background: rgba(255,255,255,.75);
+}
+.panel p {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-top: 75px;
+}
+.panel p:first-letter {
+	float: left;
+	font-size: 4em;
+	margin: 2px 2px 0 -4px;
+	color: #93765e;
+	font-weight: bold;
+	font-family: 'Lancelot', cursive;
+}
 
 
 .post-listing::after {
@@ -928,6 +949,7 @@ section::after {
 
 
 
+
 /* Use custom styles for "Mother's Day" posts */
 
 .mothers-day > p:first-of-type:first-letter, .mothers-day > p.intro:first-letter, p.float-left + h3 + p:first-letter {
@@ -1035,7 +1057,7 @@ section::after {
 	color: #9e5374;
 	float: left;
 }
-.panel {
+.sultans-palace .panel {
 	border-top: 1px solid #9e5374;
 	border-bottom: 2px solid #9e5374;
 	padding: 1em 2em .5em;
