@@ -695,7 +695,7 @@ a.sd-button > span {
 .panel p {
 	font-size: 1.2em;
 	line-height: 1.5em;
-	margin-top: 75px;
+	margin-top: 50px;
 }
 .panel p:first-letter {
 	float: left;
@@ -704,6 +704,9 @@ a.sd-button > span {
 	color: #93765e;
 	font-weight: bold;
 	font-family: 'Lancelot', cursive;
+}
+.panel .read-more {
+	margin-top: 40px;
 }
 
 
