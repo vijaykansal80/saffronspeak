@@ -251,7 +251,7 @@ function new_homepage() {
             <p class="tagline"><?php echo bloginfo('description'); ?></p>
             <?php echo show_categories(); ?> 
 
-            <?php echo featured_series('summer-series'); ?>
+            <?php echo featured_series('summer-series', 'summer-bedding-linen-ideas'); ?>
 
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
@@ -283,11 +283,15 @@ function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
 }
 
 // Show custom HTML for featured series
-function featured_series($slug) {
+function featured_series($slug, $seo_slug=false) {
     $dir = plugin_dir_path( __FILE__ );
     $template = parse_url(get_bloginfo('template_directory'));
     $path = $template['path']."/custom/series/".$slug;
-    $category = get_category_by_slug($slug);
+    if ($seo_slug) {
+        $category = get_category_by_slug($seo_slug);
+    } else {
+        $category = get_category_by_slug($slug);
+    }
     echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
     include($dir."/series/".$slug."/".$slug.".php"); 
 }
