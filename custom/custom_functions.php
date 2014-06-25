@@ -257,7 +257,7 @@ function new_homepage() {
             <?php echo list_posts('latest'); ?>
 
             <?php if (function_exists('wpp_get_mostpopular'))
-                wpp_get_mostpopular();
+                wpp_get_mostpopular("range=monthly");
             ?>
 
     <?php 
