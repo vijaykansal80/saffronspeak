@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Almendra+Display);
 @import url(http://fonts.googleapis.com/css?family=Lancelot);
 @import url(http://fonts.googleapis.com/css?family=Euphoria+Script);
+@import url(http://fonts.googleapis.com/css?family=Milonga);
 @import url("fonts/nuptial.css");
 
 /*
@@ -964,6 +965,42 @@ section::after {
 	content: '';
 	display: block;
 	clear: both;
+}
+
+
+
+
+/* Use custom styles for "Dorm Decor" posts */
+
+.dorm-decor > p:first-of-type:first-letter, .dorm-decor > p.intro:first-letter, p.float-left + h3 + p:first-letter, .dorm-decor .panel p:first-letter {
+	color: #447e94;
+	font-family: 'Milonga', cursive;
+	text-shadow: none;
+	font-size: 4em;
+	margin-top: -.1em;
+	margin-right: .1em;
+}
+.dorm-decor a {
+	color: #213164;
+}
+.dorm-decor .panel {
+	background: url('images/leather.jpg');
+	background-size: 300px 300px;
+	border-color: #447e94;
+}
+
+.dorm-decor h4 {
+	border-color: #447e94;
+}
+.dorm-decor h2, .dorm-decor h4 a, .dorm-decor h4 {
+	color: #447e94;
+}
+.dorm-decor .read-more a {
+	color: #eeb64c;
+	background-color: #213164;
+}
+.dorm-decor .read-more a:hover {
+	background-color: #447e94;
 }
 
 
