@@ -563,9 +563,10 @@ h1.entry-title, h2.entry-title {
 	content: '';
 	display: block;
 }
-.sharedaddy h3 {
+.post-listing .sharedaddy h3 {
 	float: left;
 	width: 30%;
+	padding: 0;
 	margin: 7px 0 0;
 	font-size: 1em;
 	font-style: italic;
@@ -653,6 +654,9 @@ a.sd-button > span {
 }
 .related-posts div:nth-of-type(3) {
 	margin-right: 0
+}
+.post-listing .related-posts h3 {
+	text-align: left;
 }
 .related-posts h4 {
 	text-align: center;
