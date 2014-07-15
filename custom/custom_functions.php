@@ -210,7 +210,7 @@ function thesis_breadcrumbs() {
         echo "</a>";
             if (is_category() || is_single()) {
                 echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-                the_category(' &bull; ');
+                the_category(' &bull; ', 'multiple');
                     if (is_single()) {
                         echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
                         the_title();
