@@ -984,8 +984,8 @@ section::after {
 	color: #213164;
 }
 .dorm-decor .panel {
-	background: url('images/leather.jpg');
-	background-size: 300px 300px;
+	background: url('series/dorm-decor/flowers.png');
+	background-size: 177px 102px;
 	border-color: #447e94;
 }
 
