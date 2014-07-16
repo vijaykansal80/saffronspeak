@@ -404,6 +404,17 @@ function category_class($classes) {
     $classes[] = "single-post";
     endif;
 
+    // for category archive pages 
+    if (is_category()):
+        $classes[] = get_category(get_query_var('cat'))->slug;
+        $classes[] = "post-archive";
+    endif;
+
+    // for the homepage
+    if (is_front_page()):
+        $classes[] = "homepage";
+    endif;
+
 return $classes;
 }
 
