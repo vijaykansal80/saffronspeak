@@ -392,6 +392,24 @@ $the_looper = new archive_looper;
            POSTS
 ******************************/
 
+// Add classes to different pages for styling purposes
+function category_class($classes) {
+    
+    // for individual post pages
+    if (is_single()): 
+        $categories = get_the_category($post->ID);
+        foreach($categories as $category): 
+            $classes[] = $category->slug;
+        endforeach;
+    $classes[] = "single-post";
+    endif;
+
+return $classes;
+}
+
+add_filter('thesis_body_classes', 'category_class');
+
+
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
 function post_meta() {
