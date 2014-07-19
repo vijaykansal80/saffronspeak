@@ -24,6 +24,29 @@ function tweakjp_add_sharing_js() {
 add_action( 'wp_enqueue_scripts', 'tweakjp_add_sharing_js' );
 
 
+// Add page-specific stylesheets
+function set_custom_styles() {
+    
+    // for individual post pages
+    if (is_single()): 
+        $categories = get_the_category($post->ID);
+        foreach($categories as $category): 
+            $slug = $category->slug;
+        endforeach;
+    endif;
+
+    // for category archive pages 
+    if (is_category()):
+        $slug = get_category(get_query_var('cat'))->slug;
+    endif;
+
+    wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
+    wp_enqueue_style('category-style');
+}
+
+add_action( 'wp_enqueue_scripts', 'set_custom_styles' );
+
+
 // Enable featured images/post thumbnails
 
 add_theme_support('post-thumbnails');
