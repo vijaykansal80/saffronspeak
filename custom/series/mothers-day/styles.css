@@ -1,0 +1,69 @@
+@import url(http://fonts.googleapis.com/css?family=Euphoria+Script);
+
+/* ==================================== 
+Custom styles for Mother's Day series
+===================================== */
+
+
+.mothers-day > p:first-of-type:first-letter, 
+.mothers-day > p.intro:first-letter, 
+.mothers-day p.float-left + h3 + p:first-letter {
+    font-family: 'Euphoria Script', cursive;
+    color: #8c0038;
+    text-shadow: none;
+    font-size: 5.6em;
+    margin-top: -.1em;
+    margin-right: .1em;
+    float: left;
+}
+.mothers-day a {
+    color: #8c0038;
+}
+.mothers-day .panel {
+    background: url('damask.png');
+    border-color: #93765e;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+.mothers-day .panel p {
+    margin-top: 75px;
+}
+.mothers-day .panel p:first-letter {
+    font-size: 4em;
+    color: #93765e;
+    font-family: 'Euphoria Script', cursive;
+}
+.mothers-day figure img {
+    max-width: 240px;
+    margin-top: 1em;
+}
+.mothers-day.child-post figure img {
+    max-width: 150px;
+}
+.mothers-day.child-post .panel p {
+    margin-top: 50px;
+}
+
+.mothers-day h3 {
+    color: #93765e;
+    font-size: 2.4em;
+    margin: 1em 0 .5em;
+    text-align: center;
+    font-family: 'Euphoria Script', cursive;
+    clear: both;
+}
+.post-listing .mothers-day h4 {
+    border-color: #8c0038;
+}
+.mothers-day h4 a, .mothers-day h4 {
+    color: #8c0038;
+}
+.mothers-day .read-more a {
+    color: #93765e;
+    background: url('images/lace-strip.png') no-repeat;
+    width: 150px;
+    height: 25px;
+    box-shadow: none;
+    padding: 8px 0;
+    border: none;
+}

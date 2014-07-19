@@ -31,8 +31,12 @@ function set_custom_styles() {
     if (is_single()): 
         $categories = get_the_category($post->ID);
         foreach($categories as $category): 
-            $slug = $category->slug;
+            if ($category->slug != "shopping-guides"):
+                $slug = $category->slug;
+            endif;
         endforeach;
+        echo $slug;
+        echo 'hi';
     endif;
 
     // for category archive pages 
