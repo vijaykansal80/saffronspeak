@@ -1,8 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Milonga);
 
-/* Use custom styles for "Dorm Decor" posts */
+/* ==================================== 
+Custom styles for Dorm Decor series
+===================================== */
 
-.dorm-decor > p:first-of-type:first-letter, .dorm-decor > p.intro:first-letter, p.float-left + h3 + p:first-letter, .dorm-decor .panel p:first-letter {
+.dorm-decor > p:first-of-type:first-letter, 
+.dorm-decor > p.intro:first-letter, 
+.dorm-decor p.float-left + h3 + p:first-letter, 
+.dorm-decor .panel p:first-letter {
     color: #447e94;
     font-family: 'Milonga', cursive;
     text-shadow: none;
