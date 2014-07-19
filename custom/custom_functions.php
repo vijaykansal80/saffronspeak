@@ -35,8 +35,6 @@ function set_custom_styles() {
                 $slug = $category->slug;
             endif;
         endforeach;
-        echo $slug;
-        echo 'hi';
     endif;
 
     // for category archive pages 
