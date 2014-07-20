@@ -381,9 +381,21 @@ function preview_post($post) {
            ARCHIVE PAGES
 ******************************/
 
+// Remove pagination for series lists
+function nix_nav() {
+    if (is_category()):
+        $cat = get_query_var('cat');
+        $subcategories = get_categories('child_of='.$cat); 
+        if(count($subcategories) != 0):
+            remove_action('thesis_hook_after_content', 'thesis_post_navigation');
+        endif;
+    endif;
+}
+add_action('thesis_hook_before_content','nix_nav');       
 
+// Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
- 
+
     function category() {
         thesis_archive_intro();
 
@@ -409,7 +421,6 @@ class archive_looper extends thesis_custom_loop {
                     </div>
                 </div>
             <?php endforeach;
-        
 
         // Otherwise, display a list of posts
         else:
@@ -436,8 +447,6 @@ class archive_looper extends thesis_custom_loop {
  
 }
 $the_looper = new archive_looper;
-
-
 
 
 
