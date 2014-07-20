@@ -386,24 +386,41 @@ class archive_looper extends thesis_custom_loop {
  
     function category() {
         thesis_archive_intro();
-        while (have_posts()):
-            the_post();
-            echo '<div class="post-excerpt">';
-            if (has_post_thumbnail()): ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail(''); ?>
-                </a>
-            <?php endif; ?>
-                <div class="headline_area">
-                    <?php echo post_meta(); ?>
-                    <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+
+        // If the category has subcategories, display a list of them
+        $cat = get_query_var('cat');
+        $subcategories = get_categories('child_of='.$cat); 
+        if(count($subcategories) != 0):
+            foreach ($subcategories as $subcategory):
+                ?>
+                <div class="subcategory">
+                    <h2><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
+                    <p><?php echo $subcategory->description; ?></p>
                 </div>
-                <div class="format_text entry-content">
-                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+            <?php endforeach;
+        
+
+        // Otherwise, display a list of posts
+        else:
+            while (have_posts()):
+                the_post();
+                echo '<div class="post-excerpt">';
+                if (has_post_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                        <?php the_post_thumbnail(''); ?>
+                    </a>
+                <?php endif; ?>
+                    <div class="headline_area">
+                        <?php echo post_meta(); ?>
+                        <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                    </div>
+                    <div class="format_text entry-content">
+                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                        <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+                    </div>
                 </div>
-            </div>
-        <?php endwhile;
+            <?php endwhile;
+        endif;
     }
  
 }
