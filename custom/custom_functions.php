@@ -402,8 +402,11 @@ class archive_looper extends thesis_custom_loop {
                             endif;
                     endif;
                     ?>
-                    <h2><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
-                    <p><?php echo $subcategory->description; ?></p>
+                    <h2 class="entry-title"><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
+                    <div class="format_text entry-content">
+                        <p><?php echo $subcategory->description; ?></p>
+                        <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
+                    </div>
                 </div>
             <?php endforeach;
         

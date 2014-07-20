@@ -141,6 +141,17 @@ body, input {
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+/* Use consistent styling for images */
+.post-listing .column img, .post-listing .section img, .child-post img, img.bordered, .related-posts img, .subcategory img {
+	background: #fff;
+	padding: 10px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	max-width: 100%;
+	box-sizing: border-box;
+	height: auto;
+}
+
+
 /* consistent form styling */
 input[type="text"] {
 	background: none repeat scroll 0% 0% #FFF;
@@ -501,6 +512,29 @@ ul#main-nav ul li:hover > a {
 
 
 
+/* CATEGORY ARCHIVES */
+
+/* Subcategory listing */
+.subcategory {
+	width: 48%;
+	float: left;
+	text-align: center;
+	margin-top: 2em;
+}
+.subcategory:nth-of-type(2n) {
+	clear: left;
+	margin-right: 4%;
+}
+.subcategory h2.entry-title {margin: .75em 0 .5em;}
+.subcategory p {text-align: left;}
+.subcategory p.read-more {text-align: center;}
+
+
+
+
+
+
+
 /* Post headlines */
 .headline_area {
 	text-align: center;
@@ -761,14 +795,7 @@ a.sd-button > span {
 }
 
 
-.post-listing .column img, .post-listing .section img, .child-post img, img.bordered, .related-posts img {
-	background: #fff;
-	padding: 10px;
-	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-	max-width: 100%;
-	box-sizing: border-box;
-	height: auto;
-}
+
 img.wp-smiley, .child-post figure img {
 	border: none;
 	box-shadow: none;
