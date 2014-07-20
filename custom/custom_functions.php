@@ -222,7 +222,9 @@ function custom_menu() { ?>
 remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
-// add some breadcrumbs
+
+
+// Add location-aware breadcrumbs for improved usability
 
 function thesis_breadcrumbs() {
     if (!is_home() && !is_front_page()): {
@@ -233,22 +235,37 @@ function thesis_breadcrumbs() {
         //bloginfo('name');
         echo 'Blog';
         echo "</a>";
-            if (is_category() || is_single()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-                the_category(' &bull; ', 'multiple');
-                    if (is_single()) {
-                        echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                        the_title();
-                    }
-            } elseif (is_page()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+            
+            if (is_single()):
+                echo " &raquo; ";
+                the_category(' &raquo; ', 'multiple');
+                echo " &raquo; ";
+                the_title();
+            
+            elseif (is_category()):
+                echo " &raquo; ";
+                // get a list of the category's parent
+                $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
+                // remove current category from list (in order to display without a link or trailing arrow)
+                $categories = explode(' &raquo; ', $category_list);
+                array_pop($categories);
+                array_pop($categories);
+                foreach ($categories as $category):
+                    echo $category ." &raquo; ";
+                endforeach;                
+                // and display current category name, without a link or trailing arrow
+                echo get_the_category_by_id(get_query_var('cat'));
+           
+            elseif (is_page()):
+                echo " &raquo; ";
                 echo the_title();
-            } elseif (is_search()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+            
+            elseif (is_search()):
+                echo " &raquo; Search results for: ";
                 echo '"<em>';
                 echo the_search_query();
                 echo '</em>"';
-            }
+            endif;
         }
         echo '</div>';
     endif;
