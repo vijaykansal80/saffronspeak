@@ -425,7 +425,8 @@ class archive_looper extends thesis_custom_loop {
                 <div class="subcategory">
                     <?php
                     if (function_exists('get_terms_meta')):
-                        $category_image = get_terms_meta($subcategory->term_id, 'category-image')[0];
+                        $category_image = get_terms_meta($subcategory->term_id, 'category-image');
+                        $category_image = $category_image[0];
                             if ($category_image):
                                 echo '<img src="'.$category_image.'">';
                             endif;
