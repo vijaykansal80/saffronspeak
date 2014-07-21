@@ -418,7 +418,7 @@ class archive_looper extends thesis_custom_loop {
 
         // If the category has subcategories, display a list of them
         $cat = get_query_var('cat');
-        $subcategories = get_categories('child_of='.$cat); 
+        $subcategories = get_categories('hide_empty=0&parent='.$cat); 
         if(count($subcategories) != 0):
             foreach ($subcategories as $subcategory):
                 ?>
