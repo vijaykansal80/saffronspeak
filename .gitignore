@@ -18,3 +18,16 @@ ehthumbs.db
 error_log
 access_log
 .sass-cache
+
+
+#==================#
+#  Thesis files    #
+#==================#
+lib/*
+archives.php
+comments.php
+functions.php
+index.php
+no_sidebars.php
+style.css
+terms_of_service.txt
