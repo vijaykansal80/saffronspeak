@@ -222,7 +222,9 @@ function custom_menu() { ?>
 remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
-// add some breadcrumbs
+
+
+// Add location-aware breadcrumbs for improved usability
 
 function thesis_breadcrumbs() {
     if (!is_home() && !is_front_page()): {
@@ -233,22 +235,37 @@ function thesis_breadcrumbs() {
         //bloginfo('name');
         echo 'Blog';
         echo "</a>";
-            if (is_category() || is_single()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-                the_category(' &bull; ', 'multiple');
-                    if (is_single()) {
-                        echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                        the_title();
-                    }
-            } elseif (is_page()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+            
+            if (is_single()):
+                echo " &raquo; ";
+                the_category(' &raquo; ', 'multiple');
+                echo " &raquo; ";
+                the_title();
+            
+            elseif (is_category()):
+                echo " &raquo; ";
+                // get a list of the category's parent
+                $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
+                // remove current category from list (in order to display without a link or trailing arrow)
+                $categories = explode(' &raquo; ', $category_list);
+                array_pop($categories);
+                array_pop($categories);
+                foreach ($categories as $category):
+                    echo $category ." &raquo; ";
+                endforeach;                
+                // and display current category name, without a link or trailing arrow
+                echo get_the_category_by_id(get_query_var('cat'));
+           
+            elseif (is_page()):
+                echo " &raquo; ";
                 echo the_title();
-            } elseif (is_search()) {
-                echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+            
+            elseif (is_search()):
+                echo " &raquo; Search results for: ";
                 echo '"<em>';
                 echo the_search_query();
                 echo '</em>"';
-            }
+            endif;
         }
         echo '</div>';
     endif;
@@ -381,35 +398,73 @@ function preview_post($post) {
            ARCHIVE PAGES
 ******************************/
 
+// Remove pagination for series lists
+function nix_nav() {
+    if (is_category()):
+        $cat = get_query_var('cat');
+        $subcategories = get_categories('child_of='.$cat); 
+        if(count($subcategories) != 0):
+            remove_action('thesis_hook_after_content', 'thesis_post_navigation');
+        endif;
+    endif;
+}
+add_action('thesis_hook_before_content','nix_nav');       
 
+// Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
- 
+
     function category() {
         thesis_archive_intro();
-        while (have_posts()):
-            the_post();
-            echo '<div class="post-excerpt">';
-            if (has_post_thumbnail()): ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                    <?php the_post_thumbnail(''); ?>
-                </a>
-            <?php endif; ?>
-                <div class="headline_area">
-                    <?php echo post_meta(); ?>
-                    <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+
+        // If the category has subcategories, display a list of them
+        $cat = get_query_var('cat');
+        $subcategories = get_categories('hide_empty=0&parent='.$cat); 
+        if(count($subcategories) != 0):
+            foreach ($subcategories as $subcategory):
+                ?>
+                <div class="subcategory">
+                    <?php
+                    if (function_exists('get_terms_meta')):
+                        $category_image = get_terms_meta($subcategory->term_id, 'category-image');
+                        $category_image = $category_image[0];
+                            if ($category_image):
+                                echo '<img src="'.$category_image.'">';
+                            endif;
+                    endif;
+                    ?>
+                    <h2 class="entry-title"><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
+                    <div class="format_text entry-content">
+                        <p><?php echo $subcategory->description; ?></p>
+                        <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
+                    </div>
                 </div>
-                <div class="format_text entry-content">
-                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+            <?php endforeach;
+
+        // Otherwise, display a list of posts
+        else:
+            while (have_posts()):
+                the_post();
+                echo '<div class="post-excerpt">';
+                if (has_post_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                        <?php the_post_thumbnail(''); ?>
+                    </a>
+                <?php endif; ?>
+                    <div class="headline_area">
+                        <?php echo post_meta(); ?>
+                        <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                    </div>
+                    <div class="format_text entry-content">
+                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                        <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+                    </div>
                 </div>
-            </div>
-        <?php endwhile;
+            <?php endwhile;
+        endif;
     }
  
 }
 $the_looper = new archive_looper;
-
-
 
 
 
