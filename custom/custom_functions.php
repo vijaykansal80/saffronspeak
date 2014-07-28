@@ -24,30 +24,6 @@ function tweakjp_add_sharing_js() {
 add_action( 'wp_enqueue_scripts', 'tweakjp_add_sharing_js' );
 
 
-// Add page-specific stylesheets
-function set_custom_styles() {
-    
-    // for individual post pages
-    if (is_single()): 
-        $categories = get_the_category($post->ID);
-        foreach($categories as $category): 
-            if ($category->slug != "shopping-guides"):
-                $slug = $category->slug;
-            endif;
-        endforeach;
-    endif;
-
-    // for category archive pages 
-    if (is_category()):
-        $slug = get_category(get_query_var('cat'))->slug;
-    endif;
-
-    wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
-    wp_enqueue_style('category-style');
-}
-
-add_action( 'wp_enqueue_scripts', 'set_custom_styles' );
-
 
 // Enable featured images/post thumbnails
 
@@ -98,6 +74,79 @@ function new_excerpt_more($more) {
     return '&hellip;';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+
+
+/*****************************
+     SERIES-SPECIFIC STYLES
+******************************/
+
+// Return a more logical slug for categories (will relate to folder locations in theme)
+function smarter_slug($category) {
+    $slug = strtolower($category->name);
+    $slug = str_replace('series', '', $slug);
+    $slug = str_replace(' ', '-', trim($slug));
+return $slug;   
+}
+
+
+// Add page-specific stylesheets and tags
+function set_custom_styles() {
+    
+    // for individual post pages
+    if (is_single()): 
+        $categories = get_the_category($post->ID);
+        foreach($categories as $category): 
+            if ($category->slug != "shopping-guides"):
+                $slug = smarter_slug($category);
+            endif;
+        endforeach;
+    endif;
+
+    // for category archive pages 
+    if (is_category()):
+        $slug = get_category(get_query_var('cat'))->slug;
+    endif;
+
+    wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
+    wp_enqueue_style('category-style');
+}
+
+add_action( 'wp_enqueue_scripts', 'set_custom_styles' );
+
+
+
+// Add classes to different pages for styling purposes
+function category_class($classes) {
+    
+    // for individual post pages
+    if (is_single()): 
+        $categories = get_the_category($post->ID);
+        foreach($categories as $category): 
+            $classes[] = smarter_slug($category);
+        endforeach;
+    $classes[] = "single-post";
+    endif;
+
+    // for category archive pages 
+    if (is_category()):
+        $classes[] = get_category(get_query_var('cat'))->slug;
+        $classes[] = "post-archive";
+    endif;
+
+    // for the homepage
+    if (is_front_page()):
+        $classes[] = "homepage";
+    endif;
+
+return $classes;
+}
+
+add_filter('thesis_body_classes', 'category_class');
+
+
 
 
 
@@ -470,35 +519,6 @@ $the_looper = new archive_looper;
 /*****************************
            POSTS
 ******************************/
-
-// Add classes to different pages for styling purposes
-function category_class($classes) {
-    
-    // for individual post pages
-    if (is_single()): 
-        $categories = get_the_category($post->ID);
-        foreach($categories as $category): 
-            $classes[] = $category->slug;
-        endforeach;
-    $classes[] = "single-post";
-    endif;
-
-    // for category archive pages 
-    if (is_category()):
-        $classes[] = get_category(get_query_var('cat'))->slug;
-        $classes[] = "post-archive";
-    endif;
-
-    // for the homepage
-    if (is_front_page()):
-        $classes[] = "homepage";
-    endif;
-
-return $classes;
-}
-
-add_filter('thesis_body_classes', 'category_class');
-
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
