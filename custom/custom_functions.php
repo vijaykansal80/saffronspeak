@@ -302,8 +302,7 @@ function new_homepage() {
                 wpp_get_mostpopular("range=monthly&limit=10");
             ?>
 
-    <?php 
-    endif; 
+    <?php endif; 
 }
 
 remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
