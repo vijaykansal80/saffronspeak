@@ -299,7 +299,7 @@ function new_homepage() {
             <?php echo list_posts('latest'); ?>
 
             <?php if (function_exists('wpp_get_mostpopular'))
-                wpp_get_mostpopular("range=monthly&limit=4");
+                wpp_get_mostpopular("range=monthly&limit=10");
             ?>
 
     <?php 
@@ -339,7 +339,7 @@ function featured_series($slug, $seo_slug=false) {
 }
 
 // List posts widget
-function list_posts($type, $number=4) {
+function list_posts($type, $number=10) {
     ?>
     <div class="post-list <?php echo $type; ?>">
         <h3><?php echo $type; ?> Posts</h3>
