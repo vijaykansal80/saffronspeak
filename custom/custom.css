@@ -141,15 +141,28 @@ body, input {
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
+
+
+
+
 /* Use consistent styling for images */
-.format_text img, .section img, .child-post img, img.bordered, .related-posts img, .subcategory img {
+.entry-content img, .section img, figure img, img.bordered, .related-posts img, .subcategory img {
 	background: #fff;
 	padding: 10px;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
 	max-width: 100%;
 	box-sizing: border-box;
 	height: auto;
+	margin: 0 auto;
 }
+
+img.wp-smiley, img.borderless {
+	border: none;
+	box-shadow: none;
+	padding: 0;
+	background: none;
+}
+
 
 
 /* consistent form styling */
@@ -726,18 +739,30 @@ a.sd-button > span {
 .panel {
 	border-top: 1px solid #9e5374;
 	border-bottom: 2px solid #9e5374;
-	padding: 1em 2em .5em;
+	padding: 2em 2em .5em;
 	margin: 1em 0 4em;
 	background: rgba(255,255,255,.75);
 }
+.panel figure {
+    float: left;
+    margin-right: 50px;
+}
+.panel figure img {
+    max-width: 280px;
+    height: auto;
+}
+figure .circular {
+    border-radius: 50%;
+}
+
 .panel p {
 	font-size: 1.2em;
 	line-height: 1.5em;
 	margin-top: 50px;
 }
-.panel p:first-letter {
+.panel p:first-of-type:first-letter {
 	float: left;
-	font-size: 4em;
+	font-size: 3.5em;
 	margin: 2px 2px 0 -4px;
 	color: #93765e;
 	font-weight: bold;
@@ -762,10 +787,11 @@ a.sd-button > span {
 	clear: none;
 	margin-right: 0;
 }
-
 .column h3 {
 	clear: both;
 }
+
+
 .section {
 	margin: 20px 0 60px;
 }
@@ -775,7 +801,6 @@ a.sd-button > span {
 	width: 100%;
 	display: block;
 }
-
 .section img {
 	float: left;
 	margin-right: 40px;
@@ -785,19 +810,11 @@ a.sd-button > span {
 	margin-right: 0;
 	margin-left: 40px;
 }
-
-.section p {
-	font-size: 1.2em;
-}
+.section p {font-size: 1.2em;}
 
 
 
-img.wp-smiley, .child-post figure img {
-	border: none;
-	box-shadow: none;
-	padding: 0;
-	background: none;
-}
+
 .column p {
 	text-align: left;
 	font-style: italic;
@@ -858,31 +875,14 @@ h3 a {
 h4 strong {white-space: nowrap;}
 
 
+
 /* Classes for figure elements */
-figure {
-    float: left;
-    margin-right: 50px;
-}
-figure img {
-    max-width: 280px;
-    height: auto;
-}
-figure .circular {
-    border-radius: 50%;
-}
+figure {text-align: center;}
 figcaption {
     text-align: center;
     font-style: italic;
 }
-.child-post figure {
-	background: #fff;
-	padding: 10px 10px 0;
-	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-	box-sizing: border-box;
-	text-align: center;	
-	display: inline-block;
-	margin: 1em auto;
-}
+
 
 
 /* Sourcing boxes */
@@ -962,9 +962,8 @@ section.fourcol, section.threecol, section.twocol {
 .fivecol .col:nth-of-type(5n) {
 	margin-right: 0;
 }
-.col {
-	text-align: center;
-}
+.col {text-align: center;}
+.col p {text-align: left;}
 .col h4 {
 	text-align: center;
 	border-bottom: 0;
@@ -1005,7 +1004,7 @@ section::after {
 .romantic h3 {
 	color: #8c0038;
 	font-size: 3em;
-	margin: 1em 0 .5em;panel
+	margin: 1em 0 .5em;
 	text-align: center;
 	font-family: 'Tangerine', cursive;
 	clear: both;
