@@ -10,6 +10,14 @@
 // add_action('thesis_hook_before_sidebar_1', 'thesis_widget_recent_posts');
 
 
+// Get rid of empty p tags in posts
+add_filter('the_content', 'remove_empty_p', 20, 1);
+function remove_empty_p($content){
+    $content = force_balance_tags($content);
+    return preg_replace('#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content);
+}
+
+
 // Disable certain plugins' ugly stylesheets
 function remove_plugin_styles() {
     wp_dequeue_style('yarppRelatedCss');
