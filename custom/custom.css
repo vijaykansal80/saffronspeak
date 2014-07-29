@@ -718,13 +718,13 @@ a.sd-button > span {
 
 
 /* Customize appearance of post listings on parent or series page into grid structures */
-.entry-content >p:first-of-type, p.intro {
+.single-post .entry-content > p:first-of-type, p.intro {
 	font-size: 1.4em;
 	line-height: 1.4em;
 	color: #7D7556;
 	margin: 2em 2em;
 }
-.entry-content > p:first-of-type:first-letter, p.intro:first-letter {
+.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter {
 	font-family: 'Lancelot', cursive;
 	font-size: 6em;
 	line-height: 1em;
