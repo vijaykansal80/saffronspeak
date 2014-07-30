@@ -718,13 +718,14 @@ a.sd-button > span {
 
 
 /* Customize appearance of post listings on parent or series page into grid structures */
-.single-post .entry-content > p:first-of-type, p.intro {
+.featured-series {font-size: 1.1em;}
+.single-post .entry-content > p:first-of-type, p.intro, .featured-series > p:first-of-type {
 	font-size: 1.4em;
 	line-height: 1.4em;
 	color: #7D7556;
 	margin: 2em 2em;
 }
-.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter {
+.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	font-family: 'Lancelot', cursive;
 	font-size: 6em;
 	line-height: 1em;
@@ -769,7 +770,7 @@ figure .circular {
 	font-family: 'Lancelot', cursive;
 }
 .panel .read-more {
-	margin-top: 40px;
+	margin: 30px auto 20px;
 }
 
 

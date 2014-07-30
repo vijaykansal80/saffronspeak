@@ -91,6 +91,11 @@ add_filter('excerpt_more', 'new_excerpt_more');
      SERIES-SPECIFIC STYLES
 ******************************/
 
+// Set featured category here
+$featured_series = 116;
+$featured = get_term_by('id', $featured_series, 'category');
+
+
 // Return a more logical slug for categories (will relate to folder locations in theme)
 function smarter_slug($category) {
     $slug = strtolower($category->name);
@@ -116,6 +121,11 @@ function set_custom_styles() {
     // for category archive pages 
     if (is_category()):
         $slug = get_category(get_query_var('cat'))->slug;
+    endif;
+
+    // for homepage
+    if (is_front_page()):
+        $slug = 'dorm-decor';
     endif;
 
     wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
@@ -343,6 +353,7 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 // This creates an entirely different layout for the homepage
 
 function new_homepage() {
+    global $featured;
     if (is_home() || is_front_page()): ?>
         <div id="content" class="home-content">
             
@@ -350,7 +361,7 @@ function new_homepage() {
             <p class="tagline"><?php echo bloginfo('description'); ?></p>
             <?php echo show_categories(); ?> 
 
-            <?php echo featured_series('summer-series', 'summer-bedding-linen-ideas'); ?>
+            <?php echo featured_series(smarter_slug($featured), $featured->slug); ?>
 
             <h2>Read more posts</h2>
             <?php echo list_posts('latest'); ?>
@@ -391,7 +402,9 @@ function featured_series($slug, $seo_slug=false) {
         $category = get_category_by_slug($slug);
     }
     echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
+    echo '<div class="featured-series '.$slug.'">';
     include($dir."/series/".$slug."/".$slug.".php"); 
+    echo '</div>';
 }
 
 // List posts widget

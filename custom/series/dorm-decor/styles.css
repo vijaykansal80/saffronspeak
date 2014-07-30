@@ -4,6 +4,7 @@
 Custom styles for Dorm Decor series
 ===================================== */
 
+.featured-series.dorm-decor > p:first-of-type:first-letter, 
 .dorm-decor .format_text > p:first-of-type:first-letter, 
 .dorm-decor > p.intro:first-letter, 
 .dorm-decor p.float-left + h3 + p:first-letter, 
@@ -11,11 +12,9 @@ Custom styles for Dorm Decor series
     color: #447e94;
     font-family: 'Milonga', cursive;
     text-shadow: none;
-    font-size: 4em;
-    margin-top: -.1em;
-    margin-right: .1em;
+    margin-top
 }
-.dorm-decor .entry-content a {
+.dorm-decor .entry-content a, .featured-series.dorm-decor a {
     color: #213164;
 }
 .dorm-decor .panel {
