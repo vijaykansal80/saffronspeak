@@ -501,7 +501,7 @@ function nix_nav() {
         endif;
     endif;
 }
-//add_action('thesis_hook_before_content','nix_nav');       
+add_action('thesis_hook_before_content','nix_nav');       
 
 // Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
@@ -509,7 +509,7 @@ class archive_looper extends thesis_custom_loop {
     function category() {
         thesis_archive_intro();
 
-        /* 
+        
         // If the category has subcategories, display a list of them
         $cat = get_query_var('cat');
         $subcategories = get_categories('hide_empty=0&parent='.$cat); 
@@ -536,8 +536,7 @@ class archive_looper extends thesis_custom_loop {
 
         // Otherwise, display a list of posts
         else:
-        */
-        if ($foo = bar):
+
             while (have_posts()):
                 the_post();
                 echo '<div class="post-excerpt">';
