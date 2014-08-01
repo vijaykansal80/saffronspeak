@@ -273,10 +273,12 @@ function custom_menu() { ?>
 	    
 	    <li id="blog-tab" class="active"><a href="/blog">Blog</a>
 	    	<ul>
-				<li class="cat-item cat-item-7"><a href="http://www.saffronmarigold.com/blog/category/customer-connection/" title="Enter the world of our customers">Customer Connection</a></li>
-				<li class="cat-item cat-item-6"><a href="http://www.saffronmarigold.com/blog/category/design-resources/" title="Home decor ideas that inspire">Design Resources</a></li>
-				<li class="cat-item cat-item-5"><a href="http://www.saffronmarigold.com/blog/category/shopping-guides/" title="So many options, so hard to decide - we can help!">Shopping Guides</a></li>
-				<li class="cat-item cat-item-8"><a href="http://www.saffronmarigold.com/blog/category/behind-the-scenes/" title="A look behind the scenes ">Behind the Scenes</a></li>
+                <?php
+                $categories = get_categories(array('parent' => 0, 'exclude' => 1));
+                foreach ( $categories as $category ):
+                    echo '<li class="cat-item"><a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a></li>';
+                endforeach;
+                ?>
 				<li class="rss"><a href="http://feeds.feedburner.com/SaffronMarigoldBlog" title="Saffron Marigold Blog RSS Feed" rel="nofollow">Subscribe</a></li>
 			</ul>
 	    </li>
