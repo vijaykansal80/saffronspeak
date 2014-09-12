@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Cookie);
+
+/* ==================================== 
+Custom styles for Fall series
+===================================== */
+
+.featured-series.fall > p:first-of-type:first-letter, 
+.fall .format_text > p:first-of-type:first-letter, 
+.fall > p.intro:first-letter, 
+.fall p.float-left + h3 + p:first-letter, 
+.fall .panel p:first-of-type:first-letter {
+    color: #447e94;
+    font-family: 'Cookie', cursive;
+    text-shadow: none;
+    margin-top
+}
+.fall .entry-content a, .featured-series.fall a {
+    color: #213164;
+}
+.fall .panel {
+    background: url('flowers.png');
+    background-size: 177px 102px;
+    border-color: #447e94;
+}
+
+.fall .entry-content > h3, .fall .entry-content section:not(.related-posts) h3 {
+    color: #eeb64c;
+    font-family: 'Cookie', cursive;
+    font-size: 2.4em;
+}
+.fall h4 {border-color: #447e94;}
+.fall h2, .fall .entry-content h4 a, .fall h4 {color: #447e94;}
+
+.fall .read-more a {
+    color: #eeb64c;
+    background-color: #213164;
+}
+.fall .read-more a:hover {background-color: #447e94;}

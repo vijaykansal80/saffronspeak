@@ -92,7 +92,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 ******************************/
 
 // Set featured category here
-$featured_series = 116;
+$featured_series = 119;
 $featured = get_term_by('id', $featured_series, 'category');
 
 
@@ -125,7 +125,7 @@ function set_custom_styles() {
 
     // for homepage
     if (is_front_page()):
-        $slug = 'dorm-decor';
+        $slug = 'fall';
     endif;
 
     wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
