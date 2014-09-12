@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Cookie);
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes);
 
 /* ==================================== 
 Custom styles for Fall series
@@ -6,33 +6,32 @@ Custom styles for Fall series
 
 .featured-series.fall > p:first-of-type:first-letter, 
 .fall .format_text > p:first-of-type:first-letter, 
-.fall > p.intro:first-letter, 
+.fall p.intro:first-letter, 
 .fall p.float-left + h3 + p:first-letter, 
 .fall .panel p:first-of-type:first-letter {
-    color: #447e94;
-    font-family: 'Cookie', cursive;
+    color: #c06538;
+    font-family: 'Great Vibes', cursive;
     text-shadow: none;
-    margin-top
+    margin-right: 12px;
 }
-.fall .entry-content a, .featured-series.fall a {
-    color: #213164;
-}
+.fall .entry-content a, .featured-series.fall a {color: #8b2517;}
 .fall .panel {
-    background: url('flowers.png');
-    background-size: 177px 102px;
-    border-color: #447e94;
+    background: url('fabric.jpg');
+    background-size: 198px 200px;
+    border-color: #8b2517;
 }
 
 .fall .entry-content > h3, .fall .entry-content section:not(.related-posts) h3 {
-    color: #eeb64c;
-    font-family: 'Cookie', cursive;
-    font-size: 2.4em;
+    color: #c06538;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8em;
 }
-.fall h4 {border-color: #447e94;}
-.fall h2, .fall .entry-content h4 a, .fall h4 {color: #447e94;}
+
+.fall h4 {border-color: #c06538;}
+.fall h2, .fall .entry-content h4 a, .fall h4 {color: #c06538;}
 
 .fall .read-more a {
-    color: #eeb64c;
-    background-color: #213164;
+    color: #8b2517;
+    background-color: #dca55b;
 }
-.fall .read-more a:hover {background-color: #447e94;}
+.fall .read-more a:hover {background-color: #e07a48;}
