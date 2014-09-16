@@ -823,13 +823,13 @@ figure .circular {
 }
 .column a + p {display: none;}
 
-h3 {
+h3, .format_text h3 {
 	clear: both;
 	font-size: 1.8em;
 	text-align: center;
 	font-weight: normal;
-	margin: .5em 0 1em;
-	padding: 1em 0 .5em 0;
+	margin: .5em 0 .25em;
+	padding: .5em 0 .25em 0;
 }
 h3 a {
 	text-decoration: none;
