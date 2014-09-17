@@ -13,6 +13,7 @@ Custom styles for Fall series
     font-family: 'Great Vibes', cursive;
     text-shadow: none;
     margin-right: 30px;
+    margin-top: -30px;
 }
 .fall .entry-content a, .featured-series.fall a {color: #8b2517;}
 .fall .panel {
