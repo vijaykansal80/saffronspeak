@@ -47,11 +47,11 @@ Custom styles for Fall series
     overflow: hidden;
     margin-right: 5px;
 }
-.table-of-contents a.bedroom { background: url('bedroom.jpg'); }
-.table-of-contents a.living-room { background: url('living-room.jpg'); }
-.table-of-contents a.dining-room { background: url('dining-room.jpg'); }
-.table-of-contents a.outdoor-dining { background: url('outdoor-dining.jpg'); }
-.table-of-contents a.bathroom { background: url('bathroom.jpg'); }
+.table-of-contents a.bedroom { background: url('bedroom.png'); }
+.table-of-contents a.living-room { background: url('living-room.png'); }
+.table-of-contents a.dining-room { background: url('dining-room.png'); }
+.table-of-contents a.outdoor-dining { background: url('outdoor-dining.png'); }
+.table-of-contents a.bathroom { background: url('bathroom.png'); }
 .table-of-contents:after {
     clear: both;
     display: block;
