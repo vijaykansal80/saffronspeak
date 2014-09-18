@@ -36,3 +36,25 @@ Custom styles for Fall series
     background-color: #dca55b;
 }
 .fall .read-more a:hover {background-color: #e07a48;}
+
+.table-of-contents a {
+    display: block;
+    float: left;
+    width: 155px;
+    height: 480px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 5px;
+}
+.table-of-contents a.bedroom { background: url('bedroom.jpg'); }
+.table-of-contents a.living-room { background: url('living-room.jpg'); }
+.table-of-contents a.dining-room { background: url('dining-room.jpg'); }
+.table-of-contents a.outdoor-dining { background: url('outdoor-dining.jpg'); }
+.table-of-contents a.bathroom { background: url('bathroom.jpg'); }
+.table-of-contents:after {
+    clear: both;
+    display: block;
+    content: '';
+    margin-bottom: 2em;
+}
