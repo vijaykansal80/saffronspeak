@@ -58,3 +58,5 @@ Custom styles for Fall series
     content: '';
     margin-bottom: 2em;
 }
+
+.read-more + .table-of-contents { margin-top: 2em; }
