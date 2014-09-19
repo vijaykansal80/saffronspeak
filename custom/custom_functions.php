@@ -403,7 +403,29 @@ function featured_series($slug, $seo_slug=false) {
     } else {
         $category = get_category_by_slug($slug);
     }
-    echo '<h2>Featured series: <a href="'.get_category_link($category->term_id).'">'. $category->name .'</a></h2>';
+
+
+    // get link to parent post (should be sticky)
+    $args = array(
+        'cat' => $category->term_id,
+        'post__in' => get_option( 'sticky_posts' ),
+        'ignore_sticky_posts' => 1,
+    );
+    $cat_posts = $the_query = new WP_Query($args);
+
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            $series_link = get_permalink();
+        }
+    // otherwise, just show a link to the category page
+    } else {
+        $series_link = get_category_link($category->term_id);
+    }
+    wp_reset_postdata();
+
+
+    echo '<h2>Featured series: <a href="'.$series_link.'">'. $category->name . '</a></h2>';
     echo '<div class="featured-series '.$slug.'">';
     include($dir."/series/".$slug."/".$slug.".php"); 
     echo '</div>';
