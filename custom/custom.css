@@ -823,7 +823,7 @@ figure .circular {
 }
 .column a + p {display: none;}
 
-h3, .format_text h3 {
+h3 {
 	clear: both;
 	font-size: 1.8em;
 	text-align: center;

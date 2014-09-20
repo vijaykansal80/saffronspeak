@@ -354,7 +354,6 @@ body { font-family: Georgia, "Times New Roman", Times, serif; }
 
 /*---:[ headlines ]:---*/
 .headline_area h1, .headline_area h2, #archive_intro h1 { font-size: 2.2em; line-height: 1.364em; }
-.format_text h2, .format_text h3 { font-size: 1.25em; line-height: 1.2em; margin: 1.8em 0 0.6em 0; }
 .format_text h4 { font-size: 1em; }
 .format_text h5 { font-size: 0.813em; }
 .format_text h6 { font-size: 0.813em; }
