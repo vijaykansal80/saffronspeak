@@ -527,21 +527,9 @@ class archive_looper extends thesis_custom_loop {
         if($category->name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
-                <div class="subcategory">
-                    <?php
-                    if (function_exists('get_terms_meta')):
-                        $category_image = get_terms_meta($subcategory->term_id, 'category-image');
-                        $category_image = $category_image[0];
-                            if ($category_image):
-                                echo '<img src="'.$category_image.'">';
-                            endif;
-                    endif;
-                    ?>
-                    <h2 class="entry-title"><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
-                    <div class="format_text entry-content">
-                        <p><?php echo $subcategory->description; ?></p>
-                        <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
-                    </div>
+                <div class="subcategory <?php echo $subcategory->name; ?>">
+                    <h2><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
+                    <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
                 </div>
             <?php endforeach; 
 
