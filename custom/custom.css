@@ -527,6 +527,60 @@ ul#main-nav ul li:hover > a {
 
 /* CATEGORY ARCHIVES */
 
+/* Intro panel */
+.category-intro {
+	margin: 3em 0 4em 0;
+	text-align: left;
+}
+.category-intro:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.category-intro img {
+	float: left;
+	width: 25%;
+	border-radius: 50%;
+	background: #fff;
+	padding: 8px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+}
+.category-intro div {
+	float: left;
+	width: 70%;
+	margin-left: 3%;
+}
+.category-intro h1 {
+	margin: 0 0 1em;
+	text-align: center;
+	font-size: 3em;
+}
+.category-intro p {
+	font-size: 1.6em;
+	line-height: 1.8em;
+}
+.homepage .behind-the-curtain h3 {
+	background-color: #a1414c;
+	outline-color: #a1414c;
+}
+.homepage .customer-love h3 {
+	background-color: #77a2af;
+	outline-color: #77a2af;
+}
+.homepage .design-resources h3 {
+	background-color: #5b4c70;
+	outline-color: #5b4c70;
+}
+.homepage .shopping-guides h3 {
+	background-color: #838b64;
+	outline-color: #838b64;
+}
+.homepage .category p {
+	text-align: justify;
+	font-style: italic;
+}
+
+
 /* Subcategory listing */
 .subcategory {
 	width: 48%;

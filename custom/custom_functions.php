@@ -508,16 +508,23 @@ add_action('thesis_hook_before_content','nix_nav');
 class archive_looper extends thesis_custom_loop {
 
     function category() {
-        thesis_archive_intro();
 
-        // Determine what category is being shown, and generate its name and subcategories
+        // Determine what category is being shown, and generate category object & list of subcategories
         $category_id = get_query_var('cat');
-        $category_name = get_the_category_by_id($category_id);
+        $category = get_category($category_id);
         $subcategories = get_categories('hide_empty=0&parent='.$category_id); 
 
-        // If we're in the shopping guides category, display a list of sub-categories
+        // Display a customized category intro panel ?>
+        <header class="category-intro <?php echo $category->slug; ?>">
+            <img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg">
+            <div>
+                <h1><?php echo $category->name; ?></h1>
+                <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
+            </div>
+        </header>
         
-        if($category_name === "Shopping Guides"):
+        <?php // If we're in the shopping guides category, display a list of sub-categories
+        if($category->name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
                 <div class="subcategory">
