@@ -503,17 +503,21 @@ function nix_nav() {
 }
 add_action('thesis_hook_before_content','nix_nav');       
 
+
 // Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
 
     function category() {
         thesis_archive_intro();
 
+        // Determine what category is being shown, and generate its name and subcategories
+        $category_id = get_query_var('cat');
+        $category_name = get_the_category_by_id($category_id);
+        $subcategories = get_categories('hide_empty=0&parent='.$category_id); 
+
+        // If we're in the shopping guides category, display a list of sub-categories
         
-        // If the category has subcategories, display a list of them
-        $cat = get_query_var('cat');
-        $subcategories = get_categories('hide_empty=0&parent='.$cat); 
-        if(count($subcategories) != 0):
+        if($category_name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
                 <div class="subcategory">
@@ -532,7 +536,7 @@ class archive_looper extends thesis_custom_loop {
                         <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
                     </div>
                 </div>
-            <?php endforeach;
+            <?php endforeach; 
 
         // Otherwise, display a list of posts
         else:
