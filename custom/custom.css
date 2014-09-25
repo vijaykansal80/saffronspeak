@@ -609,10 +609,29 @@ ul#main-nav ul li:hover > a {
 	color: #fff;
 }
 
+.subcategory.christmas-gift-guide h2, .subcategory.christmas-gift-guide .read-more a { background-color: #4e1c13; }
+.subcategory.christmas-gift-guide { background-image: url('series/christmas-gift-guide/christmas-gift-guide-title-image.jpg'); }
 
+.subcategory.valentines-day h2, .subcategory.valentines-day .read-more a { background-color: #7d0b25; }
+.subcategory.valentines-day { background-image: url('series/valentines-day/valentines-day-title-image.jpg'); }
 
+.subcategory.dorm-decor h2, .subcategory.dorm-decor .read-more a { background-color: #233367; }
+.subcategory.dorm-decor { background-image: url('series/dorm-decor/dorm-decor-title-image.jpg'); }
 
+.subcategory.mothers-day h2, .subcategory.mothers-day .read-more a { background-color: #714926; }
+.subcategory.mothers-day { background-image: url('series/mothers-day/mothers-day-title-image.jpg'); }
 
+.subcategory.summer h2, .subcategory.summer .read-more a { background-color: #304f64; }
+.subcategory.summer { background-image: url('series/summer/summer-title-image.jpg'); }
+
+.subcategory.spring h2, .subcategory.spring .read-more a { background-color: #937e9f; }
+.subcategory.spring { background-image: url('series/spring/spring-title-image.jpg'); }
+
+.subcategory.fall h2, .subcategory.fall .read-more a { background-color: #bd6233; }
+.subcategory.fall { background-image: url('series/fall/fall-title-image.jpg'); }
+
+.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #737c4f; }
+.subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
 
