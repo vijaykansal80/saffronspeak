@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Almendra:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Almendra+Display);
 @import url("fonts/nuptial.css");
+@import url("https://fontastic.s3.amazonaws.com/U3FZiSpQmzscw6FkyzDMyN/icons.css");
 
 /*
 File:			custom.css
@@ -555,29 +556,23 @@ ul#main-nav ul li:hover > a {
 	text-align: center;
 	font-size: 3em;
 }
+.category-intro i {
+	display: inline-block;
+	margin: -8px 5px;
+	height: .8em;
+	vertical-align: top;
+	opacity: .25;
+	font-size: 1.8em;
+	
+}
+.category-intro.behind-the-curtain h1 { color: #a1414c; }
+.category-intro.customer-love h1 { color: #77a2af; }
+.category-intro.design-resources h1 { color: #5b4c70; }
+.category-intro.shopping-guides h1 { color: #838b64; }
+
 .category-intro p {
 	font-size: 1.6em;
 	line-height: 1.8em;
-}
-.homepage .behind-the-curtain h3 {
-	background-color: #a1414c;
-	outline-color: #a1414c;
-}
-.homepage .customer-love h3 {
-	background-color: #77a2af;
-	outline-color: #77a2af;
-}
-.homepage .design-resources h3 {
-	background-color: #5b4c70;
-	outline-color: #5b4c70;
-}
-.homepage .shopping-guides h3 {
-	background-color: #838b64;
-	outline-color: #838b64;
-}
-.homepage .category p {
-	text-align: justify;
-	font-style: italic;
 }
 
 

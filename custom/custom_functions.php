@@ -518,7 +518,7 @@ class archive_looper extends thesis_custom_loop {
         <header class="category-intro <?php echo $category->slug; ?>">
             <img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg">
             <div>
-                <h1><?php echo $category->name; ?></h1>
+                <h1><i class="icon-header-fleuron-left"></i><?php echo $category->name; ?><i class="icon-header-fleuron-right"></i></h1>
                 <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
             </div>
         </header>
