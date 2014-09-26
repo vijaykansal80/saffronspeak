@@ -497,7 +497,7 @@ ul#main-nav ul li:hover > a {
 	float: left;
 	text-align: center;
 }
-.post-excerpt:nth-of-type(even) {
+.post-excerpt:nth-of-type(odd) {
 	clear: left;
 	margin-right: 4%;
 }

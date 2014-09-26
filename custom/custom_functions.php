@@ -524,9 +524,11 @@ class archive_looper extends thesis_custom_loop {
                     <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
                 </div>
             </header>
-        <?php else:
-            thesis_archive_intro();
-        endif; 
+        <?php else: ?>
+            <section class="headline_area">
+                <h1 class="entry-title"><?php echo $category->name; ?></h1>
+            </section>
+        <?php endif; 
         
         // If we're in the shopping guides category, display a list of sub-categories
         if($category->name === "Shopping Guides"):
