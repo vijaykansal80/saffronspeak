@@ -514,16 +514,21 @@ class archive_looper extends thesis_custom_loop {
         $category = get_category($category_id);
         $subcategories = get_categories('hide_empty=0&parent='.$category_id); 
 
-        // Display a customized category intro panel ?>
-        <header class="category-intro <?php echo $category->slug; ?>">
-            <img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg">
-            <div>
-                <h1><i class="icon-header-fleuron-left"></i><?php echo $category->name; ?><i class="icon-header-fleuron-right"></i></h1>
-                <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
-            </div>
-        </header>
+        // Display a customized category intro panel, for top-level categories only 
+        if ($category->category_parent === 0):
+            ?>
+            <header class="category-intro <?php echo $category->slug; ?>">
+                <img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg">
+                <div>
+                    <h1><i class="icon-header-fleuron-left"></i><?php echo $category->name; ?><i class="icon-header-fleuron-right"></i></h1>
+                    <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
+                </div>
+            </header>
+        <?php else:
+            thesis_archive_intro();
+        endif; 
         
-        <?php // If we're in the shopping guides category, display a list of sub-categories
+        // If we're in the shopping guides category, display a list of sub-categories
         if($category->name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
