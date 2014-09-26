@@ -586,6 +586,8 @@ ul#main-nav ul li:hover > a {
 	background: purple;
 	border: 10px solid #fff;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 0;
 }
 .subcategory a.div-link {
 	display: block;
