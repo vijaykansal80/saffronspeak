@@ -533,8 +533,9 @@ class archive_looper extends thesis_custom_loop {
             foreach ($subcategories as $subcategory):
                 ?>
                 <div class="subcategory <?php echo smarter_slug($subcategory); ?>">
-                    <h2><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
+                    <h2><?php echo $subcategory->name; ?></h2>
                     <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
+                    <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
                 </div>
             <?php endforeach; 
 
