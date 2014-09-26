@@ -542,8 +542,7 @@ class archive_looper extends thesis_custom_loop {
             <?php endforeach; 
 
         // Otherwise, display a list of posts
-        endif;
-        //else:
+        else:
 
             while (have_posts()):
                 the_post();
@@ -563,7 +562,7 @@ class archive_looper extends thesis_custom_loop {
                     </div>
                 </div>
             <?php endwhile;
-        //endif;
+        endif;
     }
  
 }
