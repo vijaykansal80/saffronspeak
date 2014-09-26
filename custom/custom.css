@@ -579,7 +579,7 @@ ul#main-nav ul li:hover > a {
 .category-intro.customer-love h1, .customer-love a h2, .customer-love .prev_next a, .customer-love .post-excerpt p:not(.read-more) a { color: #77a2af; }
 .customer-love .read-more a { background-color: #77a2af; }
 
-.category-intro.design-resources h1, .design-resources a h2, .design-resources.prev_next a, .design-resources .post-excerpt p:not(.read-more) a { color: #5b4c70; }
+.category-intro.design-resources h1, .design-resources a h2, .design-resources .prev_next a, .design-resources .post-excerpt p:not(.read-more) a { color: #5b4c70; }
 .design-resources .read-more a { background-color: #5b4c70; }
 
 .category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a { color: #838b64; }

@@ -501,7 +501,7 @@ function nix_nav() {
         endif;
     endif;
 }
-add_action('thesis_hook_before_content','nix_nav');       
+// add_action('thesis_hook_before_content','nix_nav');       
 
 
 // Show custom archive pages for different archive types
