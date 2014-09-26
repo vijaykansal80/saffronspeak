@@ -567,14 +567,24 @@ ul#main-nav ul li:hover > a {
 	font-size: 1.8em;
 	
 }
-.category-intro.behind-the-curtain h1 { color: #a1414c; }
-.category-intro.customer-love h1 { color: #77a2af; }
-.category-intro.design-resources h1 { color: #5b4c70; }
-.category-intro.shopping-guides h1 { color: #838b64; }
 .category-intro p {
 	font-size: 1.6em;
 	line-height: 1.8em;
 }
+
+/* Category colour-coding */
+.category-intro.behind-the-curtain h1, .behind-the-curtain a h2, .behind-the-curtain .prev_next a, .behind-the-curtain .post-excerpt p:not(.read-more) a { color: #a1414c; }
+.behind-the-curtain .read-more a { background-color: #a1414c; }
+
+.category-intro.customer-love h1, .customer-love a h2, .customer-love .prev_next a, .customer-love .post-excerpt p:not(.read-more) a { color: #77a2af; }
+.customer-love .read-more a { background-color: #77a2af; }
+
+.category-intro.design-resources h1, .design-resources a h2, .design-resources.prev_next a, .design-resources .post-excerpt p:not(.read-more) a { color: #5b4c70; }
+.design-resources .read-more a { background-color: #5b4c70; }
+
+.category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a { color: #838b64; }
+.shopping-guides .read-more a { background-color: #838b64; }
+
 
 /* Subcategory blocks (Shopping Guide parent) */
 .subcategory {
@@ -948,7 +958,7 @@ h3 a {
 	margin: 0 auto;
 	padding: 5px 20px;
 	border: 1px solid #482812;
-	color: #482812; 
+	color: #fff; 
 	text-decoration: none;
 	font-size: .8em;
 	font-weight: bold;
