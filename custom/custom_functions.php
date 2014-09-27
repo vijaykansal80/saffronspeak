@@ -529,8 +529,33 @@ class archive_looper extends thesis_custom_loop {
                 <h1 class="entry-title"><?php echo $category->name; ?></h1>
             </section>
         <?php endif; 
-        
-        // If we're in the shopping guides category, display a list of sub-categories
+
+
+        // If we're in the Design Resources category, display an expandable panel with a list of sub-categories
+        if($category->name === "Design Resources"): 
+            $series_subcategories = array_slice($subcategories, 0, 4);
+            ?>
+            <a href="#">By series or print</a>
+            <div class="subcategory-expander">
+                <div>
+                    <section>
+                        <h2>By series</h2>
+                        <ul>
+                    <?php
+                    foreach ($series_subcategories as $subcategory):
+                        echo '<li>'.$count.'<a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+                    endforeach; ?>
+                        </ul>
+                    </section>
+
+
+                
+                </div>
+            </div>
+        <?php endif; ?>
+
+
+        <?php // If we're in the Shopping Guides category, display a styled block for each sub-category
         if($category->name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
@@ -540,6 +565,7 @@ class archive_looper extends thesis_custom_loop {
                     <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
                 </div>
             <?php endforeach; 
+
 
         // Otherwise, display a list of posts
         else:

@@ -661,6 +661,35 @@ ul#main-nav ul li:hover > a {
 .subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
+/* Category expander (Design Resources parent) */
+.subcategory-expander {
+	width: 300%;
+	margin-left: -100%;
+	background: #fff;
+}
+.subcategory-expander:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+.subcategory-expander div {
+	margin: 0 auto;
+	width: 33%;
+	background: purple;
+}
+.subcategory-expander section {
+	float: left;
+	width: 40%;
+	border: 1px solid red;
+	background: white;
+}
+.subcategory-expander ul {
+	float: left;
+	width: 100px;
+	height: 100px;
+	border: 1px solid blue;
+}
+
 
 /* Post headlines */
 .headline_area {
