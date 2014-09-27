@@ -593,7 +593,7 @@ ul#main-nav ul li:hover > a {
 	width: 100%;
 	height: 300px;
 	margin: 20px 0;
-	background: purple;
+	background: #fff;
 	border: 10px solid #fff;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
 	-webkit-font-smoothing: antialiased;
@@ -612,7 +612,6 @@ ul#main-nav ul li:hover > a {
 	left: -25px;
 	top: 15px;
 	padding: 10px 14px;
-	background: blue;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
 	font-size: 2.4em;
 	color: #fff;
@@ -628,17 +627,17 @@ ul#main-nav ul li:hover > a {
 	color: #fff;
 }
 
-.subcategory.christmas-gift-guide h2, .subcategory.christmas-gift-guide .read-more a { background-color: #4e1c13; }
-.subcategory.christmas-gift-guide:hover h2, .subcategory.christmas-gift-guide:hover .read-more a { background-color: #33120c; }
-.subcategory.christmas-gift-guide { background-image: url('series/christmas-gift-guide/christmas-gift-guide-title-image.jpg'); }
+.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #4e1c13; }
+.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #33120c; }
+.subcategory.holidays { background-image: url('series/holidays/holidays-title-image.jpg'); }
 
 .subcategory.valentines-day h2, .subcategory.valentines-day .read-more a { background-color: #7d0b25; }
 .subcategory.valentines-day:hover h2, .subcategory.valentines-day:hover .read-more a { background-color: #5e081c; }
 .subcategory.valentines-day { background-image: url('series/valentines-day/valentines-day-title-image.jpg'); }
 
-.subcategory.dorm-decor h2, .subcategory.dorm-decor .read-more a { background-color: #233367; }
-.subcategory.dorm-decor:hover h2, .subcategory.dorm-decor:hover .read-more a { background-color: #1a264e; }
-.subcategory.dorm-decor { background-image: url('series/dorm-decor/dorm-decor-title-image.jpg'); }
+.subcategory.back-to-school h2, .subcategory.back-to-school .read-more a { background-color: #233367; }
+.subcategory.back-to-school:hover h2, .subcategory.back-to-school:hover .read-more a { background-color: #1a264e; }
+.subcategory.back-to-school { background-image: url('series/back-to-school/back-to-school-title-image.jpg'); }
 
 .subcategory.mothers-day h2, .subcategory.mothers-day .read-more a { background-color: #714926; }
 .subcategory.mothers-day:hover h2, .subcategory.mothers-day:hover .read-more a { background-color: #58391d; }
