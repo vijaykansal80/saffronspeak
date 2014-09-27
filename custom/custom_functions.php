@@ -497,17 +497,15 @@ function preview_post($post) {
            ARCHIVE PAGES
 ******************************/
 
-// Remove pagination for series lists
+// Remove pagination for Shopping Guides parent
 function nix_nav() {
     if (is_category()):
-        $cat = get_query_var('cat');
-        $subcategories = get_categories('child_of='.$cat); 
-        if(count($subcategories) != 0):
+        if(get_query_var('cat') === 5):
             remove_action('thesis_hook_after_content', 'thesis_post_navigation');
         endif;
     endif;
 }
-// add_action('thesis_hook_before_content','nix_nav');       
+add_action('thesis_hook_before_content','nix_nav');       
 
 
 // Show custom archive pages for different archive types
