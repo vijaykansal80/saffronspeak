@@ -534,6 +534,7 @@ class archive_looper extends thesis_custom_loop {
         // If we're in the Design Resources category, display an expandable panel with a list of sub-categories
         if($category->name === "Design Resources"): 
             $series_subcategories = array_slice($subcategories, 0, 4);
+            $print_subcategories = array_slice($subcategories, 4);
             ?>
             <a href="#">By series or print</a>
             <div class="subcategory-expander">
@@ -546,6 +547,17 @@ class archive_looper extends thesis_custom_loop {
                         echo '<li>'.$count.'<a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
                     endforeach; ?>
                         </ul>
+                    </section>
+
+                    <section>
+                        <h2>By print</h2>
+                    <?php $count = 0;
+                    foreach ($print_subcategories as $subcategory):
+                        if ($count % 3 === 0) { echo '<ul>'; }
+                        echo '<li><a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+                        $count++;
+                        if ($count % 3 === 0 or $count - 1 === count($print_subcategories)) { echo '</ul>'; } 
+                    endforeach; ?>
                     </section>
 
 
