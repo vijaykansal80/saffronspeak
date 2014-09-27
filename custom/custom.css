@@ -616,12 +616,12 @@ ul#main-nav ul li:hover > a {
 	font-size: 2.4em;
 	color: #fff;
 }
-.subcategory .new-badge {
+.subcategory .badge {
 	position: absolute;
-	top: 30px; 
-	right: -64px;
-	width: 122px;
-	height: 121px;
+	top: 20px; 
+	right: -50px;
+	width: 100px;
+	height: 100px;
 	background: none;
 	box-shadow: none;
 }
