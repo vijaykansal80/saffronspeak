@@ -536,7 +536,7 @@ class archive_looper extends thesis_custom_loop {
             $series_subcategories = array_slice($subcategories, 0, 4);
             $print_subcategories = array_slice($subcategories, 4);
             ?>
-            <a href="#">By series or print</a>
+            <a href="#" class="subcategory-expander-link"><i class="icon-caret-down"></i>By series or print</a>
             <section class="subcategory-expander">
                 <div>
                     <section>

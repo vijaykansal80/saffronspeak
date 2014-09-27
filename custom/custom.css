@@ -662,10 +662,43 @@ ul#main-nav ul li:hover > a {
 
 
 /* Category expander (Design Resources parent) */
+.subcategory-expander-link {
+	display: inline-block;
+	margin: 0 0 1px 0;
+	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+	border-bottom: 2px solid #e6e0c9;
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+	padding: 10px 15px;
+	font-size: 1.4em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #5b4e1a;
+}
+.subcategory-expander-link i {
+	display: inline-block;
+	background: #fff8dc;
+	border-radius: 50%;
+	border: 1px solid #5b4e1a;
+	color: #5b4e1a;
+	font-size: 1.1em;
+	padding-top: 1px;
+	margin-right: 7px;
+	height: 14px;
+	width: 15px;
+	text-align: center;
+	vertical-align: top;
+}
 .subcategory-expander {
 	width: 300%;
-	margin: 1em -100% 2em;
-	background: #fff;
+	margin: 0 -100% 2em;
+	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+	background-size: 200px 200px;
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	border-bottom: 2px solid #5a4e1a;
 	font-size: 1.4em;
 	line-height: 1.8em;
 }
@@ -676,7 +709,7 @@ ul#main-nav ul li:hover > a {
 }
 .subcategory-expander div {
 	margin: 0 auto;
-	width: 35%;
+	width: 33%;
 }
 .subcategory-expander section {
 	float: left;
@@ -688,7 +721,7 @@ ul#main-nav ul li:hover > a {
 .subcategory-expander h2 {
 	padding: .25em;
 	border-bottom: 1px solid #cec6a9;
-	color: #a19569;
+	color: #5a4e1a;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: 1.2em;
@@ -702,7 +735,7 @@ ul#main-nav ul li:hover > a {
 }
 .subcategory-expander ul {
 	float: left;
-	width: 200px;
+	width: 190px;
 	list-style-type: none;
 	margin: 1em 0;
 }
