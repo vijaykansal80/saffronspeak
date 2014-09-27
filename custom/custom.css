@@ -664,8 +664,10 @@ ul#main-nav ul li:hover > a {
 /* Category expander (Design Resources parent) */
 .subcategory-expander {
 	width: 300%;
-	margin-left: -100%;
+	margin: 1em -100% 2em;
 	background: #fff;
+	font-size: 1.4em;
+	line-height: 1.8em;
 }
 .subcategory-expander:after {
 	display: block;
@@ -674,20 +676,39 @@ ul#main-nav ul li:hover > a {
 }
 .subcategory-expander div {
 	margin: 0 auto;
-	width: 33%;
-	background: purple;
+	width: 35%;
 }
 .subcategory-expander section {
 	float: left;
-	width: 40%;
-	border: 1px solid red;
-	background: white;
+	margin: 1em .25em;
+}
+.subcategory-expander section:first-of-type {
+	margin-right: 3em;
+}
+.subcategory-expander h2 {
+	padding: .25em;
+	border-bottom: 1px solid #cec6a9;
+	color: #a19569;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
+.subcategory-expander h2 i {
+	display: inline-block;
+	margin-bottom: -2px;
+	margin-right: 5px;
+	vertical-align: bottom;
+	font-size: 1.4em;
 }
 .subcategory-expander ul {
 	float: left;
-	width: 100px;
-	height: 100px;
-	border: 1px solid blue;
+	width: 200px;
+	list-style-type: none;
+	margin: 1em 0;
+}
+.subcategory-expander li {
+	color: #5b4e1a;
+	margin: 4px 0;
 }
 
 

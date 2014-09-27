@@ -537,10 +537,10 @@ class archive_looper extends thesis_custom_loop {
             $print_subcategories = array_slice($subcategories, 4);
             ?>
             <a href="#">By series or print</a>
-            <div class="subcategory-expander">
+            <section class="subcategory-expander">
                 <div>
                     <section>
-                        <h2>By series</h2>
+                        <h2><i class="icon-bullet-fleuron"></i>By series</h2>
                         <ul>
                     <?php
                     foreach ($series_subcategories as $subcategory):
@@ -550,7 +550,7 @@ class archive_looper extends thesis_custom_loop {
                     </section>
 
                     <section>
-                        <h2>By print</h2>
+                        <h2><i class="icon-bullet-fleuron"></i>By print</h2>
                     <?php $count = 0;
                     foreach ($print_subcategories as $subcategory):
                         if ($count % 3 === 0) { echo '<ul>'; }
@@ -563,7 +563,7 @@ class archive_looper extends thesis_custom_loop {
 
                 
                 </div>
-            </div>
+            </section>
         <?php endif; ?>
 
 
