@@ -4,6 +4,7 @@
 @import url(http://fonts.googleapis.com/css?family=Almendra:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Almendra+Display);
 @import url("fonts/nuptial.css");
+@import url("https://fontastic.s3.amazonaws.com/U3FZiSpQmzscw6FkyzDMyN/icons.css");
 
 /*
 File:			custom.css
@@ -496,7 +497,7 @@ ul#main-nav ul li:hover > a {
 	float: left;
 	text-align: center;
 }
-.post-excerpt:nth-of-type(even) {
+.post-excerpt:nth-of-type(odd) {
 	clear: left;
 	margin-right: 4%;
 }
@@ -525,27 +526,238 @@ ul#main-nav ul li:hover > a {
 
 
 
+
+
 /* CATEGORY ARCHIVES */
 
-/* Subcategory listing */
-.subcategory {
-	width: 48%;
+/* Intro panel */
+.category-intro {
+	margin: 3em 0 4em 0;
+	text-align: left;
+}
+.category-intro:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+.category-intro img {
 	float: left;
+	width: 25%;
+	border-radius: 50%;
+	background: #fff;
+	padding: 8px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+}
+.category-intro div {
+	float: left;
+	width: 70%;
+	margin-left: 3%;
+}
+.category-intro h1 {
+	margin: 0 0 1em;
 	text-align: center;
-	margin-top: 2em;
+	font-size: 3em;
 }
-.subcategory:nth-of-type(2n) {
-	clear: left;
-	margin-right: 4%;
+.category-intro i {
+	display: inline-block;
+	margin: -8px 5px;
+	height: .8em;
+	vertical-align: top;
+	opacity: .25;
+	font-size: 1.8em;
+	
 }
-.subcategory h2.entry-title {margin: .75em 0 .5em;}
-.subcategory p {text-align: left;}
-.subcategory p.read-more {text-align: center;}
+.category-intro p {
+	font-size: 1.6em;
+	line-height: 1.8em;
+}
+
+/* Category colour-coding */
+.category-intro.behind-the-curtain h1, .behind-the-curtain a h2, .behind-the-curtain .prev_next a, .behind-the-curtain .post-excerpt p:not(.read-more) a { color: #a1414c; }
+.behind-the-curtain .read-more a { background-color: #a1414c; }
+
+.category-intro.customer-love h1, .customer-love a h2, .customer-love .prev_next a, .customer-love .post-excerpt p:not(.read-more) a { color: #77a2af; }
+.customer-love .read-more a { background-color: #77a2af; }
+
+.category-intro.design-resources h1, .design-resources a h2, .design-resources .prev_next a, .design-resources .post-excerpt p:not(.read-more) a { color: #5b4c70; }
+.design-resources .read-more a { background-color: #5b4c70; }
+
+.category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a { color: #838b64; }
+.shopping-guides .read-more a { background-color: #838b64; }
 
 
+/* Subcategory blocks (Shopping Guide parent) */
+.subcategory {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin: 20px 0;
+	background: #fff;
+	border: 10px solid #fff;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 0;
+}
+.subcategory a.div-link {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.subcategory h2 {
+	position: absolute;
+	left: -25px;
+	top: 15px;
+	padding: 10px 14px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	font-size: 2.4em;
+	color: #fff;
+}
+.subcategory .badge {
+	position: absolute;
+	top: 20px; 
+	right: -50px;
+	width: 100px;
+	height: 100px;
+	background: none;
+	box-shadow: none;
+}
+.subcategory .read-more {
+	position: absolute;
+	bottom: 25px;
+	right: 25px;
+}
+.subcategory .read-more a {
+	padding: 10px 30px;
+	font-size: 1.4em;
+	color: #fff;
+}
+
+.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #4e1c13; }
+.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #33120c; }
+.subcategory.holidays { background-image: url('series/holidays/holidays-title-image.jpg'); }
+
+.subcategory.valentines-day h2, .subcategory.valentines-day .read-more a { background-color: #7d0b25; }
+.subcategory.valentines-day:hover h2, .subcategory.valentines-day:hover .read-more a { background-color: #5e081c; }
+.subcategory.valentines-day { background-image: url('series/valentines-day/valentines-day-title-image.jpg'); }
+
+.subcategory.back-to-school h2, .subcategory.back-to-school .read-more a { background-color: #233367; }
+.subcategory.back-to-school:hover h2, .subcategory.back-to-school:hover .read-more a { background-color: #1a264e; }
+.subcategory.back-to-school { background-image: url('series/back-to-school/back-to-school-title-image.jpg'); }
+
+.subcategory.mothers-day h2, .subcategory.mothers-day .read-more a { background-color: #714926; }
+.subcategory.mothers-day:hover h2, .subcategory.mothers-day:hover .read-more a { background-color: #58391d; }
+.subcategory.mothers-day { background-image: url('series/mothers-day/mothers-day-title-image.jpg'); }
+
+.subcategory.summer h2, .subcategory.summer .read-more a { background-color: #304f64; }
+.subcategory.summer:hover h2, .subcategory.summer:hover .read-more a { background-color: #253d4d; }
+.subcategory.summer { background-image: url('series/summer/summer-title-image.jpg'); }
+
+.subcategory.spring h2, .subcategory.spring .read-more a { background-color: #937e9f; }
+.subcategory.spring:hover h2, .subcategory.spring:hover .read-more a { background-color: #836b90; }
+.subcategory.spring { background-image: url('series/spring/spring-title-image.jpg'); }
+
+.subcategory.fall h2, .subcategory.fall .read-more a { background-color: #bd6233; }
+.subcategory.fall:hover h2, .subcategory.fall:hover .read-more a { background-color: #a2542c; }
+.subcategory.fall { background-image: url('series/fall/fall-title-image.jpg'); }
+
+.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #737c4f; }
+.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #606742; }
+.subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
-
+/* Category expander (Design Resources parent) */
+body.design-resources { overflow-x: hidden; }
+.subcategory-expander-link {
+	display: inline-block;
+	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+	border-bottom: 2px solid #e6e0c9;
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+	padding: 10px 15px;
+	font-size: 1.4em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #5b4e1a;
+	clip:rect(0px, 210px, 37px, 0px);
+	position: absolute;
+	margin: -16px 0 20px 0;
+	z-index: 400;
+}
+.subcategory-expander-link i {
+	display: inline-block;
+	background: #fff8dc;
+	border-radius: 50%;
+	border: 1px solid #5b4e1a;
+	color: #5b4e1a;
+	font-size: 1.1em;
+	padding-top: 1px;
+	margin-right: 7px;
+	height: 14px;
+	width: 15px;
+	text-align: center;
+	vertical-align: top;
+}
+.subcategory-expander {
+	width: 300%;
+	position: relative;
+	top: 20px;
+	min-height: 10px;
+	margin: 2em -100% 6em;
+	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+	background-size: 200px 200px;
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	border-bottom: 1px solid #5a4e1a;
+	font-size: 1.4em;
+	line-height: 1.8em;
+}
+.subcategory-expander:after {
+	display: block;
+	clear: both;
+	content: '';
+}
+.subcategory-expander div {
+	margin: 0 auto;
+	width: 33%;
+}
+.subcategory-expander section {
+	float: left;
+	margin: 1em .25em 0;
+}
+.subcategory-expander section:first-of-type {
+	margin-right: 3em;
+}
+.subcategory-expander h2 {
+	padding: .25em;
+	border-bottom: 1px solid #cec6a9;
+	color: #5a4e1a;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1.2em;
+}
+.subcategory-expander h2 i {
+	display: inline-block;
+	margin-bottom: -2px;
+	margin-right: 5px;
+	vertical-align: bottom;
+	font-size: 1.4em;
+}
+.subcategory-expander ul {
+	float: left;
+	width: 190px;
+	list-style-type: none;
+	margin: 1em 0;
+}
+.subcategory-expander li {
+	color: #5b4e1a;
+	margin: 4px 0;
+}
 
 
 /* Post headlines */
@@ -844,7 +1056,7 @@ h3 a {
 	margin: 0 auto;
 	padding: 5px 20px;
 	border: 1px solid #482812;
-	color: #482812; 
+	color: #fff; 
 	text-decoration: none;
 	font-size: .8em;
 	font-weight: bold;

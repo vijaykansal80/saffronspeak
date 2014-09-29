@@ -32,6 +32,12 @@ function tweakjp_add_sharing_js() {
 add_action( 'wp_enqueue_scripts', 'tweakjp_add_sharing_js' );
 
 
+// Add custom JS 
+function custom_scripts() {
+    wp_enqueue_script( 'scripts', get_template_directory_uri() . '/custom/scripts.js', array('jquery'), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'custom_scripts' );
+
 
 // Enable featured images/post thumbnails
 
@@ -491,53 +497,98 @@ function preview_post($post) {
            ARCHIVE PAGES
 ******************************/
 
-// Remove pagination for series lists
+// Remove pagination for Shopping Guides parent
 function nix_nav() {
     if (is_category()):
-        $cat = get_query_var('cat');
-        $subcategories = get_categories('child_of='.$cat); 
-        if(count($subcategories) != 0):
+        if(get_query_var('cat') === 5):
             remove_action('thesis_hook_after_content', 'thesis_post_navigation');
         endif;
     endif;
 }
-//add_action('thesis_hook_before_content','nix_nav');       
+add_action('thesis_hook_before_content','nix_nav');       
+
 
 // Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
 
     function category() {
-        thesis_archive_intro();
 
-        /* 
-        // If the category has subcategories, display a list of them
-        $cat = get_query_var('cat');
-        $subcategories = get_categories('hide_empty=0&parent='.$cat); 
-        if(count($subcategories) != 0):
+        // Determine what category is being shown, and generate category object & list of subcategories
+        $category_id = get_query_var('cat');
+        $category = get_category($category_id);
+        $subcategories = get_categories('hide_empty=0&parent='.$category_id); 
+
+        // Display a customized category intro panel, for top-level categories only 
+        if ($category->category_parent === 0):
+            ?>
+            <header class="category-intro <?php echo $category->slug; ?>">
+                <img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg">
+                <div>
+                    <h1><i class="icon-header-fleuron-left"></i><?php echo $category->name; ?><i class="icon-header-fleuron-right"></i></h1>
+                    <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
+                </div>
+            </header>
+        <?php else: ?>
+            <section class="headline_area">
+                <h1 class="entry-title"><?php echo $category->name; ?></h1>
+            </section>
+        <?php endif; 
+
+
+        // If we're in the Design Resources category, display an expandable panel with a list of sub-categories
+        if($category->name === "Design Resources"): 
+            $series_subcategories = array_slice($subcategories, 0, 4);
+            $print_subcategories = array_slice($subcategories, 4);
+            ?>
+            <a href="#" class="subcategory-expander-link"><i class="icon-caret-down"></i>By series or print</a>
+            <section class="subcategory-expander">
+                <div>
+                    <section>
+                        <h2><i class="icon-bullet-fleuron"></i>By series</h2>
+                        <ul>
+                    <?php
+                    foreach ($series_subcategories as $subcategory):
+                        echo '<li>'.$count.'<a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+                    endforeach; ?>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2><i class="icon-bullet-fleuron"></i>By print</h2>
+                    <?php $count = 0;
+                    foreach ($print_subcategories as $subcategory):
+                        if ($count % 3 === 0) { echo '<ul>'; }
+                        echo '<li><a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+                        $count++;
+                        if ($count % 3 === 0 or $count - 1 === count($print_subcategories)) { echo '</ul>'; } 
+                    endforeach; ?>
+                    </section>
+
+
+                
+                </div>
+            </section>
+        <?php endif; ?>
+
+
+        <?php // If we're in the Shopping Guides category, display a styled block for each sub-category
+        if($category->name === "Shopping Guides"):
             foreach ($subcategories as $subcategory):
                 ?>
-                <div class="subcategory">
-                    <?php
-                    if (function_exists('get_terms_meta')):
-                        $category_image = get_terms_meta($subcategory->term_id, 'category-image');
-                        $category_image = $category_image[0];
-                            if ($category_image):
-                                echo '<img src="'.$category_image.'">';
-                            endif;
-                    endif;
-                    ?>
-                    <h2 class="entry-title"><a href="<?php echo get_category_link($subcategory->term_id); ?>"><?php echo $subcategory->name; ?></a></h2>
-                    <div class="format_text entry-content">
-                        <p><?php echo $subcategory->description; ?></p>
-                        <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
-                    </div>
+                <div class="subcategory <?php echo smarter_slug($subcategory); ?>">
+                    <h2><?php echo $subcategory->name; ?></h2>
+                    <?php if ($subcategory->name == "Fall"): ?>
+                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/new-for-2014.png" alt="New for 2014"/>
+                    <?php endif; ?>
+                    <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
+                    <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
                 </div>
-            <?php endforeach;
+            <?php endforeach; 
+
 
         // Otherwise, display a list of posts
         else:
-        */
-        if ($foo = bar):
+
             while (have_posts()):
                 the_post();
                 echo '<div class="post-excerpt">';
