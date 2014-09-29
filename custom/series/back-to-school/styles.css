@@ -4,35 +4,35 @@
 Custom styles for Dorm Decor series
 ===================================== */
 
-.featured-series.dorm-decor > p:first-of-type:first-letter, 
-.dorm-decor .format_text > p:first-of-type:first-letter, 
-.dorm-decor > p.intro:first-letter, 
-.dorm-decor p.float-left + h3 + p:first-letter, 
-.dorm-decor .panel p:first-of-type:first-letter {
+.featured-series.back-to-school > p:first-of-type:first-letter, 
+.back-to-school .format_text > p:first-of-type:first-letter, 
+.back-to-school > p.intro:first-letter, 
+.back-to-school p.float-left + h3 + p:first-letter, 
+.back-to-school .panel p:first-of-type:first-letter {
     color: #447e94;
     font-family: 'Milonga', cursive;
     text-shadow: none;
     margin-top
 }
-.dorm-decor .entry-content a, .featured-series.dorm-decor a {
+.back-to-school .entry-content a, .featured-series.back-to-school a {
     color: #213164;
 }
-.dorm-decor .panel {
+.back-to-school .panel {
     background: url('flowers.png');
     background-size: 177px 102px;
     border-color: #447e94;
 }
 
-.dorm-decor .entry-content > h3, .dorm-decor .entry-content section:not(.related-posts) h3 {
+.back-to-school .entry-content > h3, .back-to-school .entry-content section:not(.related-posts) h3 {
     color: #eeb64c;
     font-family: 'Milonga', cursive;
     font-size: 2.4em;
 }
-.dorm-decor h4 {border-color: #447e94;}
-.dorm-decor h2, .dorm-decor .entry-content h4 a, .dorm-decor h4 {color: #447e94;}
+.back-to-school h4 {border-color: #447e94;}
+.back-to-school h2, .back-to-school .entry-content h4 a, .back-to-school h4 {color: #447e94;}
 
-.dorm-decor .read-more a {
+.back-to-school .read-more a {
     color: #eeb64c;
     background-color: #213164;
 }
-.dorm-decor .read-more a:hover {background-color: #447e94;}
+.back-to-school .read-more a:hover {background-color: #447e94;}
