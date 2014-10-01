@@ -164,6 +164,11 @@ img.wp-smiley, img.borderless {
 	background: none;
 }
 
+.entry-content id img {
+    max-width: none;
+}
+
+
 
 
 /* consistent form styling */
