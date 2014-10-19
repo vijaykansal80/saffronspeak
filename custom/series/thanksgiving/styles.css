@@ -2,7 +2,7 @@
 
 /* First-letter and/or word */
 .featured-series.thanksgiving > p:first-of-type:first-letter, 
-.thanksgiving .format_text > p:first-of-type:first-letter, 
+.thanksgiving .entry-content > p:first-of-type:first-letter, 
 .thanksgiving p.intro:first-letter, 
 .thanksgiving p.float-left + h3 + p:first-letter, 
 .thanksgiving .panel p:first-of-type:first-letter {
@@ -19,10 +19,8 @@
 }
 
 .featured-series.thanksgiving > p:first-of-type:first-line, 
-.thanksgiving .format_text > p:first-of-type:first-line, 
-.thanksgiving p.intro:first-line, 
-.thanksgiving p.float-left + h3 + p:first-line, 
-.thanksgiving .panel p:first-of-type:first-line {
+.thanksgiving .entry-content > p:first-of-type:first-line, 
+.thanksgiving p.intro:first-line {
     color: #718295;
     font-family: 'Sacramento', cursive;
     font-size: 2em;
