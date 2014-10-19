@@ -1,17 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Sacramento);
 
+/* First-letter and/or word */
 .featured-series.thanksgiving > p:first-of-type:first-letter, 
 .thanksgiving .format_text > p:first-of-type:first-letter, 
 .thanksgiving p.intro:first-letter, 
 .thanksgiving p.float-left + h3 + p:first-letter, 
 .thanksgiving .panel p:first-of-type:first-letter {
-    color: #466545;
+    color: #718295;
     font-family: 'Sacramento', cursive;
     text-shadow: none;
     font-size: 4em;
     margin-right: 10px;
     margin-top: -10px;
 }
+.thanksgiving .panel p:first-of-type:first-letter {
+    margin-right: 15px;
+    margin-top: -15px;
+}
+
+.featured-series.thanksgiving > p:first-of-type:first-line, 
+.thanksgiving .format_text > p:first-of-type:first-line, 
+.thanksgiving p.intro:first-line, 
+.thanksgiving p.float-left + h3 + p:first-line, 
+.thanksgiving .panel p:first-of-type:first-line {
+    color: #718295;
+    font-family: 'Sacramento', cursive;
+    font-size: 2em;
+}
+
 
 /* Intro panel */
 .thanksgiving .panel {
@@ -20,11 +36,6 @@
     border-color: #455465;
     font-size: 1.2em;
     line-height: 2em;
-}
-
-.thanksgiving .panel p:first-of-type:first-letter {
-    margin-right: 15px;
-    margin-top: -15px;
 }
 
 .thanksgiving .panel strong {
@@ -43,7 +54,7 @@
 .thanksgiving .entry-content a, .featured-series.thanksgiving a {color: #466545;}
 
 .thanksgiving .entry-content > h3, .thanksgiving .entry-content section:not(.related-posts) h3 {
-    color: #466545;;
+    color: #455465;
     font-family: 'Sacramento', cursive;
     font-size: 2.8em;
 }
