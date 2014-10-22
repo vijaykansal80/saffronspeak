@@ -647,6 +647,46 @@ add_action('thesis_hook_before_headline', 'post_meta');
 
 
 
+// This adds series-specific navigation and text blocks to the bottom of posts
+
+function series_navigation() {
+    if (is_single()): 
+
+        // Make sure we only have a single category to work with
+        $categories = get_the_category($post->ID);
+        if (count($categories) === 1) {
+            $category = $categories[0];
+        }
+
+        // Only show for Shopping Guide posts (at least for now!)
+        if ($category->category_parent === 5): ?>
+        <section class="panel series-navigation">
+            <h3>Explore more of our <?php echo $category->name; ?> series</h3>
+            <p><?php echo $category->description; ?></p>
+            <?php $previous_post = get_adjacent_post(true, '', true); ?>
+            <?php if (!empty($previous_post)): ?>
+                <div class="previous-post">
+                    <span>&laquo; Previous post in series</span>
+                    <a href="<?php echo get_permalink($previous_post->ID); ?>"><?php echo $previous_post->post_title; ?></a>
+                </div>
+            <?php endif; ?>
+
+            <?php $next_post = get_adjacent_post(true, '', false); ?>
+            <?php if (!empty($next_post)): ?>
+                <div class="next-post">
+                    <span>Next post in series &raquo;</span>
+                    <a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
+                </div>
+            <?php endif; ?>
+        </section>
+        <?php endif;
+
+    endif;
+}
+add_action('thesis_hook_after_post', 'series_navigation', '1');
+
+
+
 // This adds tags to the bottom of posts, and moves YARPP below the tags
 
 function post_tags() {
