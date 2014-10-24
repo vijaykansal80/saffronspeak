@@ -28,6 +28,15 @@
 
 
 /* Intro panel */
+.column .parent-intro {
+    font-style: normal;
+    color: #718295;
+    font-family: 'Sacramento', cursive;
+    font-size: 2.6em;
+    line-height: 1.2em;
+    text-align: center;
+}
+
 .thanksgiving .panel {
     background: url('thatched.jpg');
     background-size: 198px 200px;
