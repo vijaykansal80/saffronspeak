@@ -399,6 +399,33 @@ function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
     endforeach; 
 }
 
+
+// Get custom link for series index (parent or category index)
+function get_parent_post_link($category_id) {
+    
+    // get link to parent post (should be sticky)
+    $args = array(
+        'cat' => $category_id,
+        'post__in' => get_option( 'sticky_posts' ),
+        'ignore_sticky_posts' => 1,
+    );
+    $cat_posts = $the_query = new WP_Query($args);
+
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            $series_link = get_permalink();
+        }
+    
+    // otherwise, just show a link to the category page
+    } else {
+        $series_link = get_category_link($category->term_id);
+    }
+    wp_reset_postdata();
+    return $series_link;
+}
+
+
 // Show custom HTML for featured series
 function featured_series($slug, $seo_slug=false) {
     $dir = plugin_dir_path( __FILE__ );
@@ -410,26 +437,7 @@ function featured_series($slug, $seo_slug=false) {
         $category = get_category_by_slug($slug);
     }
 
-
-    // get link to parent post (should be sticky)
-    $args = array(
-        'cat' => $category->term_id,
-        'post__in' => get_option( 'sticky_posts' ),
-        'ignore_sticky_posts' => 1,
-    );
-    $cat_posts = $the_query = new WP_Query($args);
-
-    if ( $the_query->have_posts() ) {
-        while ( $the_query->have_posts() ) {
-            $the_query->the_post();
-            $series_link = get_permalink();
-        }
-    // otherwise, just show a link to the category page
-    } else {
-        $series_link = get_category_link($category->term_id);
-    }
-    wp_reset_postdata();
-
+    $series_link = get_parent_post_link($category->term_id);
 
     echo '<h2>Featured series: <a href="'.$series_link.'">'. $category->name . '</a></h2>';
     echo '<div class="featured-series '.$slug.'">';
@@ -658,10 +666,13 @@ function series_navigation() {
             $category = $categories[0];
         }
 
+        $series_link = get_parent_post_link($category->term_id);
+
         // Only show for Shopping Guide posts (at least for now!)
         if ($category->category_parent === 5): ?>
         <section class="panel series-navigation">
-            <h3>Explore more of our <?php echo $category->name; ?> series</h3>
+
+            <h3>Explore more of our <a href="<?php echo $series_link; ?>"><?php echo $category->name; ?></a> series</h3>
             <p><?php echo $category->description; ?></p>
             <?php $previous_post = get_adjacent_post(true, '', true); ?>
             <?php if (!empty($previous_post)): ?>
