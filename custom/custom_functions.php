@@ -650,7 +650,7 @@ add_action('thesis_hook_before_headline', 'post_meta');
 // This adds series-specific navigation and text blocks to the bottom of posts
 
 function series_navigation() {
-    if (is_single()): 
+    if (is_single() and !is_sticky()): 
 
         // Make sure we only have a single category to work with
         $categories = get_the_category($post->ID);
