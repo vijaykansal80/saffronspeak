@@ -627,10 +627,18 @@ $the_looper = new archive_looper;
            POSTS
 ******************************/
 
+// Remove post title for parent posts only 
+
+function suppress_title() {
+  return (!is_page() and is_sticky()) ? false : true;
+}
+add_filter('thesis_show_headline_area', 'suppress_title');
+
+
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
 function post_meta() {
-    if (!is_page()): ?>
+    if (!is_page() and !is_sticky()): ?>
         </section>
         <section class="post-meta">
             Published 
