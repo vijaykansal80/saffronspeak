@@ -865,9 +865,8 @@ figure .circular {
 	font-weight: bold;
 	font-family: 'Lancelot', cursive;
 }
-.panel .read-more {
-	margin: 30px auto 20px;
-}
+.panel .read-more { margin: 30px auto 20px; }
+.panel h3 a { text-decoration: none; }
 
 
 
