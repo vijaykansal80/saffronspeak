@@ -672,8 +672,8 @@ ul#main-nav ul li:hover > a {
 .subcategory.fall:hover h2, .subcategory.fall:hover .read-more a { background-color: #a2542c; }
 .subcategory.fall { background-image: url('series/fall/fall-title-image.jpg'); }
 
-.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #737c4f; }
-.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #606742; }
+.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #466545; }
+.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #466545; }
 .subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
