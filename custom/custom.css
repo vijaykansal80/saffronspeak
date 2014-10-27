@@ -448,6 +448,9 @@ ul#main-nav ul li:hover > a {
 	font-style: italic;
 }
 
+/* Featured series on homepage */
+.featured-series {font-size: 1.1em;}
+
 /* Post listing boxes */
 .post-list {
 	float: left;
@@ -669,8 +672,8 @@ ul#main-nav ul li:hover > a {
 .subcategory.fall:hover h2, .subcategory.fall:hover .read-more a { background-color: #a2542c; }
 .subcategory.fall { background-image: url('series/fall/fall-title-image.jpg'); }
 
-.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #737c4f; }
-.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #606742; }
+.subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #466545; }
+.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #466545; }
 .subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
@@ -811,8 +814,92 @@ h1.entry-title, h2.entry-title {
 
 
 
+/* Drop caps */
+.single-post .entry-content > p:first-of-type, p.intro, .featured-series > p:first-of-type {
+	font-size: 1.4em;
+	line-height: 1.4em;
+	color: #7D7556;
+	margin: 2em 2em;
+}
+.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter, .featured-series p:first-of-type:first-letter {
+	font-family: 'Lancelot', cursive;
+	font-size: 6em;
+	line-height: 1em;
+	margin: -.05em 4px 0 0;
+	color: #7D7556;
+	float: left;
+	text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
+}
+
+
+/* Panel elements */
+.panel {
+	border-top: 1px solid #9e5374;
+	border-bottom: 2px solid #9e5374;
+	padding: 2em 2em .5em;
+	margin: 1em 0 4em;
+	background: rgba(255,255,255,.75);
+}
+.panel figure {
+    float: left;
+    margin-right: 50px;
+}
+.panel figure img {
+    max-width: 280px;
+    height: auto;
+}
+figure .circular {
+    border-radius: 50%;
+}
+
+.panel p {
+	font-size: 1.2em;
+	line-height: 1.5em;
+	margin-top: 50px;
+}
+.panel p:first-of-type:first-letter {
+	float: left;
+	font-size: 3.5em;
+	margin: 2px 2px 0 -4px;
+	color: #93765e;
+	font-weight: bold;
+	font-family: 'Lancelot', cursive;
+}
+.panel .read-more { margin: 30px auto 20px; }
+.panel h3 a { text-decoration: none; }
+
+
+
+
+
 /* Post footers */
 
+/* Series navigation */
+.series-navigation { padding-top: 0; }
+.next-post, .previous-post {
+	width: 49%;
+	float: left;
+	text-align: left;
+	line-height: 1.2em;
+	padding-bottom: 10px;
+}
+
+.previous-post { 
+	margin-right: 1%; 
+	text-align: left;
+}
+
+.next-post { 
+	margin-left: 1%;
+	text-align: right;
+}
+
+.next-post span, .previous-post span {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: .8em;
+}
 
 /* Sharedaddy */
 .sharedaddy {
@@ -931,64 +1018,6 @@ a.sd-button > span {
 
 
 
-
-
-
-/* Customize appearance of post listings on parent or series page into grid structures */
-.featured-series {font-size: 1.1em;}
-.single-post .entry-content > p:first-of-type, p.intro, .featured-series > p:first-of-type {
-	font-size: 1.4em;
-	line-height: 1.4em;
-	color: #7D7556;
-	margin: 2em 2em;
-}
-.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter, .featured-series p:first-of-type:first-letter {
-	font-family: 'Lancelot', cursive;
-	font-size: 6em;
-	line-height: 1em;
-	margin: -.05em 4px 0 0;
-	color: #7D7556;
-	float: left;
-	text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
-}
-
-
-/* default panel styles */
-.panel {
-	border-top: 1px solid #9e5374;
-	border-bottom: 2px solid #9e5374;
-	padding: 2em 2em .5em;
-	margin: 1em 0 4em;
-	background: rgba(255,255,255,.75);
-}
-.panel figure {
-    float: left;
-    margin-right: 50px;
-}
-.panel figure img {
-    max-width: 280px;
-    height: auto;
-}
-figure .circular {
-    border-radius: 50%;
-}
-
-.panel p {
-	font-size: 1.2em;
-	line-height: 1.5em;
-	margin-top: 50px;
-}
-.panel p:first-of-type:first-letter {
-	float: left;
-	font-size: 3.5em;
-	margin: 2px 2px 0 -4px;
-	color: #93765e;
-	font-weight: bold;
-	font-family: 'Lancelot', cursive;
-}
-.panel .read-more {
-	margin: 30px auto 20px;
-}
 
 
 

@@ -98,7 +98,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 ******************************/
 
 // Set featured category here
-$featured_series = 119;
+$featured_series = 128;
 $featured = get_term_by('id', $featured_series, 'category');
 
 
@@ -131,7 +131,7 @@ function set_custom_styles() {
 
     // for homepage
     if (is_front_page()):
-        $slug = 'fall';
+        $slug = 'thanksgiving';
     endif;
 
     wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
@@ -399,6 +399,33 @@ function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
     endforeach; 
 }
 
+
+// Get custom link for series index (parent or category index)
+function get_parent_post_link($category_id) {
+    
+    // get link to parent post (should be sticky)
+    $args = array(
+        'cat' => $category_id,
+        'post__in' => get_option( 'sticky_posts' ),
+        'ignore_sticky_posts' => 1,
+    );
+    $cat_posts = $the_query = new WP_Query($args);
+
+    if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            $series_link = get_permalink();
+        }
+    
+    // otherwise, just show a link to the category page
+    } else {
+        $series_link = get_category_link($category->term_id);
+    }
+    wp_reset_postdata();
+    return $series_link;
+}
+
+
 // Show custom HTML for featured series
 function featured_series($slug, $seo_slug=false) {
     $dir = plugin_dir_path( __FILE__ );
@@ -410,26 +437,7 @@ function featured_series($slug, $seo_slug=false) {
         $category = get_category_by_slug($slug);
     }
 
-
-    // get link to parent post (should be sticky)
-    $args = array(
-        'cat' => $category->term_id,
-        'post__in' => get_option( 'sticky_posts' ),
-        'ignore_sticky_posts' => 1,
-    );
-    $cat_posts = $the_query = new WP_Query($args);
-
-    if ( $the_query->have_posts() ) {
-        while ( $the_query->have_posts() ) {
-            $the_query->the_post();
-            $series_link = get_permalink();
-        }
-    // otherwise, just show a link to the category page
-    } else {
-        $series_link = get_category_link($category->term_id);
-    }
-    wp_reset_postdata();
-
+    $series_link = get_parent_post_link($category->term_id);
 
     echo '<h2>Featured series: <a href="'.$series_link.'">'. $category->name . '</a></h2>';
     echo '<div class="featured-series '.$slug.'">';
@@ -579,6 +587,8 @@ class archive_looper extends thesis_custom_loop {
                     <h2><?php echo $subcategory->name; ?></h2>
                     <?php if ($subcategory->name == "Fall"): ?>
                         <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/new-for-2014.png" alt="New for 2014"/>
+                    <?php elseif ($subcategory->name == "Thanksgiving"): ?>
+                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2014.png" alt="Updated for 2014"/>
                     <?php endif; ?>
                     <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
                     <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
@@ -619,10 +629,18 @@ $the_looper = new archive_looper;
            POSTS
 ******************************/
 
+// Remove post title for parent posts only 
+
+function suppress_title() {
+  return (!is_page() and is_sticky()) ? false : true;
+}
+add_filter('thesis_show_headline_area', 'suppress_title');
+
+
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
 function post_meta() {
-    if (!is_page()): ?>
+    if (!is_page() and !is_sticky()): ?>
         </section>
         <section class="post-meta">
             Published 
@@ -634,16 +652,50 @@ function post_meta() {
     endif; 
 }
 
-function post_series() {
-    if (!is_page()): ?>
-        <section class="post-headline">
-            <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
-    <?php
-    endif; 
-}
-
-add_action('thesis_hook_before_headline', 'post_series');
 add_action('thesis_hook_before_headline', 'post_meta');
+
+
+
+// This adds series-specific navigation and text blocks to the bottom of posts
+
+function series_navigation() {
+    if (is_single() and !is_sticky()): 
+
+        // Make sure we only have a single category to work with
+        $categories = get_the_category($post->ID);
+        if (count($categories) === 1) {
+            $category = $categories[0];
+        }
+
+        $series_link = get_parent_post_link($category->term_id);
+
+        // Only show for Shopping Guide posts (at least for now!)
+        if ($category->category_parent === 5): ?>
+        <section class="panel series-navigation">
+
+            <h3>Explore more of our <a href="<?php echo $series_link; ?>"><?php echo $category->name; ?></a> series</h3>
+            <p><?php echo $category->description; ?></p>
+            <?php $previous_post = get_adjacent_post(true, '', true); ?>
+            <?php if (!empty($previous_post)): ?>
+                <div class="previous-post">
+                    <span>&laquo; Previous post in series</span>
+                    <a href="<?php echo get_permalink($previous_post->ID); ?>"><?php echo $previous_post->post_title; ?></a>
+                </div>
+            <?php endif; ?>
+
+            <?php $next_post = get_adjacent_post(true, '', false); ?>
+            <?php if (!empty($next_post)): ?>
+                <div class="next-post">
+                    <span>Next post in series &raquo;</span>
+                    <a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
+                </div>
+            <?php endif; ?>
+        </section>
+        <?php endif;
+
+    endif;
+}
+add_action('thesis_hook_after_post', 'series_navigation', '1');
 
 
 
@@ -661,44 +713,6 @@ function post_tags() {
 }
 
 add_action('thesis_hook_after_post', 'post_tags', '1');
-
-// This will register "series" as a custom taxonomy
-
-function add_series() {
-
-    $labels = array(
-        'name'                       => 'Series',
-        'singular_name'              => 'Series',
-        'menu_name'                  => 'Series',
-        'all_items'                  => 'All Series',
-        'parent_item'                => 'Series Parent',
-        'parent_item_colon'          => 'Series Parent:',
-        'new_item_name'              => 'New Series Name',
-        'add_new_item'               => 'Add New Series',
-        'edit_item'                  => 'Edit Series',
-        'update_item'                => 'Update Series',
-        'separate_items_with_commas' => 'Separate series with commas',
-        'search_items'               => 'Search series',
-        'add_or_remove_items'        => 'Add or remove series',
-        'choose_from_most_used'      => 'Choose from the most used series',
-        'not_found'                  => 'Series Not Found',
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => false,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => true,
-    );
-    register_taxonomy( 'series', array( 'post' ), $args );
-
-}
-
-add_action( 'init', 'add_series', 0 );
-
-
 
 
 
