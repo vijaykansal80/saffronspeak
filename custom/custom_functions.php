@@ -642,15 +642,6 @@ function post_meta() {
     endif; 
 }
 
-function post_series() {
-    if (!is_page()): ?>
-        <section class="post-headline">
-            <h2 class="series-title"><?php echo the_terms( $post->ID, 'series', '', ', ', ' Series' ); ?></h2>
-    <?php
-    endif; 
-}
-
-add_action('thesis_hook_before_headline', 'post_series');
 add_action('thesis_hook_before_headline', 'post_meta');
 
 
@@ -712,44 +703,6 @@ function post_tags() {
 }
 
 add_action('thesis_hook_after_post', 'post_tags', '1');
-
-// This will register "series" as a custom taxonomy
-
-function add_series() {
-
-    $labels = array(
-        'name'                       => 'Series',
-        'singular_name'              => 'Series',
-        'menu_name'                  => 'Series',
-        'all_items'                  => 'All Series',
-        'parent_item'                => 'Series Parent',
-        'parent_item_colon'          => 'Series Parent:',
-        'new_item_name'              => 'New Series Name',
-        'add_new_item'               => 'Add New Series',
-        'edit_item'                  => 'Edit Series',
-        'update_item'                => 'Update Series',
-        'separate_items_with_commas' => 'Separate series with commas',
-        'search_items'               => 'Search series',
-        'add_or_remove_items'        => 'Add or remove series',
-        'choose_from_most_used'      => 'Choose from the most used series',
-        'not_found'                  => 'Series Not Found',
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => false,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => true,
-    );
-    register_taxonomy( 'series', array( 'post' ), $args );
-
-}
-
-add_action( 'init', 'add_series', 0 );
-
-
 
 
 
