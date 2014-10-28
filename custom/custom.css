@@ -880,12 +880,14 @@ figure .circular {
 
 /* Series navigation */
 .series-navigation { padding-top: 0; }
-.next-post, .previous-post {
-	width: 49%;
+.next-post, .previous-post, .all-posts {
+	width: 25%;
 	float: left;
-	text-align: left;
 	line-height: 1.2em;
 	padding-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: .8em;
 }
 
 .previous-post { 
@@ -898,12 +900,11 @@ figure .circular {
 	text-align: right;
 }
 
-.next-post span, .previous-post span {
-	display: block;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: .8em;
+.all-posts { 
+	width: 48%;
+	text-align: center; 
 }
+.next-post a, .previous-post a, .all-posts a { text-decoration: none; }
 
 /* Sharedaddy */
 .sharedaddy {
