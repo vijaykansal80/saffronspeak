@@ -850,6 +850,7 @@ h1.entry-title, h2.entry-title {
 }
 figure .circular {
     border-radius: 50%;
+    border-width: 4px;
 }
 
 .panel p {
@@ -865,7 +866,10 @@ figure .circular {
 	font-weight: bold;
 	font-family: 'Lancelot', cursive;
 }
-.panel .read-more { margin: 30px auto 20px; }
+.panel .read-more { 
+	margin: 30px auto 20px;
+	font-size: 1em;
+}
 .panel h3 a { text-decoration: none; }
 
 
