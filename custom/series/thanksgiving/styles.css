@@ -12,16 +12,17 @@
     font-size: 80px;
     margin-right: 10px;
     margin-top: -10px;
-    margin-bottom: -15px;
 }
 .thanksgiving .panel p:first-of-type:first-letter {
-    margin-right: 15px;
+    font-size: 60px;
+    margin-right: 5px;
     margin-top: -15px;
 }
 
 .featured-series.thanksgiving > p:first-of-type:first-line, 
 .thanksgiving .entry-content > p:first-of-type:first-line, 
-.thanksgiving p.intro:first-line {
+.thanksgiving p.intro:first-line,
+.homepage .thanksgiving .panel p:first-of-type:first-line {
     color: #718295;
     font-family: 'Sacramento', cursive;
     font-size: 2em;
