@@ -922,9 +922,13 @@ figure .circular {
 	float: left;
 	width: 30%;
 	padding: 0;
-	margin: 7px 0 0;
+	margin: 4px 0 0;
 	font-size: 1em;
 	font-style: italic;
+}
+.sharedaddy img {
+	border: 0;
+	box-shadow: none;
 }
 .sd-content {
 	float: left;
