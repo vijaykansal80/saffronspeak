@@ -629,12 +629,37 @@ $the_looper = new archive_looper;
            POSTS
 ******************************/
 
+// Show featured image if requested
+
+function add_params($query_vars) {
+    $query_vars[] = 'featured';
+    return $query_vars;
+}
+
+add_filter('query_vars', 'add_params' );
+
+
+function show_featured_image() {
+    global $wp_query;
+    if (!is_page()):
+        if (isset($wp_query->query_vars['featured'])) {
+            echo the_post_thumbnail();
+        }
+    endif;
+}
+
+add_filter('thesis_hook_after_headline', 'show_featured_image');
+
+
+
 // Remove post title for parent posts only 
 
 function suppress_title() {
   return (!is_page() and is_sticky()) ? false : true;
 }
+
 add_filter('thesis_show_headline_area', 'suppress_title');
+
 
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
@@ -653,6 +678,7 @@ function post_meta() {
 }
 
 add_action('thesis_hook_before_headline', 'post_meta');
+
 
 
 
@@ -698,6 +724,7 @@ function series_navigation() {
 
     endif;
 }
+
 add_action('thesis_hook_after_post', 'series_navigation', '1');
 
 
