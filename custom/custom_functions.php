@@ -391,7 +391,7 @@ function show_categories($args = array('parent' => 0, 'exclude' => 1)) {
     foreach($categories as $category):
         ?>
         <div class="category <?php echo $category->slug; ?>">
-            <a href="<?php echo get_category_link( $category->term_id ); ?>" title="<?php echo sprintf( __( "View all $category->count posts in %s" ), $category->name ); ?>"><img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg"></a>
+            <a href="<?php echo get_category_link( $category->term_id ); ?>"><img src="<?php bloginfo(stylesheet_directory); ?>/custom/images/categories/<?php echo $category->slug; ?>.jpg"></a>
             <h3><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h3>
             <p><?php echo str_replace('#', get_category_link($category->term_id), $category->description); ?></p>
         </div>
