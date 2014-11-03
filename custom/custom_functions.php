@@ -616,7 +616,7 @@ class archive_looper extends thesis_custom_loop {
                 <?php endif; ?>
                     <div class="headline_area">
                         <?php echo post_meta(); ?>
-                        <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                        <a href="<?php the_permalink() ?>"><h2 class="entry-title"><?php echo get_the_title() ?></h2></a>
                     </div>
                     <div class="format_text entry-content">
                         <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
@@ -631,18 +631,17 @@ class archive_looper extends thesis_custom_loop {
     function tag() {
         while (have_posts()):
             the_post();
-            echo '<div class="post-excerpt">';
+            echo '<div class="post-excerpt-alt">';
                 if (has_post_thumbnail()): ?>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
                         <?php the_post_thumbnail(''); ?>
                     </a>
                 <?php endif; ?>
-                <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
                 <div class="format_text entry-content">
-                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+                    <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php echo get_the_title() ?></a></h4>
+                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                        <p class="tags"><span>Tags</span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?></p>
                 </div>
-                <?php echo the_tags(); ?>
             </div>
         <?php endwhile;
     }

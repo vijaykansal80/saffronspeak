@@ -532,7 +532,46 @@ ul#main-nav ul li:hover > a {
 	text-align: center;
 }
 
-
+/* Alternate post excerpt style */
+.post-excerpt-alt {
+	clear: both;
+	margin-top: 40px;
+}
+.post-excerpt-alt:after {
+	width: 100%;
+	clear: both;
+	display: block;
+	content: '';
+}
+.post-excerpt-alt img {
+	float: left;
+	box-sizing: border-box;
+	margin: 0 20px 5px 0;
+	background: #fff;
+	padding: 10px;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	width: 30%;
+	height: auto;
+}
+.post-excerpt-alt .format_text {
+	float: left;
+	width: 65%;
+	padding-top: 10px;
+}
+.post-excerpt-alt .tags {
+	font-style: italic;
+	font-size: .85em;
+	line-height: 1.4em;
+}
+.post-excerpt-alt .tags span {
+	font-style: normal;
+	font-size: .9em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.post-excerpt-alt .tags a {
+	text-decoration: none;
+}
 
 
 
@@ -1133,7 +1172,10 @@ h3 a {
 	padding-bottom: .25em;
 	border-bottom: 1px solid #A15928;
 }
-.format_text h4 a {text-decoration: none;}
+.format_text h4 a {
+	text-decoration: none;
+	color: #A15928;
+}
 h4 strong {white-space: nowrap;}
 
 
