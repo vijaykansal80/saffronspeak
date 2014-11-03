@@ -340,6 +340,12 @@ function thesis_breadcrumbs() {
                 echo '"<em>';
                 echo the_search_query();
                 echo '</em>"';
+
+            elseif (is_tag()):
+                echo " &raquo; ";
+                echo "Tag archive: ";
+                echo single_tag_title();
+
             endif;
         }
         echo '</div>';
