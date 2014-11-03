@@ -525,6 +525,7 @@ add_action('thesis_hook_before_content','nix_nav');
 // Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
 
+    // Category archives
     function category() {
 
         // Determine what category is being shown, and generate category object & list of subcategories
@@ -624,6 +625,26 @@ class archive_looper extends thesis_custom_loop {
                 </div>
             <?php endwhile;
         endif;
+    }
+
+    // Tag archives
+    function tag() {
+        while (have_posts()):
+            the_post();
+            echo '<div class="post-excerpt">';
+                if (has_post_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                        <?php the_post_thumbnail(''); ?>
+                    </a>
+                <?php endif; ?>
+                <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                <div class="format_text entry-content">
+                    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+                </div>
+                <?php echo the_tags(); ?>
+            </div>
+        <?php endwhile;
     }
  
 }
