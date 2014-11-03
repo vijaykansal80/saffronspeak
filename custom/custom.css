@@ -943,42 +943,48 @@ figure .circular {
 	margin-top: 5px;
 }
 div.sharedaddy a.sd-button {
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-    background: -moz-linear-gradient(center top , #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
-    border-radius: 3px;
-    border: 1px solid #DDD !important;
-    box-shadow: 0px 1px 0px #FFF inset;
-    color: #000 !important;
-    text-decoration: none;
-    line-height: 1;
-    font-size: 12px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  background: -moz-linear-gradient(center top , #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
+  border-radius: 3px;
+  border: 1px solid #DDD !important;
+  box-shadow: 0px 1px 0px #FFF inset;
+  color: #000 !important;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
 }
 div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited {
-    font-style: normal;
+  font-style: normal;
+}
+div.sharedaddy .share-custom a.sd-button {
+	background: #fff;
+	text-indent: 20px;
+	margin-left: 20px;
+	margin-top: -5px;
 }
 li.share-email {
 	margin-right: 20px;
 	margin-top: 3px;
 }
 li.share-email a.sd-button > span {
-    background-image: url('../../../plugins/jetpack/modules/sharedaddy/images/email.png');
-    padding-left: 24px;
+  background-image: url('../../../plugins/jetpack/modules/sharedaddy/images/email.png');
+  padding-left: 24px;
 }
 .sd-social-icon-text a.sd-button > span, a.sd-button > span {
-    padding: 1px 5px 1px 23px;
-    background-position: 2px center;
-    background-repeat: no-repeat;
+  padding: 1px 5px 1px 23px;
+  background-position: 2px center;
+  background-repeat: no-repeat;
 }
 a.sd-button > span {
-    padding: 1px 8px;
-    display: block;
-    opacity: 0.8;
-    line-height: 1.5em;
-    text-shadow: none;
+  padding: 1px 8px;
+  display: block;
+  opacity: 0.8;
+  line-height: 1.5em;
+  text-shadow: none;
 }
 
 
