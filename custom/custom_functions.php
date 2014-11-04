@@ -298,6 +298,21 @@ remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
 
+// Get supplementary tag information
+function full_tags() {
+    $tag_query = $_SERVER['REQUEST_URI'];
+    $tag_query = str_replace('/tag/', '', $tag_query);
+    $tag_query = str_replace(',', ', ', $tag_query);
+    $tag_query = str_replace('/', '', $tag_query);
+    $tag_query = str_replace('+', ', ', $tag_query);
+    $tag_query = str_replace('-', ' ', $tag_query);
+    $primary_tag = strtolower(single_tag_title('', false));
+    $secondary_tags = str_replace($primary_tag, '', $tag_query);
+    $secondary_tags = ltrim($secondary_tags, ', ');
+    $tag_string = "<strong>". $primary_tag ."</strong> and ". $secondary_tags;
+    return $tag_string;
+}
+
 
 // Add location-aware breadcrumbs for improved usability
 
@@ -344,7 +359,8 @@ function thesis_breadcrumbs() {
             elseif (is_tag()):
                 echo " &raquo; ";
                 echo "Tag archive: ";
-                echo single_tag_title();
+                //echo single_tag_title();
+                echo full_tags();
 
             endif;
         }
