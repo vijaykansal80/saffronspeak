@@ -302,7 +302,7 @@ add_action('thesis_hook_after_header', 'custom_menu');
 function full_tags() {
     $tag_query = $_SERVER['REQUEST_URI'];
     $tag_query = str_replace('/blog/', '', $tag_query);
-    $tag_query = str_replace('/tag/', '', $tag_query);
+    $tag_query = str_replace('tag/', '', $tag_query);
     $tag_query = str_replace(',', ', ', $tag_query);
     $tag_query = str_replace('/', '', $tag_query);
     $tag_query = str_replace('+', ', ', $tag_query);
@@ -310,7 +310,11 @@ function full_tags() {
     $primary_tag = strtolower(single_tag_title('', false));
     $secondary_tags = str_replace($primary_tag, '', $tag_query);
     $secondary_tags = ltrim($secondary_tags, ', ');
-    $tag_string = "<strong>". $primary_tag ."</strong> and ". $secondary_tags;
+    if ($secondary_tags != "") {
+        $tag_string = "<strong>". $primary_tag ."</strong> and ". $secondary_tags;
+    } else {
+        $tag_string = $primary_tag;
+    }
     return $tag_string;
 }
 
