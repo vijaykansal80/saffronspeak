@@ -301,6 +301,7 @@ add_action('thesis_hook_after_header', 'custom_menu');
 // Get supplementary tag information
 function full_tags() {
     $tag_query = $_SERVER['REQUEST_URI'];
+    $tag_query = str_replace('/blog/', '', $tag_query);
     $tag_query = str_replace('/tag/', '', $tag_query);
     $tag_query = str_replace(',', ', ', $tag_query);
     $tag_query = str_replace('/', '', $tag_query);
