@@ -553,6 +553,9 @@ ul#main-nav ul li:hover > a {
 	width: 30%;
 	height: auto;
 }
+.post-excerpt-alt:nth-of-type(odd) img {
+	float: right;
+}
 .post-excerpt-alt .format_text {
 	float: left;
 	width: 65%;
