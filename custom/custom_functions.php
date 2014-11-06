@@ -74,6 +74,17 @@ add_action('pending_to_publish', 'auto_featured_image');
 add_action('future_to_publish', 'auto_featured_image');
 
 
+// Show custom number of posts for different archive types
+function custom_posts_per_page($query) {
+    if (is_tag()):
+        $query->set('posts_per_page', 10);
+    endif;
+    if (is_search()):
+        $query->set('posts_per_page', -1);
+    endif;
+}
+add_action('pre_get_posts', 'custom_posts_per_page');
+
 
 // Remove sharing links from post excerpts
 add_action( 'init', 'my_remove_filters_func' );
