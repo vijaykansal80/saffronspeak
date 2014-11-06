@@ -553,9 +553,7 @@ ul#main-nav ul li:hover > a {
 	width: 30%;
 	height: auto;
 }
-.post-excerpt-alt:nth-of-type(odd) img {
-	float: right;
-}
+.post-excerpt-alt:nth-of-type(odd) img { float: right; }
 .post-excerpt-alt .format_text {
 	float: left;
 	width: 65%;
@@ -572,8 +570,11 @@ ul#main-nav ul li:hover > a {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
-.post-excerpt-alt .tags a {
-	text-decoration: none;
+.post-excerpt-alt .tags a { text-decoration: none; }
+.post-excerpt-alt .tags strong {
+	font-weight: bold;
+	background: #edcfba;
+	padding: 2px 5px;
 }
 
 

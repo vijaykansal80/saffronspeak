@@ -299,7 +299,8 @@ add_action('thesis_hook_after_header', 'custom_menu');
 
 
 // Get supplementary tag information
-function full_tags() {
+function full_tag_string() {
+    global $tag_query;
     $tag_query = $_SERVER['REQUEST_URI'];
     $tag_query = str_replace('/blog/', '', $tag_query);
     $tag_query = str_replace('tag/', '', $tag_query);
@@ -316,6 +317,12 @@ function full_tags() {
         $tag_string = $primary_tag;
     }
     return $tag_string;
+}
+
+function all_tags() {
+    global $tag_query;
+    $all_tags = explode(', ', $tag_query);
+    return $all_tags;
 }
 
 
@@ -363,10 +370,8 @@ function thesis_breadcrumbs() {
 
             elseif (is_tag()):
                 echo " &raquo; ";
-                echo "Tag archive: ";
-                //echo single_tag_title();
-                echo full_tags();
-
+                echo "Tag archive: ";                
+                echo full_tag_string();
             endif;
         }
         echo '</div>';
@@ -661,7 +666,26 @@ class archive_looper extends thesis_custom_loop {
                 <div class="format_text entry-content">
                     <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php echo get_the_title() ?></a></h4>
                         <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                        <p class="tags"><span>Tags</span> <?php echo get_the_tag_list('', ' &middot; ', ''); ?></p>
+                        <?php 
+                            $tag_string = get_the_tag_list('', ',', '');
+                            $tags = explode(',', $tag_string);
+                        ?>
+                        <p class="tags"><span>Tags</span> 
+                        <?php 
+                            foreach($tags as $key => $tag):
+                                if ($key != 0):
+                                    echo " &middot; ";
+                                endif;
+                                $tagless_tag = strtolower(strip_tags($tag));
+                                if (in_array($tagless_tag, all_tags())):
+                                    echo "<strong>". $tag . "</strong>";
+                                else:
+                                    echo $tag;
+                                endif;
+                            endforeach;
+                        ?>
+                        </p>
+
                 </div>
             </div>
         <?php endwhile;
