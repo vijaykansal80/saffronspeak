@@ -74,6 +74,17 @@ add_action('pending_to_publish', 'auto_featured_image');
 add_action('future_to_publish', 'auto_featured_image');
 
 
+// Show custom number of posts for different archive types
+function custom_posts_per_page($query) {
+    if (is_tag()):
+        $query->set('posts_per_page', 10);
+    endif;
+    if (is_search()):
+        $query->set('posts_per_page', -1);
+    endif;
+}
+add_action('pre_get_posts', 'custom_posts_per_page');
+
 
 // Remove sharing links from post excerpts
 add_action( 'init', 'my_remove_filters_func' );
@@ -298,6 +309,33 @@ remove_action('thesis_hook_before_header', 'thesis_nav_menu');
 add_action('thesis_hook_after_header', 'custom_menu');
 
 
+// Get supplementary tag information
+function full_tag_string() {
+    global $tag_query;
+    $tag_query = $_SERVER['REQUEST_URI'];
+    $tag_query = str_replace('/blog/', '', $tag_query);
+    $tag_query = str_replace('tag/', '', $tag_query);
+    $tag_query = str_replace(',', ', ', $tag_query);
+    $tag_query = str_replace('/', '', $tag_query);
+    $tag_query = str_replace('+', ', ', $tag_query);
+    $tag_query = str_replace('-', ' ', $tag_query);
+    $primary_tag = strtolower(single_tag_title('', false));
+    $secondary_tags = str_replace($primary_tag, '', $tag_query);
+    $secondary_tags = ltrim($secondary_tags, ', ');
+    if ($secondary_tags != "") {
+        $tag_string = "<strong>". $primary_tag ."</strong> and ". $secondary_tags;
+    } else {
+        $tag_string = $primary_tag;
+    }
+    return $tag_string;
+}
+
+function all_tags() {
+    global $tag_query;
+    $all_tags = explode(', ', $tag_query);
+    return $all_tags;
+}
+
 
 // Add location-aware breadcrumbs for improved usability
 
@@ -340,6 +378,11 @@ function thesis_breadcrumbs() {
                 echo '"<em>';
                 echo the_search_query();
                 echo '</em>"';
+
+            elseif (is_tag()):
+                echo " &raquo; ";
+                echo "Tag archive: ";                
+                echo full_tag_string();
             endif;
         }
         echo '</div>';
@@ -519,6 +562,7 @@ add_action('thesis_hook_before_content','nix_nav');
 // Show custom archive pages for different archive types
 class archive_looper extends thesis_custom_loop {
 
+    // Category archives
     function category() {
 
         // Determine what category is being shown, and generate category object & list of subcategories
@@ -609,7 +653,7 @@ class archive_looper extends thesis_custom_loop {
                 <?php endif; ?>
                     <div class="headline_area">
                         <?php echo post_meta(); ?>
-                        <a href="<?php the_permalink() ?>"<?php echo '><h2 class="entry-title">' . get_the_title() . '</h2>' . "\n"?></a>
+                        <a href="<?php the_permalink() ?>"><h2 class="entry-title"><?php echo get_the_title() ?></h2></a>
                     </div>
                     <div class="format_text entry-content">
                         <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
@@ -618,6 +662,44 @@ class archive_looper extends thesis_custom_loop {
                 </div>
             <?php endwhile;
         endif;
+    }
+
+    // Tag archives
+    function tag() {
+        while (have_posts()):
+            the_post();
+            echo '<div class="post-excerpt-alt">';
+                if (has_post_thumbnail()): ?>
+                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                        <?php the_post_thumbnail(''); ?>
+                    </a>
+                <?php endif; ?>
+                <div class="format_text entry-content">
+                    <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php echo get_the_title() ?></a></h4>
+                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+                        <?php 
+                            $tag_string = get_the_tag_list('', ',', '');
+                            $tags = explode(',', $tag_string);
+                        ?>
+                        <p class="tags"><span>Tags</span> 
+                        <?php 
+                            foreach($tags as $key => $tag):
+                                if ($key != 0):
+                                    echo " &middot; ";
+                                endif;
+                                $tagless_tag = strtolower(strip_tags($tag));
+                                if (in_array($tagless_tag, all_tags())):
+                                    echo "<strong>". $tag . "</strong>";
+                                else:
+                                    echo $tag;
+                                endif;
+                            endforeach;
+                        ?>
+                        </p>
+
+                </div>
+            </div>
+        <?php endwhile;
     }
  
 }
