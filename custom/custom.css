@@ -716,7 +716,7 @@ ul#main-nav ul li:hover > a {
 .subcategory.fall { background-image: url('series/fall/fall-title-image.jpg'); }
 
 .subcategory.thanksgiving h2, .subcategory.thanksgiving .read-more a { background-color: #466545; }
-.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #466545; }
+.subcategory.thanksgiving:hover h2, .subcategory.thanksgiving:hover .read-more a { background-color: #354d34; }
 .subcategory.thanksgiving { background-image: url('series/thanksgiving/thanksgiving-title-image.jpg'); }
 
 
