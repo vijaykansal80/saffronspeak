@@ -1199,7 +1199,10 @@ h4 strong {white-space: nowrap;}
 
 
 /* Classes for figure elements */
-figure {text-align: center;}
+figure {
+	text-align: center;
+	margin: 1em 5px 2em;
+}
 figcaption {
     text-align: center;
     font-style: italic;
