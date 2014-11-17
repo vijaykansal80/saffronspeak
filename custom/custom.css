@@ -177,6 +177,9 @@ img.wp-smiley, img.borderless {
 	max-width: 670px;
 	margin: 0 auto 20px !important;
 }
+.tiled-gallery.type-rectangular {
+	max-width: 500px;
+}
 .tiled-gallery-caption {
 	font-style: italic;
 }
