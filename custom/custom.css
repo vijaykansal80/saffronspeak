@@ -1199,7 +1199,7 @@ h4 strong {white-space: nowrap;}
 
 
 /* Classes for figure elements */
-figure {
+figure:not[.col] {
 	text-align: center;
 	margin: 1em 5px 2em;
 }
