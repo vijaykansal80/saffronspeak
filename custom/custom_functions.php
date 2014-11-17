@@ -74,6 +74,17 @@ add_action('pending_to_publish', 'auto_featured_image');
 add_action('future_to_publish', 'auto_featured_image');
 
 
+// Remove comments on Jetpack's Carousel images
+function filter_media_comment_status( $open, $post_id ) {
+    $post = get_post( $post_id );
+    if( $post->post_type == 'attachment' ) {
+        return false;
+    }
+    return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
+
 // Show custom number of posts for different archive types
 function custom_posts_per_page($query) {
     if (is_tag()):
