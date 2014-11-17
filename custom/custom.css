@@ -168,7 +168,17 @@ img.wp-smiley, img.borderless {
     max-width: none;
 }
 
-
+/* Styling for tiled galleries */
+.tiled-gallery {
+	margin: 0px 55px 20px !important;
+	padding: 10px;
+	background: #fff;
+	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+	text-align: center;
+}
+.tiled-gallery-caption {
+	font-style: italic;
+}
 
 
 /* consistent form styling */
