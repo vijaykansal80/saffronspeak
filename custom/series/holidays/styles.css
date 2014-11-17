@@ -1,0 +1,105 @@
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
+
+/* First-letter and/or word */
+.featured-series.holidays > p:first-of-type:first-letter, 
+.holidays .entry-content > p:first-of-type:first-letter, 
+.holidays p.intro:first-letter, 
+.holidays p.float-left + h3 + p:first-letter, 
+.holidays .panel p:first-of-type:first-letter {
+    color: #718295;
+    font-family: "Elsie Swash Caps", cursive;
+    text-shadow: none;
+    font-size: 80px;
+    margin-right: 10px;
+    margin-top: -10px;
+}
+.holidays .panel p:first-of-type:first-letter {
+    font-size: 60px;
+    margin-right: 5px;
+    margin-top: -15px;
+}
+
+.featured-series.holidays > p:first-of-type:first-line, 
+.holidays .entry-content > p:first-of-type:first-line, 
+.holidays p.intro:first-line,
+.homepage .holidays .panel p:first-of-type:first-line {
+    color: #718295;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 2em;
+}
+
+
+/* Intro panel */
+.column .parent-intro {
+    font-style: normal;
+    color: #718295;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 2.6em;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+.holidays .panel {
+    background: url('thatched.jpg');
+    background-size: 198px 200px;
+    border-color: #455465;
+    font-size: 1.2em;
+    line-height: 2em;
+}
+
+.holidays .panel strong {
+    color: #455465;
+    font-size: 2em;
+    font-weight: normal;
+    font-family: "Elsie Swash Caps", cursive;  
+}
+
+.holidays .panel li {
+    margin: 10px 30px;
+}
+
+
+/* General styles */
+.holidays .entry-content a, .featured-series.holidays a {color: #466545;}
+
+.holidays .entry-content header {
+    background: #9c0 url('snowy-bg.jpg') no-repeat;
+    padding: 10px 0;
+    height: 150px;
+    box-sizing: border-box; 
+    text-align: center; 
+}
+.holidays header h3, .holidays .entry-content > h3, .holidays .entry-content section:not(.related-posts) h3 {
+    color: #fff;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 2.4em;
+}
+.holidays .entry-content header h3 a { color: #fff; }
+.holidays .entry-content header h4 {
+    display: inline-block;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding: 3px 10px;
+}
+.holidays .small-intro {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 20px 40px;
+}
+
+.holidays h4 {border-color: #466545;}
+
+.holidays h2, .holidays .entry-content h4 a, .holidays h4 {color: #455465;}
+
+.holidays .read-more a {
+    color: #e4e2cf;
+    background-color: #466545;
+}
+
+.holidays .read-more a:hover {background-color: #455465;}

@@ -130,6 +130,9 @@ body, input {
 	-webkit-text-stroke: 0.25px;
 }
 
+/* Ensure headings don't get underlined */
+.format_text h1 a, .format_text h2 a, .format_text h3 a, .format_text h4 a, .format_text h5 a { text-decoration: none; }
+
 /* Add a clearfix hack class */
 .clearfix:after {
 	visibility: hidden;
