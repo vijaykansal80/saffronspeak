@@ -940,7 +940,7 @@ figure .circular {
 	font-size: 2em;
 	line-height: .3em;
 	display: inline-block;
-	margin-top: 1px;
+	margin-top: -1px;
 	vertical-align: top;
 }
 section.expander { display: none; }
