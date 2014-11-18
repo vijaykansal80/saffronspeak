@@ -897,9 +897,9 @@ h1.entry-title, h2.entry-title {
 	margin: 1em 0 4em;
 	background: rgba(255,255,255,.75);
 }
-.panel figure {
+.panel figure, .panel figure:not(.col) {
     float: left;
-    margin-right: 50px;
+    margin: 0 50px 0 0;
 }
 .panel figure img {
     max-width: 280px;
