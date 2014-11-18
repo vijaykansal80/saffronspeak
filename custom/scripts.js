@@ -4,4 +4,10 @@ jQuery(document).ready(function(){
       jQuery('.subcategory-expander div').slideToggle();
       jQuery(this).find('i').toggleClass('icon-caret-up');
     });
+
+    jQuery('a.parent-expander-link').click(function(e) {
+      e.preventDefault();
+      jQuery(this).parent().next('section.expander').slideToggle(800);
+      jQuery(this).find('i').toggleClass('icon-caret-up');
+    });
 });

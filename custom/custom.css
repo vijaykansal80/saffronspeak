@@ -933,6 +933,18 @@ figure .circular {
 .panel h3 a { text-decoration: none; }
 
 
+/* Multi-sectioned parent posts */
+.parent-expander-link:after, .parent-expander-link:before { display: none; }
+.read-more .parent-expander-link { padding: 8px 20px 8px 25px; }
+.parent-expander-link i {
+	font-size: 2em;
+	line-height: .3em;
+	display: inline-block;
+	margin-top: 1px;
+	vertical-align: top;
+}
+section.expander { display: none; }
+
 
 
 
