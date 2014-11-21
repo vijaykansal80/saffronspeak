@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
 
     jQuery('a.parent-expander-link').click(function(e) {
       e.preventDefault();
-      jQuery(this).parent().next('section.expander').slideToggle(800);
+      jQuery(this).parent().prev('section.expander').slideToggle(800);
       jQuery(this).find('i').toggleClass('icon-caret-up');
     });
 });
