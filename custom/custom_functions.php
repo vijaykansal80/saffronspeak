@@ -166,9 +166,8 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 128;
+$featured_series = 130;
 $featured = get_term_by('id', $featured_series, 'category');
-
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
 function smarter_slug($category) {
@@ -178,9 +177,10 @@ function smarter_slug($category) {
 return $slug;   
 }
 
-
 // Add page-specific stylesheets and tags
 function set_custom_styles() {
+
+    global $featured;
     
     // for individual post pages
     if (is_single()): 
@@ -203,7 +203,7 @@ function set_custom_styles() {
 
     // for homepage
     if (is_front_page()):
-        $slug = 'thanksgiving';
+        $slug = smarter_slug($featured);
     endif;
 
     wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
