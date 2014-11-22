@@ -841,33 +841,39 @@ function series_navigation() {
             $category = $categories[0];
         }
 
+        // If we're in a nested sub-category, we want to jump up to the parent
+        $parent = get_term_by('id', $category->category_parent, 'category');
+        if ($parent->parent != 0):
+            $category = $parent;
+        endif;
+
         $series_link = get_parent_post_link($category->term_id);
 
         // Only show for Shopping Guide posts (at least for now!)
-        if ($category->category_parent === 5): ?>
-        <section class="panel series-navigation">
+        if ($category->parent === 5): ?>
+            <section class="panel series-navigation">
 
-            <p><?php echo $category->description; ?></p>
-            
-            <div class="previous-post">
-                <?php $previous_post = get_adjacent_post(true, '', true); ?>
-                <?php if (!empty($previous_post)): ?>                
-                    <a href="<?php echo get_permalink($previous_post->ID); ?>">&laquo; Previous post</a>
-                <?php endif; ?>
-            </div>
+                <p><?php echo $category->description; ?></p>
+                
+                <div class="previous-post">
+                    <?php $previous_post = get_adjacent_post(true, '', true); ?>
+                    <?php if (!empty($previous_post)): ?>                
+                        <a href="<?php echo get_permalink($previous_post->ID); ?>">&laquo; Previous post</a>
+                    <?php endif; ?>
+                </div>
 
-            <div class="all-posts">
-                <a href="<?php echo $series_link; ?>">View all <?php echo $category->name; ?> posts</a>
-            </div>
+                <div class="all-posts">
+                    <a href="<?php echo $series_link; ?>">View all <?php echo $category->name; ?> posts</a>
+                </div>
 
-            <div class="next-post">
-                <?php $next_post = get_adjacent_post(true, '', false); ?>
-                <?php if (!empty($next_post)): ?>
-                    <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
-                <?php endif; ?>
-            </div>
+                <div class="next-post">
+                    <?php $next_post = get_adjacent_post(true, '', false); ?>
+                    <?php if (!empty($next_post)): ?>
+                        <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
+                    <?php endif; ?>
+                </div>
 
-        </section>
+            </section>
         <?php endif;
 
     endif;
