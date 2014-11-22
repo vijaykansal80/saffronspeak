@@ -6,10 +6,9 @@
 .holidays p.intro:first-letter, 
 .holidays p.float-left + h3 + p:first-letter, 
 .holidays .panel p:first-of-type:first-letter {
-    color: #72151D;
-    text-shadow: 2px 2px 2px #fff;
+    color: #52659a;
     font-family: "Elsie Swash Caps", cursive;
-    text-shadow: 3px 0px 0px #FFF, 5px 0px 0px #FFF, 7px 1px 0px #1f2566;
+    text-shadow: 3px 0px 0px #e6e9f1, 5px 0px 0px #FFF, 7px 0px 0px #707b9a;
     font-size: 128px;
     margin-right: 11px;
     margin-top: -5px;
@@ -50,7 +49,8 @@
     text-align: center; 
 }
 .holidays header h3, .holidays .entry-content > h3, .holidays .entry-content section:not(.related-posts) h3 {
-    color: #1f2566;
+    color: #bdc2d2;
+    text-shadow: 1px 1px 1px #050938;
     font-family: "Elsie Swash Caps", cursive;
     font-size: 2.4em;
 }
@@ -67,17 +67,17 @@
     padding: 0 10px;
     vertical-align: middle;
 }
-.holidays .entry-content header h3 a { color: #fff; }
+.holidays .entry-content header h3 a { color: #e6e9f1; }
 .holidays .entry-content header h4 {
     display: inline-block;
     margin: 0 auto;
-    color: #fff;
+    color: #e6e9f1;
     text-align: center;
     text-transform: uppercase;
     font-size: .9em;
     letter-spacing: 1px;
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff;
+    border-bottom: 1px solid #e6e9f1;
+    border-top: 1px solid #e6e9f1;
     padding: 3px 10px;
 }
 .holidays .entry-content header h4:before, .holidays .entry-content header h4:after {
@@ -98,8 +98,17 @@
 .holidays h2, .holidays .entry-content h4 a, .holidays h4 {color: #1f2566;}
 
 .holidays .read-more a {
-    color: #fff;
-    background-color: #72151D;
+    color: #6d6e72;
+    border-color: #ced1d8;
+    text-shadow: 1px 1px 1px #fff;
+    background: #f2f5fc;
+    background: -moz-linear-gradient(top, #f2f5fc 0%, #e6e8ef 24%, #cdd0d7 47%, #dee0e5 77%, #e8eaef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5fc), color-stop(24%,#e6e8ef), color-stop(47%,#cdd0d7), color-stop(77%,#dee0e5), color-stop(100%,#e8eaef));
+    background: -webkit-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -o-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -ms-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: linear-gradient(to bottom, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5fc', endColorstr='#e8eaef',GradientType=0);
 }
 
 .holidays .read-more a:hover {background-color: #521219;}
