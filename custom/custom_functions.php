@@ -185,8 +185,12 @@ function set_custom_styles() {
     // for individual post pages
     if (is_single()): 
         $categories = get_the_category($post->ID);
+
         foreach($categories as $category): 
-            if ($category->slug != "shopping-guides"):
+            // check to see if it's a sub-category of the holiday category
+            if ($category->parent == 130):
+                $slug = "holidays";
+            elseif ($category->slug != "shopping-guides"):
                 $slug = smarter_slug($category);
             endif;
         endforeach;
@@ -217,7 +221,12 @@ function category_class($classes) {
     if (is_single()): 
         $categories = get_the_category($post->ID);
         foreach($categories as $category): 
-            $classes[] = smarter_slug($category);
+            // generate a list of parent categories as well
+            $parents = get_category_parents($category, false, ',');
+            $parents = explode(',', $parents);
+            foreach ($parents as $parent):
+                $classes[] = str_replace(' ', '-', strtolower($parent));
+            endforeach;
         endforeach;
     $classes[] = "single-post";
     endif;
