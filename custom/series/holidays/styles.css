@@ -110,5 +110,14 @@
     background: linear-gradient(to bottom, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5fc', endColorstr='#e8eaef',GradientType=0);
 }
-.holidays .read-more a:hover {background-color: #521219;}
+.holidays .read-more a:hover {
+    background: #e8eaef;
+    background: -moz-linear-gradient(top, #e8eaef 0%, #dee0e5 23%, #cdd0d7 53%, #e6e8ef 76%, #f2f5fc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8eaef), color-stop(23%,#dee0e5), color-stop(53%,#cdd0d7), color-stop(76%,#e6e8ef), color-stop(100%,#f2f5fc));
+    background: -webkit-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -o-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -ms-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: linear-gradient(to bottom, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8eaef', endColorstr='#f2f5fc',GradientType=0);
+}
 .holidays .read-more a .extra { display: none; }

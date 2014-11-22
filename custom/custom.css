@@ -937,10 +937,10 @@ figure .circular {
 .parent-expander-link:after, .parent-expander-link:before { display: none; }
 .read-more .parent-expander-link { padding: 8px 20px 8px 25px; }
 .parent-expander-link i {
-	font-size: 2em;
+	font-size: 1.5em;
 	line-height: .3em;
 	display: inline-block;
-	margin-top: -1px;
+	margin-top: 3px;
 	vertical-align: top;
 }
 section.expander { display: none; }
