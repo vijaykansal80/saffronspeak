@@ -110,5 +110,5 @@
     background: linear-gradient(to bottom, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5fc', endColorstr='#e8eaef',GradientType=0);
 }
-
 .holidays .read-more a:hover {background-color: #521219;}
+.holidays .read-more a .extra { display: none; }
