@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
 
+
 /* First-letter and/or word */
 .featured-series.holidays > p:first-of-type:first-letter, 
 .holidays .entry-content > p:first-of-type:first-letter, 
@@ -13,32 +14,37 @@
     margin-right: 11px;
     margin-top: -5px;
 }
-.holidays .panel p:first-of-type:first-letter {
-    font-size: 60px;
-    margin-right: 5px;
-    margin-top: -15px;
-}
 
 
-
+/* Panel styles */
 .holidays .panel {
-    background: url('thatched.jpg');
-    background-size: 198px 200px;
-    border-color: #455465;
+    background: #1f2566 url('panel-bg.png') no-repeat;
+    border: none;
     font-size: 1.2em;
     line-height: 2em;
+    height: 345px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    color: #e6e9f1;
+}
+.holidays .panel p:first-of-type:first-letter {
+    font-size: 90px;
+    margin-right: 5px;
+    margin-top: -5px;
+    text-shadow: none;
+    color: #5383A0;
 }
 
+
+/* Emphasis */
 .holidays strong { color: #1f2566; }
 
-.holidays .panel li {
-    margin: 10px 30px;
-}
 
-
-/* General styles */
+/* Text links */
 .holidays .entry-content a, .featured-series.holidays a {color: #72151D;}
 
+
+/* Fancy headers */
 .holidays .entry-content header {
     background: #1f2566 url('snowy-bg.png') no-repeat;
     padding: 10px 0;
@@ -86,17 +92,14 @@
     padding: 0 10px;
     opacity: .5;
 }
-.holidays .small-intro {
-    font-size: 1.2em;
-    line-height: 1.8em;
-    font-style: italic;
-    margin: 20px 40px;
-}
 
+
+/* Post headings */
 .holidays h4 {border-color: #1f2566;}
-
 .holidays h2, .holidays .entry-content h4 a, .holidays h4 {color: #1f2566;}
 
+
+/* Read more links */
 .holidays .read-more a {
     color: #6d6e72;
     border-color: #ced1d8;
