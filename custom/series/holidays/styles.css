@@ -34,6 +34,13 @@
     text-shadow: none;
     color: #5383A0;
 }
+.holidays .series-navigation {
+    background: #1f2566 url('series-navigation.png') no-repeat;
+    padding-top: .5em;
+    height: 245px;
+}
+.holidays .entry-content .series-navigation a { color: #5383A0; }
+.holidays .entry-content .series-navigation a:hover { color: #52659a; }
 
 
 /* Emphasis */
