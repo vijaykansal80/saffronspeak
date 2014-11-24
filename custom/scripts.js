@@ -8,7 +8,10 @@ jQuery(document).ready(function(){
     });
 
     jQuery('a.parent-expander-link').click(function(e) {
-      e.preventDefault();
+      if (!(jQuery(this).parent().prev('section.expander').is(":visible"))) {
+        e.preventDefault();
+        console.log ("Visible!");
+      }
       jQuery(this).parent().prev('section.expander').slideToggle(800);
       jQuery(this).find('i').toggleClass('icon-caret-up');
       jQuery(this).find('.main').toggle();
