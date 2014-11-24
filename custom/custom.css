@@ -704,8 +704,8 @@ ul#main-nav ul li:hover > a {
 	color: #fff;
 }
 
-.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #4e1c13; }
-.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #33120c; }
+.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #1f2566; }
+.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #171b4d; }
 .subcategory.holidays { background-image: url('series/holidays/holidays-title-image.jpg'); }
 
 .subcategory.valentines-day h2, .subcategory.valentines-day .read-more a { background-color: #7d0b25; }
