@@ -12,8 +12,14 @@
     text-shadow: 3px 0px 0px #e6e9f1, 5px 0px 0px #FFF, 7px 0px 0px #707b9a;
     font-size: 128px;
     margin-right: 11px;
-    margin-top: -5px;
+    margin-top: -15px;
 }
+.holidays .entry-content > p:first-of-type:first-line {
+    color: #52659a;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 28px;
+} 
+
 
 
 /* Panel styles */
