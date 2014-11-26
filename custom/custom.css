@@ -130,6 +130,9 @@ body, input {
 	-webkit-text-stroke: 0.25px;
 }
 
+/* Ensure headings don't get underlined */
+.format_text h1 a, .format_text h2 a, .format_text h3 a, .format_text h4 a, .format_text h5 a { text-decoration: none; }
+
 /* Add a clearfix hack class */
 .clearfix:after {
 	visibility: hidden;
@@ -701,8 +704,8 @@ ul#main-nav ul li:hover > a {
 	color: #fff;
 }
 
-.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #4e1c13; }
-.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #33120c; }
+.subcategory.holidays h2, .subcategory.holidays .read-more a { background-color: #1f2566; }
+.subcategory.holidays:hover h2, .subcategory.holidays:hover .read-more a { background-color: #171b4d; }
 .subcategory.holidays { background-image: url('series/holidays/holidays-title-image.jpg'); }
 
 .subcategory.valentines-day h2, .subcategory.valentines-day .read-more a { background-color: #7d0b25; }
@@ -929,6 +932,18 @@ figure .circular {
 }
 .panel h3 a { text-decoration: none; }
 
+
+/* Multi-sectioned parent posts */
+.parent-expander-link:after, .parent-expander-link:before { display: none; }
+.read-more .parent-expander-link { padding: 8px 20px 8px 25px; }
+.parent-expander-link i {
+	font-size: 1.5em;
+	line-height: .3em;
+	display: inline-block;
+	margin-top: 3px;
+	vertical-align: top;
+}
+section.expander { display: none; }
 
 
 
@@ -1214,7 +1229,7 @@ figcaption {
 .sourcing {
 	background: rgba(255,255,255,.25);
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,.125);
-	font-size: .8em;
+	font-size: .9em;
 	margin: 0 4em 1em;
 	padding: 1em 1em .25em;
 	text-align: center;
@@ -1224,7 +1239,20 @@ figcaption {
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-bottom: 1px solid #7D7556;
+	line-height: 1.2em;
 	margin: 0 2em .5em;
+}
+.sourcing .col h4 {
+	margin: 0 0 10px 0;
+	border-top: 1px solid #dac9be;
+	border-bottom: 1px solid #dac9be;
+	padding: 10px;
+	text-transform: none;
+	font-style: italic;
+	font-size: 1.4em;
+	line-height: 1em;
+	font-weight: normal;
+	letter-spacing: 0;
 }
 .sourcing ol {
 	text-align: center;
@@ -1239,6 +1267,10 @@ figcaption {
 	display: inline;
 	margin: 0 10px 0 10px;
 	white-space: nowrap;
+}
+.sourcing .col p {
+	text-align: left;
+	line-height: 1.6em;
 }
 .sourcing::after {
 	clear: both;
@@ -1267,6 +1299,7 @@ section.fourcol, section.threecol, section.twocol {
 	width: 31.33333%;
 	float: left;
 	margin-right: 3%;
+	margin-bottom: 2%;
 }
 .threecol .col:nth-of-type(3n) {
 	margin-right: 0;

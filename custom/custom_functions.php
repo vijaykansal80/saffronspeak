@@ -166,9 +166,8 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 128;
+$featured_series = 130;
 $featured = get_term_by('id', $featured_series, 'category');
-
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
 function smarter_slug($category) {
@@ -178,15 +177,20 @@ function smarter_slug($category) {
 return $slug;   
 }
 
-
 // Add page-specific stylesheets and tags
 function set_custom_styles() {
+
+    global $featured;
     
     // for individual post pages
     if (is_single()): 
         $categories = get_the_category($post->ID);
+
         foreach($categories as $category): 
-            if ($category->slug != "shopping-guides"):
+            // check to see if it's a sub-category of the holiday category
+            if ($category->parent == 130):
+                $slug = "holidays";
+            elseif ($category->slug != "shopping-guides"):
                 $slug = smarter_slug($category);
             endif;
         endforeach;
@@ -199,7 +203,7 @@ function set_custom_styles() {
 
     // for homepage
     if (is_front_page()):
-        $slug = 'thanksgiving';
+        $slug = smarter_slug($featured);
     endif;
 
     wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
@@ -217,7 +221,12 @@ function category_class($classes) {
     if (is_single()): 
         $categories = get_the_category($post->ID);
         foreach($categories as $category): 
-            $classes[] = smarter_slug($category);
+            // generate a list of parent categories as well
+            $parents = get_category_parents($category, false, ',');
+            $parents = explode(',', $parents);
+            foreach ($parents as $parent):
+                $classes[] = str_replace(' ', '-', strtolower($parent));
+            endforeach;
         endforeach;
     $classes[] = "single-post";
     endif;
@@ -832,33 +841,39 @@ function series_navigation() {
             $category = $categories[0];
         }
 
+        // If we're in a nested sub-category, we want to jump up to the parent
+        $parent = get_term_by('id', $category->category_parent, 'category');
+        if ($parent->parent != 0):
+            $category = $parent;
+        endif;
+
         $series_link = get_parent_post_link($category->term_id);
 
         // Only show for Shopping Guide posts (at least for now!)
-        if ($category->category_parent === 5): ?>
-        <section class="panel series-navigation">
+        if ($category->parent === 5): ?>
+            <section class="panel series-navigation">
 
-            <p><?php echo $category->description; ?></p>
-            
-            <div class="previous-post">
-                <?php $previous_post = get_adjacent_post(true, '', true); ?>
-                <?php if (!empty($previous_post)): ?>                
-                    <a href="<?php echo get_permalink($previous_post->ID); ?>">&laquo; Previous post</a>
-                <?php endif; ?>
-            </div>
+                <p><?php echo $category->description; ?></p>
+                
+                <div class="previous-post">
+                    <?php $previous_post = get_adjacent_post(true, '', true); ?>
+                    <?php if (!empty($previous_post)): ?>                
+                        <a href="<?php echo get_permalink($previous_post->ID); ?>">&laquo; Previous post</a>
+                    <?php endif; ?>
+                </div>
 
-            <div class="all-posts">
-                <a href="<?php echo $series_link; ?>">View all <?php echo $category->name; ?> posts</a>
-            </div>
+                <div class="all-posts">
+                    <a href="<?php echo $series_link; ?>">View all <?php echo $category->name; ?> posts</a>
+                </div>
 
-            <div class="next-post">
-                <?php $next_post = get_adjacent_post(true, '', false); ?>
-                <?php if (!empty($next_post)): ?>
-                    <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
-                <?php endif; ?>
-            </div>
+                <div class="next-post">
+                    <?php $next_post = get_adjacent_post(true, '', false); ?>
+                    <?php if (!empty($next_post)): ?>
+                        <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
+                    <?php endif; ?>
+                </div>
 
-        </section>
+            </section>
         <?php endif;
 
     endif;
