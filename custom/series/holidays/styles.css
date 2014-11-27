@@ -88,6 +88,9 @@
     padding: 0 10px;
     vertical-align: middle;
 }
+.holidays .related-posts h3:after, .holidays .related-posts h3:before { display: none; }
+.holidays .sharedaddy h3:after, .holidays .sharedaddy h3:before { display: none; }
+
 .holidays .entry-content header h3 a { color: #e6e9f1; }
 .holidays .entry-content header h4 {
     display: inline-block;
