@@ -70,7 +70,7 @@
 .holidays header h3, .holidays .entry-content > h3, .holidays .entry-content section:not(.related-posts) h3 {
     color: #1f2566;
     font-family: "Elsie Swash Caps", cursive;
-    font-size: 3em;
+    font-size: 2.4em;
 }
 .holidays header h3 {
     margin: 20px auto -5px;
@@ -114,8 +114,14 @@
 
 /* Post headings */
 .holidays h4 {border-color: #1f2566;}
+.holidays .twocol h5 { margin-top: 6em; }
+.holidays .twocol h4 {
+    margin: 0 0 1em;
+    padding: .25em 0 .5em;
+    border-bottom: 1px solid #1f2566;
+    font-size: 1.4em;
+}
 .holidays h2, .holidays .entry-content h4 a, .holidays h4 {color: #1f2566;}
-
 
 /* Read more links */
 .holidays .read-more a {
