@@ -131,8 +131,8 @@ function cleaner_caption( $output, $attr, $content ) {
     /* Merge the defaults with user input. */
     $attr = shortcode_atts( $defaults, $attr );
 
-    /* If the width is less than 1 or there is no caption, return the content wrapped between the [caption]< tags. */
-    if ( 1 > $attr['width'] || empty( $attr['caption'] ) )
+    /* If there is no caption, return the content wrapped between the [caption] tags only. */
+    if ( empty( $attr['caption'] ) )
         return $content;
 
     /* Set up the attributes for the caption <div>. */
