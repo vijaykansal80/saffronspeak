@@ -406,7 +406,7 @@ function all_tags() {
 // Add location-aware breadcrumbs for improved usability
 
 function thesis_breadcrumbs() {
-    if (!is_home() && !is_front_page()): {
+    if ( ! is_home() &&  ! is_front_page() && ! is_page() ): {
         echo '<div class="breadcrumbs">';
         echo '<a href="';
         echo get_option('home');
