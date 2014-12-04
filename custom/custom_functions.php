@@ -459,7 +459,15 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
 
-
+function custom_page_templates(){
+    global $post; 
+    if ( is_home() || is_front_page() ):
+        new_homepage();
+    elseif ( "27088" == $post->post_parent ):
+        promotion_page();
+    endif;
+}
+add_action('thesis_hook_custom_template', 'custom_page_templates');
 
 
 
@@ -470,28 +478,34 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 // This creates an entirely different layout for the homepage
 
 function new_homepage() {
-    global $featured;
-    if (is_home() || is_front_page()): ?>
-        <div id="content" class="home-content">
-            
-            <h2><?php echo bloginfo('title'); ?></h2>
-            <p class="tagline"><?php echo bloginfo('description'); ?></p>
-            <?php echo show_categories(); ?> 
+    global $featured; ?>
+    <div id="content" class="home-content">
+        
+        <h2><?php echo bloginfo('title'); ?></h2>
+        <p class="tagline"><?php echo bloginfo('description'); ?></p>
+        <?php echo show_categories(); ?> 
 
-            <?php echo featured_series(smarter_slug($featured), $featured->slug); ?>
+        <?php echo featured_series(smarter_slug($featured), $featured->slug); ?>
 
-            <h2>Read more posts</h2>
-            <?php echo list_posts('latest'); ?>
+        <h2>Read more posts</h2>
+        <?php echo list_posts('latest'); ?>
 
-            <?php if (function_exists('wpp_get_mostpopular'))
-                wpp_get_mostpopular("range=monthly&limit=10");
-            ?>
+        <?php if (function_exists('wpp_get_mostpopular')):
+            wpp_get_mostpopular("range=monthly&limit=10");
+        endif; ?>
 
-    <?php endif; 
+    </div>
+<?php }
+
+/*****************************
+        PROMOTION PAGES
+******************************/
+
+function promotion_page() {
+    echo "Hello, bitches!";
 }
 
-remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
-add_action('thesis_hook_custom_template', 'new_homepage');
+
 
 
 // Show categories widget
@@ -834,7 +848,7 @@ add_action('thesis_hook_before_headline', 'post_meta');
 // This adds series-specific navigation and text blocks to the bottom of posts
 
 function series_navigation() {
-    if (is_single() and !is_sticky()): 
+    if (is_single() && !is_sticky()): 
 
         // Make sure we only have a single category to work with
         $categories = get_the_category($post->ID);
