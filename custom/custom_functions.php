@@ -695,11 +695,10 @@ class archive_looper extends thesis_custom_loop {
                 ?>
                 <div class="subcategory <?php echo smarter_slug($subcategory); ?>">
                     <h2><?php echo $subcategory->name; ?></h2>
-                    <?php if ($subcategory->name == "Fall"): ?>
-                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/new-for-2014.png" alt="New for 2014"/>
-                    <?php elseif ($subcategory->name == "Thanksgiving"): ?>
-                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2014.png" alt="Updated for 2014"/>
-                    <?php elseif ($subcategory->name == "Holidays"): ?>
+                    <?php // Currently featured category should show an "Updated for..." badge
+                        global $featured;
+                        if ( $subcategory->term_id == $featured->term_id ): 
+                    ?>
                         <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2014.png" alt="Updated for 2014"/>
                     <?php endif; ?>
                     <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
