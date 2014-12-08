@@ -1,0 +1,45 @@
+.holiday-sale .promotion .panel {
+  background: url('images/panel.png'); 
+  width: 509px; 
+  margin: 0 auto; 
+  height: 388px;
+  border: 0;
+  padding: 7em 2em;
+}
+
+.holiday-sale .promotion .panel p {
+  text-align: center; 
+  line-height: 1.5;
+  font-weight: normal;
+  font-size: 2.1em;
+  text-shadow: #8b8e90 0px 1px 0px;
+  font-style: italic; 
+  color: #fff;
+}
+
+.holiday-sale .promotion .panel p:first-letter {
+  color: #2a5567;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0 -5px 0 4px;
+  font-size: 85px;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.holiday-sale .promotion img:not(.swatch) {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.holiday-sale .promotion .swatch {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.holiday-sale .promotion h2 {
+  margin: 6em 0 1em;
+  text-align: center;
+}
+
+

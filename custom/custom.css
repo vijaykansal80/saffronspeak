@@ -150,7 +150,7 @@ body, input {
 
 
 /* Use consistent styling for images */
-.entry-content img, .section img, figure img, img.bordered, .related-posts img, .subcategory img {
+.entry-content img, .section img, figure img, img.bordered, .related-posts img, .subcategory img, .promotion img {
 	background: #fff;
 	padding: 10px;
 	box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
@@ -919,6 +919,7 @@ h1.entry-title, h2.entry-title {
 	padding: 2em 2em .5em;
 	margin: 1em 0 4em;
 	background: rgba(255,255,255,.75);
+	box-sizing: border-box;
 }
 .panel figure, .panel figure:not(.col) {
     float: left;
