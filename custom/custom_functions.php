@@ -50,7 +50,6 @@ add_action('after_setup_theme','add_custom_sizes');
 
 define('YARPP_GENERATE_THUMBNAILS', true); 
 
-
 // Remove comments on Jetpack's Carousel images
 function filter_media_comment_status( $open, $post_id ) {
     $post = get_post( $post_id );
@@ -446,7 +445,22 @@ function thesis_breadcrumbs() {
 add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
+// Remove post title for parent posts and pages
+function suppress_title() {
+    if ( !is_page() and is_sticky() ) {
+        $return = false;
+    } elseif ( is_page() ) {
+        $return = false;
+    } else {
+        $return = true;
+    }
+    return $return;
+}
 
+add_filter('thesis_show_headline_area', 'suppress_title');
+
+
+// Custom pages
 function custom_page_templates(){
     global $post; 
     if ( is_home() || is_front_page() ):
@@ -815,17 +829,6 @@ function show_featured_image() {
 }
 
 add_filter('thesis_hook_after_headline', 'show_featured_image');
-
-
-
-// Remove post title for parent posts only 
-
-function suppress_title() {
-  return (!is_page() and is_sticky()) ? false : true;
-}
-
-add_filter('thesis_show_headline_area', 'suppress_title');
-
 
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
