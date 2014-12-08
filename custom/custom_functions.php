@@ -463,7 +463,7 @@ function custom_page_templates(){
     global $post; 
     if ( is_home() || is_front_page() ):
         new_homepage();
-    elseif ( "27088" == $post->post_parent ):
+    elseif ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
         promotion_page();
     endif;
 }
@@ -502,9 +502,13 @@ function new_homepage() {
 ******************************/
 
 function promotion_page() {
-    // In theory, this would apply a different structure to these pages, but in practise, Thesis is the worst.
+    global $post;
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+        echo "Hello there!";
+    endif;
 }
 
+add_action('thesis_hook_after_header', 'promotion_page');
 
 
 
@@ -805,7 +809,7 @@ add_filter('query_vars', 'add_params' );
 function show_featured_image() {
     global $post;
     global $wp_query;
-    if ( "27088" == $post->post_parent || ( ! is_page() AND isset($wp_query->query_vars['featured']) ) ):
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) || ( ! is_page() AND isset($wp_query->query_vars['featured']) ) ):
         if ( has_post_thumbnail() ) {
             echo the_post_thumbnail();
         }
