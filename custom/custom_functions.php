@@ -181,6 +181,7 @@ return $slug;
 function set_custom_styles() {
 
     global $featured;
+    global $post;
     
     // for individual post pages
     if (is_single()): 
@@ -206,8 +207,18 @@ function set_custom_styles() {
         $slug = smarter_slug($featured);
     endif;
 
-    wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
-    wp_enqueue_style('category-style');
+    // register styles for category 
+    if ( isset( $slug ) ) {
+        wp_register_style( 'category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css' );
+        wp_enqueue_style( 'category-style' );
+    }
+
+    // for promotion pages 
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+        $slug = basename( get_permalink() );
+        wp_register_style( 'page-style',  get_template_directory_uri() . '/custom/promotions/'.$slug.'.css' );
+        wp_enqueue_style( 'page-style' );
+    endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'set_custom_styles' );
@@ -504,11 +515,21 @@ function new_homepage() {
 function promotion_page() {
     global $post;
     if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
-        echo "Hello there!";
+
+        // Determine where our file will be located
+        $dir = plugin_dir_path( __FILE__ );
+        $template = parse_url(get_bloginfo('template_directory'));
+        $slug = basename( get_permalink() );
+        $path = $template['path']."/custom/promotions/";
+        $category = get_category_by_slug($slug);
+        
+        echo '<div class="promotion '.$slug.'">';
+            include($dir."/promotions/".$slug.".php"); 
+        echo '</div>';
     endif;
 }
 
-add_action('thesis_hook_after_header', 'promotion_page');
+//add_action('thesis_hook_after_header', 'promotion_page');
 
 
 
