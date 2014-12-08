@@ -83,16 +83,69 @@
 </section>
 
 
-<h2>Holiday Special: Save 50% off shipping</h2>
+<h2><img src="<?php echo $path; ?>images/holiday-shipping-special.png" alt="Holiday Shipping Special: Save 50% off shipping" /></h2>
 
 <section class="twocol">
-  <div class="col">
-  <h2>Holiday Special: Save 50% off shipping</h2>
-  US Orders: No order minimum*<br>
-  Non-US Orders: orders over $150*<br>
-  *Valid for orders up to $1000
 
-      <h3>Note</h3> 
+  <div class="col">
+  <h4>Shipping cost for US orders</h4>
+    <table class="shipping-chart">
+      <tr>
+        <th>Order total</th>
+        <th>Normal shipping</th>
+        <th>Sale shipping</th>
+      </tr>
+      <tr>
+        <td>$0-$30</td>
+        <td>$6.99</td>
+        <td><em>only</em> $3.49</td>
+      </tr>
+      <tr>
+        <td>$30-$50</td>
+        <td>$9.99</td>
+        <td><em>only</em> $4.99</td>
+      </tr>
+      <tr>
+        <td>$50-$100</td>
+        <td>$12.99</td>
+        <td><em>only</em> $6.99</td>
+      </tr>
+      <tr>
+        <td>$100-$150</td>
+        <td>$14.99</td>
+        <td><em>only</em> $7.99</td>
+      </tr>
+      <tr>
+        <td>$150-$200</td>
+        <td>$19.00</td>
+        <td><em>only</em> $9.99</td>
+      </tr>
+      <tr>
+        <td>$200-$250</td>
+        <td>$24.99</td>
+        <td><em>only</em> $12.99</td>
+      </tr>
+      <tr>
+        <td>$250-$300</td>
+        <td>$29.99</td>
+        <td><em>only</em> $14.99</td>
+      </tr>
+      <tr>
+        <td>$300+</td>
+        <td>10%</td>
+        <td>5% <em>off</em></td>
+      </tr>
+    </table>
+  <p class="small">* Non-US orders: we will contact you with the discounted shipping cost.</p>
+  </div>
+
+  <div class="col shipping-special">
+    <div class="sourcing">
+      <em>US Orders:</em> <strong>No</strong> order minimum<br>
+      <em>International Orders:</em> Minimum order <strong>$150</strong><br>
+    </div>
+
+  <h4>Notes</h4> 
     <ul>
       <li>Qualifying order total excludes shipping charges.</li>
       <li>Promotion applicable only to in stock items.</li>
@@ -102,52 +155,7 @@
     </ul>
   </div>
 
-  <div class="col">
-  <h3>Shipping cost for US orders</h3>
-    <table class="shipping-chart">
-      <tr>
-        <td>$0-$30</td>
-        <td>$6.99</td>
-        <td>$3.49</td>
-      </tr>
-      <tr>
-        <td>$30-$50</td>
-        <td>$9.99</td>
-        <td>$4.99</td>
-      </tr>
-      <tr>
-        <td>$50-$100</td>
-        <td>$12.99</td>
-        <td>$6.99</td>
-      </tr>
-      <tr>
-        <td>$100-$150</td>
-        <td>$14.99</td>
-        <td>$7.99</td>
-      </tr>
-      <tr>
-        <td>$150-$200</td>
-        <td>$19.00</td>
-        <td>$9.99</td>
-      </tr>
-      <tr>
-        <td>$200-$250</td>
-        <td>$24.99</td>
-        <td>$12.99</td>
-      </tr>
-      <tr>
-        <td>$250-$300</td>
-        <td>$29.99</td>
-        <td>$14.99</td>
-      </tr>
-      <tr>
-        <td>$300+</td>
-        <td>10%</td>
-        <td>5%</td>
-      </tr>
-    </table>
-  *Non-US orders: we will contact you with the discounted shipping cost.
-  </div>
+
 </section>
 
 

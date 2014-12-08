@@ -1341,7 +1341,10 @@ section.fourcol, section.threecol, section.twocol {
 .fivecol .col:nth-of-type(5n) {
 	margin-right: 0;
 }
-.col {text-align: center;}
+.col {
+	text-align: center;
+	box-sizing: border-box;
+}
 .col p {text-align: left;}
 .col h4 {
 	text-align: center;
@@ -1367,7 +1370,102 @@ section::after {
 }
 
 
+/* Table reset */
 
+table, tr, th, td { 
+	border-collapse: collapse; 
+	border:none; 
+} 
+
+th, td { 
+	padding: 0; 
+}
+
+
+/* Shipping Charts for promotion pages */
+
+.promotion {
+	font-size: 1.6em;
+}
+
+.promotion h4 {
+	font-style: italic;
+	margin: 0 0 1em;
+}
+
+.shipping-special {
+	text-align: left;
+	padding-left: 40px;
+}
+
+.shipping-special .sourcing {
+	width: 100%;
+	font-size: 1.2em;
+	margin: 2em 0;
+	padding-bottom: 1em;
+	position: relative;
+}
+
+.shipping-special .sourcing:before {
+	border: 1px solid #fff;
+	content: '';
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+}
+.shipping-chart {
+	width: 100%;
+	margin: 1em 0;
+}
+
+.shipping-chart tr {
+	background: rgba(255, 255, 255, 0.25);
+	border-bottom: 1px solid #93775F;
+	padding: 0;
+}
+
+.shipping-chart tr:nth-of-type(odd) {
+	background: rgba(218, 183, 160, 0.25);
+}
+
+.shipping-chart th {
+	font-size: 0.9em;
+	font-weight: normal;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.shipping-chart td, 
+.shipping-chart th {
+	margin: 0;
+	padding: 10px;
+	text-align: left;
+}
+
+.shipping-chart td:nth-child(3n+1) {
+
+} 
+
+.shipping-chart td:nth-child(2n) {
+	color: #7a6659;
+	text-decoration: line-through;
+}
+
+.shipping-chart td:nth-child(3n) {
+	font-weight: bold;
+}
+
+.shipping-chart em {
+	font-weight: normal;
+}
+
+.small {
+	font-size: .9em;
+	font-style: italic;
+}
 
 
 
