@@ -1,5 +1,5 @@
 <div class="panel">
-  <p>Welcome to our holiday sale. For this year&rsquo;s holiday sale, we have decided to organize our prints based on color-ways. This will be a four-part series. First up are our prints that have whites and blacks predominately in them.</p>
+  <p>Welcome to our holiday sale. This year we have decided to organize our prints based on color-ways. This will be a four-part series. First up are our prints that have whites and blacks predominately in them.</p>
 </div>
               
 
