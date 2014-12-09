@@ -50,30 +50,6 @@ add_action('after_setup_theme','add_custom_sizes');
 
 define('YARPP_GENERATE_THUMBNAILS', true); 
 
-
-function auto_featured_image() {
-    global $post;
-
-    if (!has_post_thumbnail($post->ID)) {
-        $attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
-        
-      if ($attached_image) {
-              foreach ($attached_image as $attachment_id => $attachment) {
-                   set_post_thumbnail($post->ID, $attachment_id);
-              }
-         }
-    }
-}
-// Use it temporarily to generate all featured images
-add_action('the_post', 'auto_featured_image');
-// Used for new posts
-add_action('save_post', 'auto_featured_image');
-add_action('draft_to_publish', 'auto_featured_image');
-add_action('new_to_publish', 'auto_featured_image');
-add_action('pending_to_publish', 'auto_featured_image');
-add_action('future_to_publish', 'auto_featured_image');
-
-
 // Remove comments on Jetpack's Carousel images
 function filter_media_comment_status( $open, $post_id ) {
     $post = get_post( $post_id );
@@ -181,6 +157,7 @@ return $slug;
 function set_custom_styles() {
 
     global $featured;
+    global $post;
     
     // for individual post pages
     if (is_single()): 
@@ -206,8 +183,18 @@ function set_custom_styles() {
         $slug = smarter_slug($featured);
     endif;
 
-    wp_register_style('category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css');
-    wp_enqueue_style('category-style');
+    // register styles for category 
+    if ( isset( $slug ) ) {
+        wp_register_style( 'category-style',  get_template_directory_uri() . '/custom/series/'.$slug.'/styles.css' );
+        wp_enqueue_style( 'category-style' );
+    }
+
+    // for promotion pages 
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+        $slug = basename( get_permalink() );
+        wp_register_style( 'page-style',  get_template_directory_uri() . '/custom/promotions/'.$slug.'.css' );
+        wp_enqueue_style( 'page-style' );
+    endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'set_custom_styles' );
@@ -345,7 +332,7 @@ function custom_menu() { ?>
 			</ul>
 	    </li>
 	    
-	    <li id="sale-tab"><a href="http://www.saffronmarigold.com/catalog/directory.php?cPath=60">SALE</a></li>
+	    <li id="sale-tab"><a href="http://www.saffronmarigold.com/blog/promotions/holiday-sale/">SALE</a></li>
 	    
 	    <li id="shopby-tab"><a href="http://www.saffronmarigold.com/catalog/shop_by_print.php?cPath=59">Shop&nbsp;by<br>Print</a>
 		    <ul>
@@ -406,7 +393,7 @@ function all_tags() {
 // Add location-aware breadcrumbs for improved usability
 
 function thesis_breadcrumbs() {
-    if (!is_home() && !is_front_page()): {
+    if ( ! is_home() &&  ! is_front_page() && ! is_page() ): {
         echo '<div class="breadcrumbs">';
         echo '<a href="';
         echo get_option('home');
@@ -458,8 +445,31 @@ function thesis_breadcrumbs() {
 add_action('thesis_hook_after_header','thesis_breadcrumbs');
 
 
+// Remove post title for parent posts and pages
+function suppress_title() {
+    if ( !is_page() and is_sticky() ) {
+        $return = false;
+    } elseif ( is_page() ) {
+        $return = false;
+    } else {
+        $return = true;
+    }
+    return $return;
+}
+
+add_filter('thesis_show_headline_area', 'suppress_title');
 
 
+// Custom pages
+function custom_page_templates(){
+    global $post; 
+    if ( is_home() || is_front_page() ):
+        new_homepage();
+    elseif ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+        promotion_page();
+    endif;
+}
+add_action('thesis_hook_custom_template', 'custom_page_templates');
 
 
 
@@ -470,28 +480,48 @@ add_action('thesis_hook_after_header','thesis_breadcrumbs');
 // This creates an entirely different layout for the homepage
 
 function new_homepage() {
-    global $featured;
-    if (is_home() || is_front_page()): ?>
-        <div id="content" class="home-content">
-            
-            <h2><?php echo bloginfo('title'); ?></h2>
-            <p class="tagline"><?php echo bloginfo('description'); ?></p>
-            <?php echo show_categories(); ?> 
+    global $featured; ?>
+    <div id="content" class="home-content">
+        
+        <h2><?php echo bloginfo('title'); ?></h2>
+        <p class="tagline"><?php echo bloginfo('description'); ?></p>
+        <?php echo show_categories(); ?> 
 
-            <?php echo featured_series(smarter_slug($featured), $featured->slug); ?>
+        <?php echo featured_series(smarter_slug($featured), $featured->slug); ?>
 
-            <h2>Read more posts</h2>
-            <?php echo list_posts('latest'); ?>
+        <h2>Read more posts</h2>
+        <?php echo list_posts('latest'); ?>
 
-            <?php if (function_exists('wpp_get_mostpopular'))
-                wpp_get_mostpopular("range=monthly&limit=10");
-            ?>
+        <?php if (function_exists('wpp_get_mostpopular')):
+            wpp_get_mostpopular("range=monthly&limit=10");
+        endif; ?>
 
-    <?php endif; 
+    </div>
+<?php }
+
+/*****************************
+        PROMOTION PAGES
+******************************/
+
+function promotion_page() {
+    global $post;
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+
+        // Determine where our file will be located
+        $dir = plugin_dir_path( __FILE__ );
+        $template = parse_url(get_bloginfo('template_directory'));
+        $slug = basename( get_permalink() );
+        $path = $template['path']."/custom/promotions/";
+        $category = get_category_by_slug($slug);
+        
+        echo '<div class="promotion '.$slug.'">';
+            include($dir."/promotions/".$slug.".php"); 
+        echo '</div>';
+    endif;
 }
 
-remove_action('thesis_hook_custom_template', 'thesis_custom_template_sample');
-add_action('thesis_hook_custom_template', 'new_homepage');
+//add_action('thesis_hook_after_header', 'promotion_page');
+
 
 
 // Show categories widget
@@ -789,26 +819,16 @@ add_filter('query_vars', 'add_params' );
 
 
 function show_featured_image() {
+    global $post;
     global $wp_query;
-    if (!is_page()):
-        if (isset($wp_query->query_vars['featured'])) {
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) || ( ! is_page() AND isset($wp_query->query_vars['featured']) ) ):
+        if ( has_post_thumbnail() ) {
             echo the_post_thumbnail();
         }
     endif;
 }
 
 add_filter('thesis_hook_after_headline', 'show_featured_image');
-
-
-
-// Remove post title for parent posts only 
-
-function suppress_title() {
-  return (!is_page() and is_sticky()) ? false : true;
-}
-
-add_filter('thesis_show_headline_area', 'suppress_title');
-
 
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
@@ -834,7 +854,7 @@ add_action('thesis_hook_before_headline', 'post_meta');
 // This adds series-specific navigation and text blocks to the bottom of posts
 
 function series_navigation() {
-    if (is_single() and !is_sticky()): 
+    if (is_single() && !is_sticky()): 
 
         // Make sure we only have a single category to work with
         $categories = get_the_category($post->ID);
