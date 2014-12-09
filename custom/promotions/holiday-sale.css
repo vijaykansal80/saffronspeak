@@ -19,8 +19,9 @@
 
 .holiday-sale .promotion .panel p:first-letter {
   color: #2a5567;
+  font-family: Lancelot, cursive;
   font-style: normal;
-  font-weight: normal;
+  font-weight: bold;
   margin: -5px 10px -5px -5px;
   font-size: 85px;
   text-shadow: 1px 1px 0px #fff;

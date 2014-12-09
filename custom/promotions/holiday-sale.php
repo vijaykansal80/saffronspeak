@@ -1,84 +1,66 @@
 <div class="panel">
-  <p>Welcome to our holiday sale. This year we have decided to organize our prints based on color-ways. This will be a four-part series. First up are our prints that have whites and blacks predominately in them. PS: You also save on shipping&hellip;</p>
+  <p>Welcome to our holiday sale. This year we have decided to organize our prints based on color-ways. This is number two in a four-part series. Today, we&rsquo;re featuring some of our prints with reds, purples, and browns. PS: You also save on shipping&hellip;</p>
 </div>
               
 
-
-
-
-
-<h2><img src="<?php echo $path; ?>/images/10.gif" alt="10% off these prints" /></h2>                         
+<h2><img src="<?php echo $path; ?>images/10.gif" alt="10% off these prints" /></h2>                         
                 
 <section class="threecol">
   <div class="col">
-   <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=V_GLACE&amp;products_id=663"><img alt="Vanilla Glacé" src="<?php echo $path; ?>images/swatches/vanilla-glace.jpg" class="swatch" /></a>
-   <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=V_GLACE&amp;products_id=663"><img src="<?php echo $path; ?>images/text/vanilla-glace.gif" alt="Vanilla Glacé" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_ROUTE&amp;products_id=525"><img alt="Spice Route" src="<?php echo $path; ?>images/swatches/spice-route.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_ROUTE&amp;products_id=525"><img src="<?php echo $path; ?>images/text/spice-route.gif" alt="Spice Route" width="177" height="44" /></a>
   </div>
-
+  
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=R_MANSOUR&amp;products_id=988"><img alt="Royal Mansour"  src="<?php echo $path; ?>images/swatches/royal-mansour.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=R_MANSOUR&amp;products_id=988"><img src="<?php echo $path; ?>images/text/royal-mansour.gif" alt="Royal Mansour" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=R_KILIM&amp;products_id=527"><img alt="Ruby Kilim" src="<?php echo $path; ?>images/swatches/ruby-kilim.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=R_KILIM&amp;products_id=527"><img src="<?php echo $path; ?>images/text/ruby-kilim.gif" alt="Ruby Kilim" width="177" height="44" /></a>
   </div>
-
-  <div class="col"> 
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=I_LACE&amp;products_id=524"><img alt="Ivy Lace" src="<?php echo $path; ?>images/swatches/ivy-lace.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=I_LACE&amp;products_id=524"><img src="<?php echo $path; ?>images/text/ivy-lace.gif" alt="Ivy Lace" width="177" height="44" /></a>
-  </div>
-</section>
-
-<section class="threecol">
+  
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_PEACOCK&amp;products_id=583"><img alt="Dance o Peacock"  src="<?php echo $path; ?>images/swatches/dance-o-peacock.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_PEACOCK&amp;products_id=583"><img src="<?php echo $path; ?>images/text/dance-o-peacock.gif" alt="Dance o Peacock" width="177" height="44" /></a>
-  </div>
-
-  <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=B_VEIL&amp;products_id=890"><img alt="Bridal Veil"  src="<?php echo $path; ?>images/swatches/bridal-veil.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=B_VEIL&amp;products_id=890"><img src="<?php echo $path; ?>images/text/bridal-veil.gif" alt="Bridal Veil" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_PALACE&amp;products_id=563"><img alt="Sultan's Palace" src="<?php echo $path; ?>images/swatches/sultans-palace.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_PALACE&amp;products_id=563"><img src="<?php echo $path; ?>images/text/sultans-palace.gif" alt="Sultan's Palace" width="177" height="44" /></a>
   </div>
 </section>
 
 <h2><img src="<?php echo $path; ?>images/15.gif" alt="15% off these prints" /></h2>
 
-<section class="threecol">
-  <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=FILI&amp;products_id=803"><img alt="Filigree"  src="<?php echo $path; ?>images/swatches/filigree.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=FILI&amp;products_id=803"><img src="<?php echo $path; ?>images/text/filigree.gif" alt="Filigree" width="177" height="44" /></a>
+<section class="threecol"> 
+
+  <div class="col">         
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=I_ROSE&amp;products_id=523"><img alt="India Rose" src="<?php echo $path; ?>images/swatches/india-rose.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=I_ROSE&amp;products_id=523"><img src="<?php echo $path; ?>images/text/india-rose.gif" alt="India Rose" width="177" height="44" /></a>
   </div>
 
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_DREAMS&amp;products_id=536"><img alt="Lavender Dreams"  src="<?php echo $path; ?>images/swatches/lavender-dreams.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_DREAMS&amp;products_id=536"><img src="<?php echo $path; ?>images/text/lavender-dreams.gif" alt="Lavender Dreams" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_CHOCOLATE&amp;products_id=698"><img alt="For the Love of Chocolate" src="<?php echo $path; ?>images/swatches/for-the-love-of-chocolate.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_CHOCOLATE&amp;products_id=698"><img src="<?php echo $path; ?>images/text/for-the-love-of-chocolate.gif" alt="For the Love of Chocolate" width="177" height="44" /></a>
   </div>
 
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=CASA&amp;products_id=949"><img alt="Casablanca" src="<?php echo $path; ?>images/swatches/casablanca.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=CASA&amp;products_id=949"><img src="<?php echo $path; ?>images/text/casablanca.gif" alt="Casablanca" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_MA&amp;products_id=774"><img alt="Mystic Amethyst" src="<?php echo $path; ?>images/swatches/mystic-amethyst.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_MA&amp;products_id=774"><img src="<?php echo $path; ?>images/text/mystic-amethyst.gif" alt="Mystic Amethyst" width="177" height="44" /></a>
   </div>
-
-  <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=K_NOIR&amp;products_id=535"><img alt="Kilim Noir" src="<?php echo $path; ?>images/swatches/kilim-noir.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=K_NOIR&amp;products_id=535"><img src="<?php echo $path; ?>images/text/kilim-noir.gif" alt="Kilim Noir" width="177" height="44" /></a>
-  </div>
+  
 </section>
 
 
 <h2><img src="<?php echo $path; ?>images/20.gif" alt="20% off these prints" /></h2>
 
-<section class="threecol">
-  <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=P_LAIT&amp;products_id=558"><img alt="Paisley Au Lait"  src="<?php echo $path; ?>images/swatches/paisley-au-lait.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=P_LAIT&amp;products_id=558"><img src="<?php echo $path; ?>images/text/paisley-au-lait.gif" alt="Paisley Au Lait" width="177" height="44" /></a>
+<section class="threecol">              
+ 
+  <div class="col">      
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_MR&amp;products_id=776"><img alt="The Maharani's Rubies" src="<?php echo $path; ?>images/swatches/maharanis-rubies.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_MR&amp;products_id=776"><img src="<?php echo $path; ?>images/text/maharanis-rubies.gif" alt="The Maharani's Rubies" width="177" height="44" /></a>
   </div>
 
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_PAPILLONS&amp;products_id=602"><img alt="Chasing Butterflies" src="<?php echo $path; ?>images/swatches/chasing-butterflies.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=L_PAPILLONS&amp;products_id=602"><img src="<?php echo $path; ?>images/text/chasing-butterflies.gif" alt="Chasing Butterflies" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_GC&amp;products_id=771"><img alt="Gilded Chocolate" src="<?php echo $path; ?>images/swatches/gilded-chocolate.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_GC&amp;products_id=771"><img src="<?php echo $path; ?>images/text/gilded-chocolate.gif" alt="Gilded Chocolate" width="177" height="44" /></a>
   </div>
 
-  <div class="col"> 
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_NP&amp;products_id=777"><img alt="The Nizam's Pearls"  src="<?php echo $path; ?>images/swatches/the-nizams-pearls.jpg" class="swatch" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=D_INDIA_NP&amp;products_id=777"><img src="<?php echo $path; ?>images/text/the-nizams-pearls.gif" alt="The Nizam's Pearls" width="177" height="44" /></a>
+  <div class="col">
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=P_MOON&amp;products_id=528"><img alt="Purple Moon" src="<?php echo $path; ?>images/swatches/purple-moon.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=P_MOON&amp;products_id=528"><img src="<?php echo $path; ?>images/text/purple-moon.gif" alt="Purple Moon" width="177" height="44" /></a>
   </div>
 </section>
 
