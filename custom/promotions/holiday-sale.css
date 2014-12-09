@@ -1,7 +1,7 @@
 .holiday-sale .promotion .panel {
   background: url('images/panel.png'); 
   width: 509px; 
-  margin: 0 auto; 
+  margin: 0 auto -2em; 
   height: 388px;
   border: 0;
   padding: 4em 2em;
