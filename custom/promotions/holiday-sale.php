@@ -8,13 +8,13 @@
 <section class="threecol">
 
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=M_DEW&amp;products_id=5575"><img alt="Morning Dew" border="0" src="<?php echo $path; ?>images/swatches/morning-dew.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=M_DEW&amp;products_id=557"><img alt="Morning Dew" border="0" src="<?php echo $path; ?>images/swatches/morning-dew.jpg" /></a>
     <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=M_DEW&amp;products_id=557"><img src="<?php echo $path; ?>images/text/morning-dew.gif" alt="Morning Dew" width="177" height="44" /></a>
   </div>
 
   <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=T_GARDEN&amp;products_id=564&amp;products_id=620"><img alt="Tropical Garden" border="0" src="<?php echo $path; ?>images/swatches/tropical-garden.jpg" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=T_GARDEN&amp;products_id=564&amp;products_id=620"><img src="<?php echo $path; ?>images/text/tropical-garden.gif" alt="Tropical Garden" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=T_GARDEN&amp;products_id=564"><img alt="Tropical Garden" border="0" src="<?php echo $path; ?>images/swatches/tropical-garden.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=T_GARDEN&amp;products_id=564"><img src="<?php echo $path; ?>images/text/tropical-garden.gif" alt="Tropical Garden" width="177" height="44" /></a>
   </div>
 
   <div class="col">
@@ -26,7 +26,7 @@
     <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=W_VINES&amp;products_id=531"><img alt="Waltz of the Vines" border="0" src="<?php echo $path; ?>images/swatches/waltz-of-vines.jpg" /></a>
     <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=W_VINES&amp;products_id=531C"><img src="<?php echo $path; ?>images/text/waltz-of-vines.gif" alt="Waltz of the Vines" width="177" height="44" /></a>
   </div>
-  
+
   <div class="col">
     <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=O_BLOSSOM&amp;products_id=982"><img alt="Orange Blossom" border="0" src="<?php echo $path; ?>images/swatches/orange-blossom.jpg" /></a>
     <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=O_BLOSSOM&amp;products_id=982"><img src="<?php echo $path; ?>images/text/orange-blossom.gif" alt="Orange Blossom" width="177" height="44" /></a>
