@@ -1,7 +1,7 @@
 .holiday-sale .promotion .panel {
-  background: url('images/panel.png'); 
-  width: 509px; 
-  margin: 0 auto -2em; 
+  background: url('images/panel.png');
+  width: 509px;
+  margin: 0 auto -2em;
   height: 388px;
   border: 0;
   padding: 4em 2em;
@@ -12,7 +12,7 @@
   font-weight: normal;
   font-size: 21px;
   text-shadow: 0px 1px 0px #8b8e90;
-  font-style: italic; 
+  font-style: italic;
   color: #fff;
   -webkit-text-stroke: 0;
 }

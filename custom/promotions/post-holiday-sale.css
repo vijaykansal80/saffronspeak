@@ -1,0 +1,51 @@
+.post-holiday-sale .promotion .panel {
+  width: 90%;
+  margin: 2em auto;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  border-color: #2a5567;
+}
+
+.post-holiday-sale .promotion .panel p {
+  line-height: 1.4;
+  font-weight: normal;
+  font-size: 21px;
+  -webkit-text-stroke: 0;
+}
+
+.post-holiday-sale .promotion .panel img {
+  margin: 2em 0 1em;
+}
+
+.post-holiday-sale .promotion .panel p:first-of-type:first-letter {
+  color: #2a5567;
+  font-family: Lancelot, cursive;
+  font-style: normal;
+  font-weight: bold;
+  margin: -5px 10px -5px -5px;
+  font-size: 85px;
+  text-shadow: 1px 1px 0px #fff;
+  line-height: .8;
+}
+
+.post-holiday-sale .promotion img:not(.swatch) {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.post-holiday-sale .promotion .swatch {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.post-holiday-sale .promotion h2 {
+  margin: 3em 0 1em;
+  text-align: center;
+}
+
+.post-holiday-sale .promotion h4, .post-holiday-sale .promotion strong {
+  color: #587b8a;
+}
+
+
