@@ -493,7 +493,7 @@ function new_homepage() {
         <?php echo list_posts('latest'); ?>
 
         <?php if (function_exists('wpp_get_mostpopular')):
-            wpp_get_mostpopular("range=monthly&limit=10");
+            wpp_get_mostpopular("range=monthly&limit=10&post_type=post");
         endif; ?>
 
     </div>
