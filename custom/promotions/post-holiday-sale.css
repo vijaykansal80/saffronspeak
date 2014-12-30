@@ -1,5 +1,5 @@
 .post-holiday-sale .promotion .panel {
-  width: 90%;
+  width: 80%;
   margin: 2em auto;
   padding-top: 1em;
   padding-bottom: 3em;
@@ -9,7 +9,7 @@
 .post-holiday-sale .promotion .panel p {
   line-height: 1.4;
   font-weight: normal;
-  font-size: 21px;
+  font-size: 18px;
   -webkit-text-stroke: 0;
 }
 

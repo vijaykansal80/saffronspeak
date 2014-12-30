@@ -1,11 +1,8 @@
 <div class="panel">
-  <p>Welcome to our <strong>biggest sale</strong> of the year! In the spirit of fair trade, we price our linen fairly and stay away from gimmicky discounts and promotions. The reality of retail, however, is that some of our prints sell very well and some do not. Managing inventory efficiently, i.e. basically making sure items do not sit in the warehouse for too long, is one of our biggest challenges.</p>
+  <p>Welcome to our <strong>biggest sale</strong> of the year. In the spirit of fair trade, we price our linen fairly and stay away from gimmicky discounts and promotions. The reality of retail, however, is that some of our prints sell very well and some do not. Managing inventory efficiently, i.e. basically making sure items do not sit in the warehouse for too long, is one of our biggest challenges.  For this holiday sale, we are aggressively discounting overstocked items and discontinued prints for <strong>savings up to 35%</strong>. Happy Shopping!</p>
 
   <img src="<?php echo $path; ?>images/post-holiday-sale.jpg" alt="Post-holiday Sale" />
 
-  <p>With the goal of getting our inventory to the correct levels, we are aggressively discounting overstocked items and discontinued prints this holidays season.</p>
-
-  <p>Remember: quantities are limited, so shop early. Sale ends on Dec 31st. Happy Shopping!</p>
 </div>
 
 <h2><img src="<?php echo $path; ?>images/discontinued-prints.png" alt="Discontinued Prints" /></h2>
@@ -61,8 +58,8 @@
   </div>
 
     <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_MARI&amp;products_id=621"><img alt="Sundari" border="0" src="<?php echo $path; ?>images/swatches/sundari.jpg" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/collection_page.php?cPath=59&amp;model=S_MARI&amp;products_id=621"><img src="<?php echo $path; ?>images/text/sundari.gif" alt="Sundari" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/product_info.php?cPath=25&amp;products_id=128"><img alt="Sundari" border="0" src="<?php echo $path; ?>images/swatches/sundari.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/product_info.php?cPath=25&amp;products_id=128"><img src="<?php echo $path; ?>images/text/sundari.gif" alt="Sundari" width="177" height="44" /></a>
   </div>
 
   <div class="col">
