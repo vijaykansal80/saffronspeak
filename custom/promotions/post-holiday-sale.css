@@ -1,31 +1,20 @@
 .post-holiday-sale .promotion .panel {
-  width: 80%;
+  width: 700px;
+  height: 292px;
   margin: 2em auto;
-  padding-top: 1em;
-  padding-bottom: 3em;
-  border-color: #2a5567;
-}
-
-.post-holiday-sale .promotion .panel p {
+  padding: 3em;
+  border: none;
+  background: url('images/light-panel.png');
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   line-height: 1.4;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 21px;
   -webkit-text-stroke: 0;
 }
 
 .post-holiday-sale .promotion .panel img {
-  margin: 2em 0 1em;
-}
-
-.post-holiday-sale .promotion .panel p:first-of-type:first-letter {
-  color: #2a5567;
-  font-family: Lancelot, cursive;
-  font-style: normal;
-  font-weight: bold;
-  margin: -5px 10px -5px -5px;
-  font-size: 85px;
-  text-shadow: 1px 1px 0px #fff;
-  line-height: .8;
+  margin: -10px 0px 0 -10px;
+  float: left;
 }
 
 .post-holiday-sale .promotion img:not(.swatch) {

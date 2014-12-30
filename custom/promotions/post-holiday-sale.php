@@ -1,8 +1,6 @@
 <div class="panel">
-  <p>Welcome to our <strong>biggest sale</strong> of the year. In the spirit of fair trade, we price our linen fairly and stay away from gimmicky discounts and promotions. The reality of retail, however, is that some of our prints sell very well and some do not. Managing inventory efficiently, i.e. basically making sure items do not sit in the warehouse for too long, is one of our biggest challenges.  For this holiday sale, we are aggressively discounting overstocked items and discontinued prints for <strong>savings up to 35%</strong>. Happy Shopping!</p>
-
-  <img src="<?php echo $path; ?>images/post-holiday-sale.jpg" alt="Post-holiday Sale" />
-
+  <img src="<?php echo $path; ?>images/w.png" alt="W" />elcome to our <strong>biggest sale</strong> of the year. Our entire catalog is on sale! We are also aggressively discounting overstocked items and discontinued prints. Enjoy <strong>savings up to 35%</strong>. Happy Shopping!
+  PS: you save on shipping too&hellip;
 </div>
 
 <h2><img src="<?php echo $path; ?>images/discontinued-prints.png" alt="Discontinued Prints" /></h2>
