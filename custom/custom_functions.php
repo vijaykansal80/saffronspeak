@@ -332,7 +332,7 @@ function custom_menu() { ?>
 			</ul>
 	    </li>
 
-	    <li id="sale-tab"><a href="http://www.saffronmarigold.com/catalog/specials.php">SALE</a></li>
+	    <li id="sale-tab"><a href="http://www.saffronmarigold.com/blog/promotions/post-holiday-sale/">SALE</a></li>
 
 	    <li id="shopby-tab"><a href="http://www.saffronmarigold.com/catalog/shop_by_print.php?cPath=59">Shop&nbsp;by<br>Print</a>
 		    <ul>
