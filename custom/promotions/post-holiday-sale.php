@@ -1,6 +1,6 @@
 <div class="panel">
   <img src="<?php echo $path; ?>images/w.png" alt="W" />elcome to our <strong>biggest sale</strong> of the year. Our entire catalog is on sale! We are also aggressively discounting overstocked items and discontinued prints. Enjoy <strong>savings up to 35%</strong>. Happy Shopping!
-  PS: you save on shipping too&hellip;
+  <br/><br/>PS: you save on shipping too&hellip;
 </div>
 
 <h2><img src="<?php echo $path; ?>images/discontinued-prints.png" alt="Discontinued Prints" /></h2>
@@ -56,8 +56,8 @@
   </div>
 
     <div class="col">
-    <a href="http://www.saffronmarigold.com/catalog/product_info.php?cPath=25&amp;products_id=128"><img alt="Sundari" border="0" src="<?php echo $path; ?>images/swatches/sundari.jpg" /></a>
-    <a href="http://www.saffronmarigold.com/catalog/product_info.php?cPath=25&amp;products_id=128"><img src="<?php echo $path; ?>images/text/sundari.gif" alt="Sundari" width="177" height="44" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/SUNDARI/1008/pink-white-window-treatment.php"><img alt="Sundari" border="0" src="<?php echo $path; ?>images/swatches/sundari.jpg" /></a>
+    <a href="http://www.saffronmarigold.com/catalog/SUNDARI/1008/pink-white-window-treatment.php"><img src="<?php echo $path; ?>images/text/sundari.gif" alt="Sundari" width="177" height="44" /></a>
   </div>
 
   <div class="col">
