@@ -13,15 +13,18 @@
 .valentines-day p.intro:first-letter,
 .valentines-day p.float-left + h3 + p:first-letter,
 .valentines-day .panel p:first-of-type:first-letter {
-    color: #8c0038;
+    color: #8c281b;
     font-family: "Isabella", cursive;
     text-shadow: none;
-    font-size: 128px;
-    margin-right: 11px;
-    margin-top: -15px;
+    font-size: 132px;
+    margin: -30px 10px -20px -20px;
 }
-
-
+.valentines-day .entry-content > p:first-of-type:first-line {
+    color: #8c281b;
+    font-family: "Isabella", cursive;
+    font-size: 48px;
+    line-height: 0.8;
+}
 
 /* Panel styles */
 .valentines-day .panel {
@@ -51,11 +54,11 @@
 
 
 /* Emphasis */
-.valentines-day strong { color: #50616d; }
+.valentines-day strong { color: #4c1617; }
 
 
 /* Text links */
-.valentines-day .entry-content a, .featured-series.valentines-day a {color: #1f2566;}
+.valentines-day .entry-content a, .featured-series.valentines-day a { color: #8c281b; }
 
 
 
@@ -63,14 +66,35 @@
 
 /* Post headings */
 .valentines-day h3 {
-    color: #8c0038;
-    font-size: 4em;
-    margin: 1em 0 .5em;
+    color: #8c281b;
     font-family: "Isabella";
+    font-size: 4em;
+    line-height: 0.5;
+    margin: 1em 0 .5em;
 }
 
-.valentines-day h4 { border-color: #8c0038; }
-.valentines-day h4 a { color: #8c0038; }
+.valentines-day h3:after,
+.valentines-day h3:before {
+    content: "v";
+    display: inline-block;
+    font-family: "saffron-marigold" !important;
+    font-size: 1.25em;
+    line-height: 1;
+    color: #8c281b;
+    opacity: 0.4;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+.valentines-day h3:after {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: translateZ(1px) rotateY(180deg);
+}
+
+.valentines-day h4 { border-color: #4c1617; }
+.valentines-day h4 a { color: #4c1617; }
 
 .valentines-day .twocol h5 { margin-top: 3em; }
 .valentines-day .twocol h4 {
@@ -79,7 +103,7 @@
     border-bottom: 1px solid #1f2566;
     font-size: 1.4em;
 }
-.valentines-day h2, .valentines-day .entry-content h4 a, .valentines-day h4 {color: #1f2566;}
+.valentines-day h2, .valentines-day .entry-content h4 a, .valentines-day h4 { color: #4c1617; }
 
 /* Read more links */
 .valentines-day .read-more a {
