@@ -11,11 +11,11 @@ Description:	Custom styles for Thesis
 
 BASIC USAGE:
 
-If you have enabled the custom stylesheet in the Thesis options panel, the <body> tag 
-will be appended with the "custom" class, like so: <body class="custom">. You can use 
+If you have enabled the custom stylesheet in the Thesis options panel, the <body> tag
+will be appended with the "custom" class, like so: <body class="custom">. You can use
 the "custom" class to override *any* CSS declarations contained in the style.css file.
 
-For example, if you wish to change the default link color to green, you would add the 
+For example, if you wish to change the default link color to green, you would add the
 following declarations to this file:
 
 	.custom a, .custom a:visited { color: #090; }	<--- This makes links green
@@ -32,7 +32,7 @@ in the User's Guide:
 	http://diythemes.com/thesis/rtfm/customizing-thesis-with-customcss/
 */
 
-/* Top Nav bar 
+/* Top Nav bar
 .custom ul#topnav {
 border-style: none;
 list-style-image: none;
@@ -84,7 +84,7 @@ float: left;
 }
 .custom #my-search input#searchsubmit.my-search:hover {
 	background-color: #776f52;
-}	 
+}
 
 /* Teaser should take the entire width */
 .custom .teaser {
@@ -105,7 +105,7 @@ float: left;
 .custom #header_widget_1 ul.sidebar_list li.widget {position: absolute; display: block; top:40px; left:600px; width:200px; }
 
 /*Category page Introductory Headline & Content */
-.custom #archive_intro h1 { 
+.custom #archive_intro h1 {
     color: #8f2c50;
 }
 .custom #archive_intro {
@@ -205,7 +205,7 @@ input[type="text"] {
 	border-left: 2px solid #CCBFB0;
 	color: #968877;
 	font-style: italic;
-	line-height: 1.8em;
+	line-height: 1.8;
 }
 .format_text blockquote cite {
 	font-style: normal;
@@ -275,10 +275,10 @@ ul#main-nav li {
 	display: -moz-inline-stack;
 	display: inline-block;
 	zoom: 1;
-	*display: inline;	
+	*display: inline;
 	text-align: center;
 	font-size: 2em;
-	line-height: .8em;
+	line-height: 0.8;
 	font-family: "Nuptial";
 	margin: 10px 0;
 	width: 56px;
@@ -322,7 +322,7 @@ ul#main-nav li#shopby-tab:before {
 	background: url('images/crown.png') top center no-repeat;
 }
 ul#main-nav li#blog-tab {
-	line-height: 1.9em;
+	line-height: 1.9;
 	font-family: "Gentium Basic", sans-serif;
 	text-transform: uppercase;
 	font-size: 1.6em;
@@ -334,7 +334,7 @@ ul#main-nav li#blog-tab {
 ul#main-nav ul {
 	position: absolute;
 	top: 55px;
-	left: -10px;	
+	left: -10px;
 	border: 1px solid #c1b788;
 	background: #ded3b5;
 	display: none;
@@ -525,7 +525,7 @@ ul#main-nav ul li:hover > a {
 .post-preview h4 {
 	margin: .25em 0 .5em 0;
 	font-size: 1.5em;
-	line-height: 1em;
+	line-height: 1;
 	font-weight: normal;
 }
 .post-preview h4 a {color: #423C2A;}
@@ -598,7 +598,7 @@ ul#main-nav ul li:hover > a {
 .post-excerpt-alt .tags {
 	font-style: italic;
 	font-size: .85em;
-	line-height: 1.4em;
+	line-height: 1.4;
 }
 .post-excerpt-alt .tags span {
 	font-style: normal;
@@ -652,11 +652,11 @@ ul#main-nav ul li:hover > a {
 	vertical-align: top;
 	opacity: .25;
 	font-size: 1.8em;
-	
 }
+
 .category-intro p {
 	font-size: 1.6em;
-	line-height: 1.8em;
+	line-height: 1.8;
 }
 
 /* Category colour-coding */
@@ -705,7 +705,7 @@ ul#main-nav ul li:hover > a {
 }
 .subcategory .badge {
 	position: absolute;
-	top: 20px; 
+	top: 20px;
 	right: -50px;
 	width: 100px;
 	height: 100px;
@@ -762,8 +762,8 @@ body.design-resources { overflow-x: hidden; }
 	display: inline-block;
 	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
 	border-bottom: 2px solid #e6e0c9;
-	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
-	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15);
 	box-shadow: 0 -1px 3px rgba(0,0,0,.15);
 	padding: 10px 15px;
 	font-size: 1.4em;
@@ -797,12 +797,12 @@ body.design-resources { overflow-x: hidden; }
 	margin: 2em -100% 6em;
 	background: #e6e0c9 url('images/seamless-paper-texture.jpg');
 	background-size: 200px 200px;
-	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
-	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
-	box-shadow: 0 -1px 3px rgba(0,0,0,.15); 
+	-moz-box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+	box-shadow: 0 -1px 3px rgba(0,0,0,.15);
 	border-bottom: 1px solid #5a4e1a;
 	font-size: 1.4em;
-	line-height: 1.8em;
+	line-height: 1.8;
 }
 .subcategory-expander:after {
 	display: block;
@@ -862,7 +862,7 @@ h2.series-title a {
 }
 h1.entry-title, h2.entry-title {
 	font-size: 3em;
-	line-height: 1.2em;
+	line-height: 1.2;
 	margin: 0 auto 0;
 }
 
@@ -893,17 +893,22 @@ h1.entry-title, h2.entry-title {
 
 
 
-/* Drop caps */
-.single-post .entry-content > p:first-of-type, p.intro, .featured-series > p:first-of-type {
+/* Emphasis on first paragraph */
+.single-post .entry-content > p:first-of-type,
+p.intro,
+.featured-series > p:first-of-type {
 	font-size: 1.4em;
-	line-height: 1.4em;
+	line-height: 1.4;
 	color: #7D7556;
 	margin: 2em 2em;
 }
-.single-post .entry-content > p:first-of-type:first-letter, p.intro:first-letter, .featured-series p:first-of-type:first-letter {
+
+/* Drop caps */
+.single-post .entry-content > p:first-of-type:first-letter,
+p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	font-family: 'Lancelot', cursive;
 	font-size: 6em;
-	line-height: 1em;
+	line-height: 1;
 	margin: -.05em 4px 0 0;
 	color: #7D7556;
 	float: left;
@@ -935,7 +940,7 @@ figure .circular {
 
 .panel p {
 	font-size: 1.2em;
-	line-height: 1.5em;
+	line-height: 1.5;
 	margin-top: 50px;
 }
 .panel p:first-of-type:first-letter {
@@ -946,7 +951,7 @@ figure .circular {
 	font-weight: bold;
 	font-family: 'Lancelot', cursive;
 }
-.panel .read-more { 
+.panel .read-more {
 	margin: 30px auto 20px;
 	font-size: 1em;
 }
@@ -958,7 +963,7 @@ figure .circular {
 .read-more .parent-expander-link { padding: 8px 20px 8px 25px; }
 .parent-expander-link i {
 	font-size: 1.5em;
-	line-height: .3em;
+	line-height: 0.3;
 	display: inline-block;
 	margin-top: 3px;
 	vertical-align: top;
@@ -975,26 +980,26 @@ section.expander { display: none; }
 .next-post, .previous-post, .all-posts {
 	width: 25%;
 	float: left;
-	line-height: 1.2em;
+	line-height: 1.2;
 	padding-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: .8em;
 }
 
-.previous-post { 
-	margin-right: 1%; 
+.previous-post {
+	margin-right: 1%;
 	text-align: left;
 }
 
-.next-post { 
+.next-post {
 	margin-left: 1%;
 	text-align: right;
 }
 
-.all-posts { 
+.all-posts {
 	width: 48%;
-	text-align: center; 
+	text-align: center;
 }
 .next-post a, .previous-post a, .all-posts a { text-decoration: none; }
 
@@ -1075,7 +1080,7 @@ a.sd-button > span {
   padding: 1px 8px;
   display: block;
   opacity: 0.8;
-  line-height: 1.5em;
+  line-height: 1.5;
   text-shadow: none;
 }
 
@@ -1091,7 +1096,7 @@ a.sd-button > span {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	font-size: .9em;
-}	
+}
 .post-tags a {
 	margin: 0 5px;
 	font-style: italic;
@@ -1197,7 +1202,7 @@ h3 a {
 	margin: 0 auto;
 	padding: 5px 20px;
 	border: 1px solid #482812;
-	color: #fff; 
+	color: #fff;
 	text-decoration: none;
 	font-size: .8em;
 	font-weight: bold;
@@ -1259,7 +1264,7 @@ figcaption {
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-bottom: 1px solid #7D7556;
-	line-height: 1.2em;
+	line-height: 1.2;
 	margin: 0 2em .5em;
 }
 .sourcing .col h4 {
@@ -1270,7 +1275,7 @@ figcaption {
 	text-transform: none;
 	font-style: italic;
 	font-size: 1.4em;
-	line-height: 1em;
+	line-height: 1;
 	font-weight: normal;
 	letter-spacing: 0;
 }
@@ -1290,7 +1295,7 @@ figcaption {
 }
 .sourcing .col p {
 	text-align: left;
-	line-height: 1.6em;
+	line-height: 1.6;
 }
 .sourcing::after {
 	clear: both;
@@ -1371,13 +1376,13 @@ section::after {
 
 /* Table reset */
 
-table, tr, th, td { 
-	border-collapse: collapse; 
-	border:none; 
-} 
+table, tr, th, td {
+	border-collapse: collapse;
+	border:none;
+}
 
-th, td { 
-	padding: 0; 
+th, td {
+	padding: 0;
 }
 
 
@@ -1438,7 +1443,7 @@ th, td {
 	text-transform: uppercase;
 }
 
-.shipping-chart td, 
+.shipping-chart td,
 .shipping-chart th {
 	margin: 0;
 	padding: 10px;
@@ -1447,7 +1452,7 @@ th, td {
 
 .shipping-chart td:nth-child(3n+1) {
 
-} 
+}
 
 .shipping-chart td:nth-child(2n) {
 	color: #7a6659;
@@ -1475,12 +1480,12 @@ th, td {
 
 
 /* Custom styling for the Sultan's Palace series.
- * This should be abstracted out into its own series, ideally with the import references to Almendra 
+ * This should be abstracted out into its own series, ideally with the import references to Almendra
  */
 
 .sultans-palace > p:first-of-type, .sultans-palace > p.intro {
 	font-size: 1.4em;
-	line-height: 1.4em;
+	line-height: 1.4;
 	color: #a45f2f;
 	margin: 2em 2em;
 }
