@@ -1,0 +1,108 @@
+@font-face {
+  font-family: 'Isabella';
+  src: url('isabella-script/Isabella.eot') format('eot');
+  src: url('isabella-script/Isabella.eot?#iefix') format('embedded-opentype'),
+       url('isabella-script/Isabella.woff') format('woff'),
+       url('isabella-script/Isabella.ttf') format('truetype'),
+       url("isabella-script/Isabella.svg#Isabella") format("svg");
+}
+
+/* First-letter and/or word */
+.featured-series.valentines-day > p:first-of-type:first-letter,
+.valentines-day .entry-content > p:first-of-type:first-letter,
+.valentines-day p.intro:first-letter,
+.valentines-day p.float-left + h3 + p:first-letter,
+.valentines-day .panel p:first-of-type:first-letter {
+    color: #8c0038;
+    font-family: "Isabella", cursive;
+    text-shadow: none;
+    font-size: 128px;
+    margin-right: 11px;
+    margin-top: -15px;
+}
+
+
+
+/* Panel styles */
+.valentines-day .panel {
+    background: #1f2566 url('panel-bg.png') no-repeat;
+    border: none;
+    font-size: 1.2em;
+    line-height: 2em;
+    height: 345px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    color: #e6e9f1;
+}
+.valentines-day .panel p:first-of-type:first-letter {
+    font-size: 90px;
+    margin-right: 5px;
+    margin-top: -5px;
+    text-shadow: none;
+    color: #5383A0;
+}
+.valentines-day .series-navigation {
+    background: #1f2566 url('series-navigation.png') no-repeat;
+    padding-top: .5em;
+    height: 245px;
+}
+.valentines-day .entry-content .series-navigation a { color: #5383A0; }
+.valentines-day .entry-content .series-navigation a:hover { color: #52659a; }
+
+
+/* Emphasis */
+.valentines-day strong { color: #50616d; }
+
+
+/* Text links */
+.valentines-day .entry-content a, .featured-series.valentines-day a {color: #1f2566;}
+
+
+
+
+
+/* Post headings */
+.valentines-day h3 {
+    color: #8c0038;
+    font-size: 4em;
+    margin: 1em 0 .5em;
+    font-family: "Isabella";
+}
+
+.valentines-day h4 { border-color: #8c0038; }
+.valentines-day h4 a { color: #8c0038; }
+
+.valentines-day .twocol h5 { margin-top: 3em; }
+.valentines-day .twocol h4 {
+    margin: 0 0 1em;
+    padding: .25em 0 .5em;
+    border-bottom: 1px solid #1f2566;
+    font-size: 1.4em;
+}
+.valentines-day h2, .valentines-day .entry-content h4 a, .valentines-day h4 {color: #1f2566;}
+
+/* Read more links */
+.valentines-day .read-more a {
+    color: #6d6e72;
+    border-color: #ced1d8;
+    text-shadow: 1px 1px 1px #fff;
+    background: #f2f5fc;
+    background: -moz-linear-gradient(top, #f2f5fc 0%, #e6e8ef 24%, #cdd0d7 47%, #dee0e5 77%, #e8eaef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5fc), color-stop(24%,#e6e8ef), color-stop(47%,#cdd0d7), color-stop(77%,#dee0e5), color-stop(100%,#e8eaef));
+    background: -webkit-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -o-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -ms-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: linear-gradient(to bottom, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5fc', endColorstr='#e8eaef',GradientType=0);
+}
+.valentines-day .read-more a:hover {
+    background: #e8eaef;
+    background: -moz-linear-gradient(top, #e8eaef 0%, #dee0e5 23%, #cdd0d7 53%, #e6e8ef 76%, #f2f5fc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8eaef), color-stop(23%,#dee0e5), color-stop(53%,#cdd0d7), color-stop(76%,#e6e8ef), color-stop(100%,#f2f5fc));
+    background: -webkit-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -o-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -ms-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: linear-gradient(to bottom, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8eaef', endColorstr='#f2f5fc',GradientType=0);
+}
+.valentines-day .read-more a .extra { display: none; }

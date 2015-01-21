@@ -1,6 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Lancelot);
-@import url(http://fonts.googleapis.com/css?family=Tangerine:400,700);
 @import url(http://fonts.googleapis.com/css?family=Almendra:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Almendra+Display);
 @import url("fonts/nuptial.css");
@@ -1475,27 +1474,9 @@ th, td {
 
 
 
-/* These should be abstracted out into their own series, ideally with the import references to Tangerine and Almendra */
-
-
-/* Use custom styles for "romantic" posts */
-.romantic h3 {
-	color: #8c0038;
-	font-size: 3em;
-	margin: 1em 0 .5em;
-	text-align: center;
-	font-family: 'Tangerine', cursive;
-	clear: both;
-}
-.romantic h4 {
-	border-color: #8c0038;
-}
-.romantic h4 a {
-	color: #8c0038;
-}
-
-
-/* Use custom styles for "Sultan's Palace" posts */
+/* Custom styling for the Sultan's Palace series.
+ * This should be abstracted out into its own series, ideally with the import references to Almendra 
+ */
 
 .sultans-palace > p:first-of-type, .sultans-palace > p.intro {
 	font-size: 1.4em;
