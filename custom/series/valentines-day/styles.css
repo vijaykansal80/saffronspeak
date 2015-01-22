@@ -24,33 +24,23 @@
     font-family: "Isabella", cursive;
     font-size: 48px;
     line-height: 0.8;
+    word-spacing: 5px;
 }
 
 /* Panel styles */
 .valentines-day .panel {
-    background: #1f2566 url('panel-bg.png') no-repeat;
-    border: none;
-    font-size: 1.2em;
-    line-height: 2em;
-    height: 345px;
-    box-sizing: border-box;
-    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-    color: #e6e9f1;
+    background: #edccb6 url('panel.jpg') repeat;
+    color: #4c1617;
 }
 .valentines-day .panel p:first-of-type:first-letter {
     font-size: 90px;
-    margin-right: 5px;
-    margin-top: -5px;
-    text-shadow: none;
-    color: #5383A0;
+    margin: -15px 10px 0 0;
 }
-.valentines-day .series-navigation {
-    background: #1f2566 url('series-navigation.png') no-repeat;
-    padding-top: .5em;
-    height: 245px;
+
+/* Series navigation */
+.valentines-day .series-navigation p {
+    margin: 4em 2em;
 }
-.valentines-day .entry-content .series-navigation a { color: #5383A0; }
-.valentines-day .entry-content .series-navigation a:hover { color: #52659a; }
 
 
 /* Emphasis */
@@ -59,10 +49,6 @@
 
 /* Text links */
 .valentines-day .entry-content a, .featured-series.valentines-day a { color: #8c281b; }
-
-
-
-
 
 /* Post headings */
 .valentines-day h3 {
@@ -73,8 +59,8 @@
     margin: 1em 0 .5em;
 }
 
-.valentines-day h3:after,
-.valentines-day h3:before {
+.valentines-day .entry-content > h3:after,
+.valentines-day .entry-content > h3:before {
     content: "v";
     display: inline-block;
     font-family: "saffron-marigold" !important;
