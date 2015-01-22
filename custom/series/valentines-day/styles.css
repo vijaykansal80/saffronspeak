@@ -51,7 +51,7 @@
 .valentines-day .entry-content a, .featured-series.valentines-day a { color: #8c281b; }
 
 /* Post headings */
-.valentines-day h3 {
+.valentines-day .entry-content > h3 {
     color: #8c281b;
     font-family: "Isabella";
     font-size: 4em;
