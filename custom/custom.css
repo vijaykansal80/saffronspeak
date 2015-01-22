@@ -1243,11 +1243,14 @@ figure:not(.col) {
 	text-align: center;
 	margin: 1em 5px 2em;
 }
+
 figcaption {
     text-align: center;
     font-style: italic;
 }
 
+figcaption h5 { font-style: normal; }
+figcaption h4 { border: none; }
 
 
 /* Sourcing boxes */

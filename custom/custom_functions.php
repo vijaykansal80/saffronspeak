@@ -102,7 +102,8 @@ function cleaner_caption( $output, $attr, $content ) {
         'id' => '',
         'align' => 'alignnone',
         'width' => '',
-        'caption' => ''
+        'caption' => '',
+        'class' => '',
     );
 
     /* Merge the defaults with user input. */
@@ -112,9 +113,12 @@ function cleaner_caption( $output, $attr, $content ) {
     if ( empty( $attr['caption'] ) )
         return $content;
 
+    /* Strip out line breaks (WordPress seems to be adding some for no good reason) */
+    $attr['caption'] = str_replace("<br />", "", $attr['caption']);
+
     /* Set up the attributes for the caption <div>. */
     $attributes = ( !empty( $attr['id'] ) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '' );
-    $attributes .= ' class="' . esc_attr( $attr['align'] ) . '"';
+    $attributes .= ' class="' . esc_attr( $attr['align'] ) . ' ' . esc_attr( $attr['class'] ) . '"';
 
     /* Open the caption <div>. */
     $output = '<figure' . $attributes .'>';
