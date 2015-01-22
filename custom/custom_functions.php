@@ -45,6 +45,7 @@ add_theme_support('post-thumbnails');
 
 function add_custom_sizes() {
     add_image_size('yarpp-thumbnail', 400, auto, true);
+    add_image_size('square', 300, 300, true);
 }
 add_action('after_setup_theme','add_custom_sizes');
 
