@@ -1352,13 +1352,25 @@ section.fourcol, section.threecol, section.twocol {
 	text-align: center;
 	box-sizing: border-box;
 }
-.col p {text-align: left;}
+
+.col p { text-align: left; }
+
 .col h4 {
 	text-align: center;
 	border-bottom: 0;
 	font-size: 1.1em;
 	margin: 0;
 }
+
+.twocol h5 { margin-top: 3em; }
+
+.twocol h4 {
+    margin: 0 0 1em;
+    padding: .25em 0 .5em;
+    border-top: 1px solid #7D7556;
+    font-size: 1.4em;
+}
+
 p.float-left {
 	width: 40%;
 	float: left;

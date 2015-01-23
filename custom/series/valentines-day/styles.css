@@ -80,15 +80,13 @@
 }
 
 .valentines-day h4 { border-color: #4c1617; }
-.valentines-day h4 a { color: #4c1617; }
 
-.valentines-day .twocol h4 {
-    margin: 0 0 1em;
-    padding: .25em 0 .5em;
-    border-top: 1px solid #f0d8c7;
-    font-size: 1.25em;
+.valentines-day h2,
+.valentines-day .entry-content h4 a,
+.valentines-day h4,
+.valentines-day h4 a {
+    color: #4c1617;
 }
-.valentines-day h2, .valentines-day .entry-content h4 a, .valentines-day h4 { color: #4c1617; }
 
 /* Read more links */
 .valentines-day .read-more a {

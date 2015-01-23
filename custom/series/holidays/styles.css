@@ -113,15 +113,8 @@
 
 
 /* Post headings */
-.holidays h4 {border-color: #1f2566;}
-.holidays .twocol h5 { margin-top: 3em; }
-.holidays .twocol h4 {
-    margin: 0 0 1em;
-    padding: .25em 0 .5em;
-    border-bottom: 1px solid #1f2566;
-    font-size: 1.4em;
-}
-.holidays h2, .holidays .entry-content h4 a, .holidays h4 {color: #1f2566;}
+.holidays h4 { border-color: #1f2566; }
+.holidays h2, .holidays .entry-content h4 a, .holidays h4 { color: #1f2566; }
 
 /* Read more links */
 .holidays .read-more a {
