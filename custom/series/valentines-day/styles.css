@@ -34,7 +34,8 @@
 }
 .valentines-day .panel p:first-of-type:first-letter {
     font-size: 90px;
-    margin: -15px 10px 0 0;
+    line-height: 0.6;
+    margin: -10px 10px -10px -20px;
 }
 
 /* Series navigation */
