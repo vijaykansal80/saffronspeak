@@ -44,15 +44,15 @@
 }
 
 /* Make images a smidge smaller */
-.valentines-day .twocol img {
+.valentines-day .alternating img {
     max-width: 85%;
 }
 
-.valentines-day .twocol:nth-of-type(odd) img {
+.valentines-day .alternating:nth-of-type(odd) img {
     margin-left: 25%;
 }
 
-.valentines-day .twocol:nth-of-type(even) img {
+.valentines-day .alternating:nth-of-type(even) img {
     margin-right: 25%;
 }
 
