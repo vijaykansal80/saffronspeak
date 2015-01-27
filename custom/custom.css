@@ -925,14 +925,17 @@ p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	background: rgba(255,255,255,.75);
 	box-sizing: border-box;
 }
+
 .panel figure, .panel figure:not(.col) {
     float: left;
     margin: 0 50px 0 0;
 }
+
 .panel figure img {
     max-width: 280px;
     height: auto;
 }
+
 figure .circular {
     border-radius: 50%;
     border-width: 4px;
@@ -943,6 +946,7 @@ figure .circular {
 	line-height: 1.5;
 	margin-top: 50px;
 }
+
 .panel p:first-of-type:first-letter {
 	float: left;
 	font-size: 3.5em;
@@ -951,12 +955,37 @@ figure .circular {
 	font-weight: bold;
 	font-family: 'Lancelot', cursive;
 }
+
 .panel .read-more {
 	margin: 30px auto 20px;
 	font-size: 1em;
 }
+
 .panel h3 a { text-decoration: none; }
 
+/* Adjust a bit for two items in panel */
+.panel.twofig figure {
+	margin: 20px 0 10px 0;
+}
+
+.panel.twofig figure:first-of-type {
+	margin-left: -50px;
+}
+
+.panel.twofig figure:last-of-type {
+	margin-right: -50px;
+}
+
+.panel.twofig figure img.circular {
+	border-width: 2px !important;
+	max-width: 200px;
+}
+
+.panel.twofig p {
+	float: left;
+	margin: 20px 6px 20px 30px;
+	width: 400px;
+}
 
 /* Multi-sectioned parent posts */
 .parent-expander-link:after, .parent-expander-link:before { display: none; }
