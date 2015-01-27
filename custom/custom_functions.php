@@ -147,7 +147,7 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 130;
+$featured_series = 114;
 $featured = get_term_by('id', $featured_series, 'category');
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
@@ -732,9 +732,9 @@ class archive_looper extends thesis_custom_loop {
                     <h2><?php echo $subcategory->name; ?></h2>
                     <?php // Currently featured category should show an "Updated for..." badge
                         global $featured;
-                        if ( $subcategory->term_id == $featured->term_id ):
+                        if( $subcategory->term_id == $featured->term_id ):
                     ?>
-                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2014.png" alt="Updated for 2014"/>
+                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2015.png" alt="Updated for 2015"/>
                     <?php endif; ?>
                     <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
                     <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
