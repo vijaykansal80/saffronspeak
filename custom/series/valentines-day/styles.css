@@ -43,19 +43,6 @@
     margin: 4em 2em;
 }
 
-/* Make images a smidge smaller */
-.valentines-day .alternating img {
-    max-width: 85%;
-}
-
-.valentines-day .alternating:nth-of-type(odd) img {
-    margin-left: 25%;
-}
-
-.valentines-day .alternating:nth-of-type(even) img {
-    margin-right: 25%;
-}
-
 /* Emphasis */
 .valentines-day strong { color: #4c1617; }
 

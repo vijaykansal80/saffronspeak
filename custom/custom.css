@@ -1362,6 +1362,7 @@ section.fourcol, section.threecol, section.twocol {
 	margin: 0;
 }
 
+/* Change heading styles a smidge for certain layouts */
 .twocol h5 { margin-top: 3em; }
 
 .twocol h4 {
@@ -1371,6 +1372,20 @@ section.fourcol, section.threecol, section.twocol {
     font-size: 1.4em;
 }
 
+/* Make images a smidge smaller */
+.alternating img {
+    max-width: 85%;
+}
+
+.alternating:nth-of-type(odd) img {
+    margin-left: 25%;
+}
+
+.alternating:nth-of-type(even) img {
+    margin-right: 25%;
+}
+
+/* Clean up formatting issues */
 p.float-left {
 	width: 40%;
 	float: left;
