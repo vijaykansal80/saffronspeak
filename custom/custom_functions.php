@@ -45,6 +45,7 @@ add_theme_support('post-thumbnails');
 
 function add_custom_sizes() {
     add_image_size('yarpp-thumbnail', 400, auto, true);
+    add_image_size('square', 300, 300, true);
 }
 add_action('after_setup_theme','add_custom_sizes');
 
@@ -101,7 +102,8 @@ function cleaner_caption( $output, $attr, $content ) {
         'id' => '',
         'align' => 'alignnone',
         'width' => '',
-        'caption' => ''
+        'caption' => '',
+        'class' => '',
     );
 
     /* Merge the defaults with user input. */
@@ -111,9 +113,12 @@ function cleaner_caption( $output, $attr, $content ) {
     if ( empty( $attr['caption'] ) )
         return $content;
 
+    /* Strip out line breaks (WordPress seems to be adding some for no good reason) */
+    $attr['caption'] = str_replace("<br />", "", $attr['caption']);
+
     /* Set up the attributes for the caption <div>. */
     $attributes = ( !empty( $attr['id'] ) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '' );
-    $attributes .= ' class="' . esc_attr( $attr['align'] ) . '"';
+    $attributes .= ' class="' . esc_attr( $attr['align'] ) . ' ' . esc_attr( $attr['class'] ) . '"';
 
     /* Open the caption <div>. */
     $output = '<figure' . $attributes .'>';
@@ -142,7 +147,7 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 130;
+$featured_series = 114;
 $featured = get_term_by('id', $featured_series, 'category');
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
@@ -727,9 +732,9 @@ class archive_looper extends thesis_custom_loop {
                     <h2><?php echo $subcategory->name; ?></h2>
                     <?php // Currently featured category should show an "Updated for..." badge
                         global $featured;
-                        if ( $subcategory->term_id == $featured->term_id ):
+                        if( $subcategory->term_id == $featured->term_id ):
                     ?>
-                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2014.png" alt="Updated for 2014"/>
+                        <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2015.png" alt="Updated for 2015"/>
                     <?php endif; ?>
                     <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
                     <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
