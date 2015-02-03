@@ -33,6 +33,7 @@
     color: #4c1617;
 }
 .valentines-day .panel p:first-of-type:first-letter {
+    font-weight: normal;
     font-size: 90px;
     line-height: 0.6;
     margin: -10px 10px -10px -20px;
