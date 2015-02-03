@@ -819,22 +819,18 @@ function add_params($query_vars) {
     $query_vars[] = 'featured';
     return $query_vars;
 }
-
 add_filter('query_vars', 'add_params' );
-
 
 function show_featured_image() {
     global $post;
-    global $wp_query;
-    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) || ( ! is_page() AND isset($wp_query->query_vars['featured']) ) ):
+    if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) || ( ! is_page() AND "yes" == get_query_var('featured') ) ):
         if ( has_post_thumbnail() ) {
-            echo the_post_thumbnail();
+            echo "<br />";
+            echo the_post_thumbnail('medium');
         }
     endif;
 }
-
 add_filter('thesis_hook_after_headline', 'show_featured_image');
-
 
 // This creates a custom instance of the byline/post meta boxes—publishing information on top, category information below
 
