@@ -67,14 +67,21 @@
 
 /* Panel styles */
 .spring .panel {
-    background: #edccb6 url('panel.jpg') repeat;
-    color: #5dad64;
+    background: #edccb6 url('symphony.png') repeat;
+    border-color: #5dad64;
 }
+
 .spring .panel p:first-of-type:first-letter {
     font-weight: normal;
     font-size: 90px;
     line-height: 0.6;
     margin: -10px 10px -10px -20px;
+}
+
+.spring .panel figure img {
+    background: none;
+    box-shadow: none;
+    padding: 0;
 }
 
 /* Series navigation */
