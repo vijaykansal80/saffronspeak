@@ -1325,12 +1325,15 @@ figcaption h4 { border: none; }
 	text-align: center;
 }
 .sourcing h4 {
+	color: #a58059;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	font-weight: bold;
-	border-bottom: 1px solid #7D7556;
+	border-bottom: 1px solid #d7b693;
 	line-height: 1.2;
-	margin: 0 2em .5em;
+	margin: 0.5em 2em 1.5em;
+	font-size: 1.1em;
+	padding-bottom: .5em;
 }
 .sourcing .col h4 {
 	margin: 0 0 10px 0;
@@ -1350,13 +1353,16 @@ figcaption h4 { border: none; }
 }
 .sourcing ol li::before {
 	content: counter(sources) ".";
-    counter-increment: sources;
-    margin-right: 5px;
+  counter-increment: sources;
+  margin-right: 5px;
 }
 .sourcing ol li {
 	display: inline;
 	margin: 0 10px 0 10px;
 	white-space: nowrap;
+}
+.sourcing .col ol {
+	text-align: left;
 }
 .sourcing .col p {
 	text-align: left;
@@ -1427,7 +1433,7 @@ section.fourcol, section.threecol, section.twocol {
 /* Change heading styles a smidge for certain layouts */
 .twocol h5 { margin-top: 3em; }
 
-.twocol h4 {
+.twocol:not(.sourcing) h4 {
     margin: 0 0 1em;
     padding: .25em 0 .5em;
     border-top: 1px solid #7D7556;

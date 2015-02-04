@@ -139,6 +139,11 @@
     color: #5dad64;
 }
 
+.spring .sourcing h4 {
+    color: #a58059;
+    border-color: #d7b693;
+}
+
 /* Read more links */
 .spring .read-more a {
     color: #fff;
