@@ -35,9 +35,34 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Showcase Mini';
+    src: url('showcase/showcasesansmini-webfont.eot');
+    src: url('showcase/showcasesansmini-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasesansmini-webfont.woff2') format('woff2'),
+         url('showcase/showcasesansmini-webfont.woff') format('woff'),
+         url('showcase/showcasesansmini-webfont.ttf') format('truetype'),
+         url('showcase/showcasesansmini-webfont.svg#showcasesans_mini') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Sans';
+    src: url('showcase/showcasesans-webfont.eot');
+    src: url('showcase/showcasesans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasesans-webfont.woff2') format('woff2'),
+         url('showcase/showcasesans-webfont.woff') format('woff'),
+         url('showcase/showcasesans-webfont.ttf') format('truetype'),
+         url('showcase/showcasesans-webfont.svg#showcasesans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* Manual emphasis on first couple of words */
 .spring .entry-content b {
-    color: #418fac;
+    color: #4f788f;
     font-family: "Showcase Script";
     font-weight: normal;
     font-size: 36px;
@@ -52,10 +77,14 @@
     margin-top: -20px;
 }
 
+.spring .entry-content b:first-letter {
+    color: purple;
+}
+
 /* Panel styles */
 .spring .panel {
     background: #edccb6 url('symphony.png') repeat;
-    border-color: #5dad64;
+    border-color: #45814b;
 }
 
 .spring .panel b {
@@ -74,14 +103,20 @@
 }
 
 /* Emphasis */
-.spring strong { color: #5dad64; }
+.spring strong {
+    color: #45814b;
+    font-family: "Showcase Slab";
+    font-size: 1.15em;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
 
 /* Text links */
-.spring .entry-content a, .featured-series.spring a { color: #418fac; }
+.spring .entry-content a, .featured-series.spring a { color: #4f788f; }
 
 /* Post headings */
 .spring .entry-content > h3 {
-    color: #418fac;
+    color: #4f788f;
     font-family: "Showcase Script";
     font-size: 2em;
     line-height: 0.5;
@@ -94,7 +129,7 @@
 }
 
 .spring .entry-content > h3 span {
-    color: #5dad64;
+    color: #45814b;
     display: block;
     font-family: "Showcase Slab";
     margin: 35px auto 25px;
@@ -102,7 +137,7 @@
 
 .spring .entry-content > h3 span:after,
 .spring .entry-content > h3 span:before {
-    color: #5dad64;
+    color: #45814b;
     content: "S";
     display: inline-block;
     font-family: "Showcase Ornament";
@@ -120,14 +155,14 @@
 }
 
 .spring .entry-content h4 {
-    border-color: #5dad64;
+    border-color: #45814b;
 }
 
 .spring h2,
 .spring .entry-content h4 a,
 .spring h4,
 .spring h4 a {
-    color: #5dad64;
+    color: #45814b;
 }
 
 .spring .sourcing h4 {
@@ -139,8 +174,8 @@
 .spring .read-more a {
     color: #fff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
-    background: #418fac;
+    background: #4f788f;
 }
 .spring .read-more a:hover {
-    background: #5dad64;
+    background: #45814b;
 }
