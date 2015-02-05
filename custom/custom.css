@@ -144,9 +144,16 @@ body, input {
 * html .clearfix             { zoom: 1; } /* IE6 */
 *:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
-
-
-
+/* Style list items */
+.entry-content ol,
+.entry-content ul {
+	margin: 0 0 3em;
+}
+.entry-content ol li,
+.entry-content ul li {
+	list-style-position: inside;
+	margin: .5em 0;
+}
 
 /* Use consistent styling for images */
 .entry-content img, .section img, figure img, img.bordered, .related-posts img, .subcategory img, .promotion img {
