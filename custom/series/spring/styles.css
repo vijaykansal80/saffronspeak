@@ -130,6 +130,10 @@
 }
 
 /* Series navigation */
+.spring .series-navigation {
+    background-image: url('symphony-blue.png');
+}
+
 .spring .series-navigation p {
     margin: 4em 2em;
 }
