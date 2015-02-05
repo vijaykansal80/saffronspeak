@@ -11,13 +11,16 @@ Custom styles for Fall series
 .fall .panel p:first-of-type:first-letter {
     color: #c06538;
     font-family: 'Great Vibes', cursive;
-    text-shadow: none;
-    margin-right: 30px;
-    margin-top: -30px;
+    float: left;
+    font-size: 72px;
+    line-height: 1;
+    margin: -10px 10px 0 -15px
 }
+
 .fall .panel p:first-of-type:first-letter {
-    margin-right: 15px;
-    margin-top: -15px;
+    font-size: 48px;
+    margin-right: 5px;
+    margin-top: -20px;
 }
 
 .fall .entry-content a, .featured-series.fall a {color: #8b2517;}

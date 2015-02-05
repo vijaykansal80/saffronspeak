@@ -13,12 +13,14 @@
     font-size: 128px;
     margin-right: 11px;
     margin-top: -15px;
+    float: left;
+    line-height: 1;
 }
 .holidays .entry-content > p:first-of-type:first-line {
     color: #52659a;
     font-family: "Elsie Swash Caps", cursive;
     font-size: 28px;
-} 
+}
 
 
 
