@@ -903,7 +903,8 @@ p.intro,
 	margin: 2em 2em;
 }
 
-/* Drop caps */
+/* Drop caps should only be automatically applied if there isn't a series set */
+/*
 .single-post .entry-content > p:first-of-type:first-letter,
 p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	font-family: 'Lancelot', cursive;
@@ -914,6 +915,16 @@ p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	float: left;
 	text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
 }
+
+.panel p:first-of-type:first-letter {
+	float: left;
+	font-size: 3.5em;
+	margin: 2px 2px 0 -4px;
+	color: #93765e;
+	font-weight: bold;
+	font-family: 'Lancelot', cursive;
+}
+*/
 
 
 /* Panel elements */
@@ -945,15 +956,6 @@ figure .circular {
 	font-size: 1.2em;
 	line-height: 1.5;
 	margin-top: 50px;
-}
-
-.panel p:first-of-type:first-letter {
-	float: left;
-	font-size: 3.5em;
-	margin: 2px 2px 0 -4px;
-	color: #93765e;
-	font-weight: bold;
-	font-family: 'Lancelot', cursive;
 }
 
 .panel .read-more {

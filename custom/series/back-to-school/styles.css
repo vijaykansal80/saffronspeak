@@ -11,8 +11,10 @@ Custom styles for Dorm Decor series
 .back-to-school .panel p:first-of-type:first-letter {
     color: #447e94;
     font-family: 'Milonga', cursive;
-    text-shadow: none;
-    margin-top
+    float: left;
+    line-height: 1;
+    font-size: 78px;
+    margin: -.05em 4px 0 0;
 }
 .back-to-school .entry-content a, .featured-series.back-to-school a {
     color: #213164;

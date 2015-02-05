@@ -6,7 +6,13 @@ Custom styles for Father's Day series
 .fathers-day > p.intro:first-letter, 
 .fathers-day p.float-left + h3 + p:first-letter, 
 .fathers-day .panel p:first-letter {
+    font-family: 'Lancelot', cursive;
+    font-size: 6em;
+    margin: -.05em 4px 0 0;
+    text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
     color: #512105;
+    float: left;
+    line-height: 1;
 }
 .fathers-day a {
     color: #8c0038;

@@ -15,7 +15,8 @@
 .valentines-day .panel p:first-of-type:first-letter {
     color: #8c281b;
     font-family: "Isabella", cursive;
-    text-shadow: none;
+    float: left;
+    line-height: 1;
     font-size: 132px;
     margin: -30px 10px -20px -20px;
 }
