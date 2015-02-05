@@ -85,6 +85,7 @@
 .spring .panel {
     background: #edccb6 url('symphony.png') repeat;
     border-color: #45814b;
+    position: relative;
 }
 
 .spring .panel b {
@@ -95,6 +96,37 @@
     background: none;
     box-shadow: none;
     padding: 0;
+}
+
+.spring .panel figcaption {
+    color: #45814b;
+    font-family: "Showcase Slab";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.spring .panel figcaption:before,
+.spring .panel figcaption:after {
+    content: "1";
+    display: inline-block;
+    font-family: "Showcase Ornament";
+    padding: 0 10px;
+}
+
+.spring .panel figcaption:after {
+    content: "3";
+}
+
+.spring .panel:before {
+    color: #45814b;
+    content: "F";
+    display: block;
+    font-family: "Showcase Ornament";
+    font-size: 31px;
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
 }
 
 /* Series navigation */
@@ -128,6 +160,16 @@
     font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
 }
 
+.spring .entry-content > h3:before {
+    color: #45814b;
+    content: "v";
+    display: block;
+    font-family: "Showcase Ornament";
+    font-size: 29px;
+    line-height: 1;
+    padding: 0 0 20px;
+}
+
 .spring .entry-content > h3 span {
     color: #45814b;
     display: block;
@@ -135,23 +177,34 @@
     margin: 35px auto 25px;
 }
 
-.spring .entry-content > h3 span:after,
-.spring .entry-content > h3 span:before {
+.spring .entry-content > h3 > span:after,
+.spring .entry-content > h3 > span:before,
+.spring .entry-content > h3 span span:before {
     color: #45814b;
     content: "S";
     display: inline-block;
     font-family: "Showcase Ornament";
-    font-size: 0.7em;
+    font-size: 22px;
     line-height: 1;
     padding: 0 5px;
     vertical-align: 7px;
 }
 
-.spring .entry-content > h3 span:after {
+.spring .entry-content > h3 > span:after {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
-    transform: translateZ(1px) rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.spring .entry-content > h3 span span {
+    display: inline;
+}
+
+.spring .entry-content > h3 span span:before {
+    content: "X";
+    padding: 0;
+    vertical-align: 0;
 }
 
 .spring .entry-content h4 {
