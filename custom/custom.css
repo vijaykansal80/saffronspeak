@@ -1245,12 +1245,13 @@ a.sd-button > span {
 
 
 
-.column p {
+.column p,
+.parent-post .col p:not(.read-more) {
 	text-align: left;
 	font-style: italic;
 	font-size: 1.1em;
 }
-.column a + p {display: none;}
+.column a + p { display: none; }
 
 h3 {
 	clear: both;
@@ -1263,7 +1264,8 @@ h3 {
 h3 a {
 	text-decoration: none;
 }
-.read-more, .column .read-more {
+.read-more,
+.column .read-more {
 	text-align: center;
 	font-style: normal;
 }
@@ -1397,7 +1399,11 @@ section.fourcol, section.threecol, section.twocol {
 	margin-right: 2%;
 	float: left;
 }
-.twocol .col:nth-of-type(2n) {
+.twocol .col:nth-of-type(odd) {
+	clear: left;
+}
+.twocol .col:nth-of-type(even) {
+	clear: none;
 	margin-right: 0;
 }
 .threecol .col {
@@ -1425,24 +1431,30 @@ section.fourcol, section.threecol, section.twocol {
 .fivecol .col:nth-of-type(5n) {
 	margin-right: 0;
 }
-.col {
+
+body:not(.parent-post) .col {
 	text-align: center;
 	box-sizing: border-box;
 }
 
-.col p { text-align: left; }
+body:not(.parent-post) .col p { text-align: left; }
 
-.col h4 {
+body:not(.parent-post) .col h4 {
 	text-align: center;
 	border-bottom: 0;
 	font-size: 1.1em;
 	margin: 0;
 }
 
+.parent-post .col h4 {
+	text-align: center;
+	font-size: 1.25em;
+}
+
 /* Change heading styles a smidge for certain layouts */
 .twocol h5 { margin-top: 3em; }
 
-.twocol:not(.sourcing) h4 {
+body:not(.parent-post) .twocol:not(.sourcing) h4 {
     margin: 0 0 1em;
     padding: .25em 0 .5em;
     border-top: 1px solid #7D7556;
