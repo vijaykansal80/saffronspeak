@@ -75,11 +75,10 @@ add_action('pre_get_posts', 'custom_posts_per_page');
 
 
 // Remove sharing links from post excerpts
-add_action( 'init', 'my_remove_filters_func' );
-
 function my_remove_filters_func() {
      remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
+add_action( 'init', 'my_remove_filters_func' );
 
 // Add a "more" link to excerpts
 function new_excerpt_more($more) {
@@ -211,15 +210,20 @@ function category_class($classes) {
 
     // for individual post pages
     if (is_single()):
+        // Put category slugs in body class
         $categories = get_the_category($post->ID);
         foreach($categories as $category):
-            // generate a list of parent categories as well
+            // Generate a list of parent categories as well
             $parents = get_category_parents($category, false, ',');
             $parents = explode(',', $parents);
             foreach ($parents as $parent):
                 $classes[] = str_replace(' ', '-', strtolower($parent));
             endforeach;
         endforeach;
+        // If this post is sticky (ie, a parent post), add a tag for that, too
+        if ( is_sticky() ):
+            $classes[] = "parent-post";
+        endif;
     $classes[] = "single-post";
     endif;
 
