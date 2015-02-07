@@ -73,12 +73,7 @@
     font-feature-settings: "dlig", "clig", "calt";
     letter-spacing: 0;
     line-height: 1;
-    margin-left: -20px;
-    margin-top: -20px;
-}
-
-.spring .entry-content b:first-letter {
-    color: purple;
+    margin-top: -20px 10px 0 -20px;
 }
 
 /* Panel styles */
@@ -90,6 +85,7 @@
 
 .spring .panel b {
     font-size: 29px;
+    color: #45814b;
 }
 
 .spring .panel figure img {
@@ -125,26 +121,36 @@
     font-family: "Showcase Ornament";
     font-size: 31px;
     position: absolute;
-    bottom: 50px;
+    bottom: 40px;
     right: 20px;
 }
 
 /* Series navigation */
 .spring .series-navigation {
     background-image: url('symphony-blue.png');
+    border-color: #4f788f;
+}
+
+.spring .series-navigation:before {
+    color: #4f788f;
+    bottom: 60px;
 }
 
 .spring .series-navigation p {
     margin: 4em 2em;
 }
 
+.spring .series-navigation b {
+    color: #4f788f;
+}
+
+.spring .series-navigation .next-post {
+    position: relative;
+}
+
 /* Emphasis */
 .spring strong {
     color: #45814b;
-    font-family: "Showcase Slab";
-    font-size: 1.15em;
-    font-weight: normal;
-    letter-spacing: 1px;
 }
 
 /* Text links */
