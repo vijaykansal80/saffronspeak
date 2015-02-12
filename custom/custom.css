@@ -1060,8 +1060,6 @@ figure .circular {
 section.expander { display: none; }
 
 
-
-
 /* Post footers */
 
 /* Series navigation */
@@ -1510,6 +1508,23 @@ section::after {
 	clear: both;
 }
 
+/* Call to actions */
+.call-to-action {
+	font-size: 1.1em;
+	margin-bottom: 40px;
+}
+
+.call-to-action .text {
+	float: left;
+	width: calc(100% - 350px);
+}
+
+.call-to-action .action img {
+	box-shadow: 0;
+	float: right;
+	padding: 0;
+	margin: 13px 0 0 10px;
+}
 
 /* Table reset */
 
