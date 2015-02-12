@@ -207,23 +207,41 @@ input[type="text"] {
 
 /* Blockquotes */
 .format_text blockquote {
+	border-left: 0;
 	margin: 2em 0;
-	font-size: 1.3em;
-	border-left: 2px solid #CCBFB0;
+	font-size: 1.2em;
 	color: #968877;
 	font-style: italic;
-	line-height: 1.8;
+	line-height: 1.6;
+	position: relative;
+	z-index: 1000;
 }
+
+.format_text blockquote:before {
+	color: #CCBFB0;
+	content: "“";
+	font-family: Georgia, Times, "Times New Roman", serif;
+	font-size: 121px;
+	font-style: normal;
+	opacity: 0.4;
+	position: absolute;
+	top: -50px;
+	left: -20px;
+	z-index: -1;
+}
+
 .format_text blockquote cite {
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: .75em;
 	letter-spacing: 1px;
 }
+
 .format_text blockquote cite:before {
 	content: '\2014';
 	display: inline-block;
 }
+
 .format_text cite a { text-decoration: none; }
 
 
@@ -1042,8 +1060,6 @@ figure .circular {
 section.expander { display: none; }
 
 
-
-
 /* Post footers */
 
 /* Series navigation */
@@ -1492,6 +1508,23 @@ section::after {
 	clear: both;
 }
 
+/* Call to actions */
+.call-to-action {
+	font-size: 1.1em;
+	margin-bottom: 40px;
+}
+
+.call-to-action .text {
+	float: left;
+	width: calc(100% - 350px);
+}
+
+.call-to-action .action img {
+	box-shadow: 0;
+	float: right;
+	padding: 0;
+	margin: 13px 0 0 10px;
+}
 
 /* Table reset */
 
