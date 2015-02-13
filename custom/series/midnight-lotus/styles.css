@@ -1,0 +1,134 @@
+/* Manual emphasis on first couple of words */
+.midnight-lotus .entry-content b {
+    color: #5077ac;
+    font-family: "Showcase Script";
+    font-weight: normal;
+    font-size: 31px;
+    -moz-font-feature-settings: "clig=1, calt=1";
+    -ms-font-feature-settings: "clig", "calt";
+    -webkit-font-feature-settings: "clig", "calt";
+    -o-font-feature-settings: "clig", "calt";
+    font-feature-settings: "clig", "calt";
+    letter-spacing: 0;
+    line-height: 1;
+    margin: -20px 5px 0 -15px;
+}
+
+/* Panel styles */
+.midnight-lotus .panel {
+    background: #edccb6 url('panel-bg.jpg') repeat;
+    border-color: #2a2761;
+}
+
+.midnight-lotus .panel b {
+    font-size: 27px;
+    color: #2a2761;
+}
+
+/* Series navigation */
+.midnight-lotus .series-navigation {
+    background-image: url('panel-bg.jpg');
+    border-color: #5077ac;
+}
+
+.midnight-lotus .series-navigation:before {
+    color: #5077ac;
+    bottom: 60px;
+}
+
+.midnight-lotus .series-navigation p {
+    margin: 4em 2em;
+}
+
+.midnight-lotus .series-navigation b {
+    color: #5077ac;
+}
+
+.midnight-lotus .series-navigation .next-post {
+    position: relative;
+}
+
+/* Emphasis */
+.midnight-lotus strong {
+    color: #2a2761;
+}
+
+/* Text links */
+.midnight-lotus .entry-content a, .featured-series.midnight-lotus a { color: #5077ac; }
+
+/* Post headings */
+.midnight-lotus .entry-content > h3 {
+    color: #5077ac;
+    font-family: "Showcase Script";
+    font-size: 2em;
+    line-height: 0.5;
+    margin: 3em 0 1.5em;
+    -moz-font-feature-settings: "swsh=1, cswh=1, dlig=1, clig=1, calt=1";
+    -ms-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -webkit-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -o-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+}
+
+.midnight-lotus .entry-content > h3 span {
+    color: #2a2761;
+    display: block;
+    font-family: "Showcase Slab";
+    margin: 35px auto 25px;
+}
+
+.midnight-lotus .entry-content > h3 > span:after,
+.midnight-lotus .entry-content > h3 > span:before,
+.midnight-lotus .entry-content > h3 span span:before {
+    color: #2a2761;
+    content: "S";
+    display: inline-block;
+    font-family: "Showcase Ornament";
+    font-size: 22px;
+    line-height: 1;
+    padding: 0 5px;
+    vertical-align: 7px;
+}
+
+.midnight-lotus .entry-content > h3 > span:after {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.midnight-lotus .entry-content > h3 span span {
+    display: inline;
+}
+
+.midnight-lotus .entry-content > h3 span span:before {
+    content: "X";
+    padding: 0;
+    vertical-align: 0;
+}
+
+.midnight-lotus .entry-content h4 {
+    border-color: #2a2761;
+}
+
+.midnight-lotus h2,
+.midnight-lotus .entry-content h4 a,
+.midnight-lotus h4,
+.midnight-lotus h4 a {
+    color: #2a2761;
+}
+
+.midnight-lotus .sourcing h4 {
+    color: #a58059;
+    border-color: #d7b693;
+}
+
+/* Read more links */
+.midnight-lotus .read-more a {
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background: #2a2761;
+}
+.midnight-lotus .read-more a:hover {
+    background: #5077ac;
+}
