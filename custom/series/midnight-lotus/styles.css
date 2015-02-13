@@ -40,11 +40,11 @@
     font-family: "Showcase Script";
     font-weight: normal;
     font-size: 31px;
-    -moz-font-feature-settings: "clig=1, calt=1";
-    -ms-font-feature-settings: "clig", "calt";
-    -webkit-font-feature-settings: "clig", "calt";
-    -o-font-feature-settings: "clig", "calt";
-    font-feature-settings: "clig", "calt";
+    -moz-font-feature-settings: "calt=1";
+    -ms-font-feature-settings: "calt";
+    -webkit-font-feature-settings: "calt";
+    -o-font-feature-settings: "calt";
+    font-feature-settings: "calt";
     letter-spacing: 0;
     line-height: 1;
     margin: -20px 5px 0 -15px;
@@ -106,8 +106,16 @@
     font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
 }
 
-.midnight-lotus .entry-content > h3:before,
-.midnight-lotus .entry-content > h3:after {
+.midnight-lotus .entry-content > h3 span {
+    color: #2a2761;
+    display: block;
+    font-family: "Showcase Slab";
+    font-size: 26px;
+    margin: 20px auto 20px;
+}
+
+.midnight-lotus .entry-content > h3 span:before,
+.midnight-lotus .entry-content > h3 span:after {
     display: inline-block;
     font-family: "Showcase Ornament";
     font-size: 22px;
@@ -116,11 +124,11 @@
     vertical-align: 0;
 }
 
-.midnight-lotus .entry-content > h3:before {
+.midnight-lotus .entry-content > h3 span:before {
     content: "1";
 }
 
-.midnight-lotus .entry-content > h3:after {
+.midnight-lotus .entry-content > h3 span:after {
     content: "3";
 }
 
