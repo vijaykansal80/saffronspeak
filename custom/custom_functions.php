@@ -993,24 +993,3 @@ function my_comments_link() {
 add_action('thesis_hook_after_post', 'my_comments_link');
 */
 remove_action('thesis_hook_after_post', 'thesis_comments_link');
-
-
-/* 2014-04-26 Sandip: Get rid of this. Hardly anyone subscribes to the blog anyway */
-/**
-function single_subscribe() { ?>
-<!--  if (is_single()) { ?> -->
-<!--
-  <div id="singlesubscribe">
-    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=SaffronMarigoldBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-    <span style="font-size:14px;font-weight:normal">You can also receive these posts via email..</span>
-    <input class="txt" value="Enter email address here" onfocus="if (this.value == 'Enter email address here') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email address here';}" name="email" type="text">
-    <input name="uri" value="SaffronMarigoldBlog" type="hidden">
-    <input value="en_US" name="loc" type="hidden">
-    <input value="Subscribe" class="btn" type="submit" onclick="_gaq.push(['_trackEvent', 'Lead Capture', 'Subscribe', 'Blog Feedburner email subscription']);">
-    </form>
-    </div>
--->
-    <?php
-}
-
-//add_action('thesis_hook_after_post_box', 'single_subscribe');
