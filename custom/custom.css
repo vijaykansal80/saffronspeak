@@ -1059,6 +1059,23 @@ figure .circular {
 }
 section.expander { display: none; }
 
+/* Updated tags for individual posts within parents */
+.parent-post .updated {
+	position: relative;
+}
+
+.parent-post .updated:after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 20px;
+	right: -30px;
+	width: 71px;
+	height: 71px;
+	background: url('images/updated-for-2015.png') no-repeat;
+	box-shadow: none;
+	z-index: 1000;
+}
 
 /* Post footers */
 
