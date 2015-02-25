@@ -1069,7 +1069,7 @@ section.expander { display: none; }
 	content: '';
 	position: absolute;
 	top: 20px;
-	right: -30px;
+	left: -30px;
 	width: 71px;
 	height: 71px;
 	background: url('images/updated-for-2015.png') no-repeat;
