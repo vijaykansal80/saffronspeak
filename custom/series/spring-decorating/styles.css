@@ -61,7 +61,7 @@
 }
 
 /* Manual emphasis on first couple of words */
-.spring .entry-content b {
+.spring-decorating .entry-content b {
     color: #4f788f;
     font-family: "Showcase Script";
     font-weight: normal;
@@ -77,24 +77,24 @@
 }
 
 /* Panel styles */
-.spring .panel {
+.spring-decorating .panel {
     background: #edccb6 url('symphony.png') repeat;
     border-color: #45814b;
     position: relative;
 }
 
-.spring .panel b {
+.spring-decorating .panel b {
     font-size: 27px;
     color: #45814b;
 }
 
-.spring .panel figure img {
+.spring-decorating .panel figure img {
     background: none;
     box-shadow: none;
     padding: 0;
 }
 
-.spring .panel figcaption {
+.spring-decorating .panel figcaption {
     color: #45814b;
     font-family: "Showcase Slab";
     font-size: 22px;
@@ -102,19 +102,19 @@
     font-weight: normal;
 }
 
-.spring .panel figcaption:before,
-.spring .panel figcaption:after {
+.spring-decorating .panel figcaption:before,
+.spring-decorating .panel figcaption:after {
     content: "1";
     display: inline-block;
     font-family: "Showcase Ornament";
     padding: 0 10px;
 }
 
-.spring .panel figcaption:after {
+.spring-decorating .panel figcaption:after {
     content: "3";
 }
 
-.spring .panel:before {
+.spring-decorating .panel:before {
     color: #45814b;
     content: "F";
     display: block;
@@ -127,38 +127,38 @@
 }
 
 /* Series navigation */
-.spring .series-navigation {
+.spring-decorating .series-navigation {
     background-image: url('symphony-blue.png');
     border-color: #4f788f;
 }
 
-.spring .series-navigation:before {
+.spring-decorating .series-navigation:before {
     color: #4f788f;
     bottom: 60px;
 }
 
-.spring .series-navigation p {
+.spring-decorating .series-navigation p {
     margin: 4em 2em;
 }
 
-.spring .series-navigation b {
+.spring-decorating .series-navigation b {
     color: #4f788f;
 }
 
-.spring .series-navigation .next-post {
+.spring-decorating .series-navigation .next-post {
     position: relative;
 }
 
 /* Emphasis */
-.spring strong {
+.spring-decorating strong {
     color: #45814b;
 }
 
 /* Text links */
-.spring .entry-content a, .featured-series.spring a { color: #4f788f; }
+.spring-decorating .entry-content a, .featured-series.spring-decorating a { color: #4f788f; }
 
 /* Post headings */
-.spring .entry-content > h3 {
+.spring-decorating .entry-content > h3 {
     color: #4f788f;
     font-family: "Showcase Script";
     font-size: 2em;
@@ -172,7 +172,7 @@
 }
 
 /*
-.spring .entry-content > h3:before {
+.spring-decorating .entry-content > h3:before {
     color: #45814b;
     content: "v";
     display: block;
@@ -182,16 +182,16 @@
     padding: 0 0 20px;
 }
 */
-.spring .entry-content > h3 span {
+.spring-decorating .entry-content > h3 span {
     color: #45814b;
     display: block;
     font-family: "Showcase Slab";
     margin: 35px auto 25px;
 }
 
-.spring .entry-content > h3 > span:after,
-.spring .entry-content > h3 > span:before,
-.spring .entry-content > h3 span span:before {
+.spring-decorating .entry-content > h3 > span:after,
+.spring-decorating .entry-content > h3 > span:before,
+.spring-decorating .entry-content > h3 span span:before {
     color: #45814b;
     content: "S";
     display: inline-block;
@@ -202,45 +202,45 @@
     vertical-align: 7px;
 }
 
-.spring .entry-content > h3 > span:after {
+.spring-decorating .entry-content > h3 > span:after {
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
-.spring .entry-content > h3 span span {
+.spring-decorating .entry-content > h3 span span {
     display: inline;
 }
 
-.spring .entry-content > h3 span span:before {
+.spring-decorating .entry-content > h3 span span:before {
     content: "X";
     padding: 0;
     vertical-align: 0;
 }
 
-.spring .entry-content h4 {
+.spring-decorating .entry-content h4 {
     border-color: #45814b;
 }
 
-.spring h2,
-.spring .entry-content h4 a,
-.spring h4,
-.spring h4 a {
+.spring-decorating h2,
+.spring-decorating .entry-content h4 a,
+.spring-decorating h4,
+.spring-decorating h4 a {
     color: #45814b;
 }
 
-.spring .sourcing h4 {
+.spring-decorating .sourcing h4 {
     color: #a58059;
     border-color: #d7b693;
 }
 
 /* Read more links */
-.spring .read-more a {
+.spring-decorating .read-more a {
     color: #fff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
     background: #4f788f;
 }
-.spring .read-more a:hover {
+.spring-decorating .read-more a:hover {
     background: #45814b;
 }
