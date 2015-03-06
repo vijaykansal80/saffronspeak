@@ -75,11 +75,10 @@ add_action('pre_get_posts', 'custom_posts_per_page');
 
 
 // Remove sharing links from post excerpts
-add_action( 'init', 'my_remove_filters_func' );
-
 function my_remove_filters_func() {
      remove_filter( 'the_excerpt', 'sharing_display', 19 );
 }
+add_action( 'init', 'my_remove_filters_func' );
 
 // Add a "more" link to excerpts
 function new_excerpt_more($more) {
@@ -147,7 +146,7 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 114;
+$featured_series = 110;
 $featured = get_term_by('id', $featured_series, 'category');
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
@@ -211,15 +210,20 @@ function category_class($classes) {
 
     // for individual post pages
     if (is_single()):
+        // Put category slugs in body class
         $categories = get_the_category($post->ID);
         foreach($categories as $category):
-            // generate a list of parent categories as well
+            // Generate a list of parent categories as well
             $parents = get_category_parents($category, false, ',');
             $parents = explode(',', $parents);
             foreach ($parents as $parent):
                 $classes[] = str_replace(' ', '-', strtolower($parent));
             endforeach;
         endforeach;
+        // If this post is sticky (ie, a parent post), add a tag for that, too
+        if ( is_sticky() ):
+            $classes[] = "parent-post";
+        endif;
     $classes[] = "single-post";
     endif;
 
@@ -989,24 +993,3 @@ function my_comments_link() {
 add_action('thesis_hook_after_post', 'my_comments_link');
 */
 remove_action('thesis_hook_after_post', 'thesis_comments_link');
-
-
-/* 2014-04-26 Sandip: Get rid of this. Hardly anyone subscribes to the blog anyway */
-/**
-function single_subscribe() { ?>
-<!--  if (is_single()) { ?> -->
-<!--
-  <div id="singlesubscribe">
-    <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=SaffronMarigoldBlog', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-    <span style="font-size:14px;font-weight:normal">You can also receive these posts via email..</span>
-    <input class="txt" value="Enter email address here" onfocus="if (this.value == 'Enter email address here') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email address here';}" name="email" type="text">
-    <input name="uri" value="SaffronMarigoldBlog" type="hidden">
-    <input value="en_US" name="loc" type="hidden">
-    <input value="Subscribe" class="btn" type="submit" onclick="_gaq.push(['_trackEvent', 'Lead Capture', 'Subscribe', 'Blog Feedburner email subscription']);">
-    </form>
-    </div>
--->
-    <?php
-}
-
-//add_action('thesis_hook_after_post_box', 'single_subscribe');
