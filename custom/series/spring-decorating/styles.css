@@ -61,7 +61,8 @@
 }
 
 /* Manual emphasis on first couple of words */
-.spring-decorating .entry-content b {
+.spring-decorating .entry-content b,
+.spring-decorating .panel b {
     color: #4f788f;
     font-family: "Showcase Script";
     font-weight: normal;
@@ -88,7 +89,7 @@
     color: #45814b;
 }
 
-.spring-decorating .panel figure img {
+.spring-decorating .entry-content .panel figure img {
     background: none;
     box-shadow: none;
     padding: 0;
