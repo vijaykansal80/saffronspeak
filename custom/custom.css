@@ -768,9 +768,9 @@ ul#main-nav ul li:hover > a {
 .subcategory.summer:hover h2, .subcategory.summer:hover .read-more a { background-color: #253d4d; }
 .subcategory.summer { background-image: url('series/summer/summer-title-image.jpg'); }
 
-.subcategory.spring h2, .subcategory.spring .read-more a { background-color: #45814b; }
-.subcategory.spring:hover h2, .subcategory.spring:hover .read-more a { background-color: #37693c; }
-.subcategory.spring { background-image: url('series/spring/spring-title-image.jpg'); }
+.subcategory.spring-decorating h2, .subcategory.spring-decorating .read-more a { background-color: #45814b; }
+.subcategory.spring-decorating:hover h2, .subcategory.spring-decorating:hover .read-more a { background-color: #37693c; }
+.subcategory.spring-decorating { background-image: url('series/spring-decorating/spring-decorating-title-image.jpg'); }
 
 .subcategory.fall h2, .subcategory.fall .read-more a { background-color: #bd6233; }
 .subcategory.fall:hover h2, .subcategory.fall:hover .read-more a { background-color: #a2542c; }
