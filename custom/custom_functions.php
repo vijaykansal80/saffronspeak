@@ -245,11 +245,6 @@ add_filter('thesis_body_classes', 'category_class');
 
 
 
-
-
-
-
-
 /*****************************
            HEADER
 ******************************/
@@ -745,7 +740,6 @@ class archive_looper extends thesis_custom_loop {
                 </div>
             <?php endforeach;
 
-
         // Otherwise, display a list of posts
         else:
 
@@ -772,45 +766,71 @@ class archive_looper extends thesis_custom_loop {
 
     // Tag archives
     function tag() {
-        while (have_posts()):
-            the_post();
-            echo '<div class="post-excerpt-alt">';
-                if (has_post_thumbnail()): ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                        <?php the_post_thumbnail(''); ?>
-                    </a>
-                <?php endif; ?>
-                <div class="format_text entry-content">
-                    <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php echo get_the_title() ?></a></h4>
-                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                        <?php
-                            $tag_string = get_the_tag_list('', ',', '');
-                            $tags = explode(',', $tag_string);
-                        ?>
-                        <p class="tags"><span>Tags</span>
-                        <?php
-                            foreach($tags as $key => $tag):
-                                if ($key != 0):
-                                    echo " &middot; ";
-                                endif;
-                                $tagless_tag = strtolower(strip_tags($tag));
-                                if (in_array($tagless_tag, all_tags())):
-                                    echo "<strong>". $tag . "</strong>";
-                                else:
-                                    echo $tag;
-                                endif;
-                            endforeach;
-                        ?>
-                        </p>
+        while ( have_posts() ):
+            show_shorter_posts( 'tag' );
+        endwhile;
+    }
 
-                </div>
-            </div>
-        <?php endwhile;
+    // Search results
+    function search() {
+        if ( have_posts() ):
+
+            while ( have_posts() ):
+                show_shorter_posts( 'search' );
+            endwhile;
+
+        // Show an error message
+        else:
+            echo "Sorry, no results found.";
+        endif;
     }
 
 }
 $the_looper = new archive_looper;
 
+
+function show_shorter_posts( $archive ) {
+    the_post();
+    echo '<div class="post-excerpt-alt">';
+        if (has_post_thumbnail()): ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                <?php the_post_thumbnail(''); ?>
+            </a>
+        <?php endif; ?>
+        <div class="format_text entry-content">
+            <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+            <p>
+            <?php
+            if ( "search" === $archive ):
+                the_excerpt();
+            else:
+                the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1');
+            endif;
+            ?>
+            </p>
+
+            <?php
+                $tag_string = get_the_tag_list('', ',', '');
+                $tags = explode(',', $tag_string);
+            ?>
+            <p class="tags"><span>Tags</span>
+            <?php
+                foreach($tags as $key => $tag):
+                    if ($key != 0):
+                        echo " &middot; ";
+                    endif;
+                    $tagless_tag = strtolower(strip_tags($tag));
+                    if (in_array($tagless_tag, all_tags())):
+                        echo "<strong>". $tag . "</strong>";
+                    else:
+                        echo $tag;
+                    endif;
+                endforeach;
+            ?>
+            </p>
+        </div>
+    </div>
+<?php }
 
 
 /*****************************

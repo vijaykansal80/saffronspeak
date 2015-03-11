@@ -638,6 +638,12 @@ ul#main-nav ul li:hover > a {
 	padding: 2px 5px;
 }
 
+/* Search term highlight */
+.search-term {
+	background: rgba(255, 255, 255, 0.75);
+	font-weight: bolder;
+}
+
 
 
 /* CATEGORY ARCHIVES */
