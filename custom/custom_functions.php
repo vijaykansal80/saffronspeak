@@ -238,6 +238,11 @@ function category_class($classes) {
         $classes[] = "homepage";
     endif;
 
+    // for search results pages
+    if (is_search()):
+        $classes[] = "search-results";
+    endif;
+
 return $classes;
 }
 
@@ -774,14 +779,14 @@ class archive_looper extends thesis_custom_loop {
     // Search results
     function search() {
         if ( have_posts() ):
-
             while ( have_posts() ):
                 show_shorter_posts( 'search' );
             endwhile;
 
-        // Show an error message
+        // Show a basic error message
         else:
-            echo "Sorry, no results found.";
+            echo '<h1>No results found.</h1>';
+            echo '<div class="format_text">Sorry, we were unable to find any posts that matched your query. Try a different search below.</div>';
         endif;
     }
 
