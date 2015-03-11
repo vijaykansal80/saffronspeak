@@ -785,8 +785,10 @@ class archive_looper extends thesis_custom_loop {
 
         // Show a basic error message
         else:
+            echo '<div class="no-results">';
             echo '<h1>No results found.</h1>';
             echo '<div class="format_text">Sorry, we were unable to find any posts that matched your query. Try a different search below.</div>';
+            echo '</div>';
         endif;
     }
 

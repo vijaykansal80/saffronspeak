@@ -639,7 +639,7 @@ ul#main-nav ul li:hover > a {
 }
 
 /* Search result page */
-.search-results #content_box {
+.search-results .no-results {
 	margin: 50px 0;
 	text-align: center;
 }
