@@ -23,21 +23,23 @@
 }
 
 .mothers-day .panel p:first-letter {
-    font-size: 96px;
-    float: left;
     color: #93765e;
+    float: left;
     font-family: 'Euphoria Script', cursive;
+    font-size: 96px;
+    line-height: 1;
     margin: -30px 5px 0 -20px;
 }
 
 /* Headers */
-.mothers-day h3 {
+.mothers-day .entry-content > h3,
+.mothers-day .entry-content section:not(.related-posts) h3 {
+    clear: both;
     color: #93765e;
+    font-family: 'Euphoria Script', cursive;
     font-size: 2.4em;
     margin: 1em 0 .5em;
     text-align: center;
-    font-family: 'Euphoria Script', cursive;
-    clear: both;
 }
 
 .post-listing .mothers-day h4 {
