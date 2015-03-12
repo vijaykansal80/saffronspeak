@@ -399,10 +399,11 @@ function all_tags() {
 }
 
 
-// Add location-aware breadcrumbs for improved usability
+// Add location-aware breadcrumbs to the left, and a search bar to the right
 
-function thesis_breadcrumbs() {
+function breadcrumbs_and_search() {
     if ( ! is_home() &&  ! is_front_page() && ! is_page() ): {
+        echo '<div class="breadcrumbs-and-search">';
         echo '<div class="breadcrumbs">';
         echo '<a href="';
         echo get_option('home');
@@ -449,9 +450,17 @@ function thesis_breadcrumbs() {
         }
         echo '</div>';
     endif;
+
+    // Search box
+    echo '<div class="search-box">';
+    get_search_form();
+    echo '<i class="icon-search"></i>';
+    echo '</div>';
+
+    echo '</div>'; // .breadcrumbs-and-search
 }
 
-add_action('thesis_hook_after_header','thesis_breadcrumbs');
+add_action('thesis_hook_after_header','breadcrumbs_and_search');
 
 
 // Remove post title for parent posts and pages
@@ -507,6 +516,8 @@ function new_homepage() {
 
     </div>
 <?php }
+
+
 
 /*****************************
         PROMOTION PAGES
@@ -787,7 +798,7 @@ class archive_looper extends thesis_custom_loop {
         else:
             echo '<div class="no-results">';
             echo '<h1>No results found.</h1>';
-            echo '<div class="format_text">Sorry, we were unable to find any posts that matched your query. Try a different search below.</div>';
+            echo '<div class="format_text">Sorry, we were unable to find any posts that matched your query. Try again with a less specific search term.</div>';
             echo '</div>';
         endif;
     }
@@ -954,16 +965,9 @@ add_action('thesis_hook_after_post', 'post_tags', '1');
 
 
 
-// This replaces the footer with a custom footer and search box
+// This replaces the footer with a custom footer
 
 function custom_footer() { ?>
-
-		<div id="my-search">
-			<form method="get" class="search_form_visible" action="http://www.saffronmarigold.com/blog/">
-				<input class="text_input" type="text" value="Enter Text &amp; Click Search" name="s" id="s" onfocus="if (this.value == 'Enter Text &amp; Click Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter Text &amp; Click Search';}" />
-				<input type="submit" class="my-search" id="searchsubmit" value="SEARCH" />
-			</form>
-		</div>
 
 	<p>Copyright &copy; <?php echo date('Y'); ?>  Saffron Marigold</p>
 
