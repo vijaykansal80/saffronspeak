@@ -22,20 +22,36 @@
         $(this).find('.extra').toggle();
       });
 
-      // Add a placeholder to search input
+      // Add a placeholder to search input and declare variable for the search input
       $( '#s' ).attr( 'placeholder', 'Enter your search terms here.' );
+      var $searchInput = $( '#s' );
 
-      // Pull out the search bar when clicked
+      // Deal with clicks on search icon
       $( '.icon-search' ).on( 'click', function() {
-        var $searchInput = $( '#s' );
+        // If the search bar is already open
         if ( $searchInput.hasClass( 'open' ) ) {
-          $( '#searchform' ).submit();
+          if ( $searchInput.val() ) {
+            // Submit our search if there's a search term entered
+            $( '#searchform' ).submit();
+          } else {
+            // Otherwise, close the search box
+            $searchInput.removeClass( 'open' );
+          }
+        // If the search bar isn't already open, open it!
         } else {
           $searchInput.addClass( 'open' );
           $searchInput.focus();
           return false;
         }
-      });
+      } );
+
+      // Make sure empty searches aren't submitted
+      $( '#searchform' ).on( 'submit', function( e ) {
+        if ( ! $searchInput.val() ) {
+          e.preventDefault();
+          $( '#s' ).attr( 'placeholder', 'Don’t forget to enter a search term!' );
+        }
+      } );
 
       // Smooth scrolling
       $(function() {
