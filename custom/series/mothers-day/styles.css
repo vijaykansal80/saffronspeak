@@ -8,12 +8,16 @@
     font-family: 'Rouge Script', cursive;
     color: #8c0038;
     font-size: 146px;
-    margin-top: -40px;
+    margin-top: -30px;
     margin-left: -40px;
     float: left;
     line-height: 1;
 }
 
+.mothers-day .entry-content > p:first-of-type,
+.mothers-day .entry-content p.intro {
+    margin-top: 3em;
+}
 
 
 /* Panels */
@@ -64,6 +68,7 @@
 .mothers-day .entry-content > h3:after,
 .mothers-day .entry-content section:not(.related-posts) h3:after {
     content: 'h';
+    padding-left: 5px;
 }
 
 .mothers-day h4 {
