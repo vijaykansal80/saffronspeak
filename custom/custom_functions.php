@@ -402,54 +402,55 @@ function all_tags() {
 // Add location-aware breadcrumbs to the left, and a search bar to the right
 
 function breadcrumbs_and_search() {
-    if ( ! is_home() &&  ! is_front_page() && ! is_page() ): {
-        echo '<div class="breadcrumbs-and-search">';
+    echo '<div class="breadcrumbs-and-search">';
+
+    // Only show breadcrumbs on category and post pages
+    if ( ! is_home() &&  ! is_front_page() && ! is_page() ):
         echo '<div class="breadcrumbs">';
         echo '<a href="';
         echo get_option('home');
         echo '">';
-        //bloginfo('name');
         echo 'Blog';
         echo "</a>";
 
-            if (is_single()):
-                echo " &raquo; ";
-                the_category(' &raquo; ', 'multiple');
-                echo " &raquo; ";
-                the_title();
+        if (is_single()):
+            echo " &raquo; ";
+            the_category(' &raquo; ', 'multiple');
+            echo " &raquo; ";
+            the_title();
 
-            elseif (is_category()):
-                echo " &raquo; ";
-                // get a list of the category's parent
-                $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
-                // remove current category from list (in order to display without a link or trailing arrow)
-                $categories = explode(' &raquo; ', $category_list);
-                array_pop($categories);
-                array_pop($categories);
-                foreach ($categories as $category):
-                    echo $category ." &raquo; ";
-                endforeach;
-                // and display current category name, without a link or trailing arrow
-                echo get_the_category_by_id(get_query_var('cat'));
+        elseif (is_category()):
+            echo " &raquo; ";
+            // get a list of the category's parent
+            $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
+            // remove current category from list (in order to display without a link or trailing arrow)
+            $categories = explode(' &raquo; ', $category_list);
+            array_pop($categories);
+            array_pop($categories);
+            foreach ($categories as $category):
+                echo $category ." &raquo; ";
+            endforeach;
+            // and display current category name, without a link or trailing arrow
+            echo get_the_category_by_id(get_query_var('cat'));
 
-            elseif (is_page()):
-                echo " &raquo; ";
-                echo the_title();
+        elseif (is_page()):
+            echo " &raquo; ";
+            echo the_title();
 
-            elseif (is_search()):
-                echo " &raquo; Search results for: ";
-                echo '"<em>';
-                echo the_search_query();
-                echo '</em>"';
+        elseif (is_search()):
+            echo " &raquo; Search results for: ";
+            echo '"<em>';
+            echo the_search_query();
+            echo '</em>"';
 
-            elseif (is_tag()):
-                echo " &raquo; ";
-                echo "Tag archive: ";
-                echo full_tag_string();
-            endif;
-        }
-        echo '</div>';
-    endif;
+        elseif (is_tag()):
+            echo " &raquo; ";
+            echo "Tag archive: ";
+            echo full_tag_string();
+        endif;
+
+    echo '</div>';
+    endif; // ! is_home() &&  ! is_front_page() && ! is_page()
 
     // Search box
     echo '<div class="search-box">';
