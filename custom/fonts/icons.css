@@ -62,3 +62,9 @@
 .icon-search:before {
   content: "s";
 }
+.icon-mothers-fleuron-left:before {
+  content: "g";
+}
+.icon-mothers-fleuron-right:before {
+  content: "h";
+}

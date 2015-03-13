@@ -37,12 +37,36 @@
     clear: both;
     color: #93765e;
     font-family: 'Rouge Script', cursive;
-    font-size: 3.6em;
+    font-size: 3.1em;
     margin: 1em 0 .5em;
     text-align: center;
 }
 
-.post-listing .mothers-day h4 {
+.mothers-day .entry-content > h3:after,
+.mothers-day .entry-content > h3:before,
+.mothers-day .entry-content section:not(.related-posts) h3:after,
+.mothers-day .entry-content section:not(.related-posts) h3:before {
+    display: inline-block;
+    font-family: "saffron-marigold" !important;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #93765e;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+
+.mothers-day .entry-content > h3:before,
+.mothers-day .entry-content section:not(.related-posts) h3:before {
+    content: 'g';
+    padding-right: 10px;
+}
+
+.mothers-day .entry-content > h3:after,
+.mothers-day .entry-content section:not(.related-posts) h3:after {
+    content: 'h';
+}
+
+.mothers-day h4 {
     border-color: #8c0038;
 }
 
@@ -51,7 +75,6 @@
 }
 
 /* Links */
-
 .mothers-day a {
     color: #8c0038;
 }
@@ -71,6 +94,11 @@
     float: left;
     text-align: center;
     width: 30%;
+}
+
+.mothers-day .entry-content .story .photo h3:before,
+.mothers-day .entry-content .story .photo h3:after {
+    display: none;
 }
 
 .mothers-day .story .photo img {
