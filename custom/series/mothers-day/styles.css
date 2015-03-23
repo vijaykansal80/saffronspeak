@@ -1,19 +1,23 @@
-@import url(http://fonts.googleapis.com/css?family=Euphoria+Script);
+@import url(http://fonts.googleapis.com/css?family=Rouge+Script);
 
 /* Drop caps */
 .mothers-day .entry-content > p:first-of-type:first-letter,
 .mothers-day .entry-content p.intro:first-letter,
 .mothers-day p.float-left + h3 + p:first-letter,
 .mothers-day h2 {
-    font-family: 'Euphoria Script', cursive;
+    font-family: 'Rouge Script', cursive;
     color: #8c0038;
-    font-size: 5.6em;
-    margin-top: -.1em;
-    margin-right: .1em;
+    font-size: 146px;
+    margin-top: -30px;
+    margin-left: -40px;
     float: left;
     line-height: 1;
 }
 
+.mothers-day .entry-content > p:first-of-type,
+.mothers-day .entry-content p.intro {
+    margin-top: 3em;
+}
 
 
 /* Panels */
@@ -25,10 +29,10 @@
 .mothers-day .panel p:first-letter {
     color: #93765e;
     float: left;
-    font-family: 'Euphoria Script', cursive;
+    font-family: 'Rouge Script', cursive;
     font-size: 96px;
     line-height: 1;
-    margin: -10px 10px -10px -20px;
+    margin: -10px 5px -10px -10px;
 }
 
 /* Headers */
@@ -36,13 +40,38 @@
 .mothers-day .entry-content section:not(.related-posts) h3 {
     clear: both;
     color: #93765e;
-    font-family: 'Euphoria Script', cursive;
-    font-size: 2.4em;
+    font-family: 'Rouge Script', cursive;
+    font-size: 3.1em;
     margin: 1em 0 .5em;
     text-align: center;
 }
 
-.post-listing .mothers-day h4 {
+.mothers-day .entry-content > h3:after,
+.mothers-day .entry-content > h3:before,
+.mothers-day .entry-content section:not(.related-posts) h3:after,
+.mothers-day .entry-content section:not(.related-posts) h3:before {
+    display: inline-block;
+    font-family: "saffron-marigold" !important;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #93765e;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+
+.mothers-day .entry-content > h3:before,
+.mothers-day .entry-content section:not(.related-posts) h3:before {
+    content: 'g';
+    padding-right: 10px;
+}
+
+.mothers-day .entry-content > h3:after,
+.mothers-day .entry-content section:not(.related-posts) h3:after {
+    content: 'h';
+    padding-left: 5px;
+}
+
+.mothers-day h4 {
     border-color: #8c0038;
 }
 
@@ -51,7 +80,6 @@
 }
 
 /* Links */
-
 .mothers-day a {
     color: #8c0038;
 }
@@ -73,9 +101,14 @@
     width: 30%;
 }
 
+.mothers-day .entry-content .story .photo h3:before,
+.mothers-day .entry-content .story .photo h3:after {
+    display: none;
+}
+
 .mothers-day .story .photo img {
-    margin-top: 2em;
-    transform: rotate(-2deg);
+    margin: 2em auto -3em;
+    transform: rotate(-1deg);
 }
 
 .mothers-day .story .text {

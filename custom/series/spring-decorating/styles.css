@@ -89,7 +89,7 @@
     color: #45814b;
 }
 
-.spring-decorating .entry-content .panel figure img {
+.spring-decorating:not(.parent-post) .entry-content .panel figure img {
     background: none;
     box-shadow: none;
     padding: 0;
