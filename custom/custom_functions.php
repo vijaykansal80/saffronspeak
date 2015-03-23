@@ -238,15 +238,15 @@ function category_class($classes) {
         $classes[] = "homepage";
     endif;
 
+    // for search results pages
+    if (is_search()):
+        $classes[] = "search-results";
+    endif;
+
 return $classes;
 }
 
 add_filter('thesis_body_classes', 'category_class');
-
-
-
-
-
 
 
 
@@ -399,59 +399,69 @@ function all_tags() {
 }
 
 
-// Add location-aware breadcrumbs for improved usability
+// Add location-aware breadcrumbs to the left, and a search bar to the right
 
-function thesis_breadcrumbs() {
-    if ( ! is_home() &&  ! is_front_page() && ! is_page() ): {
+function breadcrumbs_and_search() {
+    echo '<div class="breadcrumbs-and-search">';
+
+    // Only show breadcrumbs on category and post pages
+    if ( ! is_home() &&  ! is_front_page() && ! is_page() ):
         echo '<div class="breadcrumbs">';
         echo '<a href="';
         echo get_option('home');
         echo '">';
-        //bloginfo('name');
         echo 'Blog';
         echo "</a>";
 
-            if (is_single()):
-                echo " &raquo; ";
-                the_category(' &raquo; ', 'multiple');
-                echo " &raquo; ";
-                the_title();
+        if (is_single()):
+            echo " &raquo; ";
+            the_category(' &raquo; ', 'multiple');
+            echo " &raquo; ";
+            the_title();
 
-            elseif (is_category()):
-                echo " &raquo; ";
-                // get a list of the category's parent
-                $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
-                // remove current category from list (in order to display without a link or trailing arrow)
-                $categories = explode(' &raquo; ', $category_list);
-                array_pop($categories);
-                array_pop($categories);
-                foreach ($categories as $category):
-                    echo $category ." &raquo; ";
-                endforeach;
-                // and display current category name, without a link or trailing arrow
-                echo get_the_category_by_id(get_query_var('cat'));
+        elseif (is_category()):
+            echo " &raquo; ";
+            // get a list of the category's parent
+            $category_list = get_category_parents(get_query_var('cat'), true, ' &raquo; ' );
+            // remove current category from list (in order to display without a link or trailing arrow)
+            $categories = explode(' &raquo; ', $category_list);
+            array_pop($categories);
+            array_pop($categories);
+            foreach ($categories as $category):
+                echo $category ." &raquo; ";
+            endforeach;
+            // and display current category name, without a link or trailing arrow
+            echo get_the_category_by_id(get_query_var('cat'));
 
-            elseif (is_page()):
-                echo " &raquo; ";
-                echo the_title();
+        elseif (is_page()):
+            echo " &raquo; ";
+            echo the_title();
 
-            elseif (is_search()):
-                echo " &raquo; Search results for: ";
-                echo '"<em>';
-                echo the_search_query();
-                echo '</em>"';
+        elseif (is_search()):
+            echo " &raquo; Search results for: ";
+            echo '"<em>';
+            echo the_search_query();
+            echo '</em>"';
 
-            elseif (is_tag()):
-                echo " &raquo; ";
-                echo "Tag archive: ";
-                echo full_tag_string();
-            endif;
-        }
-        echo '</div>';
-    endif;
+        elseif (is_tag()):
+            echo " &raquo; ";
+            echo "Tag archive: ";
+            echo full_tag_string();
+        endif;
+
+    echo '</div>';
+    endif; // ! is_home() &&  ! is_front_page() && ! is_page()
+
+    // Search box
+    echo '<div class="search-box">';
+    get_search_form();
+    echo '<i class="icon-search"></i>';
+    echo '</div>';
+
+    echo '</div>'; // .breadcrumbs-and-search
 }
 
-add_action('thesis_hook_after_header','thesis_breadcrumbs');
+add_action('thesis_hook_after_header','breadcrumbs_and_search');
 
 
 // Remove post title for parent posts and pages
@@ -507,6 +517,8 @@ function new_homepage() {
 
     </div>
 <?php }
+
+
 
 /*****************************
         PROMOTION PAGES
@@ -745,7 +757,6 @@ class archive_looper extends thesis_custom_loop {
                 </div>
             <?php endforeach;
 
-
         // Otherwise, display a list of posts
         else:
 
@@ -772,45 +783,73 @@ class archive_looper extends thesis_custom_loop {
 
     // Tag archives
     function tag() {
-        while (have_posts()):
-            the_post();
-            echo '<div class="post-excerpt-alt">';
-                if (has_post_thumbnail()): ?>
-                    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                        <?php the_post_thumbnail(''); ?>
-                    </a>
-                <?php endif; ?>
-                <div class="format_text entry-content">
-                    <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php echo get_the_title() ?></a></h4>
-                        <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-                        <?php
-                            $tag_string = get_the_tag_list('', ',', '');
-                            $tags = explode(',', $tag_string);
-                        ?>
-                        <p class="tags"><span>Tags</span>
-                        <?php
-                            foreach($tags as $key => $tag):
-                                if ($key != 0):
-                                    echo " &middot; ";
-                                endif;
-                                $tagless_tag = strtolower(strip_tags($tag));
-                                if (in_array($tagless_tag, all_tags())):
-                                    echo "<strong>". $tag . "</strong>";
-                                else:
-                                    echo $tag;
-                                endif;
-                            endforeach;
-                        ?>
-                        </p>
+        while ( have_posts() ):
+            show_shorter_posts( 'tag' );
+        endwhile;
+    }
 
-                </div>
-            </div>
-        <?php endwhile;
+    // Search results
+    function search() {
+        if ( have_posts() ):
+            while ( have_posts() ):
+                show_shorter_posts( 'search' );
+            endwhile;
+
+        // Show a basic error message
+        else:
+            echo '<div class="no-results">';
+            echo '<h1>No results found.</h1>';
+            echo '<div class="format_text">Sorry, we were unable to find any posts that matched your query. Try again with a less specific search term.</div>';
+            echo '</div>';
+        endif;
     }
 
 }
 $the_looper = new archive_looper;
 
+
+function show_shorter_posts( $archive ) {
+    the_post();
+    echo '<div class="post-excerpt-alt">';
+        if (has_post_thumbnail()): ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+                <?php the_post_thumbnail(''); ?>
+            </a>
+        <?php endif; ?>
+        <div class="format_text entry-content">
+            <h4 class="entry-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+            <p>
+            <?php
+            if ( "search" === $archive ):
+                the_excerpt();
+            else:
+                the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1');
+            endif;
+            ?>
+            </p>
+
+            <?php
+                $tag_string = get_the_tag_list('', ',', '');
+                $tags = explode(',', $tag_string);
+            ?>
+            <p class="tags"><span>Tags</span>
+            <?php
+                foreach($tags as $key => $tag):
+                    if ($key != 0):
+                        echo " &middot; ";
+                    endif;
+                    $tagless_tag = strtolower(strip_tags($tag));
+                    if (in_array($tagless_tag, all_tags())):
+                        echo "<strong>". $tag . "</strong>";
+                    else:
+                        echo $tag;
+                    endif;
+                endforeach;
+            ?>
+            </p>
+        </div>
+    </div>
+<?php }
 
 
 /*****************************
@@ -927,16 +966,9 @@ add_action('thesis_hook_after_post', 'post_tags', '1');
 
 
 
-// This replaces the footer with a custom footer and search box
+// This replaces the footer with a custom footer
 
 function custom_footer() { ?>
-
-		<div id="my-search">
-			<form method="get" class="search_form_visible" action="http://www.saffronmarigold.com/blog/">
-				<input class="text_input" type="text" value="Enter Text &amp; Click Search" name="s" id="s" onfocus="if (this.value == 'Enter Text &amp; Click Search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter Text &amp; Click Search';}" />
-				<input type="submit" class="my-search" id="searchsubmit" value="SEARCH" />
-			</form>
-		</div>
 
 	<p>Copyright &copy; <?php echo date('Y'); ?>  Saffron Marigold</p>
 
