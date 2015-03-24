@@ -45,6 +45,11 @@
         }
       } );
 
+      // If we're on the homepage, show the search box expanded by default
+      if ( $( 'body' ).hasClass( 'homepage' ) ) {
+        $searchInput.addClass( 'open' );
+      }
+
       // Make sure empty searches aren't submitted
       $( '#searchform' ).on( 'submit', function( e ) {
         if ( ! $searchInput.val() ) {
