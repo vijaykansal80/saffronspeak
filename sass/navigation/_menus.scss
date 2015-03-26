@@ -3,6 +3,7 @@
 	display: block;
 	float: left;
 	width: 100%;
+	font-family: $font__decor;
 
 	ul {
 		list-style: none;
@@ -96,4 +97,125 @@
 		text-align: right;
 		width: 50%;
 	}
+}
+
+
+
+/* nav */
+ul#main-nav {
+	list-style-type: none;
+	background: url("images/ribbon.jpg") no-repeat top center;
+	height: 78px;
+	text-align: center;
+	clear: both;
+}
+ul#main-nav li {
+	display: -moz-inline-stack;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	text-align: center;
+	font-size: 2em;
+	line-height: 0.8;
+	font-family: "Nuptial";
+	margin: 10px 0;
+	width: 56px;
+	vertical-align: middle;
+	padding: 16px 18px 10px 10px;
+	background: url(images/ribbon-stitch.jpg) no-repeat center right;
+	position: relative;
+}
+ul#main-nav li:last-child {
+	background: none;
+}
+ul#main-nav li a {
+	color: #454d18;
+	display: block;
+}
+ul#main-nav li:hover {
+	text-shadow: 0px 0px 40px #fcf2c6, 0px 0px 20px #fcf2c6, 0px 0px 10px #fcf2c6, 0px 0px 5px #fcf2c6;
+}
+ul#main-nav li:hover > a {
+	color: #2c310f;
+}
+
+ul#main-nav li.active {
+	background: rgba(252, 242, 198, .3);
+	box-shadow: 0px 0px 9px 10px rgba(252, 242, 198, .3);
+	background: none;
+	box-shadow: none;
+}
+ul#main-nav li.active > a {
+	color: #767e49;
+}
+
+ul#main-nav li#shopby-tab:before {
+	position: absolute;
+	top: -6px;
+	left: 0;
+	width: 100%;
+	height: 15px;
+	content: '';
+	display: block;
+	background: url('images/crown.png') top center no-repeat;
+}
+ul#main-nav li#blog-tab {
+	line-height: 1.9;
+	font-family: "Gentium Basic", sans-serif;
+	text-transform: uppercase;
+	font-size: 1.6em;
+}
+
+
+
+/* sub nav */
+ul#main-nav ul {
+	position: absolute;
+	top: 55px;
+	left: -10px;
+	border: 1px solid #c1b788;
+	background: #ded3b5;
+	display: none;
+	min-width: 200px;
+	z-index: 100;
+}
+ul#main-nav li#blog-tab ul {
+	top: 54px;
+}
+
+ul#main-nav li:hover > ul, ul:hover {
+	display: block;
+}
+ul#main-nav ul li {
+	display: block;
+	background: none;
+	font-family: 'Gentium Basic', serif;
+	font-size: 14px;
+	text-transform: none;
+	text-align: left;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 10px 10px;
+	border-bottom: 1px dashed #fff;
+}
+ul#main-nav ul li:last-child {
+	border-bottom: none;
+}
+ul#main-nav ul li:hover {
+	text-shadow: none;
+	background: rgba(255,255,255,.25);
+}
+ul#main-nav ul li:hover > a {
+	color: #2c310f;
+}
+
+/* breadcrumbs */
+.breadcrumbs-and-search {
+	position: relative;
+}
+
+.breadcrumbs {
+	margin: 5px 30px;
+	font-size: 12px;
 }
