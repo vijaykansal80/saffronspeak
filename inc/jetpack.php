@@ -3,17 +3,42 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package safflower
+ * @package Safflower
  */
 
-/**
- * Add theme support for Infinite Scroll.
- * See: http://jetpack.me/support/infinite-scroll/
- */
 function safflower_jetpack_setup() {
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'footer'    => 'page',
-	) );
+  /**
+   * Add theme support for Infinite Scroll.
+   * See: http://jetpack.me/support/infinite-scroll/
+   */
+  add_theme_support( 'infinite-scroll', array(
+    'container'      => 'main',
+    'footer'         => 'colophon',
+    'footer_widgets' => 'footer-sidebar',
+    'wrapper'        => false,
+  ) );
+
+  /**
+   * Add theme support for Jetpack responsive videos
+   * See: http://jetpack.me/support/responsive-videos/
+   */
+  add_theme_support( 'jetpack-responsive-videos' );
+
+  /**
+   * Add theme support for Jetpack featured content
+   * See: http://jetpack.me/support/featured-content/
+   */
+  add_theme_support( 'featured-content', array(
+    'filter'    => 'safflower_get_featured_posts',
+    'max_posts' => 2,
+  ) );
+
+  /**
+   * Add theme support for Jetpack site logo
+   * See: http://jetpack.me/support/site-logo/
+   */
+  add_image_size( 'safflower-logo', 700 ); // Restrict logo to 700 pixels in width (double-sized for Retina)
+  add_theme_support( 'site-logo', array( 'size' => 'safflower-logo' ) );
+
 }
 add_action( 'after_setup_theme', 'safflower_jetpack_setup' );
