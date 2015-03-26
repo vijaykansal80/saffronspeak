@@ -269,6 +269,11 @@ th {
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+html {
+  font-size: 62.5%;
+  /* Sets up base font size so rems are equal to pixels */
+}
+
 body,
 button,
 input,
@@ -276,13 +281,22 @@ select,
 textarea {
   color: #4A4633;
   font-family: "Gentium Basic", serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 19px;
+  font-size: 1.9rem;
+  line-height: 1.4;
 }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 31px;
+  font-size: 3.1rem;
+  line-height: 1.2;
+  margin: 0 auto 0;
+  color: #BD6518;
 }
 
 p {
@@ -304,8 +318,8 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 0.9375px;
+  font-size: 0.09375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -315,8 +329,8 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 0.9375px;
+  font-size: 0.09375rem;
 }
 
 abbr, acronym {
@@ -417,8 +431,8 @@ input[type="submit"] {
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 0.75px;
+  font-size: 0.075rem;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -722,8 +736,8 @@ ul#main-nav ul li:hover > a {
   clip: auto !important;
   color: #4A4633;
   display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 0.875px;
+  font-size: 0.0875rem;
   font-weight: bold;
   height: auto;
   left: 5px;
@@ -838,6 +852,49 @@ ul#main-nav ul li:hover > a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+/* Individual post pages */
+/* Post headlines */
+.entry-header {
+  text-align: center;
+}
+
+.entry-meta {
+  color: #8c927b;
+  font-size: 16px;
+  font-size: 1.6rem;
+  border-top: 1px solid #8c927b;
+  border-bottom: 2px solid #8c927b;
+  padding: .4em 10px;
+  display: inline-block;
+  margin: .75em auto 1em;
+  font-style: italic;
+  word-spacing: 3px;
+}
+.entry-meta::before, .entry-meta::after {
+  content: '\2666';
+  padding: 0 10px;
+  display: inline;
+}
+.entry-meta abbr, .entry-meta a {
+  color: #707956;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .85em;
+  word-spacing: normal;
+  text-decoration: none;
+}
+
+/* Emphasize first paragraph */
+.single-post .entry-content > p:first-of-type,
+p.intro,
+.featured-series > p:first-of-type {
+  font-size: 1.4em;
+  line-height: 1.4;
+  color: #7D7556;
+  margin: 2em 2em;
 }
 
 /*--------------------------------------------------------------

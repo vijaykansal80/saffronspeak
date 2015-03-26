@@ -26,3 +26,51 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+/* Individual post pages */
+
+/* Post headlines */
+.entry-header {
+  text-align: center;
+}
+
+.entry-meta {
+  color: $green;
+  @include font-size(16);
+  border-top: 1px solid $green;
+  border-bottom: 2px solid $green;
+  padding: .4em 10px;
+  display: inline-block;
+  margin: .75em auto 1em;
+  font-style: italic;
+  word-spacing: 3px;
+
+  &::before,
+  &::after {
+    content: '\2666';
+    padding: 0 10px;
+    display: inline;
+  }
+
+  abbr, a {
+    color: #707956;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .85em;
+    word-spacing: normal;
+    text-decoration: none;
+  }
+}
+
+
+/* Emphasize first paragraph */
+.single-post .entry-content > p:first-of-type,
+p.intro,
+.featured-series > p:first-of-type {
+  font-size: 1.4em;
+  line-height: 1.4;
+  color: #7D7556;
+  margin: 2em 2em;
+}
