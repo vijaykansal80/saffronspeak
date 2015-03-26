@@ -23,6 +23,7 @@ access_log
 #==================#
 #  Thesis files    #
 #==================#
+thesis
 lib/*
 archives.php
 comments.php
