@@ -94,6 +94,8 @@ function safflower_posted_on() {
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
 
+	edit_post_link( __( ' (Edit) ', 'safflower' ), '<span class="edit-link">', '</span>' );
+
 }
 endif;
 
@@ -125,8 +127,6 @@ function safflower_entry_footer() {
 		comments_popup_link( __( 'Leave a comment', 'safflower' ), __( '1 Comment', 'safflower' ), __( '% Comments', 'safflower' ) );
 		echo '</span>';
 	}
-
-	edit_post_link( __( 'Edit', 'safflower' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
