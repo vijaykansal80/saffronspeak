@@ -61,14 +61,11 @@
     }
 
     .entry-content {
+      @include font-size(16);
       margin-top: 0;
-    }
-
-    p {
-      @include font-size(17);
       text-align: left;
     }
-  }
+  } // .post
 
 
   /* Alternate post excerpt style */
@@ -164,7 +161,6 @@ p.intro,
   margin: 1em 0;
 
   @include tablet {
-    font-size: 1.4em;
     margin: 2em 2em;
   }
 

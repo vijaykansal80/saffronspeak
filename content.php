@@ -22,7 +22,7 @@ if (has_post_thumbnail()): ?>
 
   <div class="entry-content">
     <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
-    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+    
   </div>
-
+<p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
 </article><!-- #post-## -->

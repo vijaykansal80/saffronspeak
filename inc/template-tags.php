@@ -7,6 +7,17 @@
  * @package safflower
  */
 
+/**
+ * Remove the 'Category:' prefix on category archive pages
+ */
+add_filter( 'get_the_archive_title', function ( $title ) {
+  if( is_category() ) {
+    $title = single_cat_title( '', false );
+  }
+	return $title;
+});
+
+
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
