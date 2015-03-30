@@ -842,6 +842,12 @@ ul#main-nav ul li:hover > a {
 .group-blog .byline {
   display: inline;
 }
+@media (max-width: 767px) {
+  .single .byline,
+  .group-blog .byline {
+    display: none;
+  }
+}
 
 .page-content,
 .entry-content,
@@ -861,40 +867,192 @@ ul#main-nav ul li:hover > a {
 }
 
 .entry-meta {
-  color: #8c927b;
   font-size: 16px;
   font-size: 1.6rem;
-  border-top: 1px solid #8c927b;
   border-bottom: 2px solid #8c927b;
-  padding: .4em 10px;
+  border-top: 1px solid #8c927b;
+  color: #8c927b;
   display: inline-block;
-  margin: .75em auto 1em;
   font-style: italic;
-  word-spacing: 3px;
+  margin: .75em auto 1em;
+  padding: .4em 10px;
+  word-spacing: 1px;
 }
 .entry-meta::before, .entry-meta::after {
   content: '\2666';
-  padding: 0 10px;
   display: inline;
+  padding: 0 10px;
 }
 .entry-meta abbr, .entry-meta a {
   color: #707956;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   font-size: .85em;
-  word-spacing: normal;
+  font-style: normal;
+  letter-spacing: 2px;
   text-decoration: none;
+  text-transform: uppercase;
+  word-spacing: normal;
 }
 
 /* Emphasize first paragraph */
 .single-post .entry-content > p:first-of-type,
 p.intro,
 .featured-series > p:first-of-type {
-  font-size: 1.4em;
-  line-height: 1.4;
   color: #7D7556;
-  margin: 2em 2em;
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin: 1em 0;
+}
+@media (min-width: 768px) {
+  .single-post .entry-content > p:first-of-type,
+  p.intro,
+  .featured-series > p:first-of-type {
+    font-size: 1.4em;
+    margin: 2em 2em;
+  }
+}
+
+/* Sharedaddy */
+.sharedaddy {
+  border-top: 1px solid #7D7556;
+  border-bottom: 2px solid #7D7556;
+  overflow: auto;
+  padding: 5px 0;
+}
+
+.sharedaddy::after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.sharedaddy h3 {
+  float: left;
+  width: 30%;
+  padding: 0;
+  margin: 4px 0 0;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.sharedaddy img {
+  border: 0;
+  box-shadow: none;
+}
+
+.sd-content {
+  float: left;
+  width: 65%;
+  margin-left: 5%;
+}
+
+.sd-content ul {
+  margin: 0;
+}
+
+.sd-content li {
+  display: block;
+  list-style-type: none;
+  float: left;
+  margin-top: 5px;
+}
+
+div.sharedaddy a.sd-button {
+  margin: 0px;
+  padding: 0px;
+  display: inline-block;
+  background: -moz-linear-gradient(center top, #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
+  border-radius: 3px;
+  border: 1px solid #DDD !important;
+  box-shadow: 0px 1px 0px #FFF inset;
+  color: #000 !important;
+  text-decoration: none;
+  line-height: 1;
+  font-size: 12px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+}
+
+div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited {
+  font-style: normal;
+}
+
+div.sharedaddy .share-custom a.sd-button {
+  background: #fff;
+  text-indent: 20px;
+  margin-left: 20px;
+  margin-top: -5px;
+}
+
+li.share-email {
+  margin-right: 20px;
+  margin-top: 3px;
+}
+
+li.share-email a.sd-button > span {
+  background-image: url("../../../plugins/jetpack/modules/sharedaddy/images/email.png");
+  padding-left: 24px;
+}
+
+.sd-social-icon-text a.sd-button > span, a.sd-button > span {
+  padding: 1px 5px 1px 23px;
+  background-position: 2px center;
+  background-repeat: no-repeat;
+}
+
+a.sd-button > span {
+  padding: 1px 8px;
+  display: block;
+  opacity: 0.8;
+  line-height: 1.5;
+  text-shadow: none;
+}
+
+.tags-links {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 4px 8px;
+  color: #8c927b;
+  font-size: 14px;
+  font-size: 1.4rem;
+  margin: 2em auto 2.5em;
+}
+.tags-links span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .9em;
+}
+.tags-links a {
+  margin: 0 5px;
+  font-style: italic;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+/* YARPP Related Posts */
+.related-posts {
+  clear: both;
+}
+
+.related-posts div {
+  width: 30%;
+  float: left;
+  margin-right: 5%;
+}
+
+.related-posts div:nth-of-type(3) {
+  margin-right: 0;
+}
+
+.related-posts h3 {
+  text-align: left;
+}
+
+.related-posts h4 {
+  text-align: center;
+}
+
+.related-posts .inline-readmore {
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 /*--------------------------------------------------------------

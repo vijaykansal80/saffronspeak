@@ -104,16 +104,19 @@ if ( ! function_exists( 'safflower_entry_footer' ) ) :
 function safflower_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
+
+		/* We don't currently show categories at the bottom of posts
 		$categories_list = get_the_category_list( __( ', ', 'safflower' ) );
 		if ( $categories_list && safflower_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'safflower' ) . '</span>', $categories_list );
 		}
+		*/
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'safflower' ) );
+		$tags_list = get_the_tag_list( '', __( '&middot;', 'safflower' ) );
+		//$tags_list = get_the_tag_list('', ' &middot; ', '');
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'safflower' ) . '</span>', $tags_list );
+			printf( '<section class="tags-links">' . __( '<span>Find related posts by tags:</span>  %1$s', 'safflower' ) . '</section>', $tags_list );
 		}
 	}
 
