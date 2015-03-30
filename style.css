@@ -318,8 +318,8 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 0.9375px;
-  font-size: 0.09375rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -329,8 +329,8 @@ pre {
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 0.9375px;
-  font-size: 0.09375rem;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 abbr, acronym {
@@ -431,8 +431,8 @@ input[type="submit"] {
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  font-size: 0.75px;
-  font-size: 0.075rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -820,6 +820,11 @@ ul#main-nav ul li:hover > a {
 --------------------------------------------------------------*/
 .site-logo {
   max-width: 350px;
+}
+@media (max-width: 767px) {
+  .site-logo {
+    max-width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------

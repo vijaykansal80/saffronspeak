@@ -1,3 +1,7 @@
 .site-logo {
   max-width: 350px;
+
+  @include mobile {
+    max-width: 100%;
+  }
 }
