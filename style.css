@@ -290,13 +290,24 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
   font-weight: normal;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+}
 
 h1 {
-  font-size: 31px;
-  font-size: 3.1rem;
-  line-height: 1.2;
-  margin: 0 auto 0;
+  font-size: 36px;
+  font-size: 3.6rem;
   color: #BD6518;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 29px;
+  font-size: 2.9rem;
+  color: #8c927b;
+  line-height: 1.2;
+  margin: 0 auto;
 }
 
 p {
@@ -878,6 +889,89 @@ ul#main-nav ul li:hover > a {
   margin: 0 0 1.5em;
 }
 
+/* Blog archive pages */
+.archive {
+  /* Post excerpts */
+  /* Alternate post excerpt style */
+}
+.archive .post {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .archive .post {
+    width: 48%;
+    float: left;
+  }
+  .archive .post:nth-of-type(odd) {
+    clear: left;
+    margin-right: 4%;
+  }
+}
+.archive .post .entry-meta {
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.archive .post .entry-meta::before, .archive .post .entry-meta::after {
+  padding: 0 5px;
+}
+.archive .post .entry-content {
+  margin-top: 0;
+}
+.archive .post p {
+  font-size: 17px;
+  font-size: 1.7rem;
+  text-align: left;
+}
+.archive .post-excerpt-alt {
+  clear: both;
+  margin-top: 40px;
+}
+.archive .post-excerpt-alt:after {
+  width: 100%;
+  clear: both;
+  display: block;
+  content: '';
+}
+.archive .post-excerpt-alt img {
+  float: left;
+  box-sizing: border-box;
+  margin: 0 20px 5px 0;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  width: 30%;
+  height: auto;
+}
+.archive .post-excerpt-alt:nth-of-type(odd) img {
+  float: right;
+}
+.archive .post-excerpt-alt .format_text {
+  float: left;
+  width: 65%;
+  padding-top: 10px;
+}
+.archive .post-excerpt-alt .tags {
+  font-style: italic;
+  font-size: .85em;
+  line-height: 1.4;
+}
+.archive .post-excerpt-alt .tags span {
+  font-style: normal;
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.archive .post-excerpt-alt .tags a {
+  text-decoration: none;
+}
+.archive .post-excerpt-alt .tags strong {
+  font-weight: bold;
+  background: #edcfba;
+  padding: 2px 5px;
+}
+
 /* Individual post pages */
 /* Post headlines */
 .entry-header {
@@ -1073,6 +1167,21 @@ a.sd-button > span {
   white-space: nowrap;
 }
 
+/* Search results page */
+.search-results .no-results {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.search-results h1 {
+  margin-bottom: 20px;
+}
+
+.search-term {
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: bolder;
+}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -1110,6 +1219,15 @@ a.sd-button > span {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
+.content-area img {
+  margin: 0 10px 5px 0;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+  height: auto;
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {

@@ -4,35 +4,25 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="post-excerpt">
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php safflower_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+<?php // Show featured images
+if (has_post_thumbnail()): ?>
+  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+    <?php the_post_thumbnail(''); ?>
+  </a>
+<?php endif; ?>
 
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'safflower' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+  <header class="entry-header">
+  	<div class="entry-meta">
+      <?php echo safflower_posted_on(); ?>
+    </div>
+    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+  </header>
 
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'safflower' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+  <div class="entry-content">
+    <p><?php the_advanced_excerpt('length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1'); ?></p>
+    <p class="read-more"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">Read more</a></p>
+  </div>
 
-	<footer class="entry-footer">
-		<?php safflower_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

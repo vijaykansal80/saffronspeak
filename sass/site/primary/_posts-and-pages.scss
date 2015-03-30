@@ -32,6 +32,92 @@
 }
 
 
+/* Blog archive pages */
+.archive {
+
+  /* Post excerpts */
+  .post {
+    text-align: center;
+
+    @include tablet {
+      width: 48%;
+      float: left;
+
+      &:nth-of-type(odd) {
+        clear: left;
+        margin-right: 4%;
+      }
+    }
+
+    .entry-meta {
+      @include font-size(15);
+      padding-right: 5px;
+      padding-left: 5px;
+
+      &::before,
+      &::after {
+        padding: 0 5px;
+      }
+    }
+
+    .entry-content {
+      margin-top: 0;
+    }
+
+    p {
+      @include font-size(17);
+      text-align: left;
+    }
+  }
+
+
+  /* Alternate post excerpt style */
+  .post-excerpt-alt {
+    clear: both;
+    margin-top: 40px;
+  }
+  .post-excerpt-alt:after {
+    width: 100%;
+    clear: both;
+    display: block;
+    content: '';
+  }
+  .post-excerpt-alt img {
+    float: left;
+    box-sizing: border-box;
+    margin: 0 20px 5px 0;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    width: 30%;
+    height: auto;
+  }
+  .post-excerpt-alt:nth-of-type(odd) img { float: right; }
+  .post-excerpt-alt .format_text {
+    float: left;
+    width: 65%;
+    padding-top: 10px;
+  }
+  .post-excerpt-alt .tags {
+    font-style: italic;
+    font-size: .85em;
+    line-height: 1.4;
+  }
+  .post-excerpt-alt .tags span {
+    font-style: normal;
+    font-size: .9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .post-excerpt-alt .tags a { text-decoration: none; }
+  .post-excerpt-alt .tags strong {
+    font-weight: bold;
+    background: #edcfba;
+    padding: 2px 5px;
+  }
+} // .archive
+
+
 /* Individual post pages */
 
 /* Post headlines */
@@ -210,4 +296,20 @@ a.sd-button > span {
 .related-posts .inline-readmore {
   text-decoration: none;
   white-space: nowrap;
+}
+
+
+/* Search results page */
+.search-results .no-results {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.search-results h1 {
+  margin-bottom: 20px;
+}
+
+.search-term {
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: bolder;
 }

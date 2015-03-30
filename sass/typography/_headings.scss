@@ -1,11 +1,22 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
   font-weight: normal;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 h1 {
-  @include font-size(31);
-  line-height: 1.2;
-  margin: 0 auto 0;
+  @include font-size(36);
   color: $orange;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+
+h2 {
+  @include font-size(29);
+  color: $green;
+  line-height: 1.2;
+  margin: 0 auto;
 }
