@@ -19,6 +19,13 @@
     margin-top: 3em;
 }
 
+.mothers-day b {
+    color: #8c0038;
+    font-family: 'Rouge Script', cursive;
+    font-size: 48px;
+    font-weight: normal;
+    margin-left: -20px;
+}
 
 /* Panels */
 .mothers-day .panel {
