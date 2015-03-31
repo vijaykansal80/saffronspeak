@@ -616,6 +616,7 @@ a:hover, a:active {
   .main-navigation {
     background: url("images/ribbon.jpg") no-repeat top center;
     height: 78px;
+    /* sub nav */
   }
   .main-navigation li {
     float: left;
@@ -635,6 +636,40 @@ a:hover, a:active {
   }
   .main-navigation li:last-child {
     background: none;
+  }
+  .main-navigation .sub-menu {
+    position: absolute;
+    top: 55px;
+    left: -9999px;
+    border: 1px solid #c1b788;
+    background: #ded3b5;
+    min-width: 200px;
+    z-index: 100;
+  }
+  .main-navigation .sub-menu li {
+    display: block;
+    background: none;
+    font-family: 'Gentium Basic', serif;
+    font-size: 14px;
+    float: none;
+    text-transform: none;
+    text-align: left;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 10px 10px;
+    border-bottom: 1px dashed #fff;
+    max-width: none;
+  }
+  .main-navigation .sub-menu li:last-child {
+    border-bottom: none;
+  }
+  .main-navigation .sub-menu li:hover {
+    text-shadow: none;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .main-navigation .sub-menu li:hover a {
+    color: #2c310f;
   }
 }
 /* Post navigation */
@@ -716,53 +751,6 @@ ul#main-nav li#blog-tab {
   font-family: "Gentium Basic", sans-serif;
   text-transform: uppercase;
   font-size: 1.6em;
-}
-
-/* sub nav */
-ul#main-nav ul {
-  position: absolute;
-  top: 55px;
-  left: -10px;
-  border: 1px solid #c1b788;
-  background: #ded3b5;
-  display: none;
-  min-width: 200px;
-  z-index: 100;
-}
-
-ul#main-nav li#blog-tab ul {
-  top: 54px;
-}
-
-ul#main-nav li:hover > ul, ul:hover {
-  display: block;
-}
-
-ul#main-nav ul li {
-  display: block;
-  background: none;
-  font-family: 'Gentium Basic', serif;
-  font-size: 14px;
-  text-transform: none;
-  text-align: left;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 10px 10px;
-  border-bottom: 1px dashed #fff;
-}
-
-ul#main-nav ul li:last-child {
-  border-bottom: none;
-}
-
-ul#main-nav ul li:hover {
-  text-shadow: none;
-  background: rgba(255, 255, 255, 0.25);
-}
-
-ul#main-nav ul li:hover > a {
-  color: #2c310f;
 }
 
 /* breadcrumbs */
