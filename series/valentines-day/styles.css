@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'Isabella';
+  src: url('isabella-script/Isabella.eot') format('eot');
+  src: url('isabella-script/Isabella.eot?#iefix') format('embedded-opentype'),
+       url('isabella-script/Isabella.woff') format('woff'),
+       url('isabella-script/Isabella.ttf') format('truetype'),
+       url("isabella-script/Isabella.svg#Isabella") format("svg");
+}
+
+/* First-letter and/or word */
+.featured-series.valentines-day > p:first-of-type:first-letter,
+.valentines-day .entry-content > p:first-of-type:first-letter,
+.valentines-day p.intro:first-letter,
+.valentines-day p.float-left + h3 + p:first-letter,
+.valentines-day .panel p:first-of-type:first-letter {
+    color: #8c281b;
+    font-family: "Isabella", cursive;
+    float: left;
+    line-height: 1;
+    font-size: 132px;
+    margin: -30px 10px -20px -20px;
+}
+.valentines-day .entry-content > p:first-of-type:first-line {
+    color: #8c281b;
+    font-family: "Isabella", cursive;
+    font-size: 48px;
+    line-height: 0.8;
+    word-spacing: 5px;
+}
+
+/* Panel styles */
+.valentines-day .panel {
+    background: #edccb6 url('panel.jpg') repeat;
+    color: #4c1617;
+}
+.valentines-day .panel p:first-of-type:first-letter {
+    font-weight: normal;
+    font-size: 90px;
+    line-height: 0.6;
+    margin: -10px 10px -10px -20px;
+}
+
+/* Series navigation */
+.valentines-day .series-navigation p {
+    margin: 4em 2em;
+}
+
+/* Emphasis */
+.valentines-day strong { color: #4c1617; }
+
+/* Text links */
+.valentines-day .entry-content a, .featured-series.valentines-day a { color: #8c281b; }
+
+/* Post headings */
+.valentines-day .entry-content > h3 {
+    color: #8c281b;
+    font-family: "Isabella";
+    font-size: 4em;
+    line-height: 0.5;
+    margin: 1em 0 .5em;
+}
+
+.valentines-day .entry-content > h3:after,
+.valentines-day .entry-content > h3:before {
+    content: "v";
+    display: inline-block;
+    font-family: "saffron-marigold" !important;
+    font-size: 1.25em;
+    line-height: 1;
+    color: #8c281b;
+    opacity: 0.4;
+    padding: 0 15px;
+    vertical-align: middle;
+}
+
+.valentines-day h3:after {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: translateZ(1px) rotateY(180deg);
+}
+
+.valentines-day h4 {
+    border-color: #4c1617;
+}
+
+.valentines-day h2,
+.valentines-day .entry-content h4 a,
+.valentines-day h4,
+.valentines-day h4 a {
+    color: #4c1617;
+}
+
+/* Read more links */
+.valentines-day .read-more a {
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background: #8c281b;
+}
+.valentines-day .read-more a:hover {
+    background: #4c1617;
+}

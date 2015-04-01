@@ -1,0 +1,38 @@
+/* ==================================== 
+Custom styles for Father's Day series
+===================================== */
+
+.fathers-day > p:first-of-type:first-letter, 
+.fathers-day > p.intro:first-letter, 
+.fathers-day p.float-left + h3 + p:first-letter, 
+.fathers-day .panel p:first-letter {
+    font-family: 'Lancelot', cursive;
+    font-size: 6em;
+    margin: -.05em 4px 0 0;
+    text-shadow: -4px 2px 0px #fff, -6px 4px 0px #676047;
+    color: #512105;
+    float: left;
+    line-height: 1;
+}
+.fathers-day a {
+    color: #8c0038;
+}
+.fathers-day .panel {
+    background: url('leather.jpg');
+    background-size: 300px 300px;
+    border-color: #512105;
+}
+
+.fathers-day h4 {
+    border-color: #512105;
+}
+.fathers-day h2, .fathers-day h4 a, .fathers-day h4 {
+    color: #512105;
+}
+.fathers-day .read-more a {
+    color: white;
+    background-color: #512105;
+}
+.fathers-day .read-more a:hover {
+    background-color: #4e7e97;
+}

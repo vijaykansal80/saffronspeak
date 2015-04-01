@@ -1,0 +1,145 @@
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps);
+
+
+/* First-letter and/or word */
+.featured-series.holidays > p:first-of-type:first-letter, 
+.holidays .entry-content > p:first-of-type:first-letter, 
+.holidays p.intro:first-letter, 
+.holidays p.float-left + h3 + p:first-letter, 
+.holidays .panel p:first-of-type:first-letter {
+    color: #52659a;
+    font-family: "Elsie Swash Caps", cursive;
+    text-shadow: 3px 0px 0px #e6e9f1, 5px 0px 0px #FFF, 7px 0px 0px #707b9a;
+    font-size: 128px;
+    margin-right: 11px;
+    margin-top: -15px;
+    float: left;
+    line-height: 1;
+}
+.holidays .entry-content > p:first-of-type:first-line {
+    color: #52659a;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 28px;
+}
+
+
+
+/* Panel styles */
+.holidays .panel {
+    background: #1f2566 url('panel-bg.png') no-repeat;
+    border: none;
+    font-size: 1.2em;
+    line-height: 2em;
+    height: 345px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    color: #e6e9f1;
+}
+.holidays .panel p:first-of-type:first-letter {
+    font-size: 90px;
+    margin-right: 5px;
+    margin-top: -5px;
+    text-shadow: none;
+    color: #5383A0;
+}
+.holidays .series-navigation {
+    background: #1f2566 url('series-navigation.png') no-repeat;
+    padding-top: .5em;
+    height: 245px;
+}
+.holidays .entry-content .series-navigation a { color: #5383A0; }
+.holidays .entry-content .series-navigation a:hover { color: #52659a; }
+
+
+/* Emphasis */
+.holidays strong { color: #50616d; }
+
+
+/* Text links */
+.holidays .entry-content a, .featured-series.holidays a {color: #1f2566;}
+
+
+/* Fancy headers */
+.holidays .entry-content header {
+    background: #1f2566 url('snowy-bg.png') no-repeat;
+    padding: 10px 0;
+    height: 150px;
+    margin: 3em 0 1em;
+    box-sizing: border-box; 
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    text-align: center; 
+}
+.holidays header h3, .holidays .entry-content > h3, .holidays .entry-content section:not(.related-posts) h3 {
+    color: #1f2566;
+    font-family: "Elsie Swash Caps", cursive;
+    font-size: 2.4em;
+}
+.holidays header h3 {
+    margin: 20px auto -5px;
+    font-size: 2.4em;
+    color: #bdc2d2;
+    text-shadow: 1px 1px 1px #050938;
+}
+.holidays h3:before, .holidays h3:after {
+    content: "f";
+    font-family: "saffron-marigold" !important;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    color: #5383A0;
+    opacity: .85;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+.holidays .related-posts h3:after, .holidays .related-posts h3:before { display: none; }
+.holidays .sharedaddy h3:after, .holidays .sharedaddy h3:before { display: none; }
+
+.holidays .entry-content header h3 a { color: #e6e9f1; }
+.holidays .entry-content header h4 {
+    display: inline-block;
+    margin: 0 auto;
+    color: #e6e9f1;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #e6e9f1;
+    border-top: 1px solid #e6e9f1;
+    padding: 3px 10px;
+}
+.holidays .entry-content header h4:before, .holidays .entry-content header h4:after {
+    content: '\2022';
+    display: inline-block;
+    padding: 0 10px;
+    opacity: .5;
+}
+
+
+/* Post headings */
+.holidays h4 { border-color: #1f2566; }
+.holidays h2, .holidays .entry-content h4 a, .holidays h4 { color: #1f2566; }
+
+/* Read more links */
+.holidays .read-more a {
+    color: #6d6e72;
+    border-color: #ced1d8;
+    text-shadow: 1px 1px 1px #fff;
+    background: #f2f5fc;
+    background: -moz-linear-gradient(top, #f2f5fc 0%, #e6e8ef 24%, #cdd0d7 47%, #dee0e5 77%, #e8eaef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5fc), color-stop(24%,#e6e8ef), color-stop(47%,#cdd0d7), color-stop(77%,#dee0e5), color-stop(100%,#e8eaef));
+    background: -webkit-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -o-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: -ms-linear-gradient(top, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    background: linear-gradient(to bottom, #f2f5fc 0%,#e6e8ef 24%,#cdd0d7 47%,#dee0e5 77%,#e8eaef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5fc', endColorstr='#e8eaef',GradientType=0);
+}
+.holidays .read-more a:hover {
+    background: #e8eaef;
+    background: -moz-linear-gradient(top, #e8eaef 0%, #dee0e5 23%, #cdd0d7 53%, #e6e8ef 76%, #f2f5fc 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8eaef), color-stop(23%,#dee0e5), color-stop(53%,#cdd0d7), color-stop(76%,#e6e8ef), color-stop(100%,#f2f5fc));
+    background: -webkit-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -o-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: -ms-linear-gradient(top, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    background: linear-gradient(to bottom, #e8eaef 0%,#dee0e5 23%,#cdd0d7 53%,#e6e8ef 76%,#f2f5fc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8eaef', endColorstr='#f2f5fc',GradientType=0);
+}
+.holidays .read-more a .extra { display: none; }

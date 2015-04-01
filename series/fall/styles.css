@@ -1,0 +1,70 @@
+@import url(http://fonts.googleapis.com/css?family=Great+Vibes);
+
+/* ==================================== 
+Custom styles for Fall series
+===================================== */
+
+.featured-series.fall > p:first-of-type:first-letter, 
+.fall .format_text > p:first-of-type:first-letter, 
+.fall p.intro:first-letter, 
+.fall p.float-left + h3 + p:first-letter, 
+.fall .panel p:first-of-type:first-letter {
+    color: #c06538;
+    font-family: 'Great Vibes', cursive;
+    float: left;
+    font-size: 72px;
+    line-height: 1;
+    margin: -10px 10px 0 -15px
+}
+
+.fall .panel p:first-of-type:first-letter {
+    font-size: 48px;
+    margin-right: 5px;
+    margin-top: -20px;
+}
+
+.fall .entry-content a, .featured-series.fall a {color: #8b2517;}
+.fall .panel {
+    background: url('fabric.jpg');
+    background-size: 198px 200px;
+    border-color: #8b2517;
+}
+
+.fall .entry-content > h3, .fall .entry-content section:not(.related-posts) h3 {
+    color: #c06538;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8em;
+}
+
+.fall h4 {border-color: #c06538;}
+.fall h2, .fall .entry-content h4 a, .fall h4 {color: #c06538;}
+
+.fall .read-more a {
+    color: #8b2517;
+    background-color: #dca55b;
+}
+.fall .read-more a:hover {background-color: #e07a48;}
+
+.table-of-contents a {
+    display: block;
+    float: left;
+    width: 155px;
+    height: 480px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 5px;
+}
+.table-of-contents a.bedroom { background: url('bedroom.png'); }
+.table-of-contents a.living-room { background: url('living-room.png'); }
+.table-of-contents a.dining-room { background: url('dining-room.png'); }
+.table-of-contents a.outdoor-dining { background: url('outdoor-dining.png'); }
+.table-of-contents a.bathroom { background: url('bathroom.png'); }
+.table-of-contents:after {
+    clear: both;
+    display: block;
+    content: '';
+    margin-bottom: 2em;
+}
+
+.read-more + .table-of-contents { margin-top: 2em; }

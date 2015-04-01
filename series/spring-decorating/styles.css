@@ -1,0 +1,247 @@
+
+@font-face {
+    font-family: 'Showcase Script';
+    src: url('showcase/showcasescript-webfont.eot');
+    src: url('showcase/showcasescript-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasescript-webfont.woff2') format('woff2'),
+         url('showcase/showcasescript-webfont.woff') format('woff'),
+         url('showcase/showcasescript-webfont.ttf') format('truetype'),
+         url('showcase/showcasescript-webfont.svg#showcasescript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Slab';
+    src: url('showcase/showcaseslab-webfont.eot');
+    src: url('showcase/showcaseslab-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcaseslab-webfont.woff2') format('woff2'),
+         url('showcase/showcaseslab-webfont.woff') format('woff'),
+         url('showcase/showcaseslab-webfont.ttf') format('truetype'),
+         url('showcase/showcaseslab-webfont.svg#showcaseslab') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Ornament';
+    src: url('showcase/showcaseorn-webfont.eot');
+    src: url('showcase/showcaseorn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcaseorn-webfont.woff2') format('woff2'),
+         url('showcase/showcaseorn-webfont.woff') format('woff'),
+         url('showcase/showcaseorn-webfont.ttf') format('truetype'),
+         url('showcase/showcaseorn-webfont.svg#showcaseornaments') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Mini';
+    src: url('showcase/showcasesansmini-webfont.eot');
+    src: url('showcase/showcasesansmini-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasesansmini-webfont.woff2') format('woff2'),
+         url('showcase/showcasesansmini-webfont.woff') format('woff'),
+         url('showcase/showcasesansmini-webfont.ttf') format('truetype'),
+         url('showcase/showcasesansmini-webfont.svg#showcasesans_mini') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Sans';
+    src: url('showcase/showcasesans-webfont.eot');
+    src: url('showcase/showcasesans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasesans-webfont.woff2') format('woff2'),
+         url('showcase/showcasesans-webfont.woff') format('woff'),
+         url('showcase/showcasesans-webfont.ttf') format('truetype'),
+         url('showcase/showcasesans-webfont.svg#showcasesans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Manual emphasis on first couple of words */
+.spring-decorating .entry-content b,
+.spring-decorating .panel b {
+    color: #4f788f;
+    font-family: "Showcase Script";
+    font-weight: normal;
+    font-size: 31px;
+    -moz-font-feature-settings: "clig=1, calt=1";
+    -ms-font-feature-settings: "clig", "calt";
+    -webkit-font-feature-settings: "clig", "calt";
+    -o-font-feature-settings: "clig", "calt";
+    font-feature-settings: "clig", "calt";
+    letter-spacing: 0;
+    line-height: 1;
+    margin: -20px 5px 0 -15px;
+}
+
+/* Panel styles */
+.spring-decorating .panel {
+    background: #edccb6 url('symphony.png') repeat;
+    border-color: #45814b;
+    position: relative;
+}
+
+.spring-decorating .panel b {
+    font-size: 27px;
+    color: #45814b;
+}
+
+.spring-decorating:not(.parent-post) .entry-content .panel figure img {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.spring-decorating .panel figcaption {
+    color: #45814b;
+    font-family: "Showcase Slab";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.spring-decorating .panel figcaption:before,
+.spring-decorating .panel figcaption:after {
+    content: "1";
+    display: inline-block;
+    font-family: "Showcase Ornament";
+    padding: 0 10px;
+}
+
+.spring-decorating .panel figcaption:after {
+    content: "3";
+}
+
+.spring-decorating .panel:before {
+    color: #45814b;
+    content: "F";
+    display: block;
+    font-family: "Showcase Ornament";
+    font-size: 31px;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+}
+
+/* Series navigation */
+.spring-decorating .series-navigation {
+    background-image: url('symphony-blue.png');
+    border-color: #4f788f;
+}
+
+.spring-decorating .series-navigation:before {
+    color: #4f788f;
+    bottom: 60px;
+}
+
+.spring-decorating .series-navigation p {
+    margin: 4em 2em;
+}
+
+.spring-decorating .series-navigation b {
+    color: #4f788f;
+}
+
+.spring-decorating .series-navigation .next-post {
+    position: relative;
+}
+
+/* Emphasis */
+.spring-decorating strong {
+    color: #45814b;
+}
+
+/* Text links */
+.spring-decorating .entry-content a, .featured-series.spring-decorating a { color: #4f788f; }
+
+/* Post headings */
+.spring-decorating .entry-content > h3 {
+    color: #4f788f;
+    font-family: "Showcase Script";
+    font-size: 2em;
+    line-height: 0.5;
+    margin: 3em 0 1.5em;
+    -moz-font-feature-settings: "swsh=1, cswh=1, dlig=1, clig=1, calt=1";
+    -ms-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -webkit-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -o-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+}
+
+/*
+.spring-decorating .entry-content > h3:before {
+    color: #45814b;
+    content: "v";
+    display: block;
+    font-family: "Showcase Ornament";
+    font-size: 29px;
+    line-height: 1;
+    padding: 0 0 20px;
+}
+*/
+.spring-decorating .entry-content > h3 span {
+    color: #45814b;
+    display: block;
+    font-family: "Showcase Slab";
+    margin: 35px auto 25px;
+}
+
+.spring-decorating .entry-content > h3 > span:after,
+.spring-decorating .entry-content > h3 > span:before,
+.spring-decorating .entry-content > h3 span span:before {
+    color: #45814b;
+    content: "S";
+    display: inline-block;
+    font-family: "Showcase Ornament";
+    font-size: 22px;
+    line-height: 1;
+    padding: 0 5px;
+    vertical-align: 7px;
+}
+
+.spring-decorating .entry-content > h3 > span:after {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.spring-decorating .entry-content > h3 span span {
+    display: inline;
+}
+
+.spring-decorating .entry-content > h3 span span:before {
+    content: "X";
+    padding: 0;
+    vertical-align: 0;
+}
+
+.spring-decorating .entry-content h4 {
+    border-color: #45814b;
+}
+
+.spring-decorating h2,
+.spring-decorating .entry-content h4 a,
+.spring-decorating h4,
+.spring-decorating h4 a {
+    color: #45814b;
+}
+
+.spring-decorating .sourcing h4 {
+    color: #a58059;
+    border-color: #d7b693;
+}
+
+/* Read more links */
+.spring-decorating .read-more a {
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background: #4f788f;
+}
+.spring-decorating .read-more a:hover {
+    background: #45814b;
+}

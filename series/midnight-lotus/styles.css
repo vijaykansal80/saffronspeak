@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'Showcase Script';
+    src: url('showcase/showcasescript-webfont.eot');
+    src: url('showcase/showcasescript-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcasescript-webfont.woff2') format('woff2'),
+         url('showcase/showcasescript-webfont.woff') format('woff'),
+         url('showcase/showcasescript-webfont.ttf') format('truetype'),
+         url('showcase/showcasescript-webfont.svg#showcasescript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Slab';
+    src: url('showcase/showcaseslab-webfont.eot');
+    src: url('showcase/showcaseslab-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcaseslab-webfont.woff2') format('woff2'),
+         url('showcase/showcaseslab-webfont.woff') format('woff'),
+         url('showcase/showcaseslab-webfont.ttf') format('truetype'),
+         url('showcase/showcaseslab-webfont.svg#showcaseslab') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Showcase Ornament';
+    src: url('showcase/showcaseorn-webfont.eot');
+    src: url('showcase/showcaseorn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('showcase/showcaseorn-webfont.woff2') format('woff2'),
+         url('showcase/showcaseorn-webfont.woff') format('woff'),
+         url('showcase/showcaseorn-webfont.ttf') format('truetype'),
+         url('showcase/showcaseorn-webfont.svg#showcaseornaments') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Manual emphasis on first couple of words */
+.midnight-lotus .entry-content b {
+    color: #5077ac;
+    font-family: "Showcase Script";
+    font-weight: normal;
+    font-size: 31px;
+    -moz-font-feature-settings: "calt=1";
+    -ms-font-feature-settings: "calt";
+    -webkit-font-feature-settings: "calt";
+    -o-font-feature-settings: "calt";
+    font-feature-settings: "calt";
+    letter-spacing: 0;
+    line-height: 1;
+    margin: -20px 5px 0 -15px;
+}
+
+/* Panel styles */
+.midnight-lotus .panel {
+    background: #edccb6 url('panel-bg.jpg') repeat;
+    border-color: #2a2761;
+}
+
+.midnight-lotus .panel b {
+    font-size: 27px;
+    color: #2a2761;
+}
+
+/* Series navigation */
+.midnight-lotus .series-navigation {
+    background-image: url('panel-bg.jpg');
+    border-color: #5077ac;
+}
+
+.midnight-lotus .series-navigation:before {
+    color: #5077ac;
+    bottom: 60px;
+}
+
+.midnight-lotus .series-navigation p {
+    margin: 4em 2em;
+}
+
+.midnight-lotus .series-navigation b {
+    color: #5077ac;
+}
+
+.midnight-lotus .series-navigation .next-post {
+    position: relative;
+}
+
+/* Emphasis */
+.midnight-lotus strong {
+    color: #2a2761;
+}
+
+/* Text links */
+.midnight-lotus .entry-content a, .featured-series.midnight-lotus a { color: #5077ac; }
+
+/* Post headings */
+.midnight-lotus .entry-content > h3 {
+    color: #5077ac;
+    font-family: "Showcase Script";
+    font-size: 2em;
+    line-height: 0.5;
+    margin: 3em 0 1.5em;
+    -moz-font-feature-settings: "swsh=1, cswh=1, dlig=1, clig=1, calt=1";
+    -ms-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -webkit-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    -o-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+    font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
+}
+
+.midnight-lotus .entry-content > h3 span {
+    color: #2a2761;
+    display: block;
+    font-family: "Showcase Slab";
+    font-size: 26px;
+    margin: 20px auto 20px;
+}
+
+.midnight-lotus .entry-content > h3 span:before,
+.midnight-lotus .entry-content > h3 span:after {
+    display: inline-block;
+    font-family: "Showcase Ornament";
+    font-size: 22px;
+    line-height: 1;
+    padding: 0 10px;
+    vertical-align: 0;
+}
+
+.midnight-lotus .entry-content > h3 span:before {
+    content: "1";
+}
+
+.midnight-lotus .entry-content > h3 span:after {
+    content: "3";
+}
+
+.midnight-lotus .entry-content h4 {
+    border-color: #2a2761;
+}
+
+.midnight-lotus h2,
+.midnight-lotus .entry-content h4 a,
+.midnight-lotus h4,
+.midnight-lotus h4 a {
+    color: #2a2761;
+}
+
+.midnight-lotus .sourcing h4 {
+    color: #a58059;
+    border-color: #d7b693;
+}
+
+/* Read more links */
+.midnight-lotus .read-more a {
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background: #2a2761;
+}
+.midnight-lotus .read-more a:hover {
+    background: #5077ac;
+}

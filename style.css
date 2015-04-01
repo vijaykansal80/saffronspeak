@@ -1287,6 +1287,126 @@ a.sd-button > span {
   background-color: #838b64;
 }
 
+/* Shopping Guide page */
+.category-shopping-guides .subcategory {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0;
+  background: #fff;
+  border: 10px solid #fff;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  display: block;
+  height: 300px;
+  margin: 20px 0;
+  position: relative;
+  width: 100%;
+}
+.category-shopping-guides .subcategory .div-link {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.category-shopping-guides .subcategory h2 {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  left: -25px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 15px;
+}
+.category-shopping-guides .subcategory .badge {
+  background: none;
+  box-shadow: none;
+  height: 100px;
+  position: absolute;
+  right: -50px;
+  top: 20px;
+  width: 100px;
+}
+.category-shopping-guides .subcategory .read-more {
+  bottom: 0;
+  position: absolute;
+  right: 25px;
+}
+.category-shopping-guides .subcategory .read-more a {
+  color: #fff;
+  padding: 10px 30px;
+}
+.category-shopping-guides .subcategory.valentines-day {
+  background-image: url("series/valentines-day/valentines-day-title-image.jpg");
+}
+.category-shopping-guides .subcategory.valentines-day h2, .category-shopping-guides .subcategory.valentines-day .read-more a {
+  background-color: #7d0b25;
+}
+.category-shopping-guides .subcategory.valentines-day:hover h2, .category-shopping-guides .subcategory.valentines-day:hover .read-more a {
+  background-color: #4e0717;
+}
+.category-shopping-guides .subcategory.spring-decorating {
+  background-image: url("series/spring-decorating/spring-decorating-title-image.jpg");
+}
+.category-shopping-guides .subcategory.spring-decorating h2, .category-shopping-guides .subcategory.spring-decorating .read-more a {
+  background-color: #45814b;
+}
+.category-shopping-guides .subcategory.spring-decorating:hover h2, .category-shopping-guides .subcategory.spring-decorating:hover .read-more a {
+  background-color: #336038;
+}
+.category-shopping-guides .subcategory.mothers-day {
+  background-image: url("series/mothers-day/mothers-day-title-image.jpg");
+}
+.category-shopping-guides .subcategory.mothers-day h2, .category-shopping-guides .subcategory.mothers-day .read-more a {
+  background-color: #714926;
+}
+.category-shopping-guides .subcategory.mothers-day:hover h2, .category-shopping-guides .subcategory.mothers-day:hover .read-more a {
+  background-color: #4b3019;
+}
+.category-shopping-guides .subcategory.summer {
+  background-image: url("series/summer/summer-title-image.jpg");
+}
+.category-shopping-guides .subcategory.summer h2, .category-shopping-guides .subcategory.summer .read-more a {
+  background-color: #304f64;
+}
+.category-shopping-guides .subcategory.summer:hover h2, .category-shopping-guides .subcategory.summer:hover .read-more a {
+  background-color: #1f3442;
+}
+.category-shopping-guides .subcategory.back-to-school {
+  background-image: url("series/back-to-school/back-to-school-title-image.jpg");
+}
+.category-shopping-guides .subcategory.back-to-school h2, .category-shopping-guides .subcategory.back-to-school .read-more a {
+  background-color: #233367;
+}
+.category-shopping-guides .subcategory.back-to-school:hover h2, .category-shopping-guides .subcategory.back-to-school:hover .read-more a {
+  background-color: #162041;
+}
+.category-shopping-guides .subcategory.fall {
+  background-image: url("series/fall/fall-title-image.jpg");
+}
+.category-shopping-guides .subcategory.fall h2, .category-shopping-guides .subcategory.fall .read-more a {
+  background-color: #bd6233;
+}
+.category-shopping-guides .subcategory.fall:hover h2, .category-shopping-guides .subcategory.fall:hover .read-more a {
+  background-color: #954d28;
+}
+.category-shopping-guides .subcategory.thanksgiving {
+  background-image: url("series/thanksgiving/thanksgiving-title-image.jpg");
+}
+.category-shopping-guides .subcategory.thanksgiving h2, .category-shopping-guides .subcategory.thanksgiving .read-more a {
+  background-color: #466545;
+}
+.category-shopping-guides .subcategory.thanksgiving:hover h2, .category-shopping-guides .subcategory.thanksgiving:hover .read-more a {
+  background-color: #314730;
+}
+.category-shopping-guides .subcategory.holidays {
+  background-image: url("series/holidays/holidays-title-image.jpg");
+}
+.category-shopping-guides .subcategory.holidays h2, .category-shopping-guides .subcategory.holidays .read-more a {
+  background-color: #1f2566;
+}
+.category-shopping-guides .subcategory.holidays:hover h2, .category-shopping-guides .subcategory.holidays:hover .read-more a {
+  background-color: #13173f;
+}
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/

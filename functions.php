@@ -172,3 +172,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Custom functions that allow for series-specific styling.
+ */
+require get_template_directory() . '/inc/series-styles.php';

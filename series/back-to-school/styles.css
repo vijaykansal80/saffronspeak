@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Milonga);
+
+/* ==================================== 
+Custom styles for Dorm Decor series
+===================================== */
+
+.featured-series.back-to-school > p:first-of-type:first-letter, 
+.back-to-school .format_text > p:first-of-type:first-letter, 
+.back-to-school > p.intro:first-letter, 
+.back-to-school p.float-left + h3 + p:first-letter, 
+.back-to-school .panel p:first-of-type:first-letter {
+    color: #447e94;
+    font-family: 'Milonga', cursive;
+    float: left;
+    line-height: 1;
+    font-size: 78px;
+    margin: -.05em 4px 0 0;
+}
+.back-to-school .entry-content a, .featured-series.back-to-school a {
+    color: #213164;
+}
+.back-to-school .panel {
+    background: url('flowers.png');
+    background-size: 177px 102px;
+    border-color: #447e94;
+}
+
+.back-to-school .entry-content > h3, .back-to-school .entry-content section:not(.related-posts) h3 {
+    color: #eeb64c;
+    font-family: 'Milonga', cursive;
+    font-size: 2.4em;
+}
+.back-to-school h4 {border-color: #447e94;}
+.back-to-school h2, .back-to-school .entry-content h4 a, .back-to-school h4 {color: #447e94;}
+
+.back-to-school .read-more a {
+    color: #eeb64c;
+    background-color: #213164;
+}
+.back-to-school .read-more a:hover {background-color: #447e94;}

@@ -51,3 +51,87 @@
 
 .category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a { color: #838b64; }
 .shopping-guides .read-more a { background-color: #838b64; }
+
+
+// Mixin used to generate series styling on Shopping Guides page
+@mixin generate-series-styles($slug, $color) {
+  &.#{$slug} {
+    background-image: url('series/#{$slug}/#{$slug}-title-image.jpg');
+
+    h2, .read-more a {
+      background-color: $color;
+    }
+
+    &:hover h2, &:hover .read-more a {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+/* Shopping Guide page */
+.category-shopping-guides {
+
+  .subcategory {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 0;
+    background: #fff;
+    border: 10px solid #fff;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+    display: block;
+    height: 300px;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+
+    .div-link {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    h2 {
+      box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+      color: #fff;
+      left: -25px;
+      padding: 10px 14px;
+      position: absolute;
+      top: 15px;
+    }
+
+    .badge {
+      background: none;
+      box-shadow: none;
+      height: 100px;
+      position: absolute;
+      right: -50px;
+      top: 20px;
+      width: 100px;
+    }
+
+    .read-more {
+      bottom: 0;
+      position: absolute;
+      right: 25px;
+
+      a {
+        color: #fff;
+        padding: 10px 30px;
+      }
+    } // .read-more
+
+    @include generate-series-styles("valentines-day", $color__valentines-day);
+    @include generate-series-styles("spring-decorating", $color__spring-decorating);
+    @include generate-series-styles("mothers-day", $color__mothers-day);
+    @include generate-series-styles("summer", $color__summer);
+    @include generate-series-styles("back-to-school", $color__back-to-school);
+    @include generate-series-styles("fall", $color__fall);
+    @include generate-series-styles("thanksgiving", $color__thanksgiving);
+    @include generate-series-styles("holidays", $color__holidays);
+
+  } //.subcategory
+} // .category-shopping-guides
+
+
