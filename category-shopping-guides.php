@@ -6,7 +6,7 @@
  * going to show a list of all its sub-categories. These are
  * then individually styled using CSS.
  *
- * @package safflower
+ * @package Safflower
  */
 
 get_header(); ?>

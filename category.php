@@ -34,58 +34,7 @@ get_header(); ?>
         ?>
       </header><!-- .page-header -->
 
-      <?php
-        // If we're in the Design Resources category, display an expandable panel with a list of sub-categories
-        if( "Design Resources" === $category->name ):
-            $series_subcategories = array_slice($subcategories, 0, 4);
-            $print_subcategories = array_slice($subcategories, 4);
-            ?>
-            <a href="#" class="subcategory-expander-link"><i class="icon-caret-down"></i>By series or print</a>
-            <section class="subcategory-expander">
-                <div>
-                    <section>
-                        <h2><i class="icon-bullet-fleuron"></i>By series</h2>
-                        <ul>
-                    <?php
-                    foreach ($series_subcategories as $subcategory):
-                        echo '<li>'.$count.'<a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
-                    endforeach; ?>
-                        </ul>
-                    </section>
 
-                    <section>
-                        <h2><i class="icon-bullet-fleuron"></i>By print</h2>
-                    <?php $count = 0;
-                    foreach ($print_subcategories as $subcategory):
-                        if ($count % 3 === 0) { echo '<ul>'; }
-                        echo '<li><a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
-                        $count++;
-                        if ($count % 3 === 0 or $count - 1 === count($print_subcategories)) { echo '</ul>'; }
-                    endforeach; ?>
-                    </section>
-                </div>
-            </section>
-        <?php endif; // Design Resources subcategory panel
-
-        // If we're in the Shopping Guides category, display a styled block for each sub-category
-        if( "Shopping Guides" === $category->name ):
-          foreach ($subcategories as $subcategory):
-          ?>
-            <div class="subcategory <?php echo smarter_slug($subcategory); ?>">
-                <h2><?php echo $subcategory->name; ?></h2>
-                <?php // Currently featured category should show an "Updated for..." badge
-                    global $featured;
-                    if( $subcategory->term_id == $featured->term_id ):
-                ?>
-                    <img class="badge" src="<?php bloginfo(stylesheet_directory); ?>/custom/images/updated-for-2015.png" alt="Updated for 2015"/>
-                <?php endif; ?>
-                <p class="read-more"><a href="<?php echo get_category_link($subcategory->term_id); ?>">Read more</a></p>
-                <a class="div-link" href="<?php echo get_category_link($subcategory->term_id); ?>"></a>
-            </div>
-        <?php endforeach;
-
-      // Otherwise, display a list of posts
-      else:
         while ( have_posts() ) : the_post(); ?>
 
         <?php

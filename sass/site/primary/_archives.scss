@@ -135,3 +135,105 @@
 } // .category-shopping-guides
 
 
+/* Design Resources page */
+
+.category-design-resources {
+  overflow-x: hidden; /* Ensure the panel doesn't cause horizontal scrolling */
+}
+
+.subcategory-expander-link {
+  @include font-size(14);
+  background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+  border-bottom: 2px solid #e6e0c9;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+  clip:rect(0px, 210px, 37px, 0px);
+  color: $brown !important;
+  display: inline-block;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: -16px 0 20px 0;
+  padding: 10px 15px;
+  position: absolute;
+  text-decoration: none;
+  text-transform: uppercase;
+  z-index: 400;
+
+  i {
+    background: #fff8dc;
+    border-radius: 50%;
+    border: 1px solid $brown;
+    color: $brown;
+    display: inline-block;
+    height: 15px;
+    margin-right: 7px;
+    padding-top: 1px;
+    text-align: center;
+    vertical-align: -3px;
+    width: 15px;
+  }
+}
+
+.subcategory-expander {
+  @include clearfix;
+  background-size: 200px 200px;
+  background: #e6e0c9 url('images/seamless-paper-texture.jpg');
+  border-bottom: 1px solid $brown;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.15);
+  @include font-size(14);
+  line-height: 1.8;
+  margin: 2em -100% 6em;
+  height: 10px;
+  position: relative;
+  top: 20px;
+  width: 300%;
+
+  div {
+    margin: 0 auto;
+    width: 33%;
+  }
+
+  section {
+    float: left;
+    margin: 1em 0;
+
+    &:first-of-type {
+      margin-right: 2.99em;
+    }
+  }
+
+  h2 {
+    padding: .25em;
+    border-bottom: 1px solid desaturate(lighten($brown, 50%), 30%);
+    color: $brown;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    @include font-size(16);
+
+    i {
+      display: inline-block;
+      margin-bottom: -2px;
+      margin-right: 5px;
+      vertical-align: bottom;
+      //@include font-size(14);
+    }
+  }
+
+  ul {
+    float: left;
+    width: 190px;
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  li {
+    color: $brown;
+    margin: 4px 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+} // .subcategory-expander
+
+

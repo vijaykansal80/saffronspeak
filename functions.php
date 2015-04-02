@@ -133,6 +133,9 @@ function safflower_fonts_url() {
 function safflower_scripts() {
 	wp_enqueue_style( 'safflower-style', get_stylesheet_uri() );
 
+	// General JS functions
+	wp_enqueue_script( 'safflower-scripts', get_template_directory_uri() . '/js/safflower.js', array(), '20150402', true );
+
 	// Custom icon font & web fonts
 	wp_enqueue_style( 'safflower-icons', get_template_directory_uri() . '/fonts/icons.css', array(), '20150326' );
 	wp_enqueue_style( 'safflower-nuptial', get_template_directory_uri() . '/fonts/nuptial.css', array(), '20150326' );
