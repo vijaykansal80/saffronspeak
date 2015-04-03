@@ -1,10 +1,6 @@
-.content-area img {
+.entry-content img {
+  @extend %bordered;
   margin: 0 10px 5px 0;
-  background: #fff;
-  padding: 10px;
-  box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-  max-width: 100%;
-  height: auto;
 }
 
 /* Don't show borders or box-shadows for certain images */

@@ -19,13 +19,17 @@ $color__text-screen: #4A4633;
 
 $color__background-button: $orange;
 $color__border-button: $russet;
-$color__border-button-hover: lighten($russet, 25%);
+$color__border-button-hover: darken($russet, 25%);
 $color__border-button-focus: darken($russet, 25%);
 $color__border-input: $olive;
 $color__border-abbr: #666;
 $color__text-input: #867D56;
 $color__text-input-focus: #4A4633;
 
+$color__customer-love: #77a2af;
+$color__design-resources: #5b4c70;
+$color__shopping-guides: #838b64;
+$color__behind-the-curtain: #a1414c;
 
 $color__valentines-day: #7d0b25;
 $color__spring-decorating: #45814b;

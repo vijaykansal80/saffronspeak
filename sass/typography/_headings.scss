@@ -8,14 +8,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @include font-size(36);
+  @include font-size(28);
+  @include tablet {
+    @include font-size(36);
+  }
   color: $orange;
   line-height: 1.2;
   margin: 0 auto;
 }
 
 h2 {
-  @include font-size(29);
+  @include font-size(21);
+  @include tablet {
+    @include font-size(28);
+  }
   color: $green;
   line-height: 1.2;
   margin: 0 auto;

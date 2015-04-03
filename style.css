@@ -47,6 +47,28 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: 20px;
 }
 
+.archive .post img, .category-intro img, .entry-content img {
+  background: #fff;
+  padding: 8px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+}
+@media (min-width: 768px) {
+  .archive .post img, .category-intro img, .entry-content img {
+    padding: 10px;
+    /* We use a slightly larger border on larger screens */
+  }
+}
+
+.category-intro h1::before, .category-intro h1::after {
+  font-family: "saffron-marigold" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -296,19 +318,31 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 28px;
+  font-size: 2.8rem;
   color: #BD6518;
   line-height: 1.2;
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+    font-size: 3.6rem;
+  }
+}
 
 h2 {
-  font-size: 29px;
-  font-size: 2.9rem;
+  font-size: 21px;
+  font-size: 2.1rem;
   color: #8c927b;
   line-height: 1.2;
   margin: 0 auto;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 28px;
+    font-size: 2.8rem;
+  }
 }
 
 p {
@@ -459,7 +493,7 @@ button:hover, .read-more a:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  border-color: #ae612b;
+  border-color: black;
   background: #a65915;
 }
 button:active, .read-more a:active, button:focus, .read-more a:focus,
@@ -1227,64 +1261,131 @@ a.sd-button > span {
 .category-intro img {
   border-radius: 50%;
   margin: 0 auto;
-  width: 50%;
+  padding: 6px;
+  width: 60%;
 }
 @media (min-width: 768px) {
   .category-intro img {
     float: left;
-    margin-right: 2em !important;
-    /* Currently a necessary evil */
-    width: 25%;
+    margin-right: 2em;
+    padding: 8px;
+    width: 28%;
   }
 }
 .category-intro h1 {
   clear: none;
   text-align: center;
 }
-.category-intro i {
+.category-intro h1::before, .category-intro h1::after {
   display: inline-block;
-  margin: -8px 5px;
-  height: .8em;
-  vertical-align: top;
-  opacity: .25;
   font-size: 1.8em;
+  height: .8em;
+  margin: -8px 5px;
+  opacity: 0.25;
+  vertical-align: top;
+}
+.category-intro h1::before {
+  content: 'a';
+}
+.category-intro h1::after {
+  content: 'b';
 }
 .category-intro p {
   line-height: 1.8;
   text-align: left;
 }
 
-/* Category colour-coding */
-.category-intro.behind-the-curtain h1, .behind-the-curtain a h2, .behind-the-curtain .prev_next a, .behind-the-curtain .post-excerpt p:not(.read-more) a {
-  color: #a1414c;
-}
-
-.behind-the-curtain .read-more a {
-  background-color: #a1414c;
-}
-
-.category-intro.customer-love h1, .customer-love a h2, .customer-love .prev_next a, .customer-love .post-excerpt p:not(.read-more) a {
+/* Colour-code top-level categories for more interest */
+.category-intro.customer-love h1,
+.category-intro.customer-love a,
+.category.category-customer-love h2 a,
+.category.category-customer-love .prev_next a,
+.category.category-customer-love .entry-content p:not(.read-more) a {
   color: #77a2af;
 }
 
-.customer-love .read-more a {
+.category-intro.customer-love a:hover,
+.category.category-customer-love h2 a:hover,
+.category.category-customer-love .prev_next a:hover,
+.category.category-customer-love .entry-content p:not(.read-more) a:hover {
+  color: #5a8a99;
+}
+
+.category.category-customer-love .read-more a {
   background-color: #77a2af;
 }
 
-.category-intro.design-resources h1, .design-resources a h2, .design-resources .prev_next a, .design-resources .post-excerpt p:not(.read-more) a {
+.category.category-customer-love .read-more:hover a {
+  background-color: #5a8a99;
+}
+
+.category-intro.design-resources h1,
+.category-intro.design-resources a,
+.category.category-design-resources h2 a,
+.category.category-design-resources .prev_next a,
+.category.category-design-resources .entry-content p:not(.read-more) a {
   color: #5b4c70;
 }
 
-.design-resources .read-more a {
+.category-intro.design-resources a:hover,
+.category.category-design-resources h2 a:hover,
+.category.category-design-resources .prev_next a:hover,
+.category.category-design-resources .entry-content p:not(.read-more) a:hover {
+  color: #423752;
+}
+
+.category.category-design-resources .read-more a {
   background-color: #5b4c70;
 }
 
-.category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a {
+.category.category-design-resources .read-more:hover a {
+  background-color: #423752;
+}
+
+.category-intro.shopping-guides h1,
+.category-intro.shopping-guides a,
+.category.category-shopping-guides h2 a,
+.category.category-shopping-guides .prev_next a,
+.category.category-shopping-guides .entry-content p:not(.read-more) a {
   color: #838b64;
 }
 
-.shopping-guides .read-more a {
+.category-intro.shopping-guides a:hover,
+.category.category-shopping-guides h2 a:hover,
+.category.category-shopping-guides .prev_next a:hover,
+.category.category-shopping-guides .entry-content p:not(.read-more) a:hover {
+  color: #676d4f;
+}
+
+.category.category-shopping-guides .read-more a {
   background-color: #838b64;
+}
+
+.category.category-shopping-guides .read-more:hover a {
+  background-color: #676d4f;
+}
+
+.category-intro.behind-the-curtain h1,
+.category-intro.behind-the-curtain a,
+.category.category-behind-the-curtain h2 a,
+.category.category-behind-the-curtain .prev_next a,
+.category.category-behind-the-curtain .entry-content p:not(.read-more) a {
+  color: #a1414c;
+}
+
+.category-intro.behind-the-curtain a:hover,
+.category.category-behind-the-curtain h2 a:hover,
+.category.category-behind-the-curtain .prev_next a:hover,
+.category.category-behind-the-curtain .entry-content p:not(.read-more) a:hover {
+  color: #7d323b;
+}
+
+.category.category-behind-the-curtain .read-more a {
+  background-color: #a1414c;
+}
+
+.category.category-behind-the-curtain .read-more:hover a {
+  background-color: #7d323b;
 }
 
 /* Shopping Guide page */
@@ -1539,13 +1640,8 @@ a.sd-button > span {
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-.content-area img {
+.entry-content img {
   margin: 0 10px 5px 0;
-  background: #fff;
-  padding: 10px;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
-  max-width: 100%;
-  height: auto;
 }
 
 /* Don't show borders or box-shadows for certain images */

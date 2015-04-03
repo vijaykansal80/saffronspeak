@@ -7,29 +7,42 @@
   text-align: center;
 
   img {
+    @extend %bordered;
     border-radius: 50%;
     margin: 0 auto;
-    width: 50%;
+    padding: 6px;
+    width: 60%;
 
     @include tablet {
       float: left;
-      margin-right: 2em !important; /* Currently a necessary evil */
-      width: 25%;
+      margin-right: 2em;
+      padding: 8px;
+      width: 28%;
     }
   }
 
   h1 {
     clear: none;
     text-align: center;
-  }
 
-  i {
-    display: inline-block;
-    margin: -8px 5px;
-    height: .8em;
-    vertical-align: top;
-    opacity: .25;
-    font-size: 1.8em;
+    &::before,
+    &::after {
+      @extend %icons;
+      display: inline-block;
+      font-size: 1.8em;
+      height: .8em;
+      margin: -8px 5px;
+      opacity: 0.25;
+      vertical-align: top;
+    }
+
+    &::before {
+      content: 'a';
+    }
+
+    &::after {
+      content: 'b';
+    }
   }
 
   p {
@@ -39,18 +52,39 @@
 } // .category-intro
 
 
-/* Category colour-coding */
-.category-intro.behind-the-curtain h1, .behind-the-curtain a h2, .behind-the-curtain .prev_next a, .behind-the-curtain .post-excerpt p:not(.read-more) a { color: #a1414c; }
-.behind-the-curtain .read-more a { background-color: #a1414c; }
+/* Colour-code top-level categories for more interest */
 
-.category-intro.customer-love h1, .customer-love a h2, .customer-love .prev_next a, .customer-love .post-excerpt p:not(.read-more) a { color: #77a2af; }
-.customer-love .read-more a { background-color: #77a2af; }
+// Mixin used to generate colour-coding for top-level categories
+@mixin generate-category-colours($slug, $color) {
+  .category-intro.#{$slug} h1,
+  .category-intro.#{$slug} a,
+  .category.category-#{$slug} h2 a,
+  .category.category-#{$slug} .prev_next a,
+  .category.category-#{$slug} .entry-content p:not(.read-more) a {
+    color: $color;
+  }
 
-.category-intro.design-resources h1, .design-resources a h2, .design-resources .prev_next a, .design-resources .post-excerpt p:not(.read-more) a { color: #5b4c70; }
-.design-resources .read-more a { background-color: #5b4c70; }
+  .category-intro.#{$slug} a:hover,
+  .category.category-#{$slug} h2 a:hover,
+  .category.category-#{$slug} .prev_next a:hover,
+  .category.category-#{$slug} .entry-content p:not(.read-more) a:hover {
+    color: darken($color, 10%);
+  }
 
-.category-intro.shopping-guides h1, .shopping-guides a h2, .shopping-guides .prev_next a, .shopping-guides .post-excerpt p:not(.read-more) a { color: #838b64; }
-.shopping-guides .read-more a { background-color: #838b64; }
+  .category.category-#{$slug} .read-more a {
+    background-color: $color;
+  }
+
+  .category.category-#{$slug} .read-more:hover a {
+    background-color: darken($color, 10%);
+  }
+}
+
+@include generate-category-colours("customer-love", $color__customer-love);
+@include generate-category-colours("design-resources", $color__design-resources);
+@include generate-category-colours("shopping-guides", $color__shopping-guides);
+@include generate-category-colours("behind-the-curtain", $color__behind-the-curtain);
+
 
 
 // Mixin used to generate series styling on Shopping Guides page
@@ -136,7 +170,6 @@
 
 
 /* Design Resources page */
-
 .category-design-resources {
   overflow-x: hidden; /* Ensure the panel doesn't cause horizontal scrolling */
 }

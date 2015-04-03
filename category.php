@@ -12,30 +12,12 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-    <?php if ( have_posts() ) :
+    <?php if ( have_posts() ) : ?>
 
-      $category_id = get_query_var('cat');
-      $category = get_category($category_id);
-      $subcategories = get_categories('hide_empty=0&parent='.$category_id);
+      <?php get_template_part( 'category-header' ); ?>
 
-      // If this is a top-level category, we display a fancy introductory panel
-      if ( $category->category_parent === 0 ):
-        $extra_header_classes = "category-intro " . $category->slug;
-        $fleurons = '<i class="icon-header-fleuron-left"></i><?php echo $category->name; ?><i class="icon-header-fleuron-right"></i>';
-        $description = str_replace('#', get_category_link($category->term_id), $category->description);
-      endif;
-      ?>
-
-      <header class="page-header <?php echo $extra_header_classes; ?>">
-        <img src="<?php bloginfo(stylesheet_directory); ?>/images/categories/<?php echo $category->slug; ?>.jpg">
-        <?php
-          the_archive_title( '<h1 class="page-title">', '</h1>' );
-          the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-      </header><!-- .page-header -->
-
-
-        while ( have_posts() ) : the_post(); ?>
+      <?php /* Start the Loop */ ?>
+      <?php while ( have_posts() ) : the_post(); ?>
 
         <?php
           /* Include the Post-Format-specific template for the content.
