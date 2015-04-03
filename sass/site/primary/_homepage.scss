@@ -1,0 +1,163 @@
+.home {
+
+  /* Site header */
+  .entry-header {
+    .site-title {
+      color: $brown;
+      margin: 1em auto 0;
+      position: relative;
+      text-align: center;
+
+      &::before,
+      &::after {
+        @extend %icons;
+        display: inline-block;
+        font-size: 1.8em;
+        height: .8em;
+        margin: -8px 5px;
+        opacity: 0.25;
+        vertical-align: top;
+      }
+
+      &::before {
+        content: 'a';
+      }
+
+      &::after {
+        content: 'b';
+      }
+    } // .site-title
+
+    .tagline {
+      color: darken($brown, 20%);
+      text-align: center;
+      font-style: italic;
+      margin: 0 auto 2em;
+    }
+  } // .entry-header
+
+  /* Category introductions */
+  .category {
+    text-align: center;
+
+    img {
+      @extend %bordered;
+      border-radius: 50%;
+      padding: 6px;
+      max-width: 75%;
+      position: relative;
+      z-index: 10;
+    }
+
+    h3 {
+      @extend %boxed-text;
+      margin: -17px auto 1em;
+      padding-top: 7px;
+      padding-bottom: 5px;
+    }
+
+    p {
+      @include font-size(14);
+      font-style: italic;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    @include mobile {
+      img {
+        clear: both;
+        float: left;
+        margin-right: 10px;
+        width: 40%;
+      }
+
+      h3 {
+        display: none;
+      }
+
+      p {
+        // display: none;
+      }
+    }
+
+    @include tablet {
+      float: left;
+      width: 23.5%;
+      margin: 1em 2% 4em 0;
+
+      &:nth-of-type(4) {
+        margin-right: 0;
+      }
+    } // tablet
+  } // .category
+}
+
+
+
+
+
+.homepage .behind-the-curtain h3 {
+  background-color: #a1414c;
+  outline-color: #a1414c;
+}
+.homepage .customer-love h3 {
+  background-color: #77a2af;
+  outline-color: #77a2af;
+}
+.homepage .design-resources h3 {
+  background-color: #5b4c70;
+  outline-color: #5b4c70;
+}
+.homepage .shopping-guides h3 {
+  background-color: #838b64;
+  outline-color: #838b64;
+}
+
+
+/* Featured series on homepage */
+.featured-series {font-size: 1.1em;}
+
+/* Post listing boxes */
+.post-list {
+  float: left;
+  box-sizing: border-box;
+  width: 46%;
+  margin: 0 4% 2em 0;
+  padding: 1em;
+  background: url('images/low_contrast_linen.png');
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+}
+.post-list:last-of-type {
+  margin-right: 0;
+}
+.post-list h3 {
+  display: inline-block;
+  margin: -.25em 0 0 -1.25em;
+}
+.post-preview {
+  clear: both;
+  margin: 1em 0;
+}
+.post-preview img {
+  float: left;
+  margin: 0 10px 5px 0;
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
+  max-width: 100px;
+  max-height: 100px;
+}
+.post-preview:nth-of-type(odd) img {
+  float: right;
+  margin: 0 0 5px 10px;
+}
+.post-preview h4 {
+  margin: .25em 0 .5em 0;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: normal;
+}
+.post-preview h4 a {color: #423C2A;}
+.post-preview p {font-style: italic;}
+

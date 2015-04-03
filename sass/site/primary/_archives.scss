@@ -1,6 +1,4 @@
-/* CATEGORY ARCHIVES */
-
-/* Intro panel */
+/* Category intro panel */
 .category-intro {
   @include clearfix;
   margin: 3em 0 4em 0;
@@ -53,54 +51,11 @@
 
 
 /* Colour-code top-level categories for more interest */
-
-// Mixin used to generate colour-coding for top-level categories
-@mixin generate-category-colours($slug, $color) {
-  .category-intro.#{$slug} h1,
-  .category-intro.#{$slug} a,
-  .category.category-#{$slug} h2 a,
-  .category.category-#{$slug} .prev_next a,
-  .category.category-#{$slug} .entry-content p:not(.read-more) a {
-    color: $color;
-  }
-
-  .category-intro.#{$slug} a:hover,
-  .category.category-#{$slug} h2 a:hover,
-  .category.category-#{$slug} .prev_next a:hover,
-  .category.category-#{$slug} .entry-content p:not(.read-more) a:hover {
-    color: darken($color, 10%);
-  }
-
-  .category.category-#{$slug} .read-more a {
-    background-color: $color;
-  }
-
-  .category.category-#{$slug} .read-more:hover a {
-    background-color: darken($color, 10%);
-  }
-}
-
 @include generate-category-colours("customer-love", $color__customer-love);
 @include generate-category-colours("design-resources", $color__design-resources);
 @include generate-category-colours("shopping-guides", $color__shopping-guides);
 @include generate-category-colours("behind-the-curtain", $color__behind-the-curtain);
 
-
-
-// Mixin used to generate series styling on Shopping Guides page
-@mixin generate-series-styles($slug, $color) {
-  &.#{$slug} {
-    background-image: url('series/#{$slug}/#{$slug}-title-image.jpg');
-
-    h2, .read-more a {
-      background-color: $color;
-    }
-
-    &:hover h2, &:hover .read-more a {
-      background-color: darken($color, 10%);
-    }
-  }
-}
 
 /* Shopping Guide page */
 .category-shopping-guides {
@@ -268,5 +223,3 @@
     text-decoration: none;
   }
 } // .subcategory-expander
-
-

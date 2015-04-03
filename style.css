@@ -47,19 +47,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: 20px;
 }
 
-.archive .post img, .category-intro img, .entry-content img {
+.home .category img, .archive .post img, .category-intro img, .entry-content img {
   background: #fff;
   padding: 8px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .archive .post img, .category-intro img, .entry-content img {
+  .home .category img, .archive .post img, .category-intro img, .entry-content img {
     padding: 10px;
     /* We use a slightly larger border on larger screens */
   }
 }
 
-.category-intro h1::before, .category-intro h1::after {
+.home .entry-header .site-title::before, .home .entry-header .site-title::after, .category-intro h1::before, .category-intro h1::after {
   font-family: "saffron-marigold" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -67,6 +67,28 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   text-transform: none !important;
   line-height: 1;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.home .category h3 {
+  background: #46382d;
+  border: 1px solid #FDF2F7;
+  outline: 3px solid #46382d;
+  padding: 6px 2px;
+  color: #FDF2F7;
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0;
+}
+.home .category h3::before, .home .category h3::after {
+  content: '\00b7';
+  padding: 0 5px;
+  display: inline;
+}
+.home .category h3 a {
+  color: #FDF2F7;
 }
 
 /*--------------------------------------------------------------
@@ -920,6 +942,164 @@ ul#main-nav li#blog-tab {
 }
 
 /*--------------------------------------------------------------
+## Homepage
+--------------------------------------------------------------*/
+.home {
+  /* Site header */
+  /* Category introductions */
+}
+.home .entry-header .site-title {
+  color: #93775F;
+  margin: 1em auto 0;
+  position: relative;
+  text-align: center;
+}
+.home .entry-header .site-title::before, .home .entry-header .site-title::after {
+  display: inline-block;
+  font-size: 1.8em;
+  height: .8em;
+  margin: -8px 5px;
+  opacity: 0.25;
+  vertical-align: top;
+}
+.home .entry-header .site-title::before {
+  content: 'a';
+}
+.home .entry-header .site-title::after {
+  content: 'b';
+}
+.home .entry-header .tagline {
+  color: #554537;
+  text-align: center;
+  font-style: italic;
+  margin: 0 auto 2em;
+}
+.home .category {
+  text-align: center;
+}
+.home .category img {
+  border-radius: 50%;
+  padding: 6px;
+  max-width: 75%;
+  position: relative;
+  z-index: 10;
+}
+.home .category h3 {
+  margin: -17px auto 1em;
+  padding-top: 7px;
+  padding-bottom: 5px;
+}
+.home .category p {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: justify;
+}
+@media (max-width: 767px) {
+  .home .category img {
+    clear: both;
+    float: left;
+    margin-right: 10px;
+    width: 40%;
+  }
+  .home .category h3 {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .home .category {
+    float: left;
+    width: 23.5%;
+    margin: 1em 2% 4em 0;
+  }
+  .home .category:nth-of-type(4) {
+    margin-right: 0;
+  }
+}
+
+.homepage .behind-the-curtain h3 {
+  background-color: #a1414c;
+  outline-color: #a1414c;
+}
+
+.homepage .customer-love h3 {
+  background-color: #77a2af;
+  outline-color: #77a2af;
+}
+
+.homepage .design-resources h3 {
+  background-color: #5b4c70;
+  outline-color: #5b4c70;
+}
+
+.homepage .shopping-guides h3 {
+  background-color: #838b64;
+  outline-color: #838b64;
+}
+
+/* Featured series on homepage */
+.featured-series {
+  font-size: 1.1em;
+}
+
+/* Post listing boxes */
+.post-list {
+  float: left;
+  box-sizing: border-box;
+  width: 46%;
+  margin: 0 4% 2em 0;
+  padding: 1em;
+  background: url("images/low_contrast_linen.png");
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+.post-list:last-of-type {
+  margin-right: 0;
+}
+
+.post-list h3 {
+  display: inline-block;
+  margin: -.25em 0 0 -1.25em;
+}
+
+.post-preview {
+  clear: both;
+  margin: 1em 0;
+}
+
+.post-preview img {
+  float: left;
+  margin: 0 10px 5px 0;
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.post-preview:nth-of-type(odd) img {
+  float: right;
+  margin: 0 0 5px 10px;
+}
+
+.post-preview h4 {
+  margin: .25em 0 .5em 0;
+  font-size: 1.5em;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.post-preview h4 a {
+  color: #423C2A;
+}
+
+.post-preview p {
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .sticky {
@@ -1250,8 +1430,7 @@ a.sd-button > span {
 /*--------------------------------------------------------------
 ## Blog archive pages (categories, tags, etc)
 --------------------------------------------------------------*/
-/* CATEGORY ARCHIVES */
-/* Intro panel */
+/* Category intro panel */
 .category-intro {
   content: "";
   display: table;
@@ -1319,6 +1498,16 @@ a.sd-button > span {
   background-color: #5a8a99;
 }
 
+.home .customer-love h3 {
+  background-color: #77a2af;
+  outline-color: #77a2af;
+}
+
+.home .customer-love:hover h3 {
+  background-color: #5a8a99;
+  outline-color: #5a8a99;
+}
+
 .category-intro.design-resources h1,
 .category-intro.design-resources a,
 .category.category-design-resources h2 a,
@@ -1340,6 +1529,16 @@ a.sd-button > span {
 
 .category.category-design-resources .read-more:hover a {
   background-color: #423752;
+}
+
+.home .design-resources h3 {
+  background-color: #5b4c70;
+  outline-color: #5b4c70;
+}
+
+.home .design-resources:hover h3 {
+  background-color: #423752;
+  outline-color: #423752;
 }
 
 .category-intro.shopping-guides h1,
@@ -1365,6 +1564,16 @@ a.sd-button > span {
   background-color: #676d4f;
 }
 
+.home .shopping-guides h3 {
+  background-color: #838b64;
+  outline-color: #838b64;
+}
+
+.home .shopping-guides:hover h3 {
+  background-color: #676d4f;
+  outline-color: #676d4f;
+}
+
 .category-intro.behind-the-curtain h1,
 .category-intro.behind-the-curtain a,
 .category.category-behind-the-curtain h2 a,
@@ -1386,6 +1595,16 @@ a.sd-button > span {
 
 .category.category-behind-the-curtain .read-more:hover a {
   background-color: #7d323b;
+}
+
+.home .behind-the-curtain h3 {
+  background-color: #a1414c;
+  outline-color: #a1414c;
+}
+
+.home .behind-the-curtain:hover h3 {
+  background-color: #7d323b;
+  outline-color: #7d323b;
 }
 
 /* Shopping Guide page */
@@ -1521,7 +1740,7 @@ a.sd-button > span {
   border-bottom: 2px solid #e6e0c9;
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
   clip: rect(0px, 210px, 37px, 0px);
-  color: #5b4e1a !important;
+  color: #93775F !important;
   display: inline-block;
   letter-spacing: 1px;
   line-height: 1;
@@ -1535,8 +1754,8 @@ a.sd-button > span {
 .subcategory-expander-link i {
   background: #fff8dc;
   border-radius: 50%;
-  border: 1px solid #5b4e1a;
-  color: #5b4e1a;
+  border: 1px solid #93775F;
+  color: #93775F;
   display: inline-block;
   height: 15px;
   margin-right: 7px;
@@ -1551,7 +1770,7 @@ a.sd-button > span {
   display: table;
   background-size: 200px 200px;
   background: #e6e0c9 url("images/seamless-paper-texture.jpg");
-  border-bottom: 1px solid #5b4e1a;
+  border-bottom: 1px solid #93775F;
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.15);
   font-size: 14px;
   font-size: 1.4rem;
@@ -1575,8 +1794,8 @@ a.sd-button > span {
 }
 .subcategory-expander h2 {
   padding: .25em;
-  border-bottom: 1px solid #ccc5a8;
-  color: #5b4e1a;
+  border-bottom: 1px solid #f8f8f8;
+  color: #93775F;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 16px;
@@ -1596,7 +1815,7 @@ a.sd-button > span {
   padding: 0;
 }
 .subcategory-expander li {
-  color: #5b4e1a;
+  color: #93775F;
   margin: 4px 0;
 }
 .subcategory-expander a {

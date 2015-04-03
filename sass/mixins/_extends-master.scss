@@ -6,7 +6,6 @@
   @include tablet {
     padding: 10px; /* We use a slightly larger border on larger screens */
   }
-
 }
 
 %icons {
@@ -17,4 +16,28 @@
   text-transform: none !important;
   line-height: 1;
   -moz-osx-font-smoothing: grayscale;
+}
+
+%boxed-text {
+  background: darken($brown, 25%);
+  border: 1px solid $cream;
+  outline: 3px solid darken($brown, 25%);
+  padding: 6px 2px;
+  color: #FDF2F7;
+  @include font-size(14);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0;
+
+  &::before,
+  &::after {
+    content: '\00b7';
+    padding: 0 5px;
+    display: inline;
+  }
+
+  a {
+    color: $cream;
+  }
 }
