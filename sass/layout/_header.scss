@@ -5,3 +5,53 @@
     max-width: 100%;
   }
 }
+
+/* Breadcrumbs */
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+/* Search bar */
+.search-box {
+  position: absolute;
+  right: 0;
+  top: -10px;
+
+  .icon-search {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 20px;
+    vertical-align: -7px;
+  }
+
+  .search-form {
+    display: inline-block;
+  }
+
+  .search-field {
+    width: 0;
+    font-size: 14px;
+    padding: 10px 10px;
+    -webkit-transition: all 0.125s;
+    -moz-transition: all 0.125s;
+    -ms-transition: all 0.125s;
+    -o-transition: all 0.125s;
+    transition: all 0.125s;
+    opacity: 0;
+    overflow: hidden;
+
+    &.open {
+      width: 250px;
+      opacity: 1;
+    }
+  }
+
+  .search-submit {
+    display: none;
+  }
+}
+
+.home .search-box {
+  top: -5px; /* Corrects placement for homepage, where there are no breadcrumbs */
+}

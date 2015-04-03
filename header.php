@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package safflower
+ * @package Safflower
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -37,5 +37,15 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+
+	<section class="breadcrumbs-and-search">
+		<?php safflower_breadcrumbs(); ?>
+
+	  <div class="search-box">
+	    <?php get_search_form(); ?>
+	    <i class="icon-search"></i>
+	  </div>
+
+  </section>
 
 	<div id="content" class="site-content">

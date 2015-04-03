@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package safflower
+ * @package Safflower
  */
 
 /**
@@ -16,6 +16,109 @@ add_filter( 'get_the_archive_title', function ( $title ) {
   }
 	return $title;
 });
+
+
+if ( ! function_exists( 'safflower_breadcrumbs' ) ) :
+/**
+ * Display breadcrumb navigation, where applicable
+ *
+ */
+function safflower_breadcrumbs() {
+
+  // Only show breadcrumbs on category and post pages
+  if ( ! is_home() &&  ! is_front_page() && ! is_page() ):
+    echo '<div class="breadcrumbs">';
+    echo '<a href="';
+    echo get_option('home');
+    echo '">';
+    echo 'Blog';
+    echo "</a>";
+
+    // Single post
+    if ( is_single() ):
+        echo ' &raquo; ';
+      	// Parent categories
+        the_category( ' &raquo; ', 'multiple' );
+        echo ' &raquo; ';
+        // Post title
+        the_title();
+
+    // Category archive
+    elseif (is_category()):
+        echo ' &raquo; ';
+
+        // Get a list of the current category's parent categories
+        $category_list = get_category_parents( get_query_var( 'cat' ), true, ' &raquo; ' );
+
+        // Remove current category from list (in order to display without a link or trailing arrow)
+        $categories = explode( ' &raquo; ', $category_list );
+        array_pop( $categories );
+        array_pop( $categories );
+        foreach ( $categories as $category ):
+          echo $category .' &raquo; ';
+        endforeach;
+
+        // Display current category name, without a link or trailing arrow
+        echo get_the_category_by_id( get_query_var( 'cat' ) );
+
+    // Static page
+    elseif (is_page()):
+        echo " &raquo; ";
+        echo the_title();
+
+    // Search results
+    elseif ( is_search() ):
+      echo ' &raquo; Search results for: ';
+      echo '&ldquo;<em>';
+      echo the_search_query();
+      echo '</em>&rdquo;';
+
+    // Tag archives
+    elseif ( is_tag() ):
+      echo ' &raquo; ';
+      echo 'Tag archive: ';
+      echo safflower_full_tag_string();
+    endif;
+
+  	echo '</div>';
+  endif; // ! is_home() &&  ! is_front_page() && ! is_page()
+}
+endif;
+
+if ( ! function_exists( 'safflower_full_tag_string' ) ) :
+/**
+ * If you're using a more complex tag string, like red+bedding
+ * or red-bedding, WordPress doesn't parse these properly for display
+ * in a list of breadcrumbs. This parses the tags directly from the request
+ * URI and outputs them in a logical, user-friendly fashion.
+ *
+ */
+function safflower_full_tag_string() {
+  global $tag_query;
+  $tag_query = $_SERVER['REQUEST_URI'];
+  $tag_query = str_replace( '/blog/', '', $tag_query );
+  $tag_query = str_replace( 'tag/', '', $tag_query );
+  $tag_query = str_replace( ',', ', ', $tag_query );
+  $tag_query = str_replace( '/', '', $tag_query );
+  $tag_query = str_replace( '+', ', ', $tag_query );
+  $tag_query = str_replace( '-', ' ', $tag_query );
+  $primary_tag = strtolower( single_tag_title( '', false ) );
+  $secondary_tags = str_replace( $primary_tag, '', $tag_query );
+  $secondary_tags = ltrim( $secondary_tags, ', ' );
+  if ( '' != $secondary_tags ) {
+    $tag_string = '<strong>'. $primary_tag .'</strong> and '. $secondary_tags;
+  } else {
+    $tag_string = $primary_tag;
+  }
+  return $tag_string;
+}
+
+function all_tags() {
+  global $tag_query;
+  $all_tags = explode(', ', $tag_query);
+  return $all_tags;
+}
+endif;
 
 
 if ( ! function_exists( 'the_posts_navigation' ) ) :

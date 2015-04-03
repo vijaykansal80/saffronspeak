@@ -6,10 +6,18 @@ input[type="search"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	border-radius: 0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .15);
+  @include font-size(12);
+  line-height: 1.2;
+  -webkit-appearance: none;
+  outline: none;
 
 	&:focus {
 		color: $color__text-input-focus;
+    border: 1px solid lighten($color__border-input, 25%);
+    background: #fff;
 	}
 }
 
@@ -18,10 +26,10 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 2px 4px;
 }
 
 textarea {
-	padding-left: 3px;
+	padding-left: 4px;
 	width: 100%;
 }

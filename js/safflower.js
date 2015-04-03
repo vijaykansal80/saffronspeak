@@ -23,8 +23,8 @@
       });
 
       // Add a placeholder to search input and declare variable for the search input
-      $( '#s' ).attr( 'placeholder', 'Enter your search terms here.' );
-      var $searchInput = $( '#s' );
+      var $searchInput = $( '.search-field' );
+      $searchInput.attr( 'placeholder', 'Enter your search terms here.' );
 
       // Deal with clicks on search icon
       $( '.icon-search' ).on( 'click', function() {
@@ -32,7 +32,7 @@
         if ( $searchInput.hasClass( 'open' ) ) {
           if ( $searchInput.val() ) {
             // Submit our search if there's a search term entered
-            $( '#searchform' ).submit();
+            $( '.search-form' ).submit();
           } else {
             // Otherwise, close the search box
             $searchInput.removeClass( 'open' );
@@ -46,7 +46,7 @@
       } );
 
       // If we're on the homepage, show the search box expanded by default
-      if ( $( 'body' ).hasClass( 'homepage' ) ) {
+      if ( $( 'body' ).hasClass( 'home' ) ) {
         $searchInput.addClass( 'open' );
       }
 
