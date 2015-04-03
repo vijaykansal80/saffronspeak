@@ -28,3 +28,15 @@ function smarter_slug( $category ) {
   $slug = str_replace( ' ', '-', trim( $slug ) );
   return $slug;
 }
+
+
+/**
+* Get a link to the currently featured series.
+* This function is primarily used on the homepage, in order to
+* dynamically generate a link to the featured series.
+*/
+function get_featured_series_link( $slug ) {
+  $category = get_category_by_slug( $slug );
+  $series_link = '<a href="'. get_parent_post_link( $category->term_id ) . '">' . $category->name . '</a>';
+  return $series_link;
+}

@@ -59,7 +59,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   }
 }
 
-.home .entry-header .site-title::before, .home .entry-header .site-title::after, .category-intro h1::before, .category-intro h1::after {
+.home .section-header h2::before, .home .section-header h2::after, .category-intro h1::before, .category-intro h1::after {
   font-family: "saffron-marigold" !important;
   font-style: normal !important;
   font-weight: normal !important;
@@ -945,16 +945,16 @@ ul#main-nav li#blog-tab {
 ## Homepage
 --------------------------------------------------------------*/
 .home {
-  /* Site header */
+  /* Section headers */
   /* Category introductions */
 }
-.home .entry-header .site-title {
+.home .section-header h2 {
   color: #93775F;
   margin: 1em auto 0;
   position: relative;
   text-align: center;
 }
-.home .entry-header .site-title::before, .home .entry-header .site-title::after {
+.home .section-header h2::before, .home .section-header h2::after {
   display: inline-block;
   font-size: 1.8em;
   height: .8em;
@@ -962,13 +962,13 @@ ul#main-nav li#blog-tab {
   opacity: 0.25;
   vertical-align: top;
 }
-.home .entry-header .site-title::before {
+.home .section-header h2::before {
   content: 'a';
 }
-.home .entry-header .site-title::after {
+.home .section-header h2::after {
   content: 'b';
 }
-.home .entry-header .tagline {
+.home .section-header .tagline {
   color: #554537;
   text-align: center;
   font-style: italic;
@@ -1016,26 +1016,6 @@ ul#main-nav li#blog-tab {
   .home .category:nth-of-type(4) {
     margin-right: 0;
   }
-}
-
-.homepage .behind-the-curtain h3 {
-  background-color: #a1414c;
-  outline-color: #a1414c;
-}
-
-.homepage .customer-love h3 {
-  background-color: #77a2af;
-  outline-color: #77a2af;
-}
-
-.homepage .design-resources h3 {
-  background-color: #5b4c70;
-  outline-color: #5b4c70;
-}
-
-.homepage .shopping-guides h3 {
-  background-color: #838b64;
-  outline-color: #838b64;
 }
 
 /* Featured series on homepage */

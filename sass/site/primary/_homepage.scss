@@ -1,8 +1,8 @@
 .home {
 
-  /* Site header */
-  .entry-header {
-    .site-title {
+  /* Section headers */
+  .section-header {
+    h2 {
       color: $brown;
       margin: 1em auto 0;
       position: relative;
@@ -34,7 +34,7 @@
       font-style: italic;
       margin: 0 auto 2em;
     }
-  } // .entry-header
+  } // .section-header
 
   /* Category introductions */
   .category {
@@ -92,26 +92,6 @@
   } // .category
 }
 
-
-
-
-
-.homepage .behind-the-curtain h3 {
-  background-color: #a1414c;
-  outline-color: #a1414c;
-}
-.homepage .customer-love h3 {
-  background-color: #77a2af;
-  outline-color: #77a2af;
-}
-.homepage .design-resources h3 {
-  background-color: #5b4c70;
-  outline-color: #5b4c70;
-}
-.homepage .shopping-guides h3 {
-  background-color: #838b64;
-  outline-color: #838b64;
-}
 
 
 /* Featured series on homepage */
