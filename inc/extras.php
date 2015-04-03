@@ -4,8 +4,50 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package safflower
+ * @package Safflower
  */
+
+/**
+ * Filter the output of WordPress Popular Posts plugin in order to use custom HTML.
+ * https://github.com/cabrerahector/wordpress-popular-posts/wiki/3.-Filters
+ */
+function custom_popular_posts_list( $mostpopular, $instance ) {
+?>
+  <section class="post-list favourite-posts">
+    <h3>Most-loved Posts</h3>
+    <?php
+    global $post;
+    foreach( $mostpopular as $popular ):
+      $post = get_post( $popular->id );
+      setup_postdata( $post );
+      format_post_preview( $post );
+      wp_reset_postdata();
+    endforeach;
+    ?>
+  </section>
+<?php
+}
+add_filter( 'wpp_custom_html', 'custom_popular_posts_list', 10, 2 );
+
+/**
+ * Show a formatted list of posts.
+ * This is currently used only to list popular and new posts on the homepage,
+ * but in the future could be used in a sidebar or similar.
+ */
+function format_post_preview($post) {
+?>
+  <article class="post-preview">
+    <a href="<?php the_permalink(); ?>">
+    <?php if ( has_post_thumbnail() ) {
+    	the_post_thumbnail();
+    } ?>
+    </a>
+    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+    <p><?php the_advanced_excerpt( 'length=10&use_words=1&no_custom=1&ellipsis=&finish_sentence=1&allowed_tags=a,em,strong' ); ?></p>
+  </article>
+<?php
+}
+
 
 /**
  * Adds custom classes to the array of body classes.

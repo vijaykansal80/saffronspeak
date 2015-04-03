@@ -69,11 +69,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   -moz-osx-font-smoothing: grayscale;
 }
 
-.home .category h3 {
+.home .category h3, .home .post-list h3 {
   background: #46382d;
   border: 1px solid #FDF2F7;
   outline: 3px solid #46382d;
-  padding: 6px 2px;
+  padding: 4px 2px;
   color: #FDF2F7;
   font-size: 14px;
   font-size: 1.4rem;
@@ -82,12 +82,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke: 0;
 }
-.home .category h3::before, .home .category h3::after {
+.home .category h3::before, .home .post-list h3::before, .home .category h3::after, .home .post-list h3::after {
   content: '\00b7';
   padding: 0 5px;
   display: inline;
 }
-.home .category h3 a {
+.home .category h3 a, .home .post-list h3 a {
   color: #FDF2F7;
 }
 
@@ -947,10 +947,12 @@ ul#main-nav li#blog-tab {
 .home {
   /* Section headers */
   /* Category introductions */
+  /* Featured series panel */
+  /* Post listing boxes */
 }
 .home .section-header h2 {
   color: #93775F;
-  margin: 1em auto 0;
+  margin: 2em auto 1em;
   position: relative;
   text-align: center;
 }
@@ -970,9 +972,10 @@ ul#main-nav li#blog-tab {
 }
 .home .section-header .tagline {
   color: #554537;
-  text-align: center;
   font-style: italic;
-  margin: 0 auto 2em;
+  line-height: 1.2;
+  margin: -1em auto 2em;
+  text-align: center;
 }
 .home .category {
   text-align: center;
@@ -1017,38 +1020,34 @@ ul#main-nav li#blog-tab {
     margin-right: 0;
   }
 }
-
-/* Featured series on homepage */
-.featured-series {
-  font-size: 1.1em;
+.home .featured-series {
+  margin: 2em 0;
 }
-
-/* Post listing boxes */
-.post-list {
-  float: left;
-  box-sizing: border-box;
-  width: 46%;
-  margin: 0 4% 2em 0;
-  padding: 1em;
+.home .post-list {
   background: url("images/low_contrast_linen.png");
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  margin-top: 1em;
+  padding: 0.5em;
 }
-
-.post-list:last-of-type {
-  margin-right: 0;
+@media (min-width: 768px) {
+  .home .post-list {
+    float: left;
+    width: 46%;
+    margin: 0 4% 2em 0;
+  }
+  .home .post-list:last-of-type {
+    margin-right: 0;
+  }
 }
-
-.post-list h3 {
+.home .post-list h3 {
   display: inline-block;
-  margin: -.25em 0 0 -1.25em;
+  margin: 0 -15px;
 }
-
-.post-preview {
+.home .post-preview {
   clear: both;
-  margin: 1em 0;
+  margin: 1em 0 1.5em;
 }
-
-.post-preview img {
+.home .post-preview img {
   float: left;
   margin: 0 10px 5px 0;
   border-radius: 50%;
@@ -1058,25 +1057,26 @@ ul#main-nav li#blog-tab {
   max-width: 100px;
   max-height: 100px;
 }
-
-.post-preview:nth-of-type(odd) img {
+.home .post-preview:nth-of-type(odd) img {
   float: right;
   margin: 0 0 5px 10px;
 }
-
-.post-preview h4 {
-  margin: .25em 0 .5em 0;
-  font-size: 1.5em;
-  line-height: 1;
+.home .post-preview h4 {
+  clear: none;
+  font-size: 21px;
+  font-size: 2.1rem;
   font-weight: normal;
+  line-height: 1;
+  margin: .25em 0 .5em 0;
 }
-
-.post-preview h4 a {
-  color: #423C2A;
+.home .post-preview h4 a {
+  color: #655141;
 }
-
-.post-preview p {
+.home .post-preview p {
+  font-size: 14px;
+  font-size: 1.4rem;
   font-style: italic;
+  line-height: 1.4;
 }
 
 /*--------------------------------------------------------------

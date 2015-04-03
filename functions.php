@@ -46,7 +46,21 @@ function safflower_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+
+	/*
+	 * Set up custom (cropped) images for thumbnails
+	 */
+	function add_custom_sizes() {
+    add_image_size('yarpp-thumbnail', 400, auto, true);
+    add_image_size('square', 300, 300, true);
+	}
+	add_action('after_setup_theme','add_custom_sizes');
+
+	/*
+	 * Auto-generate properly-sized YARPP (Yet Another Related Posts Plugin) thumbnails
+	 */
+	define('YARPP_GENERATE_THUMBNAILS', true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
