@@ -4,8 +4,10 @@
 }
 
 /* Don't show borders or box-shadows for certain images */
-.wp-smiley,
-.borderless {
+.entry-content .wp-smiley,
+.post .wp-smiley,
+.entry-content .borderless,
+.post .borderless {
   background: none;
 	border: none;
   box-shadow: none;
