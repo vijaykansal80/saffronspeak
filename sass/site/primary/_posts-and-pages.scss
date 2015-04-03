@@ -32,91 +32,97 @@
 }
 
 
-/* Blog archive pages */
-.archive {
+/* Post excerpts on archive pages */
+.post {
+  text-align: center;
 
-  /* Post excerpts */
-  .post {
-    text-align: center;
+  img {
+    @extend %bordered;
+  }
 
-    @include tablet {
-      width: 48%;
-      float: left;
+  .entry-meta {
+    @include font-size(15);
+    padding-right: 5px;
+    padding-left: 5px;
 
-      &:nth-of-type(odd) {
-        clear: left;
-        margin-right: 4%;
-      }
-    } // tablet
+    &::before,
+    &::after {
+      padding: 0 5px;
+    }
+  }
 
-    img {
-      @extend %bordered;
+  .entry-content {
+    @include font-size(16);
+    margin-top: 0;
+    text-align: left;
+  }
+} // .post
+
+/* Short post excerpt style */
+.short-excerpt {
+  clear: both;
+  margin-top: 40px;
+
+  .entry-content {
+    text-align: left;
+  }
+
+  .tag-list {
+    @include font-size(14);
+    line-height: 1.4;
+    margin: 1em 0;
+    text-align: left;
+
+    span {
+      font-size: .9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .entry-meta {
-      @include font-size(15);
-      padding-right: 5px;
-      padding-left: 5px;
+    a {
+      font-style: italic;
+      text-decoration: none;
+    }
 
-      &::before,
-      &::after {
-        padding: 0 5px;
-      }
+    strong {
+      font-weight: bold;
+      background: #edcfba;
+      padding: 2px 5px;
+    }
+  } // .tags
+} // .short-excerpt
+
+/* Use columns for larger screens */
+@include tablet {
+  .long-excerpt {
+    width: 48%;
+    float: left;
+
+    &:nth-of-type(odd) {
+      clear: left;
+      margin-right: 4%;
+    }
+  } // .long-excerpt
+
+  .short-excerpt {
+    img {
+      float: left;
+      margin: 0 20px 5px 0;
+      width: 30%;
+    }
+
+    &:nth-of-type(odd) img {
+      float: right;
     }
 
     .entry-content {
-      @include font-size(16);
-      margin-top: 0;
-      text-align: left;
+      float: left;
+      width: 65%;
+      padding-top: 10px;
     }
-  } // .post
+  }
+} // tablet
 
-
-  /* Alternate post excerpt style */
-  .post-excerpt-alt {
-    clear: both;
-    margin-top: 40px;
-  }
-  .post-excerpt-alt:after {
-    width: 100%;
-    clear: both;
-    display: block;
-    content: '';
-  }
-  .post-excerpt-alt img {
-    float: left;
-    box-sizing: border-box;
-    margin: 0 20px 5px 0;
-    background: #fff;
-    padding: 10px;
-    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-    width: 30%;
-    height: auto;
-  }
-  .post-excerpt-alt:nth-of-type(odd) img { float: right; }
-  .post-excerpt-alt .format_text {
-    float: left;
-    width: 65%;
-    padding-top: 10px;
-  }
-  .post-excerpt-alt .tags {
-    font-style: italic;
-    font-size: .85em;
-    line-height: 1.4;
-  }
-  .post-excerpt-alt .tags span {
-    font-style: normal;
-    font-size: .9em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .post-excerpt-alt .tags a { text-decoration: none; }
-  .post-excerpt-alt .tags strong {
-    font-weight: bold;
-    background: #edcfba;
-    padding: 2px 5px;
-  }
-} // .archive
 
 
 /* Individual post pages */
@@ -167,7 +173,6 @@ p.intro,
   @include tablet {
     margin: 2em 2em;
   }
-
 }
 
 

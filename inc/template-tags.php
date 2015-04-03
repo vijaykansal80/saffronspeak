@@ -120,6 +120,35 @@ function all_tags() {
 }
 endif;
 
+if ( ! function_exists( 'safflower_list_tags' ) ) :
+/**
+ * Show a list of tags to which the current post belongs.
+ * Should be used in the Loop.
+ */
+function safflower_list_tags() {
+  $tag_string = get_the_tag_list( '', ',', '' );
+  $tags = explode( ',', $tag_string );
+	?>
+	<section class="tag-list">
+		<span>Tags</span>
+		<?php
+	  foreach( $tags as $key => $tag ):
+		  if ( 0 != $key ):
+		  	echo ' &middot; ';
+		  endif;
+		  // Strip HTML and convert to lowercase, for consistency
+	   	$tagless_tag = strtolower( strip_tags( $tag ) );
+	    if ( in_array( $tagless_tag, all_tags() ) ):
+	      echo '<strong>'. $tag . '</strong>';
+	    else:
+	      echo $tag;
+	    endif;
+	  endforeach;
+	?>
+	</section>
+	<?php }
+endif;
+
 
 if ( ! function_exists( 'the_posts_navigation' ) ) :
 /**

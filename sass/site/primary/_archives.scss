@@ -223,3 +223,28 @@
     text-decoration: none;
   }
 } // .subcategory-expander
+
+
+/* Hide titles on tag pages and search results */
+.tag .page-header,
+.search-results .page-header {
+  display: none;
+}
+
+
+/* Search results */
+.search-results .no-results {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.search-results h1 {
+  margin-bottom: 20px;
+}
+
+.search-term {
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: bolder;
+}
+
+
