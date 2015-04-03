@@ -30,20 +30,18 @@
   }
 
   .search-field {
-    width: 0;
-    font-size: 14px;
-    padding: 10px 10px;
-    -webkit-transition: all 0.125s;
     -moz-transition: all 0.125s;
     -ms-transition: all 0.125s;
     -o-transition: all 0.125s;
-    transition: all 0.125s;
+    -webkit-transition: all 0.125s;
     opacity: 0;
     overflow: hidden;
+    transition: all 0.125s;
+    width: 0;
 
     &.open {
-      width: 250px;
       opacity: 1;
+      width: 250px;
     }
   }
 

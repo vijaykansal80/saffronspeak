@@ -28,7 +28,7 @@ h2 {
 h4 {
   @include font-size(19);
   font-weight: normal;
-  margin: .75em 0;
+  margin: .75em auto;
   padding-bottom: .25em;
   color: $orange;
   border-bottom: 1px solid $orange;

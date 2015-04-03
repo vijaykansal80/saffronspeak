@@ -369,7 +369,7 @@ h4 {
   font-size: 19px;
   font-size: 1.9rem;
   font-weight: normal;
-  margin: .75em 0;
+  margin: .75em auto;
   padding-bottom: .25em;
   color: #BD6518;
   border-bottom: 1px solid #BD6518;
@@ -569,8 +569,8 @@ textarea {
   border-radius: 0;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 1.2;
   -webkit-appearance: none;
   outline: none;
@@ -591,11 +591,11 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-  padding: 2px 4px;
+  padding: 10px;
 }
 
 textarea {
-  padding-left: 4px;
+  padding-left: 10px;
   width: 100%;
 }
 
@@ -973,20 +973,18 @@ ul#main-nav li#blog-tab {
   display: inline-block;
 }
 .search-box .search-field {
-  width: 0;
-  font-size: 14px;
-  padding: 10px 10px;
-  -webkit-transition: all 0.125s;
   -moz-transition: all 0.125s;
   -ms-transition: all 0.125s;
   -o-transition: all 0.125s;
-  transition: all 0.125s;
+  -webkit-transition: all 0.125s;
   opacity: 0;
   overflow: hidden;
+  transition: all 0.125s;
+  width: 0;
 }
 .search-box .search-field.open {
-  width: 250px;
   opacity: 1;
+  width: 250px;
 }
 .search-box .search-submit {
   display: none;
@@ -1151,12 +1149,8 @@ ul#main-nav li#blog-tab {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-  display: block;
-}
-
-.hentry {
-  margin: 0 0 1.5em;
+.page-header {
+  text-align: center;
 }
 
 .byline,
@@ -1872,13 +1866,17 @@ a.sd-button > span {
 }
 
 /* Search results */
-.search-results .no-results {
-  margin: 50px 0;
+.no-results .page-content {
+  margin: 50px auto;
+  max-width: 400px;
   text-align: center;
 }
-
-.search-results h1 {
-  margin-bottom: 20px;
+.no-results .search-field {
+  width: 50%;
+}
+.no-results .search-submit {
+  margin-left: 1%;
+  width: 40%;
 }
 
 .search-term {
