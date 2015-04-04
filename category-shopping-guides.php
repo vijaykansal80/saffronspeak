@@ -21,14 +21,14 @@ get_header(); ?>
     foreach ( $subcategories as $subcategory ):
     ?>
 
-      <div class="subcategory <?php echo smarter_slug( $subcategory ); ?>">
+      <div class="subcategory <?php echo safflower_smart_slug( $subcategory ); ?>">
         <h2><?php echo $subcategory->name; ?></h2>
         <?php // Our current featured category should show an "Updated for 2015" badge
         if ( $subcategory->term_id == $featured->term_id ): ?>
           <img class="badge" src="<?php bloginfo( stylesheet_directory ); ?>/images/updated-for-2015.png" alt="Updated for 2015"/>
         <?php endif; ?>
-          <p class="read-more"><a href="<?php echo get_category_link( $subcategory->term_id ); ?>">Read more</a></p>
-          <a class="div-link" href="<?php echo get_category_link( $subcategory->term_id ); ?>"></a>
+          <p class="read-more"><a href="<?php echo safflower_parent_post_link( $subcategory->term_id ); ?>">Read more</a></p>
+          <a class="div-link" href="<?php echo safflower_parent_post_link( $subcategory->term_id ); ?>"></a>
       </div>
     <?php endforeach; ?>
 

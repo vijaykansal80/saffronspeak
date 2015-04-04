@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'long-excerpt' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-excerpt long-excerpt' ); ?>>
 
 <?php // Show featured images
 if (has_post_thumbnail()): ?>

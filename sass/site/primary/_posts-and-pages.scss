@@ -29,22 +29,10 @@
 
 
 /* Post excerpts on archive pages */
-.post {
-  text-align: center;
+.post-excerpt {
 
   img {
     @extend %bordered;
-  }
-
-  .entry-meta {
-    @include font-size(15);
-    padding-right: 5px;
-    padding-left: 5px;
-
-    &::before,
-    &::after {
-      padding: 0 5px;
-    }
   }
 
   .entry-content {
@@ -56,6 +44,18 @@
 
 .long-excerpt {
   @include unit(half);
+  text-align: center;
+
+  .entry-meta {
+    @include font-size(15);
+    padding-right: 5px;
+    padding-left: 5px;
+
+    &::before,
+    &::after {
+      padding: 0 5px;
+    }
+  }
 }
 
 /* Short post excerpt style */
@@ -63,13 +63,12 @@
   clear: both;
   margin-top: 40px;
 
-  img {
+  .post-thumbnail {
     @include unit(third);
   }
 
   .entry-content {
     @include unit(two-thirds);
-    text-align: left;
   }
 
   .tag-list {
@@ -102,7 +101,7 @@
 @include tablet {
   .short-excerpt {
 
-    &:nth-of-type(odd) img {
+    &:nth-of-type(odd) .post-thumbnail {
       float: right;
     }
 

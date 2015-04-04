@@ -38,10 +38,10 @@ get_header(); ?>
     <?php endforeach; ?>
 
     <header class="section-header">
-    	<h2>Featured series: <?php echo get_featured_series_link( $featured->slug ); ?></h2>
+    	<h2>Featured series: <?php echo safflower_featured_series_link( $safflower_featured_series->slug ); ?></h2>
     </header>
 
-    <section class="featured-series <?php echo smarter_slug( $featured ); ?>">
+    <section class="featured-series <?php echo safflower_smart_slug( $safflower_featured_series ); ?>">
 	    <?php
 	    /*
 	     * For each series, we want to show a customized panel. Since this panel can be completely
@@ -50,7 +50,7 @@ get_header(); ?>
 	     * the panel content. So, we're dynamically generating the include path based on the series
 	     * slug and including the file in our output HTML.
 	     */
-					$slug = smarter_slug( $featured );
+					$slug = safflower_smart_slug( $safflower_featured_series );
 			    $dir = plugin_dir_path( __FILE__ );
 			    $template = parse_url( get_bloginfo( 'template_directory' ) );
 			    $path = $template['path']. '/series/' .$slug;

@@ -9,21 +9,27 @@
  * @package Safflower
  */
 
-// Define a category as featured by setting the category slug below.
-$featured_series = 110;
-// Now fetch the full category object for use.
-$featured = get_term_by( 'id', $featured_series, 'category' );
-
+/**
+ * Define the featured series by manually entering its category ID below.
+ * @todo Implement Jetpack's Featured Content instead to set featured series
+ * via the WordPress admin, rather than manually here.
+ */
+$safflower_featured_series_id = 110;
+// Fetch the full category object for use.
+$safflower_featured_series = get_term_by( 'id', $safflower_featured_series_id, 'category' );
 
 /**
- * If the category name has a "series" suffix, we're going to remove it.
- * This ensures that we look in the correct folder locations for our files,
- * as well as ensuring that we use the correct class names. Currently, no
- * categories use the "series" suffix anymore, but this is retained
- * for backwards (as well as future) compatibility.
+ * Categories often use complicated slugs: "dorm-decor-series-bedding-linen-ideas".
+ * This is for SEO purposes, but can make things a bit confusing from a development
+ * perspective. Instead, we're going to use simpler, more human-friendly slugs, based
+ * on the actual category name. This resulting slug is then used for our file and folder
+ * structures as well as our class names, so it makes sense to keep it simple.
+ * Note that this means we can change the category slugs without any implication,
+ * but that changing the title will require adjusting of the folder names and files.
  */
-function smarter_slug( $category ) {
+function safflower_smart_slug( $category ) {
   $slug = strtolower( $category->name );
+  // Remove the "series" suffix if it exists. (Currently not used.)
   $slug = str_replace( 'series', '', $slug );
   $slug = str_replace( ' ', '-', trim( $slug ) );
   return $slug;
@@ -35,9 +41,9 @@ function smarter_slug( $category ) {
 * This function is primarily used on the homepage, in order to
 * dynamically generate a link to the featured series.
 */
-function get_featured_series_link( $slug ) {
+function safflower_featured_series_link( $slug ) {
   $category = get_category_by_slug( $slug );
-  $series_link = '<a href="'. get_parent_post_link( $category->term_id ) . '">' . $category->name . '</a>';
+  $series_link = '<a href="'. safflower_parent_post_link( $category->term_id ) . '">' . $category->name . '</a>';
   return $series_link;
 }
 
@@ -51,7 +57,7 @@ function get_featured_series_link( $slug ) {
 *
 * This function returns the URL for a given category's parent post.
 */
-function get_parent_post_link( $category_id ) {
+function safflower_parent_post_link( $category_id ) {
   // Find all sticky posts in the category (there should only be one)
   $args = array(
     'cat'                 => $category_id,
@@ -82,3 +88,78 @@ function get_parent_post_link( $category_id ) {
   wp_reset_postdata();
   return $series_link;
 }
+
+
+/**
+* Enqueue series-specific stylesheets on single post pages and the homepage.
+*
+* Because each series uses its own unique fonts, there are going to be lots of HTTP requests going on.
+* For the moment, we're simplifying things by ONLY loading the CSS for the particular series to which
+* the current page belongs. This may not be the best way of doing this: it may instead be better to
+* concatenating all series' stylesheets into our main style.css, thus removing the extra HTTP request.
+* However, since this means all fonts (30 or so) would be loaded on every page, this may not be the
+* most performant solution.
+*
+* @todo: A/B test performance.
+*/
+function safflower_series_styles() {
+  global $safflower_featured_series;
+
+  // Single posts
+  if ( is_single() ):
+    $categories = get_the_category( $post->ID );
+    // For each of the post's categories, add its "slug" to the body class
+    foreach( $categories as $category ):
+      // If the category is a sub-category of the Holiday series, just use the "holidays" stylesheet
+      if ( 130 === $category->parent ):
+        $slug = "holidays";
+      // Don't load a stylesheet for certain categories (@todo: Increase list of categories. Currently this creates 404 errors on some pages.)
+      elseif ( "shopping-guides" != $category->slug ):
+        $slug = safflower_smart_slug( $category );
+      endif;
+    endforeach;
+  endif;
+
+  // Homepage
+  if ( is_front_page() ):
+    $slug = safflower_smart_slug( $safflower_featured_series );
+  endif;
+
+  // Register our series-specific stylesheet
+  if ( isset( $slug ) ) {
+    wp_register_style( 'category-style',  get_template_directory_uri() . '/series/'.$slug.'/styles.css' );
+    wp_enqueue_style( 'category-style' );
+  }
+
+  // Promotion pages also have specific stylesheets
+  if ( "Promotions" == get_post_field( 'post_title', $post->post_parent ) ):
+    $slug = basename( get_permalink() );
+    wp_register_style( 'page-style',  get_template_directory_uri() . '/promotions/'.$slug.'.css' );
+    wp_enqueue_style( 'page-style' );
+  endif;
+}
+add_action( 'wp_enqueue_scripts', 'safflower_series_styles' );
+
+
+/**
+* Since we want to implement our styles based on the series (category) of a post, we need
+* some way of indicating which series a particular post belongs to. To do this, we'll
+* add an additional CSS class to the body tag for our custom styles to use. WordPress
+* already natively adds them on certain pages, but we need a bit more.
+*/
+function safflower_series_class( $classes ) {
+  if ( is_single() ):
+    // Add category slugs to the body class
+    $categories = get_the_category( $post->ID );
+    foreach( $categories as $category ):
+      // Generate a list of parent categories as well
+      $parents = get_category_parents( $category, false, ',' );
+      $parents = explode( ',', $parents );
+      foreach ( $parents as $parent ):
+        $classes[] = str_replace( ' ', '-', strtolower( $parent ) );
+      endforeach;
+    endforeach;
+  endif;
+return $classes;
+}
+add_filter('body_class', 'safflower_series_class');

@@ -52,7 +52,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.widget, .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+.widget, .home .post-list, .long-excerpt, .short-excerpt .post-thumbnail, .short-excerpt .entry-content, .home .category {
   float: left;
   padding: 0.625em;
 }
@@ -61,7 +61,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 50%;
 }
 
-.short-excerpt img {
+.short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
@@ -104,7 +104,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .widget, .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+  .widget, .home .post-list, .long-excerpt, .short-excerpt .post-thumbnail, .short-excerpt .entry-content, .home .category {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -152,13 +152,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   pointer-events: none;
 }
 
-.home .category img, .post img, .category-intro img, .entry-content img {
+.home .category img, .post-excerpt img, .category-intro img, .entry-content img {
   background: #fff;
   padding: 8px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .home .category img, .post img, .category-intro img, .entry-content img {
+  .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
     padding: 10px;
     /* We use a slightly larger border on larger screens */
   }
@@ -1291,32 +1291,30 @@ ul#main-nav li#blog-tab {
 }
 
 /* Post excerpts on archive pages */
-.post {
-  text-align: center;
-}
-.post .entry-meta {
-  font-size: 15px;
-  font-size: 1.5rem;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-.post .entry-meta::before, .post .entry-meta::after {
-  padding: 0 5px;
-}
-.post .entry-content {
+.post-excerpt .entry-content {
   font-size: 16px;
   font-size: 1.6rem;
   margin-top: 0;
   text-align: left;
 }
 
+.long-excerpt {
+  text-align: center;
+}
+.long-excerpt .entry-meta {
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.long-excerpt .entry-meta::before, .long-excerpt .entry-meta::after {
+  padding: 0 5px;
+}
+
 /* Short post excerpt style */
 .short-excerpt {
   clear: both;
   margin-top: 40px;
-}
-.short-excerpt .entry-content {
-  text-align: left;
 }
 .short-excerpt .tag-list {
   font-size: 14px;
@@ -1342,7 +1340,7 @@ ul#main-nav li#blog-tab {
 
 /* Alternate floating of images and add a bit of padding to entry content */
 @media (min-width: 768px) {
-  .short-excerpt:nth-of-type(odd) img {
+  .short-excerpt:nth-of-type(odd) .post-thumbnail {
     float: right;
   }
   .short-excerpt .entry-content {
