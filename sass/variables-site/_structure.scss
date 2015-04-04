@@ -1,22 +1,17 @@
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
-
-$grid__width: 850px;
-$grid__columns: 12;
-$grid_guttter: 20px;
-$grid__container: #page;
-
-
-// Adjust unit spacing in pixels, em or rem (optional)
-$gutters: 1.25em;
-// Containers can be fluid, fixed, centered or whatever (optional)
+// Set gutter width and site container width
+$gutters: 1em;
 $container-max-width: 850px;
-// Include the main Girder partial
+
+/*
+ * Use Girder for our grid structure
+ *
+ * https://github.com/unmaya/Girder
+ */
 @import "girder/girder";
 
 #page {
   @include baseline-grid;
-  padding: 20px;
+  padding: #{$gutters};
   margin: 0 auto;
-  max-width: 850px;
+  max-width: #{$container-max-width};
 }

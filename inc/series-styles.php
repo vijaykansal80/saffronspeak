@@ -149,6 +149,7 @@ add_action( 'wp_enqueue_scripts', 'safflower_series_styles' );
 */
 function safflower_series_class( $classes ) {
   if ( is_single() ):
+
     // Add category slugs to the body class
     $categories = get_the_category( $post->ID );
     foreach( $categories as $category ):
@@ -159,6 +160,11 @@ function safflower_series_class( $classes ) {
         $classes[] = str_replace( ' ', '-', strtolower( $parent ) );
       endforeach;
     endforeach;
+
+    // Add class to indicate whether this is the "parent" post
+    if ( is_sticky() ):
+      $classes[] = 'parent-post';
+    endif;
   endif;
 return $classes;
 }

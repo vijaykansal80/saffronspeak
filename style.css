@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Safflower
 Theme URI: http://saffronmarigold.com
@@ -41,6 +42,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/*
+ * Use Girder for our grid structure
+ *
+ * https://github.com/unmaya/Girder
+ */
 /* =========================================== */
 /*   Girder v.1.0.4 A Sassy layout helper  // */
 /*   https://github.com/unmaya/Girder     // */
@@ -52,25 +58,51 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.widget, .home .post-list, .long-excerpt, .short-excerpt .post-thumbnail, .short-excerpt .entry-content, .home .category {
+.widget, .home .post-list, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
   float: left;
-  padding: 0.625em;
+  padding: 0.5em;
 }
 
 .widget, .home .post-list, .long-excerpt {
   width: 50%;
 }
 
-.short-excerpt .post-thumbnail {
+.panel figure:not(.col), .short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
-.short-excerpt .entry-content {
+.panel p, .short-excerpt .entry-content {
   width: 66.6665%;
 }
 
 .home .category {
   width: 25%;
+}
+
+.panel {
+  position: relative;
+  clear: both;
+  display: block;
+}
+.panel:after {
+  clear: both;
+}
+.panel:before, .panel:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.panel .row > :first-of-type {
+  padding-left: 0;
+}
+.panel .row > :last-child {
+  padding-right: 0;
+}
+.equal-units.panel > :first-of-type {
+  padding-left: 0.5em;
+}
+.equal-units.panel > :last-child {
+  padding-right: 0.5em;
 }
 
 .container {
@@ -104,7 +136,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .widget, .home .post-list, .long-excerpt, .short-excerpt .post-thumbnail, .short-excerpt .entry-content, .home .category {
+  .widget, .home .post-list, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -113,16 +145,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 @media only screen and (min-width: 35.5em) {
   .row.equal-units > :first-of-type {
-    padding-left: 0.625em;
+    padding-left: 0.5em;
   }
   .row.equal-units > :last-child {
-    padding-right: 0.625em;
+    padding-right: 0.5em;
   }
 }
 
 #page {
   position: relative;
-  padding: 20px;
+  padding: 1em;
   margin: 0 auto;
   max-width: 850px;
 }
@@ -152,14 +184,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   pointer-events: none;
 }
 
-.home .category img, .post-excerpt img, .category-intro img, .entry-content img {
+.panel figure:not(.col) img, .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
   background: #fff;
-  padding: 8px;
+  padding: 6px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
-    padding: 10px;
+  .panel figure:not(.col) img, .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
+    padding: 8px;
     /* We use a slightly larger border on larger screens */
   }
 }
@@ -619,6 +651,79 @@ img {
   /* Adhere to container width. */
 }
 
+.panel {
+  background: rgba(255, 255, 255, 0.75);
+  border-bottom: 2px solid #9e5374;
+  border-top: 1px solid #9e5374;
+  margin: 1em 0 4em;
+  padding: 1em;
+  /* In some cases, we use two columns in a panel (These styles likely need tweaking!) */
+}
+.panel figure:not(.col) {
+  margin: 0;
+}
+.panel p {
+  margin: 0.5em 0;
+}
+@media (min-width: 768px) {
+  .panel p {
+    padding-left: 1em;
+  }
+}
+.panel p:first-of-type {
+  margin-top: 1em;
+}
+.panel .read-more {
+  font-size: 0.85em;
+  margin: 1em auto 0.5em;
+  padding: 0;
+}
+.panel .read-more a {
+  display: inline-block;
+  line-height: 1.2;
+  padding: 8px 20px;
+}
+.panel .read-more a::before, .panel .read-more a::after {
+  display: none;
+}
+.panel .read-more a span {
+  display: block;
+}
+.panel .read-more a .pre:before,
+.panel .read-more a .pre:after {
+  content: "•";
+  display: inline;
+  padding: 5px;
+}
+.panel .read-more a .title {
+  font-size: 1.5em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.panel .read-more a .title::after {
+  content: "»";
+  display: inline;
+  padding-left: 5px;
+}
+.panel.twofig figure {
+  margin: 20px 0 10px 0;
+}
+.panel.twofig figure:first-of-type {
+  margin-left: -50px;
+}
+.panel.twofig figure:last-of-type {
+  margin-right: -50px;
+}
+.panel.twofig figure .circular {
+  border-width: 2px !important;
+  max-width: 200px;
+}
+.panel.twofig figure p {
+  float: left;
+  margin: 20px 6px 20px 30px;
+  width: 400px;
+}
+
 table {
   margin: 0 0 1.5em;
   width: 100%;
@@ -1054,7 +1159,7 @@ ul#main-nav li#blog-tab {
   font-size: 0.9em;
   margin-top: 1em;
   position: relative;
-  padding: 1.25em;
+  padding: 1em;
   text-align: left;
   /* Make sure select elements fit in widgets. */
 }
@@ -2011,6 +2116,12 @@ a.sd-button > span {
 --------------------------------------------------------------*/
 .entry-content img {
   margin: 0 10px 5px 0;
+}
+
+/* Make images circular using this class (works best on images that are cropped to a square!) */
+.circular {
+  border-radius: 50%;
+  border-width: 4px;
 }
 
 /* Don't show borders or box-shadows for certain images */

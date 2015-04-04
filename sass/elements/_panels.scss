@@ -1,0 +1,93 @@
+.panel {
+  @extend %row;
+  background: rgba(255, 255, 255, .75);
+  border-bottom: 2px solid #9e5374;
+  border-top: 1px solid #9e5374;
+  margin: 1em 0 4em;
+  padding: $gutters;
+
+  figure:not(.col) {
+    @include unit(third);
+    margin: 0;
+
+    img {
+      @extend %bordered;
+    }
+  }
+
+  p {
+    @include unit(two-thirds);
+    margin: $gutters/2 0;
+    @include tablet {
+      padding-left: $gutters;
+    }
+
+    &:first-of-type {
+      margin-top: 1em;
+    }
+  } // p
+
+  .read-more {
+    font-size: 0.85em;
+    margin: 1em auto 0.5em;
+    padding: 0;
+
+    a {
+      display: inline-block;
+      line-height: 1.2;
+      padding: 8px 20px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      span {
+        display: block;
+      }
+
+      .pre:before,
+      .pre:after {
+        content: "•";
+        display: inline;
+        padding: 5px;
+      }
+
+      .title {
+        font-size: 1.5em;
+        letter-spacing: 0;
+        text-transform: none;
+
+        &::after {
+          content: "»";
+          display: inline;
+          padding-left: 5px;
+        }
+      }
+    } // a
+  } // .read-more
+
+  /* In some cases, we use two columns in a panel (These styles likely need tweaking!) */
+  &.twofig figure {
+    margin: 20px 0 10px 0;
+
+    &:first-of-type {
+      margin-left: -50px;
+    }
+
+    &:last-of-type {
+      margin-right: -50px;
+    }
+
+    .circular {
+      border-width: 2px !important;
+      max-width: 200px;
+    }
+
+    p {
+      float: left;
+      margin: 20px 6px 20px 30px;
+      width: 400px;
+    }
+  } // .twofig
+} // .panel
