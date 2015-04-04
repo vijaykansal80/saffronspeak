@@ -52,12 +52,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+.widget, .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
   float: left;
   padding: 0.625em;
 }
 
-.home .post-list, .long-excerpt {
+.widget, .home .post-list, .long-excerpt {
   width: 50%;
 }
 
@@ -104,7 +104,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+  .widget, .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -174,7 +174,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   -moz-osx-font-smoothing: grayscale;
 }
 
-.home .category h3, .home .post-list h3 {
+.widget .widgettitle, .home .post-list .widgettitle,
+.widget .widget-title,
+.home .post-list .widget-title,
+.home .post-list h3, .home .category h3 {
   background: #46382d;
   border: 1px solid #FDF2F7;
   outline: 3px solid #46382d;
@@ -187,12 +190,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke: 0;
 }
-.home .category h3::before, .home .post-list h3::before, .home .category h3::after, .home .post-list h3::after {
+.widget .widgettitle::before, .home .post-list .widgettitle::before,
+.widget .widget-title::before,
+.home .post-list .widget-title::before,
+.home .post-list h3::before, .home .category h3::before, .widget .widgettitle::after, .home .post-list .widgettitle::after,
+.widget .widget-title::after,
+.home .post-list .widget-title::after,
+.home .post-list h3::after, .home .category h3::after {
   content: '\00b7';
   padding: 0 5px;
   display: inline;
 }
-.home .category h3 a, .home .post-list h3 a {
+.widget .widgettitle a, .home .post-list .widgettitle a,
+.widget .widget-title a,
+.home .post-list .widget-title a,
+.home .post-list h3 a, .home .category h3 a {
   color: #FDF2F7;
 }
 
@@ -568,15 +580,22 @@ hr {
 }
 
 ul, ol {
-  margin: 0 0 1.5em 3em;
+  margin: 0 0 3em;
+  padding: 0;
 }
 
 ul {
-  list-style: disc;
+  list-style: circle;
 }
 
 ol {
   list-style: decimal;
+}
+
+li {
+  line-height: 1.2;
+  list-style-position: inside;
+  margin: .5em 0;
 }
 
 li > ul,
@@ -1031,11 +1050,37 @@ ul#main-nav li#blog-tab {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
-  margin: 0 0 1.5em;
+.widget, .home .post-list {
+  font-size: 0.9em;
+  margin-top: 1em;
+  position: relative;
+  padding: 1.25em;
+  text-align: left;
   /* Make sure select elements fit in widgets. */
 }
-.widget select {
+.widget::before, .home .post-list::before {
+  background: url("images/low_contrast_linen.png");
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  display: block;
+  top: 0.625em;
+  right: 0.625em;
+  left: 0.625em;
+  bottom: 0.625em;
+  position: absolute;
+  z-index: -1;
+}
+.widget .widgettitle, .home .post-list .widgettitle,
+.widget .widget-title,
+.home .post-list .widget-title,
+.home .post-list h3 {
+  display: inline-block;
+  margin: 0 -15px;
+}
+.widget > ul, .home .post-list > ul {
+  margin: 1em 0;
+}
+.widget select, .home .post-list select {
   max-width: 100%;
 }
 
@@ -1173,27 +1218,6 @@ ul#main-nav li#blog-tab {
 }
 .home .featured-series {
   margin: 2em 0;
-}
-.home .post-list {
-  margin-top: 1em;
-  position: relative;
-  padding: 1.25em;
-}
-.home .post-list::before {
-  background: url("images/low_contrast_linen.png");
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
-  content: '';
-  display: block;
-  top: 0.625em;
-  right: 0.625em;
-  left: 0.625em;
-  bottom: 0.625em;
-  position: absolute;
-  z-index: -1;
-}
-.home .post-list h3 {
-  display: inline-block;
-  margin: 0 -15px;
 }
 .home .post-preview {
   clear: both;
@@ -1517,21 +1541,6 @@ a.sd-button > span {
 .related-posts .inline-readmore {
   text-decoration: none;
   white-space: nowrap;
-}
-
-/* Search results page */
-.search-results .no-results {
-  margin: 50px 0;
-  text-align: center;
-}
-
-.search-results h1 {
-  margin-bottom: 20px;
-}
-
-.search-term {
-  background: rgba(255, 255, 255, 0.75);
-  font-weight: bolder;
 }
 
 /*--------------------------------------------------------------
@@ -1936,22 +1945,33 @@ a.sd-button > span {
 }
 
 /* Search results */
-.no-results .page-content {
-  margin: 50px auto;
-  max-width: 400px;
-  text-align: center;
-}
-.no-results .search-field {
-  width: 50%;
-}
-.no-results .search-submit {
-  margin-left: 1%;
-  width: 40%;
+.search-results h1 {
+  margin-bottom: 20px;
 }
 
 .search-term {
   background: rgba(255, 255, 255, 0.75);
   font-weight: bolder;
+}
+
+/* Search form on 404 and no results page */
+.no-results,
+.error-404 {
+  text-align: center;
+}
+.no-results .search-form,
+.error-404 .search-form {
+  margin: 0 auto;
+  max-width: 400px;
+}
+.no-results .search-field,
+.error-404 .search-field {
+  width: 50%;
+}
+.no-results .search-submit,
+.error-404 .search-submit {
+  margin-left: 1%;
+  width: 40%;
 }
 
 /*--------------------------------------------------------------

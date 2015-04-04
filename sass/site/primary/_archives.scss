@@ -232,11 +232,23 @@
 }
 
 /* Search results */
-.no-results {
-  .page-content {
-    margin: 50px auto;
+.search-results h1 {
+  margin-bottom: 20px;
+}
+
+.search-term {
+  background: rgba(255, 255, 255, 0.75);
+  font-weight: bolder;
+}
+
+/* Search form on 404 and no results page */
+.no-results,
+.error-404 {
+  text-align: center;
+
+  .search-form {
+    margin: 0 auto;
     max-width: 400px;
-    text-align: center;
   }
 
   .search-field {
@@ -247,10 +259,4 @@
     margin-left: 1%;
     width: 40%;
   }
-}
-
-
-.search-term {
-  background: rgba(255, 255, 255, 0.75);
-  font-weight: bolder;
 }

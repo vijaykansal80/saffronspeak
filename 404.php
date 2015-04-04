@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package safflower
+ * @package Safflower
  */
 
 get_header(); ?>
@@ -20,7 +20,7 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+					<?php the_widget( 'WP_Widget_Recent_Posts', __('Latest Posts'), 10 ); ?>
 
 					<?php if ( safflower_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
@@ -41,7 +41,7 @@ get_header(); ?>
 
 					<?php
 						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'safflower' ), convert_smilies( ':)' ) ) . '</p>';
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives.', 'safflower' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 

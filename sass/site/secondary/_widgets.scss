@@ -1,10 +1,39 @@
 .widget {
-	margin: 0 0 1.5em;
+  @include unit(half);
+  font-size: 0.9em;
+  margin-top: 1em;
+  position: relative;
+  padding: $gutters;
+  text-align: left;
 
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
-	}
+  &::before {
+    background: url('images/low_contrast_linen.png');
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .25);
+    content: '';
+    display: block;
+    top: 0.625em;
+    right: 0.625em;
+    left: 0.625em;
+    bottom: 0.625em;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .widgettitle,
+  .widget-title {
+    @extend %boxed-text;
+    display: inline-block;
+    margin: 0 -15px;
+  }
+
+  & > ul {
+    margin: 1em 0;
+  }
+
+  /* Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
 }
 
 /* Search widget. */
