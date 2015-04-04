@@ -1,8 +1,22 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
 
+$grid__width: 850px;
+$grid__columns: 12;
+$grid_guttter: 20px;
+$grid__container: #page;
+
+
+// Adjust unit spacing in pixels, em or rem (optional)
+$gutters: 1.25em;
+// Containers can be fluid, fixed, centered or whatever (optional)
+$container-max-width: 850px;
+// Include the main Girder partial
+@import "girder/girder";
+
 #page {
+  @include baseline-grid;
+  padding: 20px;
   margin: 0 auto;
   max-width: 850px;
-  padding: 20px;
 }

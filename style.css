@@ -41,10 +41,115 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-#page {
+/* =========================================== */
+/*   Girder v.1.0.4 A Sassy layout helper  // */
+/*   https://github.com/unmaya/Girder     // */
+/* ======================================== */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+  float: left;
+  padding: 0.625em;
+}
+
+.home .post-list, .long-excerpt {
+  width: 50%;
+}
+
+.short-excerpt img {
+  width: 33.3332%;
+}
+
+.short-excerpt .entry-content {
+  width: 66.6665%;
+}
+
+.home .category {
+  width: 25%;
+}
+
+.container {
   margin: 0 auto;
   max-width: 850px;
+}
+
+.row {
+  padding: 0;
+  clear: both;
+  display: block;
+}
+.row:after {
+  clear: both;
+}
+.row:before, .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+@media only screen and (min-width: 35.5em) {
+  .row > :first-of-type {
+    padding-left: 0;
+  }
+  .row > :last-child {
+    padding-right: 0;
+  }
+}
+.row.no-gutters, .row.no-padding {
+  padding: 0;
+}
+
+@media only screen and (min-width: 10em) and (max-width: 35.5em) {
+  .home .post-list, .long-excerpt, .short-excerpt img, .short-excerpt .entry-content, .home .category {
+    width: 100%;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media only screen and (min-width: 35.5em) {
+  .row.equal-units > :first-of-type {
+    padding-left: 0.625em;
+  }
+  .row.equal-units > :last-child {
+    padding-right: 0.625em;
+  }
+}
+
+#page {
+  position: relative;
   padding: 20px;
+  margin: 0 auto;
+  max-width: 850px;
+}
+#page:after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9;
+  background-image: -moz-linear-gradient(top, transparent 95%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(95%, transparent), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, transparent 95%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -o-linear-gradient(top, transparent 95%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: -ms-linear-gradient(top, transparent 95%, rgba(0, 0, 0, 0.15) 100%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.15) 95%, rgba(0, 0, 0, 0.15) 100%);
+  -webkit-background-size: 100% 26px;
+  -moz-background-size: 100% 26px;
+  -ms-background-size: 100% 26px;
+  background-size: 100% 26px;
+}
+.debug #page:after {
+  display: block;
+  pointer-events: none;
 }
 
 .home .category img, .post img, .category-intro img, .entry-content img {
@@ -1066,45 +1171,25 @@ ul#main-nav li#blog-tab {
   line-height: 1.2;
   text-align: justify;
 }
-@media (max-width: 767px) {
-  .home .category img {
-    clear: both;
-    float: left;
-    margin-right: 10px;
-    width: 40%;
-  }
-  .home .category h3 {
-    display: none;
-  }
-}
-@media (min-width: 768px) {
-  .home .category {
-    float: left;
-    width: 23.5%;
-    margin: 1em 2% 4em 0;
-  }
-  .home .category:nth-of-type(4) {
-    margin-right: 0;
-  }
-}
 .home .featured-series {
   margin: 2em 0;
 }
 .home .post-list {
+  margin-top: 1em;
+  position: relative;
+  padding: 1.25em;
+}
+.home .post-list::before {
   background: url("images/low_contrast_linen.png");
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
-  margin-top: 1em;
-  padding: 0.5em;
-}
-@media (min-width: 768px) {
-  .home .post-list {
-    float: left;
-    width: 46%;
-    margin: 0 4% 2em 0;
-  }
-  .home .post-list:last-of-type {
-    margin-right: 0;
-  }
+  content: '';
+  display: block;
+  top: 0.625em;
+  right: 0.625em;
+  left: 0.625em;
+  bottom: 0.625em;
+  position: absolute;
+  z-index: -1;
 }
 .home .post-list h3 {
   display: inline-block;
@@ -1130,6 +1215,7 @@ ul#main-nav li#blog-tab {
 }
 .home .post-preview h4 {
   clear: none;
+  border-color: #797979;
   font-size: 21px;
   font-size: 2.1rem;
   font-weight: normal;
@@ -1230,28 +1316,12 @@ ul#main-nav li#blog-tab {
   padding: 2px 5px;
 }
 
-/* Use columns for larger screens */
+/* Alternate floating of images and add a bit of padding to entry content */
 @media (min-width: 768px) {
-  .long-excerpt {
-    width: 48%;
-    float: left;
-  }
-  .long-excerpt:nth-of-type(odd) {
-    clear: left;
-    margin-right: 4%;
-  }
-
-  .short-excerpt img {
-    float: left;
-    margin: 0 20px 5px 0;
-    width: 30%;
-  }
   .short-excerpt:nth-of-type(odd) img {
     float: right;
   }
   .short-excerpt .entry-content {
-    float: left;
-    width: 65%;
     padding-top: 10px;
   }
 }
