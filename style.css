@@ -1900,6 +1900,8 @@ a.sd-button > span {
 .short-excerpt {
   clear: both;
   margin-top: 40px;
+  /* Tighten up layout on mobile */
+  /* Alternate floating of images and add a bit of padding to entry content */
 }
 .short-excerpt .tag-list {
   font-size: 14px;
@@ -1922,8 +1924,17 @@ a.sd-button > span {
   background: #edcfba;
   padding: 2px 5px;
 }
-
-/* Alternate floating of images and add a bit of padding to entry content */
+@media (max-width: 767px) {
+  .short-excerpt .post-thumbnail {
+    padding-bottom: 0;
+  }
+  .short-excerpt .entry-content {
+    padding-top: 0;
+  }
+  .short-excerpt h4 {
+    margin-top: 0;
+  }
+}
 @media (min-width: 768px) {
   .short-excerpt:nth-of-type(odd) .post-thumbnail {
     float: right;
@@ -1931,7 +1942,11 @@ a.sd-button > span {
   .short-excerpt .entry-content {
     padding-top: 10px;
   }
+  .short-excerpt h4 {
+    text-align: left;
+  }
 }
+
 /* Shopping Guide page */
 .category-shopping-guides .subcategory {
   -webkit-font-smoothing: antialiased;

@@ -124,13 +124,24 @@
       padding: 2px 5px;
     }
   } // .tags
-} // .short-excerpt
 
+  /* Tighten up layout on mobile */
+  @include mobile {
+    .post-thumbnail {
+      padding-bottom: 0;
+    }
 
-/* Alternate floating of images and add a bit of padding to entry content */
-@include tablet {
-  .short-excerpt {
+    .entry-content {
+      padding-top: 0;
+    }
 
+    h4 {
+      margin-top: 0;
+    }
+  } // mobile
+
+  /* Alternate floating of images and add a bit of padding to entry content */
+  @include tablet {
     &:nth-of-type(odd) .post-thumbnail {
       float: right;
     }
@@ -138,9 +149,12 @@
     .entry-content {
       padding-top: 10px;
     }
-  }
-} // tablet
 
+    h4 {
+      text-align: left;
+    }
+  } // tablet
+} // .short-excerpt
 
 
 /* Shopping Guide page */
