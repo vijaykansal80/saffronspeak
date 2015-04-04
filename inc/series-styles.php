@@ -169,3 +169,54 @@ function safflower_series_class( $classes ) {
 return $classes;
 }
 add_filter('body_class', 'safflower_series_class');
+
+
+/**
+* Add a navigation panel to the bottom of posts that allows users
+* to easily navigate between posts of that series. This will need
+* to be styled individually for each individual series.
+*/
+function safflower_series_nav() {
+  if ( ! is_sticky() ): // Don't show the navigation on parent posts
+
+    // Make sure we're only pulling a single category
+    $categories = get_the_category( $post->ID );
+    if ( 1 === count( $categories ) ) {
+      $category = $categories[0];
+    }
+
+    // If we're in a nested sub-category (like in the Holiday series), we want to jump up to the parent category
+    $parent = get_term_by( 'id', $category->category_parent, 'category' );
+    if ( 0 != $parent->parent ) {
+      $category = $parent;
+    }
+
+    $series_link = safflower_parent_post_link( $category->term_id );
+
+    // Only show for Shopping Guide posts (at least for now!)
+    if ( 5 === $category->parent ): ?>
+      <section class="panel series-navigation">
+        <p class="series-description"><?php echo $category->description; ?></p>
+
+        <div class="previous-post">
+          <?php $previous_post = get_adjacent_post( true, '', true ); ?>
+          <?php if ( ! empty( $previous_post ) ): ?>
+            <a href="<?php echo get_permalink( $previous_post->ID ); ?>">&laquo; Previous post</a>
+          <?php endif; ?>
+        </div>
+
+        <div class="all-posts">
+          <a href="<?php echo $series_link; ?>">View all <?php echo $category->name; ?> posts</a>
+        </div>
+
+        <div class="next-post">
+          <?php $next_post = get_adjacent_post( true, '', false ); ?>
+          <?php if ( ! empty( $next_post ) ): ?>
+            <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
+          <?php endif; ?>
+        </div>
+
+      </section>
+    <?php endif;
+  endif;
+}

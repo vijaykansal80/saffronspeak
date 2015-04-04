@@ -60,14 +60,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
+.parent-post .column, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
 
 .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .long-excerpt {
+.parent-post .column, .series-navigation .all-posts, .long-excerpt {
   width: 50%;
 }
 
@@ -75,11 +75,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 33.3332%;
 }
 
-.panel p, .short-excerpt .entry-content {
+.panel p:not(.series-description), .short-excerpt .entry-content {
   width: 66.6665%;
 }
 
-.home .category {
+.home .category, .series-navigation .previous-post, .series-navigation .next-post {
   width: 25%;
 }
 
@@ -142,7 +142,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
-  .parent-post .column, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
+  .parent-post .column, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -675,15 +675,15 @@ img {
 .panel figure:not(.col) {
   margin: 0;
 }
-.panel p {
+.panel p:not(.series-description) {
   margin: 0.75em 0;
 }
 @media (min-width: 768px) {
-  .panel p {
+  .panel p:not(.series-description) {
     padding-left: 1.5em;
   }
 }
-.panel p:first-of-type {
+.panel p:not(.series-description):first-of-type {
   margin-top: 1em;
 }
 .panel .read-more {
@@ -1477,7 +1477,7 @@ p.intro,
   line-height: 1.4;
 }
 
-/* Multi-sectioned parent posts */
+/* Multi-sectioned parent posts (Holiday series, as of now) */
 .parent-expander-link:after,
 .parent-expander-link:before {
   display: none;
@@ -1517,7 +1517,40 @@ p.intro,
   z-index: 1000;
 }
 
-/* Sharedaddy */
+/* Series navigation */
+.series-navigation {
+  margin-bottom: 0;
+  padding: 0.75em 1.5em;
+}
+.series-navigation p {
+  padding: 0.75em 1.5em;
+}
+.series-navigation .next-post,
+.series-navigation .previous-post,
+.series-navigation .all-posts {
+  font-size: 13px;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.series-navigation .next-post a,
+.series-navigation .previous-post a,
+.series-navigation .all-posts a {
+  text-decoration: none;
+}
+.series-navigation .previous-post {
+  text-align: left;
+}
+.series-navigation .next-post {
+  text-align: right;
+}
+.series-navigation .all-posts {
+  text-align: center;
+}
+
+/* Sharedaddy panel */
 .sharedaddy {
   border-top: 1px solid #7D7556;
   border-bottom: 2px solid #7D7556;

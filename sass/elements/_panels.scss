@@ -15,7 +15,7 @@
     }
   }
 
-  p {
+  p:not(.series-description) {
     @include unit(two-thirds);
     margin: $gutters/2 0;
     @include tablet {

@@ -26,9 +26,11 @@
 				'after'  => '</div>',
 			) );
 		?>
+		<?php safflower_series_nav(); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 		<?php safflower_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->
