@@ -57,6 +57,92 @@
 @include generate-category-colours("behind-the-curtain", $color__behind-the-curtain);
 
 
+
+/* Post excerpts on archive pages */
+.post-excerpt {
+  img {
+    @extend %bordered;
+  }
+
+  .entry-content {
+    @include font-size(16);
+    margin-top: 0;
+    text-align: left;
+  }
+} // .post
+
+/* Long post excerpt style */
+.long-excerpt {
+  @include unit(half);
+  text-align: center;
+
+  .entry-meta {
+    @include font-size(15);
+    padding-right: 5px;
+    padding-left: 5px;
+
+    &::before,
+    &::after {
+      padding: 0 5px;
+    }
+  }
+}
+
+/* Short post excerpt style */
+.short-excerpt {
+  clear: both;
+  margin-top: 40px;
+
+  .post-thumbnail {
+    @include unit(third);
+  }
+
+  .entry-content {
+    @include unit(two-thirds);
+  }
+
+  .tag-list {
+    @include font-size(14);
+    line-height: 1.4;
+    margin: 1em 0;
+    text-align: left;
+
+    span {
+      font-size: .9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    a {
+      font-style: italic;
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: bold;
+      background: #edcfba;
+      padding: 2px 5px;
+    }
+  } // .tags
+} // .short-excerpt
+
+
+/* Alternate floating of images and add a bit of padding to entry content */
+@include tablet {
+  .short-excerpt {
+
+    &:nth-of-type(odd) .post-thumbnail {
+      float: right;
+    }
+
+    .entry-content {
+      padding-top: 10px;
+    }
+  }
+} // tablet
+
+
+
 /* Shopping Guide page */
 .category-shopping-guides {
 

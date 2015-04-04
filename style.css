@@ -58,12 +58,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.widget, .home .post-list, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
+.widget, .home .post-list, .twocol .col,
+.twocol .column, .parent-post .col,
+.parent-post .column, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
   float: left;
-  padding: 0.5em;
+  padding: 0.75em;
 }
 
-.widget, .home .post-list, .long-excerpt {
+.widget, .home .post-list, .twocol .col,
+.twocol .column, .parent-post .col,
+.parent-post .column, .long-excerpt {
   width: 50%;
 }
 
@@ -79,30 +83,30 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel {
+.panel, .twocol, .parent-post section {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after {
+.panel:after, .twocol:after, .parent-post section:after {
   clear: both;
 }
-.panel:before, .panel:after {
+.panel:before, .twocol:before, .parent-post section:before, .panel:after, .twocol:after, .parent-post section:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type {
+.panel .row > :first-of-type, .twocol .row > :first-of-type, .parent-post section .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child {
+.panel .row > :last-child, .twocol .row > :last-child, .parent-post section .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type {
-  padding-left: 0.5em;
+.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .parent-post section.equal-units > :first-of-type {
+  padding-left: 0.75em;
 }
-.equal-units.panel > :last-child {
-  padding-right: 0.5em;
+.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .parent-post section.equal-units > :last-child {
+  padding-right: 0.75em;
 }
 
 .container {
@@ -136,7 +140,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .widget, .home .post-list, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
+  .widget, .home .post-list, .twocol .col,
+  .twocol .column, .parent-post .col,
+  .parent-post .column, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p, .short-excerpt .entry-content, .home .category {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -145,16 +151,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 @media only screen and (min-width: 35.5em) {
   .row.equal-units > :first-of-type {
-    padding-left: 0.5em;
+    padding-left: 0.75em;
   }
   .row.equal-units > :last-child {
-    padding-right: 0.5em;
+    padding-right: 0.75em;
   }
 }
 
 #page {
   position: relative;
-  padding: 1em;
+  padding: 1.5em;
   margin: 0 auto;
   max-width: 850px;
 }
@@ -184,13 +190,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   pointer-events: none;
 }
 
-.panel figure:not(.col) img, .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
+.panel figure:not(.col) img, .home .category img, .category-intro img, .post-excerpt img, .entry-content img {
   background: #fff;
   padding: 6px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .panel figure:not(.col) img, .home .category img, .post-excerpt img, .category-intro img, .entry-content img {
+  .panel figure:not(.col) img, .home .category img, .category-intro img, .post-excerpt img, .entry-content img {
     padding: 8px;
     /* We use a slightly larger border on larger screens */
   }
@@ -514,14 +520,21 @@ h2 {
   }
 }
 
+h3 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
 h4 {
-  font-size: 19px;
-  font-size: 1.9rem;
+  font-size: 21px;
+  font-size: 2.1rem;
   font-weight: normal;
   margin: .75em auto;
   padding-bottom: .25em;
   color: #BD6518;
   border-bottom: 1px solid #BD6518;
+  text-align: center;
 }
 h4 a {
   color: #BD6518;
@@ -656,18 +669,18 @@ img {
   border-bottom: 2px solid #9e5374;
   border-top: 1px solid #9e5374;
   margin: 1em 0 4em;
-  padding: 1em;
+  padding: 1.5em;
   /* In some cases, we use two columns in a panel (These styles likely need tweaking!) */
 }
 .panel figure:not(.col) {
   margin: 0;
 }
 .panel p {
-  margin: 0.5em 0;
+  margin: 0.75em 0;
 }
 @media (min-width: 768px) {
   .panel p {
-    padding-left: 1em;
+    padding-left: 1.5em;
   }
 }
 .panel p:first-of-type {
@@ -1159,7 +1172,7 @@ ul#main-nav li#blog-tab {
   font-size: 0.9em;
   margin-top: 1em;
   position: relative;
-  padding: 1em;
+  padding: 1.5em;
   text-align: left;
   /* Make sure select elements fit in widgets. */
 }
@@ -1364,97 +1377,9 @@ ul#main-nav li#blog-tab {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* Headers */
+.entry-header,
 .page-header {
-  text-align: center;
-}
-
-.byline,
-.updated:not(.published) {
-  display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-@media (max-width: 767px) {
-  .single .byline,
-  .group-blog .byline {
-    display: none;
-  }
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
-}
-
-/* Post excerpts on archive pages */
-.post-excerpt .entry-content {
-  font-size: 16px;
-  font-size: 1.6rem;
-  margin-top: 0;
-  text-align: left;
-}
-
-.long-excerpt {
-  text-align: center;
-}
-.long-excerpt .entry-meta {
-  font-size: 15px;
-  font-size: 1.5rem;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-.long-excerpt .entry-meta::before, .long-excerpt .entry-meta::after {
-  padding: 0 5px;
-}
-
-/* Short post excerpt style */
-.short-excerpt {
-  clear: both;
-  margin-top: 40px;
-}
-.short-excerpt .tag-list {
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  margin: 1em 0;
-  text-align: left;
-}
-.short-excerpt .tag-list span {
-  font-size: .9em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.short-excerpt .tag-list a {
-  font-style: italic;
-  text-decoration: none;
-}
-.short-excerpt .tag-list strong {
-  font-weight: bold;
-  background: #edcfba;
-  padding: 2px 5px;
-}
-
-/* Alternate floating of images and add a bit of padding to entry content */
-@media (min-width: 768px) {
-  .short-excerpt:nth-of-type(odd) .post-thumbnail {
-    float: right;
-  }
-  .short-excerpt .entry-content {
-    padding-top: 10px;
-  }
-}
-/* Individual post pages */
-/* Post headlines */
-.entry-header {
   text-align: center;
 }
 
@@ -1485,6 +1410,34 @@ ul#main-nav li#blog-tab {
   word-spacing: normal;
 }
 
+.byline,
+.updated:not(.published) {
+  display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+@media (max-width: 767px) {
+  .single .byline,
+  .group-blog .byline {
+    display: none;
+  }
+}
+
+/* Page structure */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
 /* Emphasize first paragraph */
 .single-post .entry-content > p:first-of-type,
 p.intro,
@@ -1500,6 +1453,68 @@ p.intro,
   .featured-series > p:first-of-type {
     margin: 2em 2em;
   }
+}
+
+/* Columns, as defined within actual page content itself */
+.twocol .col:nth-of-type(odd),
+.twocol .column:nth-of-type(odd) {
+  clear: left;
+}
+
+/* Parent posts */
+.parent-post .col:nth-of-type(odd),
+.parent-post .column:nth-of-type(odd) {
+  clear: left;
+}
+.parent-post .col h4,
+.parent-post .column h4 {
+  margin-top: 0;
+}
+.parent-post .col p:not(.read-more),
+.parent-post .column p:not(.read-more) {
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+/* Multi-sectioned parent posts */
+.parent-expander-link:after,
+.parent-expander-link:before {
+  display: none;
+}
+
+.read-more .parent-expander-link {
+  padding: 8px 20px 8px 25px;
+}
+
+.parent-expander-link i {
+  font-size: 1.5em;
+  line-height: 0.3;
+  display: inline-block;
+  margin-top: 3px;
+  vertical-align: top;
+}
+
+.expander {
+  display: none;
+}
+
+/* Flag an individual post as "updated" within the parent post */
+.parent-post .updated {
+  position: relative;
+}
+
+.parent-post .updated:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -30px;
+  width: 71px;
+  height: 71px;
+  background: url("images/updated-for-2015.png") no-repeat;
+  box-shadow: none;
+  z-index: 1000;
 }
 
 /* Sharedaddy */
@@ -1826,6 +1841,64 @@ a.sd-button > span {
   outline-color: #7d323b;
 }
 
+/* Post excerpts on archive pages */
+.post-excerpt .entry-content {
+  font-size: 16px;
+  font-size: 1.6rem;
+  margin-top: 0;
+  text-align: left;
+}
+
+/* Long post excerpt style */
+.long-excerpt {
+  text-align: center;
+}
+.long-excerpt .entry-meta {
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.long-excerpt .entry-meta::before, .long-excerpt .entry-meta::after {
+  padding: 0 5px;
+}
+
+/* Short post excerpt style */
+.short-excerpt {
+  clear: both;
+  margin-top: 40px;
+}
+.short-excerpt .tag-list {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 1em 0;
+  text-align: left;
+}
+.short-excerpt .tag-list span {
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.short-excerpt .tag-list a {
+  font-style: italic;
+  text-decoration: none;
+}
+.short-excerpt .tag-list strong {
+  font-weight: bold;
+  background: #edcfba;
+  padding: 2px 5px;
+}
+
+/* Alternate floating of images and add a bit of padding to entry content */
+@media (min-width: 768px) {
+  .short-excerpt:nth-of-type(odd) .post-thumbnail {
+    float: right;
+  }
+  .short-excerpt .entry-content {
+    padding-top: 10px;
+  }
+}
 /* Shopping Guide page */
 .category-shopping-guides .subcategory {
   -webkit-font-smoothing: antialiased;

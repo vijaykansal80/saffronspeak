@@ -2,7 +2,7 @@
 /**
  * Safflower functions and definitions
  *
- * @package safflower
+ * @package Safflower
  */
 
 /**
@@ -164,6 +164,17 @@ function safflower_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'safflower_scripts' );
+
+
+/**
+ * Remove empty <p> tags in posts.
+ * These have a tendency to muck up the layout.
+ */
+function safflower_strip_empty_p( $content ) {
+  $content = force_balance_tags( $content );
+  return preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+}
+add_filter( 'the_content', 'safflower_strip_empty_p', 20, 1 );
 
 /**
  * Implement the Custom Header feature.
