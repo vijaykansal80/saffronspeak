@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Showcase Script';
     src: url('showcase/showcasescript-webfont.eot');
@@ -158,8 +157,8 @@
 .spring-decorating .entry-content > h3 {
     color: #4f788f;
     font-family: "Showcase Script";
-    font-size: 2em;
-    line-height: 0.5;
+    font-size: 1.6em;
+    line-height: 1.4;
     margin: 3em 0 1.5em;
     -moz-font-feature-settings: "swsh=1, cswh=1, dlig=1, clig=1, calt=1";
     -ms-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
@@ -183,7 +182,7 @@
     color: #45814b;
     display: block;
     font-family: "Showcase Slab";
-    margin: 35px auto 25px;
+    margin: 2px auto 4px;
 }
 
 .spring-decorating .entry-content > h3 > span:after,
