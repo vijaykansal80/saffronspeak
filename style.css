@@ -610,11 +610,48 @@ body {
   /* Fallback for when there is no custom background color defined. */
 }
 
-blockquote, q {
-  quotes: "" "";
+q {
+  quotes: "“" "”" "‘" "’";
 }
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
+
+blockquote {
+  color: #aa917b;
+  font-size: 1.125em;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 2em 0;
+  position: relative;
+  z-index: 1000;
+}
+blockquote::before {
+  color: #c8b8aa;
+  content: "“";
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 121px;
+  font-size: 12.1rem;
+  font-style: normal;
+  left: -20px;
+  opacity: 0.4;
+  position: absolute;
+  top: -50px;
+  z-index: -1;
+}
+
+cite {
+  color: #beab9a;
+  display: inline-block;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+cite::before {
+  content: '\2014';
+  display: inline-block;
+}
+cite a {
+  text-decoration: none;
 }
 
 hr {
@@ -735,6 +772,67 @@ img {
   float: left;
   margin: 20px 6px 20px 30px;
   width: 400px;
+}
+
+.sourcing {
+  content: "";
+  display: table;
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .sourcing {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.125);
+    padding: 1em 2em 1em;
+    margin: 0 3em 1em;
+  }
+}
+.sourcing h4 {
+  border-bottom: 1px solid #d7b693;
+  color: #a58059;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin: 0.5em 0.5em 1.5em;
+  padding-bottom: .5em;
+  text-transform: uppercase;
+}
+.sourcing ol {
+  counter-reset: sources 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+.sourcing li {
+  display: inline-block;
+  margin: 0 0 0.5em;
+}
+.sourcing li::before {
+  content: counter(sources) ".";
+  counter-increment: sources;
+  margin-right: 5px;
+}
+.sourcing .col ol {
+  text-align: left;
+}
+.sourcing .col p {
+  text-align: left;
+  line-height: 1.6;
+}
+.sourcing .col h4 {
+  margin: 0 0 10px 0;
+  border-top: 1px solid #dac9be;
+  border-bottom: 1px solid #dac9be;
+  padding: 10px;
+  text-transform: none;
+  font-style: italic;
+  font-size: 1.4em;
+  line-height: 1;
+  font-weight: normal;
+  letter-spacing: 0;
 }
 
 table {
@@ -1131,7 +1229,8 @@ ul#main-nav li#blog-tab {
   margin-left: 1.5em;
 }
 
-.aligncenter {
+.aligncenter,
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1380,6 +1479,7 @@ ul#main-nav li#blog-tab {
 /* Headers */
 .entry-header,
 .page-header {
+  margin-top: 1em;
   text-align: center;
 }
 
@@ -1468,7 +1568,7 @@ p.intro,
 }
 .parent-post .col h4,
 .parent-post .column h4 {
-  margin-top: 0;
+  margin-top: 0.5em;
 }
 .parent-post .col p:not(.read-more),
 .parent-post .column p:not(.read-more) {
@@ -2236,13 +2336,25 @@ a.sd-button > span {
 # Media
 --------------------------------------------------------------*/
 .entry-content img {
-  margin: 0 10px 5px 0;
+  margin-bottom: 5px;
 }
 
 /* Make images circular using this class (works best on images that are cropped to a square!) */
 .circular {
   border-radius: 50%;
   border-width: 4px;
+}
+
+/* Sometimes, we want to use "alternating" rows, in which we alternate between images and text.
+ * This allows for a more varied layout. */
+.alternating img {
+  max-width: 85%;
+}
+.alternating img:nth-of-type(odd) img {
+  margin-left: 25%;
+}
+.alternating img:nth-of-type(even) img {
+  margin-right: 25%;
 }
 
 /* Don't show borders or box-shadows for certain images */

@@ -1,12 +1,26 @@
 .entry-content img {
   @extend %bordered;
-  margin: 0 10px 5px 0;
+  margin-bottom: 5px;
 }
 
 /* Make images circular using this class (works best on images that are cropped to a square!) */
 .circular {
   border-radius: 50%;
   border-width: 4px;
+}
+
+/* Sometimes, we want to use "alternating" rows, in which we alternate between images and text.
+ * This allows for a more varied layout. */
+.alternating img {
+    max-width: 85%;
+
+  &:nth-of-type(odd) img {
+    margin-left: 25%;
+  }
+
+  &:nth-of-type(even) img {
+    margin-right: 25%;
+  }
 }
 
 /* Don't show borders or box-shadows for certain images */

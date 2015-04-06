@@ -10,6 +10,7 @@
 	margin-left: 1.5em;
 }
 
-.aligncenter {
+.aligncenter,
+.center {
 	@include center-block;
 }

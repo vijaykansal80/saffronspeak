@@ -1,6 +1,7 @@
 /* Headers */
 .entry-header,
 .page-header {
+  margin-top: 1em;
   text-align: center;
 }
 
@@ -102,7 +103,7 @@ p.intro,
     }
 
     h4 {
-      margin-top: 0;
+      margin-top: 0.5em;
     }
 
     p:not(.read-more) {
