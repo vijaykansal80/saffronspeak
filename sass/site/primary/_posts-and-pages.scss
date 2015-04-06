@@ -155,8 +155,7 @@ p.intro,
   z-index: 1000;
 }
 
-
-/* Call to actions */
+/* Call to action at bottom of posts */
 .call-to-action {
   @include clearfix;
   margin-bottom: 40px;
@@ -176,8 +175,19 @@ p.intro,
   }
 }
 
+/* Adjust headings for specific layout (example: http://www.saffronmarigold.com/blog/ideas-for-a-fresh-and-feminine-mothers-day-brunch-2015/) */
+body:not(.parent-post) .twocol:not(.sourcing) {
+  h5 {
+    margin-top: 3em;
+  }
 
-
+  h4 {
+    margin: 0.25em 0 1em;
+    padding: .25em 0 .5em;
+    border-bottom: 0;
+    border-top: 1px solid lighten($brown, 25%);
+  }
+}
 
 
 /* Series navigation */

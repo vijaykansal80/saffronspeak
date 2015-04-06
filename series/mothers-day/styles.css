@@ -25,6 +25,7 @@
     font-size: 48px;
     font-weight: normal;
     margin-left: -20px;
+    line-height: 0.5;
 }
 
 
@@ -49,7 +50,8 @@
     clear: both;
     color: #93765e;
     font-family: 'Rouge Script', cursive;
-    font-size: 3.1em;
+    font-size: 2.6em;
+    line-height: 1;
     margin: 1em 0 .5em;
     text-align: center;
 }
@@ -88,18 +90,20 @@
 }
 
 /* Links */
-.mothers-day a {
+.mothers-day .entry-content a {
     color: #8c0038;
 }
 
 .mothers-day .read-more a {
     color: #93765e;
     background: url('lace-strip.png') no-repeat;
+    display: inline-block;
     width: 150px;
-    height: 25px;
+    height: 42px;
     box-shadow: none;
-    padding: 8px 0;
+    padding: 13px 0;
     border: none;
+    text-shadow: none;
 }
 
 /* Story panel */

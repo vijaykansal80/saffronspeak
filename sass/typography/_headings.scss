@@ -47,3 +47,17 @@ h4 {
     white-space: nowrap;
   }
 }
+
+h5 {
+  color: lighten($brown, 5%);
+  @include font-size(14);
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h6 {
+  @extend h5;
+  @include font-size(12);
+}

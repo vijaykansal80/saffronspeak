@@ -486,13 +486,13 @@ textarea {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, h6 {
   clear: both;
   font-weight: normal;
   line-height: 1.2;
   margin: 0 auto;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h6 a {
   text-decoration: none;
 }
 
@@ -541,6 +541,21 @@ h4 a {
 }
 h4 strong {
   white-space: nowrap;
+}
+
+h5, h6 {
+  color: #a0846c;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 p {
@@ -790,8 +805,8 @@ img {
   }
 }
 .sourcing h4 {
-  border-bottom: 1px solid #d7b693;
-  color: #a58059;
+  border-bottom: 1px solid #b49e8b !important;
+  color: #a0846c !important;
   font-size: 16px;
   font-size: 1.6rem;
   font-weight: bold;
@@ -1619,7 +1634,7 @@ p.intro,
   z-index: 1000;
 }
 
-/* Call to actions */
+/* Call to action at bottom of posts */
 .call-to-action {
   content: "";
   display: table;
@@ -1631,6 +1646,17 @@ p.intro,
 .call-to-action img {
   box-shadow: 0;
   padding: 0;
+}
+
+/* Adjust headings for specific layout (example: http://www.saffronmarigold.com/blog/ideas-for-a-fresh-and-feminine-mothers-day-brunch-2015/) */
+body:not(.parent-post) .twocol:not(.sourcing) h5, body:not(.parent-post) .twocol:not(.sourcing) h6 {
+  margin-top: 3em;
+}
+body:not(.parent-post) .twocol:not(.sourcing) h4 {
+  margin: 0.25em 0 1em;
+  padding: .25em 0 .5em;
+  border-bottom: 0;
+  border-top: 1px solid #c8b8aa;
 }
 
 /* Series navigation */

@@ -11,8 +11,8 @@
   }
 
   h4 {
-    border-bottom: 1px solid #d7b693;
-    color: #a58059;
+    border-bottom: 1px solid lighten($brown, 15%) !important; // So individual series' styles don't override it
+    color: lighten($brown, 5%) !important; // So individual series' styles don't override it
     @include font-size(16);
     font-weight: bold;
     letter-spacing: 2px;
