@@ -32,6 +32,7 @@ function safflower_smart_slug( $category ) {
   // Remove the "series" suffix if it exists. (Currently not used.)
   $slug = str_replace( 'series', '', $slug );
   $slug = str_replace( ' ', '-', trim( $slug ) );
+  $slug = preg_replace( '/[^A-Za-z0-9\-]/', '', $slug ); // Strip special characters
   return $slug;
 }
 
@@ -157,7 +158,8 @@ function safflower_series_class( $classes ) {
       $parents = get_category_parents( $category, false, ',' );
       $parents = explode( ',', $parents );
       foreach ( $parents as $parent ):
-        $classes[] = str_replace( ' ', '-', strtolower( $parent ) );
+        $string = str_replace( ' ', '-', strtolower( $parent ) ); // Replace spaces with hyphens & convert to lowercase
+        $classes[] = preg_replace( '/[^A-Za-z0-9\-]/', '', $string ); // Strip special characters
       endforeach;
     endforeach;
 

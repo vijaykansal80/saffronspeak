@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/css?family=Almendra:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Almendra+Display);
+
+/* Drop caps */
+.sultans-palace .entry-content > p:first-of-type:first-letter,
+.sultans-palace .intro:first-letter {
+  float: left;
+  color: #a45f2f;
+  font-size: 121px;
+  float: left;
+  font-family: 'Almendra';
+  margin: -20px 5px -10px -20px;
+  line-height: 1;
+}
+
+.sultans-palace .panel p:first-letter {
+  font-family: 'Almendra';
+  font-size: 83px;
+  margin: -10px 4px -10px 0;
+  color: #9e5374;
+  float: left;
+  line-height: 1;
+}
+
+/* Panel */
+.sultans-palace .panel {
+  border-color: #9e5374;
+  background: #fff url('quatrefoil.png');
+}
+
+/* Headings */
+.sultans-palace .entry-content > h3 {
+  font-family: 'Almendra';
+}
+
+.sultans-palace h3 a {
+  color: #4e2e5f;
+}
+
+.sultans-palace h4 {
+  border-color: #32245f;
+}
+
+.sultans-palace h4,
+.sultans-palace h4 a {
+  color: #32245f;
+}
+
+/* Read more links */
+.sultans-palace .read-more a {
+  background: #90afcc;
+  border-color: #4e2e5f;
+  color: #4e2e5f;
+  text-shadow: none;
+}
+
+.sultans-palace .read-more a:hover {
+  background: #738ca3;
+  border-color: #fff;
+  color: #fff;
+}
