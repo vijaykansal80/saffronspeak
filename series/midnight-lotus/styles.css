@@ -96,9 +96,9 @@
 .midnight-lotus .entry-content > h3 {
     color: #5077ac;
     font-family: "Showcase Script";
-    font-size: 2em;
-    line-height: 0.5;
-    margin: 3em 0 1.5em;
+    font-size: 1.7em;
+    line-height: 1.6;
+    margin: 3em 0 0.5em;
     -moz-font-feature-settings: "swsh=1, cswh=1, dlig=1, clig=1, calt=1";
     -ms-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
     -webkit-font-feature-settings: "swsh", "cswh", "dlig", "clig", "calt";
@@ -111,7 +111,7 @@
     display: block;
     font-family: "Showcase Slab";
     font-size: 26px;
-    margin: 20px auto 20px;
+    margin: -10px auto 2px;
 }
 
 .midnight-lotus .entry-content > h3 span:before,

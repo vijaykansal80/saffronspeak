@@ -11,7 +11,8 @@
 }
 
 .aligncenter,
-.center {
+.center,
+.size-full {
 	@include center-block;
 }
 

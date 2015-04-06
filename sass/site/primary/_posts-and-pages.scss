@@ -88,6 +88,19 @@ p.intro,
   }
 }
 
+.threecol {
+  @extend %row;
+
+  .col,
+  .column {
+    @include unit(third);
+
+    &:nth-of-type(3n+1) {
+      clear: left;
+    }
+  }
+}
+
 /* Parent posts */
 .parent-post {
   section {

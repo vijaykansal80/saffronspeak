@@ -60,7 +60,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
+.threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
@@ -71,7 +72,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 50%;
 }
 
-.panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail {
+.panel figure:not(.col), .panel.twofig figure, .threecol .col,
+.threecol .column, .short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
@@ -83,29 +85,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel, .twocol, .parent-post section {
+.panel, .twocol, .threecol, .parent-post section {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after, .twocol:after, .parent-post section:after {
+.panel:after, .twocol:after, .threecol:after, .parent-post section:after {
   clear: both;
 }
-.panel:before, .twocol:before, .parent-post section:before, .panel:after, .twocol:after, .parent-post section:after {
+.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type, .twocol .row > :first-of-type, .parent-post section .row > :first-of-type {
+.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child, .twocol .row > :last-child, .parent-post section .row > :last-child {
+.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .parent-post section.equal-units > :first-of-type {
+.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type {
   padding-left: 0.75em;
 }
-.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .parent-post section.equal-units > :last-child {
+.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child {
   padding-right: 0.75em;
 }
 
@@ -142,7 +144,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
-  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
+  .threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -1249,7 +1252,8 @@ ul#main-nav li#blog-tab {
 }
 
 .aligncenter,
-.center {
+.center,
+.size-full {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1581,6 +1585,11 @@ p.intro,
 /* Columns, as defined within actual page content itself */
 .twocol .col:nth-of-type(odd),
 .twocol .column:nth-of-type(odd) {
+  clear: left;
+}
+
+.threecol .col:nth-of-type(3n+1),
+.threecol .column:nth-of-type(3n+1) {
   clear: left;
 }
 
@@ -2466,6 +2475,10 @@ figure figcaption h6 {
 figure .wp-caption-text h4,
 figure figcaption h4 {
   border: none;
+}
+.wp-caption.col,
+figure.col {
+  margin: 0;
 }
 
 /*
