@@ -189,6 +189,10 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   }
 }
 
+/* This ensures that images smaller than the column will appear center aligned, but that paragraphs will still left-align */
+.col img {
+  @include center-block;
+}
 
 /* Series navigation */
 .series-navigation {

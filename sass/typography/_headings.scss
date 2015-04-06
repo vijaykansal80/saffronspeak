@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-  @include font-size(21);
+  @include font-size(24);
   @include tablet {
     @include font-size(28);
   }
@@ -26,8 +26,17 @@ h2 {
 }
 
 h3 {
-  @include font-size(24);
+  @include font-size(21);
+  @include tablet {
+    @include font-size(24);
+  }
   text-align: center;
+  @include mobile {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
 }
 
 h4 {

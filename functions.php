@@ -167,7 +167,7 @@ add_action( 'wp_enqueue_scripts', 'safflower_scripts' );
 
 
 /**
- * Remove empty <p> tags in posts.
+ * Remove empty <p> tags and <p> tags that are wrapped around images.
  * These have a tendency to muck up the layout.
  */
 function safflower_strip_empty_p( $content ) {
@@ -175,6 +175,11 @@ function safflower_strip_empty_p( $content ) {
   return preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
 }
 add_filter( 'the_content', 'safflower_strip_empty_p', 20, 1 );
+
+function safflower_remove_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'safflower_remove_ptags_on_images');
 
 /**
  * Implement the Custom Header feature.

@@ -58,20 +58,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.widget, .home .post-list, .twocol .col,
+.panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
 
-.widget, .home .post-list, .twocol .col,
+.panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt {
   width: 50%;
 }
 
-.panel figure:not(.col), .short-excerpt .post-thumbnail {
+.panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
@@ -140,9 +140,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .widget, .home .post-list, .twocol .col,
+  .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
-  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -509,8 +509,8 @@ h1 {
 }
 
 h2 {
-  font-size: 21px;
-  font-size: 2.1rem;
+  font-size: 24px;
+  font-size: 2.4rem;
   color: #8c927b;
 }
 @media (min-width: 768px) {
@@ -521,9 +521,20 @@ h2 {
 }
 
 h3 {
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 21px;
+  font-size: 2.1rem;
   text-align: center;
+}
+@media (min-width: 768px) {
+  h3 {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 767px) {
+  h3::before, h3::after {
+    display: none !important;
+  }
 }
 
 h4 {
@@ -770,23 +781,13 @@ img {
   display: inline;
   padding-left: 5px;
 }
-.panel.twofig figure {
-  margin: 20px 0 10px 0;
-}
-.panel.twofig figure:first-of-type {
-  margin-left: -50px;
-}
-.panel.twofig figure:last-of-type {
-  margin-right: -50px;
-}
-.panel.twofig figure .circular {
-  border-width: 2px !important;
-  max-width: 200px;
-}
-.panel.twofig figure p {
-  float: left;
-  margin: 20px 6px 20px 30px;
-  width: 400px;
+@media (min-width: 768px) {
+  .panel.twofig figure:first-of-type {
+    margin-left: -9%;
+  }
+  .panel.twofig figure:last-of-type {
+    margin-right: -9%;
+  }
 }
 
 .sourcing {
@@ -1659,6 +1660,13 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
   border-top: 1px solid #c8b8aa;
 }
 
+/* This ensures that images smaller than the column will appear center aligned, but that paragraphs will still left-align */
+.col img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Series navigation */
 .series-navigation {
   margin-bottom: 0;
@@ -2424,23 +2432,47 @@ object {
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-.wp-caption {
+.wp-caption,
+figure {
   margin-bottom: 1.5em;
   max-width: 100%;
 }
-.wp-caption img[class*="wp-image-"] {
+.wp-caption img[class*="wp-image-"],
+figure img[class*="wp-image-"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-
-.wp-caption-text {
+.wp-caption .wp-caption-text,
+.wp-caption figcaption,
+figure .wp-caption-text,
+figure figcaption {
+  font-style: italic;
+  margin: 0;
   text-align: center;
 }
+.wp-caption .wp-caption-text h5, .wp-caption .wp-caption-text h6,
+.wp-caption figcaption h5,
+.wp-caption figcaption h6,
+figure .wp-caption-text h5,
+figure .wp-caption-text h6,
+figure figcaption h5,
+figure figcaption h6 {
+  font-style: normal;
+}
+.wp-caption .wp-caption-text h4,
+.wp-caption figcaption h4,
+figure .wp-caption-text h4,
+figure figcaption h4 {
+  border: none;
+}
 
+/*
+figure:not(.col) {
+  text-align: center;
+  margin: 1em 5px 2em;
+}
+*/
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/

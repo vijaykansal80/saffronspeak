@@ -68,26 +68,25 @@
   } // .read-more
 
   /* In some cases, we use two columns in a panel (These styles likely need tweaking!) */
-  &.twofig figure {
-    margin: 20px 0 10px 0;
+  &.twofig {
 
-    &:first-of-type {
-      margin-left: -50px;
-    }
+    figure {
+      @include unit(third);
 
-    &:last-of-type {
-      margin-right: -50px;
-    }
+      @include tablet {
+        &:first-of-type {
+          margin-left: -9%;
+        }
 
-    .circular {
-      border-width: 2px !important;
-      max-width: 200px;
-    }
+        &:last-of-type {
+          margin-right: -9%;
+        }
+      }
+    } // figure
 
-    p {
-      float: left;
-      margin: 20px 6px 20px 30px;
-      width: 400px;
+    p:not(.series-description) {
+      @include unit(half);
     }
   } // .twofig
+
 } // .panel

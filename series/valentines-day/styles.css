@@ -40,10 +40,7 @@
     margin: -10px 10px -10px -20px;
 }
 
-/* Series navigation */
-.valentines-day .series-navigation p {
-    margin: 4em 2em;
-}
+
 
 /* Emphasis */
 .valentines-day strong { color: #4c1617; }
@@ -55,9 +52,9 @@
 .valentines-day .entry-content > h3 {
     color: #8c281b;
     font-family: "Isabella";
-    font-size: 4em;
-    line-height: 0.5;
-    margin: 1em 0 .5em;
+    font-size: 3.4em;
+    line-height: 0.8;
+    margin: 1em 0 0;
 }
 
 .valentines-day .entry-content > h3:after,
