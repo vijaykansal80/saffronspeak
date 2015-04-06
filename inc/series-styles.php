@@ -199,8 +199,13 @@ function safflower_series_nav() {
         <p class="series-description"><?php echo $category->description; ?></p>
 
         <div class="previous-post">
-          <?php $previous_post = get_adjacent_post( true, '', true ); ?>
-          <?php if ( ! empty( $previous_post ) ): ?>
+          <?php
+          /*
+           * Since we're using sticky posts to determine the parent page, we don't want these to appear in our prev/next navigation.
+           * So, if the previous post is sticky, or if it doesn't exist, we won't show a link to it.
+           */
+          $previous_post = get_adjacent_post( true, '', true ); ?>
+          <?php if ( ! empty( $previous_post ) AND ! is_sticky( $previous_post->ID ) ): ?>
             <a href="<?php echo get_permalink( $previous_post->ID ); ?>">&laquo; Previous post</a>
           <?php endif; ?>
         </div>
@@ -210,9 +215,14 @@ function safflower_series_nav() {
         </div>
 
         <div class="next-post">
-          <?php $next_post = get_adjacent_post( true, '', false ); ?>
-          <?php if ( ! empty( $next_post ) ): ?>
-            <a href="<?php echo get_permalink($next_post->ID); ?>">Next post &raquo;</a>
+          <?php
+          /*
+           * Since we're using sticky posts to determine the parent page, we don't want these to appear in our prev/next navigation.
+           * So, if the next post is sticky, or if it doesn't exist, we won't show a link to it.
+           */
+          $next_post = get_adjacent_post( true, '', false );
+          if ( ! empty( $next_post )  AND ! is_sticky( $next_post->ID ) ): ?>
+            <a href="<?php echo get_permalink( $next_post->ID ); ?>">Next post &raquo;</a>
           <?php endif; ?>
         </div>
 
