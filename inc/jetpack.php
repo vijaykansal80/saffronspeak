@@ -45,6 +45,7 @@ add_action( 'after_setup_theme', 'safflower_jetpack_setup' );
 
 /**
 * Remove ability to comment on Jetpack carousel images
+* See: http://jetpack.me/support/carousel/
 */
 function filter_media_comment_status( $open, $post_id ) {
     $post = get_post( $post_id );
@@ -54,3 +55,14 @@ function filter_media_comment_status( $open, $post_id ) {
     return $open;
 }
 add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
+
+/**
+* We've disabled Sharedaddy's scripts on the front-end, in order to customize its display.
+* See: http://themeshaper.com/2014/05/30/customizing-jetpacks-sharing-module/
+*/
+function safflower_remove_sharedaddy_script() {
+  remove_action( 'wp_head', 'sharing_add_header', 1 );
+}
+add_action( 'template_redirect', 'safflower_remove_sharedaddy_script' );
+

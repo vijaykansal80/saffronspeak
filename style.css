@@ -60,7 +60,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
 .threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
@@ -68,7 +68,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt {
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt {
   width: 50%;
 }
 
@@ -85,29 +85,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel, .twocol, .threecol, .parent-post section {
+.panel, .twocol, .threecol, .parent-post section, .sharedaddy {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after, .twocol:after, .threecol:after, .parent-post section:after {
+.panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after {
   clear: both;
 }
-.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after {
+.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type {
+.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child {
+.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type {
+.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type {
   padding-left: 0.75em;
 }
-.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child {
+.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child {
   padding-right: 0.75em;
 }
 
@@ -144,7 +144,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
-  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
+  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
   .threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
@@ -489,13 +489,13 @@ textarea {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6, h6 {
+h1, h2, h3, h4, h5, h6, .sharedaddy h3, h6 {
   clear: both;
   font-weight: normal;
   line-height: 1.2;
   margin: 0 auto;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .sharedaddy h3 a, h6 a {
   text-decoration: none;
 }
 
@@ -557,7 +557,7 @@ h4 strong {
   white-space: nowrap;
 }
 
-h5, h6 {
+h5, h6, .sharedaddy h3 {
   color: #a0846c;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1631,8 +1631,7 @@ p.intro,
 .parent-post .updated {
   position: relative;
 }
-
-.parent-post .updated:after {
+.parent-post .updated::after {
   display: block;
   content: '';
   position: absolute;
@@ -1660,7 +1659,7 @@ p.intro,
 }
 
 /* Adjust headings for specific layout (example: http://www.saffronmarigold.com/blog/ideas-for-a-fresh-and-feminine-mothers-day-brunch-2015/) */
-body:not(.parent-post) .twocol:not(.sourcing) h5, body:not(.parent-post) .twocol:not(.sourcing) h6 {
+body:not(.parent-post) .twocol:not(.sourcing) h5, body:not(.parent-post) .twocol:not(.sourcing) h6, body:not(.parent-post) .twocol:not(.sourcing) .sharedaddy h3, .sharedaddy body:not(.parent-post) .twocol:not(.sourcing) h3 {
   margin-top: 3em;
 }
 body:not(.parent-post) .twocol:not(.sourcing) h4 {
@@ -1712,98 +1711,38 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
 
 /* Sharedaddy panel */
 .sharedaddy {
-  border-top: 1px solid #7D7556;
-  border-bottom: 2px solid #7D7556;
+  border-top: 1px solid #c8b8aa;
+  border-bottom: 2px solid #c8b8aa;
   overflow: auto;
-  padding: 5px 0;
+  padding: 5px 0 0;
 }
-
-.sharedaddy::after {
-  clear: both;
-  content: '';
-  display: block;
-}
-
 .sharedaddy h3 {
-  float: left;
-  width: 30%;
-  padding: 0;
-  margin: 4px 0 0;
-  font-size: 1em;
-  font-style: italic;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
 }
-
+@media (min-width: 768px) {
+  .sharedaddy h3 {
+    padding-bottom: 0;
+    padding-top: 7px;
+  }
+}
 .sharedaddy img {
   border: 0;
   box-shadow: none;
 }
-
-.sd-content {
-  float: left;
-  width: 65%;
-  margin-left: 5%;
+.sharedaddy .sd-content {
+  padding-top: 5px;
+  padding-bottom: 0;
+  text-align: center;
 }
-
-.sd-content ul {
+.sharedaddy .sd-content ul {
   margin: 0;
 }
-
-.sd-content li {
-  display: block;
-  list-style-type: none;
-  float: left;
-  margin-top: 5px;
-}
-
-div.sharedaddy a.sd-button {
-  margin: 0px;
-  padding: 0px;
+.sharedaddy .sd-content li {
   display: inline-block;
-  background: -moz-linear-gradient(center top, #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
-  border-radius: 3px;
-  border: 1px solid #DDD !important;
-  box-shadow: 0px 1px 0px #FFF inset;
-  color: #000 !important;
-  text-decoration: none;
-  line-height: 1;
-  font-size: 12px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: normal;
-}
-
-div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited {
-  font-style: normal;
-}
-
-div.sharedaddy .share-custom a.sd-button {
-  background: #fff;
-  text-indent: 20px;
-  margin-left: 20px;
-  margin-top: -5px;
-}
-
-li.share-email {
-  margin-right: 20px;
-  margin-top: 3px;
-}
-
-li.share-email a.sd-button > span {
-  background-image: url("../../../plugins/jetpack/modules/sharedaddy/images/email.png");
-  padding-left: 24px;
-}
-
-.sd-social-icon-text a.sd-button > span, a.sd-button > span {
-  padding: 1px 5px 1px 23px;
-  background-position: 2px center;
-  background-repeat: no-repeat;
-}
-
-a.sd-button > span {
-  padding: 1px 8px;
-  display: block;
-  opacity: 0.8;
-  line-height: 1.5;
-  text-shadow: none;
+  list-style-type: none;
+  margin: 0;
 }
 
 .tags-links {
@@ -2461,13 +2400,19 @@ figure figcaption {
   margin: 0;
   text-align: center;
 }
-.wp-caption .wp-caption-text h5, .wp-caption .wp-caption-text h6,
+.wp-caption .wp-caption-text h5, .wp-caption .wp-caption-text h6, .wp-caption .wp-caption-text .sharedaddy h3, .sharedaddy .wp-caption .wp-caption-text h3,
 .wp-caption figcaption h5,
 .wp-caption figcaption h6,
+.wp-caption figcaption .sharedaddy h3,
+.sharedaddy .wp-caption figcaption h3,
 figure .wp-caption-text h5,
 figure .wp-caption-text h6,
+figure .wp-caption-text .sharedaddy h3,
+.sharedaddy figure .wp-caption-text h3,
 figure figcaption h5,
-figure figcaption h6 {
+figure figcaption h6,
+figure figcaption .sharedaddy h3,
+.sharedaddy figure figcaption h3 {
   font-style: normal;
 }
 .wp-caption .wp-caption-text h4,

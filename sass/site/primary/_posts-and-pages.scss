@@ -149,19 +149,19 @@ p.intro,
 /* Flag an individual post as "updated" within the parent post */
 .parent-post .updated {
   position: relative;
-}
 
-.parent-post .updated:after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: -30px;
-  width: 71px;
-  height: 71px;
-  background: url('images/updated-for-2015.png') no-repeat;
-  box-shadow: none;
-  z-index: 1000;
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    width: 71px;
+    height: 71px;
+    background: url('images/updated-for-2015.png') no-repeat;
+    box-shadow: none;
+    z-index: 1000;
+  }
 }
 
 /* Call to action at bottom of posts */
@@ -244,84 +244,48 @@ body:not(.parent-post) .twocol:not(.sourcing) {
 
 /* Sharedaddy panel */
 .sharedaddy {
-  border-top: 1px solid #7D7556;
-  border-bottom: 2px solid #7D7556;
+  @extend %row;
+  border-top: 1px solid lighten($brown, 25%);
+  border-bottom: 2px solid lighten($brown, 25%);
   overflow: auto;
-  padding: 5px 0;
-}
-.sharedaddy::after {
-  clear: both;
-  content: '';
-  display: block;
-}
-.sharedaddy h3 {
-  float: left;
-  width: 30%;
-  padding: 0;
-  margin: 4px 0 0;
-  font-size: 1em;
-  font-style: italic;
-}
-.sharedaddy img {
-  border: 0;
-  box-shadow: none;
-}
-.sd-content {
-  float: left;
-  width: 65%;
-  margin-left: 5%;
-}
-.sd-content ul {margin: 0;}
-.sd-content li {
-  display: block;
-  list-style-type: none;
-  float: left;
-  margin-top: 5px;
-}
-div.sharedaddy a.sd-button {
-  margin: 0px;
-  padding: 0px;
-  display: inline-block;
-  background: -moz-linear-gradient(center top , #F7F7F7 0%, #EFEFEF 100%) repeat scroll 0% 0% transparent;
-  border-radius: 3px;
-  border: 1px solid #DDD !important;
-  box-shadow: 0px 1px 0px #FFF inset;
-  color: #000 !important;
-  text-decoration: none;
-  line-height: 1;
-  font-size: 12px;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-weight: normal;
-}
-div.sharedaddy a, div.sharedaddy a:link, div.sharedaddy a:visited {
-  font-style: normal;
-}
-div.sharedaddy .share-custom a.sd-button {
-  background: #fff;
-  text-indent: 20px;
-  margin-left: 20px;
-  margin-top: -5px;
-}
-li.share-email {
-  margin-right: 20px;
-  margin-top: 3px;
-}
-li.share-email a.sd-button > span {
-  background-image: url('../../../plugins/jetpack/modules/sharedaddy/images/email.png');
-  padding-left: 24px;
-}
-.sd-social-icon-text a.sd-button > span, a.sd-button > span {
-  padding: 1px 5px 1px 23px;
-  background-position: 2px center;
-  background-repeat: no-repeat;
-}
-a.sd-button > span {
-  padding: 1px 8px;
-  display: block;
-  opacity: 0.8;
-  line-height: 1.5;
-  text-shadow: none;
-}
+  padding: 5px 0 0;
+
+  h3 {
+    @extend h5;
+    @include unit(half);
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+
+    @include tablet {
+      padding-bottom: 0;
+      padding-top: 7px;
+    }
+  }
+
+  img {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .sd-content {
+    @include unit(half);
+    padding-top: 5px;
+    padding-bottom: 0;
+    text-align: center;
+
+    ul {
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+    }
+  } // .sd-content
+
+} // .sharedaddy
 
 
 // Post tags
