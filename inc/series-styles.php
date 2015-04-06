@@ -191,10 +191,16 @@ function safflower_series_nav() {
       $category = $parent;
     }
 
+    /*
+     * We only want to display the series navigation if this is, in fact, a series.
+     * It also needs to have styles written for it, otherwise it'll look all funky.
+     * To check if this is a styled series, we're going to see if the category has a
+     * parent (sticky) post defined. If it does, we'll assume it's a styled series,
+     * and we'll show the series nav.
+     */
     $series_link = safflower_parent_post_link( $category->term_id );
 
-    // Only show for Shopping Guide posts (at least for now!)
-    if ( 5 === $category->parent ): ?>
+    if ( get_category_link( $category->term_id ) !== $series_link ): ?>
       <section class="panel series-navigation">
         <p class="series-description"><?php echo $category->description; ?></p>
 

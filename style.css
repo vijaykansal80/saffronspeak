@@ -1589,10 +1589,6 @@ p.intro,
 .parent-post .column:nth-of-type(odd) {
   clear: left;
 }
-.parent-post .col h4,
-.parent-post .column h4 {
-  margin-top: 0.5em;
-}
 .parent-post .col p:not(.read-more),
 .parent-post .column p:not(.read-more) {
   font-size: 18px;
