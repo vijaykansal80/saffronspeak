@@ -2002,6 +2002,9 @@ a.sd-button > span {
 .long-excerpt {
   text-align: center;
 }
+.long-excerpt:nth-of-type(odd) {
+  clear: left;
+}
 .long-excerpt .entry-meta {
   font-size: 15px;
   font-size: 1.5rem;

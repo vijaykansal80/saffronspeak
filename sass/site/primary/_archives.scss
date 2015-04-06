@@ -76,6 +76,10 @@
   @include unit(half);
   text-align: center;
 
+  &:nth-of-type(odd) {
+    clear: left;
+  }
+
   .entry-meta {
     @include font-size(15);
     padding-right: 5px;
@@ -85,8 +89,8 @@
     &::after {
       padding: 0 5px;
     }
-  }
-}
+  } // .entry-meta
+} // .long-excerpt
 
 /* Short post excerpt style */
 .short-excerpt {
