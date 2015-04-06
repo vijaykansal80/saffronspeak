@@ -156,6 +156,30 @@ p.intro,
 }
 
 
+/* Call to actions */
+.call-to-action {
+  @include clearfix;
+  margin-bottom: 40px;
+
+  .text {
+    @include unit(half);
+  }
+
+  .action {
+    @include unit(half);
+    text-align: center;
+  }
+
+  img {
+    box-shadow: 0;
+    padding: 0;
+  }
+}
+
+
+
+
+
 /* Series navigation */
 .series-navigation {
   margin-bottom: 0;

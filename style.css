@@ -60,14 +60,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
 
 .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
-.parent-post .column, .series-navigation .all-posts, .long-excerpt {
+.parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt {
   width: 50%;
 }
 
@@ -142,7 +142,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
   .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
-  .parent-post .column, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+  .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .long-excerpt, .panel figure:not(.col), .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -1615,6 +1615,20 @@ p.intro,
   background: url("images/updated-for-2015.png") no-repeat;
   box-shadow: none;
   z-index: 1000;
+}
+
+/* Call to actions */
+.call-to-action {
+  content: "";
+  display: table;
+  margin-bottom: 40px;
+}
+.call-to-action .action {
+  text-align: center;
+}
+.call-to-action img {
+  box-shadow: 0;
+  padding: 0;
 }
 
 /* Series navigation */
