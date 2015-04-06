@@ -83,7 +83,7 @@ function safflower_parent_post_link( $category_id ) {
 
   // If there are no sticky posts in the category, just show a link to the category page itself
   else:
-    $series_link = get_category_link( $category->term_id );
+    $series_link = get_category_link( $category_id );
   endif;
   wp_reset_postdata();
   return $series_link;

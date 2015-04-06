@@ -886,6 +886,7 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
   border-color: black;
   background: #a65915;
+  color: #fff;
 }
 button:active, .read-more a:active, button:focus, .read-more a:focus,
 input[type="button"]:active,
@@ -1252,6 +1253,10 @@ ul#main-nav li#blog-tab {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.center {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -2287,7 +2292,7 @@ a.sd-button > span {
 }
 .subcategory-expander h2 {
   padding: .25em;
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #c8b8aa;
   color: #93775F;
   text-transform: uppercase;
   letter-spacing: 2px;

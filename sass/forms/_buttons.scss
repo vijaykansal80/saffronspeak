@@ -20,6 +20,7 @@ input[type="submit"] {
 	&:hover {
 		border-color: $color__border-button-hover;
 		background: darken($color__background-button, 5%);
+		color: #fff;
 	}
 
 	&:active,

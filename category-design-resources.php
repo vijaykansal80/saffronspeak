@@ -18,8 +18,8 @@ get_header(); ?>
     // Fetch all sub-categories (that have posts)
     $subcategories = get_categories( 'hide_empty=0&parent='.get_query_var( 'cat' ) );
     // Divide subcategories into two different sections, "series" or "print"
-    $series_subcategories = array_slice($subcategories, 0, 4);
-    $print_subcategories = array_slice($subcategories, 4);
+    $series_subcategories = array_slice( $subcategories, 0, 4 );
+    $print_subcategories = array_slice( $subcategories, 4 );
     ?>
     <a href="#" class="subcategory-expander-link"><i class="icon-caret-down"></i>By series or print</a>
     <section class="subcategory-expander">
@@ -28,23 +28,24 @@ get_header(); ?>
           <h2><i class="icon-bullet-fleuron"></i>By series</h2>
           <ul>
         <?php
-        foreach ($series_subcategories as $subcategory):
-          echo '<li>'.$count.'<a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+        foreach ( $series_subcategories as $subcategory ):
+          echo '<li>'. $count .'<a href="'. safflower_parent_post_link( $subcategory->term_id ) .'">'. $subcategory->name .'</a></li>';
         endforeach; ?>
           </ul>
         </section>
 
         <section>
           <h2><i class="icon-bullet-fleuron"></i>By print</h2>
-        <?php $count = 0;
+        <?php
+        $count = 0;
         // We're going to use some math to split our categories into columns of three
-        foreach ($print_subcategories as $subcategory):
-          if ($count % 3 === 0) {
+        foreach ( $print_subcategories as $subcategory ):
+          if ( $count % 3 === 0 ) {
             echo '<ul>';
           }
-          echo '<li><a href="'.get_category_link($subcategory->term_id).'">'.$subcategory->name.'</a></li>';
+          echo '<li><a href="'. safflower_parent_post_link( $subcategory->term_id ) .'">'. $subcategory->name .'</a></li>';
           $count++;
-          if ($count % 3 === 0 or $count - 1 === count($print_subcategories)) {
+          if ( $count % 3 === 0 or $count - 1 === count( $print_subcategories ) ) {
             echo '</ul>';
           }
         endforeach; ?>
