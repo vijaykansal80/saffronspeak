@@ -258,6 +258,9 @@ ul#main-nav li#blog-tab {
 	& .nav-previous {
 		@include unit(half);
 		text-align: left;
+		@include mobile {
+			text-align: center;
+		}
 
 		&:before {
 			content: '\00ab';
@@ -268,6 +271,9 @@ ul#main-nav li#blog-tab {
 	& .nav-next {
 		@include unit(half);
 		text-align: right;
+		@include mobile {
+			text-align: center;
+		}
 
 		&::after {
 			content: '\00bb';

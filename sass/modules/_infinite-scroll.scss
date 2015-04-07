@@ -8,3 +8,37 @@
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+.infinite-wrapper {
+  @extend %row;
+}
+
+
+/* Click-to-scroll button */
+#infinite-handle {
+  clear: both;
+  text-align: center;
+
+  span {
+    background: none;
+  }
+
+  button {
+    background: $green !important;
+    padding: 0.7em 1.4em !important;
+
+    &:hover {
+      background: lighten( $green, 50% );
+    }
+  }
+}
+
+/* Loading icon */
+.infinite-loader {
+  clear: both;
+  text-align: center;
+
+  .spinner {
+    left: 50% !important; /* ..because the Jetpack CSS is inline */
+  }
+}

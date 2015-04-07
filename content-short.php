@@ -21,7 +21,7 @@ if ( has_post_thumbnail() ): ?>
       the_excerpt();
     // Otherwise, we'll use a custom excerpt that allows us greater control
     else:
-      the_advanced_excerpt( 'length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1' );
+      the_advanced_excerpt( 'length=40&use_words=1&no_custom=1&ellipsis=&finish_sentence=1&allowed_tags=em,strong,a,li,ul' );
     endif;
     ?>
 

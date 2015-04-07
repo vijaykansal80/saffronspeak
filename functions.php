@@ -204,6 +204,19 @@ add_filter('excerpt_more', 'safflower_excerpt_more');
 
 
 /**
+ * Show 10 posts per page on search and tag archives.
+ */
+function safflower_more_posts( $query ) {
+  if ( $query->is_main_query() ):
+  	if ( $query->is_tag OR $query->is_search ) {
+   		$query->set( 'posts_per_page', 10 );
+  	}
+  endif;
+}
+add_action( 'pre_get_posts', 'safflower_more_posts' );
+
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';

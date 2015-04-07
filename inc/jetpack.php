@@ -13,9 +13,9 @@ function safflower_jetpack_setup() {
    */
   add_theme_support( 'infinite-scroll', array(
     'container'      => 'main',
-    'footer'         => 'colophon',
-    'footer_widgets' => 'footer-sidebar',
-    'wrapper'        => false,
+    'footer'         => false,
+    'render'         => 'safflower_render_post_content',
+    'wrapper'        => 'infinite-wrapper',
   ) );
 
   /**
@@ -42,6 +42,22 @@ function safflower_jetpack_setup() {
 
 }
 add_action( 'after_setup_theme', 'safflower_jetpack_setup' );
+
+/**
+* Render a different post template depending on which page we're on
+*/
+function safflower_render_post_content() {
+  while( have_posts() ) {
+    the_post();
+    if ( is_category( 'shopping-guides' ) ):
+      get_template_part( 'content', 'blank' );
+    elseif ( is_tag() OR is_search() ):
+      get_template_part( 'content', 'short' );
+    else:
+      get_template_part( 'content', get_post_format() );
+    endif;
+  }
+}
 
 /**
 * Remove ability to comment on Jetpack carousel images

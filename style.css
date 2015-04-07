@@ -93,45 +93,45 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel, .comment-navigation,
+#main, .panel, .comment-navigation,
 .posts-navigation,
-.post-navigation, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts {
+.post-navigation, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts, .infinite-wrapper {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after, .comment-navigation:after,
+#main:after, .panel:after, .comment-navigation:after,
 .posts-navigation:after,
-.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
+.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
   clear: both;
 }
-.panel:before, .comment-navigation:before,
+#main:before, .panel:before, .comment-navigation:before,
 .posts-navigation:before,
-.post-navigation:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .panel:after, .comment-navigation:after,
+.post-navigation:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .infinite-wrapper:before, #main:after, .panel:after, .comment-navigation:after,
 .posts-navigation:after,
-.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
+.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type, .comment-navigation .row > :first-of-type,
+#main .row > :first-of-type, .panel .row > :first-of-type, .comment-navigation .row > :first-of-type,
 .posts-navigation .row > :first-of-type,
-.post-navigation .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type {
+.post-navigation .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type, .infinite-wrapper .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child, .comment-navigation .row > :last-child,
+#main .row > :last-child, .panel .row > :last-child, .comment-navigation .row > :last-child,
 .posts-navigation .row > :last-child,
-.post-navigation .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child {
+.post-navigation .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child, .infinite-wrapper .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type, .equal-units.comment-navigation > :first-of-type,
+.equal-units#main > :first-of-type, .equal-units.panel > :first-of-type, .equal-units.comment-navigation > :first-of-type,
 .equal-units.posts-navigation > :first-of-type,
-.equal-units.post-navigation > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type {
+.equal-units.post-navigation > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type, .equal-units.infinite-wrapper > :first-of-type {
   padding-left: 0.75em;
 }
-.equal-units.panel > :last-child, .equal-units.comment-navigation > :last-child,
+.equal-units#main > :last-child, .equal-units.panel > :last-child, .equal-units.comment-navigation > :last-child,
 .equal-units.posts-navigation > :last-child,
-.equal-units.post-navigation > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child {
+.equal-units.post-navigation > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child, .equal-units.infinite-wrapper > :last-child {
   padding-right: 0.75em;
 }
 
@@ -1234,6 +1234,13 @@ ul#main-nav li#blog-tab {
 .post-navigation .nav-previous {
   text-align: left;
 }
+@media (max-width: 767px) {
+  .comment-navigation .nav-previous,
+  .posts-navigation .nav-previous,
+  .post-navigation .nav-previous {
+    text-align: center;
+  }
+}
 .comment-navigation .nav-previous:before,
 .posts-navigation .nav-previous:before,
 .post-navigation .nav-previous:before {
@@ -1244,6 +1251,13 @@ ul#main-nav li#blog-tab {
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
   text-align: right;
+}
+@media (max-width: 767px) {
+  .comment-navigation .nav-next,
+  .posts-navigation .nav-next,
+  .post-navigation .nav-next {
+    text-align: center;
+  }
 }
 .comment-navigation .nav-next::after,
 .posts-navigation .nav-next::after,
@@ -2366,6 +2380,32 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block;
+}
+
+/* Click-to-scroll button */
+#infinite-handle {
+  clear: both;
+  text-align: center;
+}
+#infinite-handle span {
+  background: none;
+}
+#infinite-handle button, #infinite-handle .read-more a, .read-more #infinite-handle a {
+  background: #8c927b !important;
+  padding: 0.7em 1.4em !important;
+}
+#infinite-handle button:hover, #infinite-handle .read-more a:hover, .read-more #infinite-handle a:hover {
+  background: white;
+}
+
+/* Loading icon */
+.infinite-loader {
+  clear: both;
+  text-align: center;
+}
+.infinite-loader .spinner {
+  left: 50% !important;
+  /* ..because the Jetpack CSS is inline */
 }
 
 /*--------------------------------------------------------------
