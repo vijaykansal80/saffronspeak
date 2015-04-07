@@ -1,3 +1,8 @@
+/* Parent posts are marked as "sticky". We're not formatting them any differently at the moment, but we could! */
+.sticky {
+  font-weight: normal;
+}
+
 /* Headers */
 .entry-header,
 .page-header {

@@ -9,7 +9,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: safflower
-Tags:
+Tags: orange, light, one-column, responsive-layout, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, microformats, site-logo, sticky-post, theme-options, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1612,6 +1612,11 @@ ul#main-nav li#blog-tab {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/* Parent posts are marked as "sticky". We're not formatting them any differently at the moment, but we could! */
+.sticky {
+  font-weight: normal;
+}
+
 /* Headers */
 .entry-header,
 .page-header {

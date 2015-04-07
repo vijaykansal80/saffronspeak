@@ -29,7 +29,7 @@ function safflower_breadcrumbs() {
   if ( ! is_home() &&  ! is_front_page() && ! is_page() ):
     echo '<div class="breadcrumbs">';
     echo '<a href="';
-    echo get_option('home');
+    echo home_url();
     echo '">';
     echo 'Blog';
     echo "</a>";

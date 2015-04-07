@@ -20,7 +20,7 @@ get_header(); ?>
 
 					<?php get_search_form(); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts', __('Latest Posts'), 10 ); ?>
+					<?php the_widget( 'WP_Widget_Recent_Posts', __( 'Latest Posts', 'safflower' ), 10 ); ?>
 
 					<?php if ( safflower_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">

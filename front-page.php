@@ -30,7 +30,7 @@ get_header(); ?>
     	foreach( $categories as $category ): ?>
         <div class="category <?php echo $category->slug; ?>">
           <a href="<?php echo get_category_link( $category->term_id ); ?>">
-          	<img src="<?php bloginfo( stylesheet_directory ); ?>/images/categories/<?php echo $category->slug; ?>.jpg">
+          	<img src="<?php echo get_template_directory_uri(); ?>/images/categories/<?php echo $category->slug; ?>.jpg">
           </a>
           <h3><a href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a></h3>
           <p><?php echo str_replace( '#', get_category_link( $category->term_id ), $category->description ); ?></p>
@@ -53,7 +53,7 @@ get_header(); ?>
   	     */
   					$slug = safflower_smart_slug( $safflower_featured_series );
   			    $dir = plugin_dir_path( __FILE__ );
-  			    $template = parse_url( get_bloginfo( 'template_directory' ) );
+  			    $template = parse_url( get_template_directory_uri() );
   			    $path = $template['path']. '/series/' .$slug;
   			    include( $dir. '/series/' .$slug. '/' .$slug. '.php' );
   			?>
