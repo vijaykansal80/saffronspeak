@@ -16,6 +16,7 @@ function safflower_jetpack_setup() {
     'footer'         => false,
     'render'         => 'safflower_render_post_content',
     'wrapper'        => 'infinite-wrapper',
+    'posts_per_page' => 6,
   ) );
 
   /**
