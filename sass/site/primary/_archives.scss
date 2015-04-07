@@ -4,19 +4,15 @@
   margin: 3em 0 4em 0;
   text-align: center;
 
+  .category-image {
+    @include unit(third);
+  }
+
   img {
     @extend %bordered;
     border-radius: 50%;
     margin: 0 auto;
-    padding: 6px;
-    width: 60%;
-
-    @include tablet {
-      float: left;
-      margin-right: 2em;
-      padding: 8px;
-      width: 28%;
-    }
+    border-width: 6px;
   }
 
   h1 {

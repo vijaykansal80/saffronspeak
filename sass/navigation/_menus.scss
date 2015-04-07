@@ -165,27 +165,6 @@
 } // tablet + desktop menu
 
 
-/* Post navigation */
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	& .nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	& .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
-}
 
 
 /* nav */
@@ -258,4 +237,41 @@ ul#main-nav li#blog-tab {
 .breadcrumbs {
 	margin: 5px 30px;
 	font-size: 12px;
+}
+
+/* Post navigation */
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	@extend %row;
+	@extend h5;
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	& .nav-previous {
+		@include unit(half);
+		text-align: left;
+
+		&:before {
+			content: '\00ab';
+			padding-right: 5px;
+		}
+	}
+
+	& .nav-next {
+		@include unit(half);
+		text-align: right;
+
+		&::after {
+			content: '\00bb';
+			padding-left: 5px;
+		}
+	}
 }

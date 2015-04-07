@@ -12,7 +12,7 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-    <?php get_template_part( 'category-header' ); ?>
+    <?php get_template_part( '_category-header' ); ?>
 
     <?php
     // Fetch all sub-categories (that have posts)

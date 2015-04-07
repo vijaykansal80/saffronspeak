@@ -58,22 +58,30 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   box-sizing: border-box;
 }
 
-.panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
+.panel.twofig p:not(.series-description), .comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous, .comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-.threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+.threecol .column, .related-posts .related-post, .category-intro .category-image, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
 
-.panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
+.panel.twofig p:not(.series-description), .comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous, .comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt {
   width: 50%;
 }
 
 .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-.threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail {
+.threecol .column, .related-posts .related-post, .category-intro .category-image, .short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
@@ -85,29 +93,45 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts {
+.panel, .comment-navigation,
+.posts-navigation,
+.post-navigation, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
+.panel:after, .comment-navigation:after,
+.posts-navigation:after,
+.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
   clear: both;
 }
-.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
+.panel:before, .comment-navigation:before,
+.posts-navigation:before,
+.post-navigation:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .panel:after, .comment-navigation:after,
+.posts-navigation:after,
+.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type {
+.panel .row > :first-of-type, .comment-navigation .row > :first-of-type,
+.posts-navigation .row > :first-of-type,
+.post-navigation .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child {
+.panel .row > :last-child, .comment-navigation .row > :last-child,
+.posts-navigation .row > :last-child,
+.post-navigation .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type {
+.equal-units.panel > :first-of-type, .equal-units.comment-navigation > :first-of-type,
+.equal-units.posts-navigation > :first-of-type,
+.equal-units.post-navigation > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type {
   padding-left: 0.75em;
 }
-.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child {
+.equal-units.panel > :last-child, .equal-units.comment-navigation > :last-child,
+.equal-units.posts-navigation > :last-child,
+.equal-units.post-navigation > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child {
   padding-right: 0.75em;
 }
 
@@ -142,10 +166,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 @media only screen and (min-width: 10em) and (max-width: 35.5em) {
-  .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
+  .panel.twofig p:not(.series-description), .comment-navigation .nav-previous,
+  .posts-navigation .nav-previous,
+  .post-navigation .nav-previous, .comment-navigation .nav-next,
+  .posts-navigation .nav-next,
+  .post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
   .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-  .threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+  .threecol .column, .related-posts .related-post, .category-intro .category-image, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -488,13 +516,17 @@ textarea {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6, .sharedaddy h3, h6 {
+h1, h2, h3, h4, h5, h6, .comment-navigation,
+.posts-navigation,
+.post-navigation, .sharedaddy h3, h6 {
   clear: both;
   font-weight: normal;
   line-height: 1.2;
   margin: 0 auto;
 }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .sharedaddy h3 a, h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .comment-navigation a,
+.posts-navigation a,
+.post-navigation a, .sharedaddy h3 a, h6 a {
   text-decoration: none;
 }
 
@@ -557,7 +589,9 @@ h4 strong {
   white-space: nowrap;
 }
 
-h5, h6, .sharedaddy h3 {
+h5, h6, .comment-navigation,
+.posts-navigation,
+.post-navigation, .sharedaddy h3 {
   color: #a0846c;
   font-size: 14px;
   font-size: 1.4rem;
@@ -1113,27 +1147,6 @@ a:hover, a:active {
     color: #2c310f;
   }
 }
-/* Post navigation */
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5em;
-  overflow: hidden;
-}
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-
 /* nav */
 ul#main-nav {
   list-style-type: none;
@@ -1202,6 +1215,41 @@ ul#main-nav li#blog-tab {
 .breadcrumbs {
   margin: 5px 30px;
   font-size: 12px;
+}
+
+/* Post navigation */
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+.comment-navigation a,
+.posts-navigation a,
+.post-navigation a {
+  text-decoration: none;
+}
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  text-align: left;
+}
+.comment-navigation .nav-previous:before,
+.posts-navigation .nav-previous:before,
+.post-navigation .nav-previous:before {
+  content: '\00ab';
+  padding-right: 5px;
+}
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  text-align: right;
+}
+.comment-navigation .nav-next::after,
+.posts-navigation .nav-next::after,
+.post-navigation .nav-next::after {
+  content: '\00bb';
+  padding-left: 5px;
 }
 
 /*--------------------------------------------------------------
@@ -1661,7 +1709,9 @@ p.intro,
 }
 
 /* Adjust headings for specific layout (example: http://www.saffronmarigold.com/blog/ideas-for-a-fresh-and-feminine-mothers-day-brunch-2015/) */
-body:not(.parent-post) .twocol:not(.sourcing) h5, body:not(.parent-post) .twocol:not(.sourcing) h6, body:not(.parent-post) .twocol:not(.sourcing) .sharedaddy h3, .sharedaddy body:not(.parent-post) .twocol:not(.sourcing) h3 {
+body:not(.parent-post) .twocol:not(.sourcing) h5, body:not(.parent-post) .twocol:not(.sourcing) h6, body:not(.parent-post) .twocol:not(.sourcing) .comment-navigation,
+body:not(.parent-post) .twocol:not(.sourcing) .posts-navigation,
+body:not(.parent-post) .twocol:not(.sourcing) .post-navigation, body:not(.parent-post) .twocol:not(.sourcing) .sharedaddy h3, .sharedaddy body:not(.parent-post) .twocol:not(.sourcing) h3 {
   margin-top: 3em;
 }
 body:not(.parent-post) .twocol:not(.sourcing) h4 {
@@ -1799,16 +1849,7 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
 .category-intro img {
   border-radius: 50%;
   margin: 0 auto;
-  padding: 6px;
-  width: 60%;
-}
-@media (min-width: 768px) {
-  .category-intro img {
-    float: left;
-    margin-right: 2em;
-    padding: 8px;
-    width: 28%;
-  }
+  border-width: 6px;
 }
 .category-intro h1 {
   clear: none;
@@ -2393,17 +2434,28 @@ figure figcaption {
   margin: 0;
   text-align: center;
 }
-.wp-caption .wp-caption-text h5, .wp-caption .wp-caption-text h6, .wp-caption .wp-caption-text .sharedaddy h3, .sharedaddy .wp-caption .wp-caption-text h3,
+.wp-caption .wp-caption-text h5, .wp-caption .wp-caption-text h6, .wp-caption .wp-caption-text .comment-navigation,
+.wp-caption .wp-caption-text .posts-navigation,
+.wp-caption .wp-caption-text .post-navigation, .wp-caption .wp-caption-text .sharedaddy h3, .sharedaddy .wp-caption .wp-caption-text h3,
 .wp-caption figcaption h5,
 .wp-caption figcaption h6,
+.wp-caption figcaption .comment-navigation,
+.wp-caption figcaption .posts-navigation,
+.wp-caption figcaption .post-navigation,
 .wp-caption figcaption .sharedaddy h3,
 .sharedaddy .wp-caption figcaption h3,
 figure .wp-caption-text h5,
 figure .wp-caption-text h6,
+figure .wp-caption-text .comment-navigation,
+figure .wp-caption-text .posts-navigation,
+figure .wp-caption-text .post-navigation,
 figure .wp-caption-text .sharedaddy h3,
 .sharedaddy figure .wp-caption-text h3,
 figure figcaption h5,
 figure figcaption h6,
+figure figcaption .comment-navigation,
+figure figcaption .posts-navigation,
+figure figcaption .post-navigation,
 figure figcaption .sharedaddy h3,
 .sharedaddy figure figcaption h3 {
   font-style: normal;
