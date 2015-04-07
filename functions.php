@@ -215,6 +215,16 @@ function safflower_more_posts( $query ) {
 }
 add_action( 'pre_get_posts', 'safflower_more_posts' );
 
+/**
+ * Add the "featured" query to our accessible query variables.
+ * This is so we can manually check for a featured image in content-single.php.
+ */
+function add_params($query_vars) {
+    $query_vars[] = 'featured';
+    return $query_vars;
+}
+add_filter('query_vars', 'add_params' );
+
 
 /**
  * Implement the Custom Header feature.

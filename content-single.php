@@ -6,6 +6,23 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+<?php
+/*
+ * For QA purposes, we want a way to easily show the featured
+ * image attached to a post. Since these aren't displayed in
+ * the actual post themselves, we add a query var to the URL to
+ * manually check the featured image, like so:
+ * http://saffronmarigold.com/blog/monday-mix-summer-party-inspiration/?featured=yes
+ */
+if ( "yes" == get_query_var( 'featured' ) ):
+	if ( has_post_thumbnail() ) {
+    echo '<div class="center">';
+    echo the_post_thumbnail( 'medium' );
+    echo '</div>';
+  }
+endif;
+?>
+
 	<?php
 	// If this is the parent (sticky) post, we won't show the post header
 	if ( ! is_sticky() ):
