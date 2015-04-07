@@ -1443,12 +1443,14 @@ ul#main-nav li#blog-tab {
 }
 .home .category img {
   border-radius: 50%;
-  padding: 6px;
-  max-width: 75%;
+  border-width: 6px;
+  max-width: 85%;
   position: relative;
   z-index: 10;
 }
 .home .category h3 {
+  font-size: 13px;
+  font-size: 1.3rem;
   margin: -17px auto 1em;
   padding-top: 7px;
   padding-bottom: 5px;
