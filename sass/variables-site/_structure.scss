@@ -11,7 +11,7 @@ $container-max-width: 850px;
 
 #page {
   @include baseline-grid;
-  padding: $gutters / 2;
+  padding: 0 $gutters / 2;
   margin: 0 auto;
   max-width: #{$container-max-width};
 }

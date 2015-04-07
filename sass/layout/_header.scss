@@ -1,14 +1,73 @@
-.site-logo {
-  max-width: 350px;
+/* Site logo, title */
+.site-branding {
+  @include unit(half);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Social media links, contact information, and cart links */
+.site-contact {
+  @include font-size(14);
+  @include unit(half);
 
   @include mobile {
-    max-width: 100%;
+    display: none; // This creates too much visual noise on mobile, at least for now.
+  }
+
+  img {
+    vertical-align: middle;
+
+    &.flower {
+      vertical-align: top;
+      @include desktop-max {
+        display: none;
+      }
+    }
+  } // img
+
+  a {
+    color: $olive;
   }
 }
 
+.site-signup {
+  margin-top: 0.5em;
+
+  h5 {
+    margin-bottom: 0.25em;
+
+    @include desktop-max {
+      span {
+        display: none;
+      }
+    }
+  }
+
+  input[type="email"] {
+    width: 70%;
+  }
+
+  input[type=submit] {
+    margin-left: 1%;
+    width: 28%;
+  }
+}
+
+
 /* Breadcrumbs */
-.breadcrumbs a {
-  text-decoration: none;
+.breadcrumbs-and-search {
+  @extend %row;
+  position: relative;
+  z-index: 1000;
+}
+
+.breadcrumbs {
+  @include font-size(12);
+  margin: 5px 30px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 /* Search bar */

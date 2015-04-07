@@ -62,7 +62,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous, .comment-navigation .nav-next,
 .posts-navigation .nav-next,
-.post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
+.post-navigation .nav-next, .widget, .home .post-list, .site-branding, .site-contact, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
 .threecol .column, .related-posts .related-post, .category-intro .category-image, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
@@ -74,7 +74,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous, .comment-navigation .nav-next,
 .posts-navigation .nav-next,
-.post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
+.post-navigation .nav-next, .widget, .home .post-list, .site-branding, .site-contact, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt {
   width: 50%;
@@ -95,43 +95,43 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 #main, .panel, .comment-navigation,
 .posts-navigation,
-.post-navigation, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts, .infinite-wrapper {
+.post-navigation, .breadcrumbs-and-search, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts, .infinite-wrapper {
   position: relative;
   clear: both;
   display: block;
 }
 #main:after, .panel:after, .comment-navigation:after,
 .posts-navigation:after,
-.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
+.post-navigation:after, .breadcrumbs-and-search:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
   clear: both;
 }
 #main:before, .panel:before, .comment-navigation:before,
 .posts-navigation:before,
-.post-navigation:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .infinite-wrapper:before, #main:after, .panel:after, .comment-navigation:after,
+.post-navigation:before, .breadcrumbs-and-search:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .infinite-wrapper:before, #main:after, .panel:after, .comment-navigation:after,
 .posts-navigation:after,
-.post-navigation:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
+.post-navigation:after, .breadcrumbs-and-search:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after, .infinite-wrapper:after {
   display: table;
   content: "";
   line-height: 0;
 }
 #main .row > :first-of-type, .panel .row > :first-of-type, .comment-navigation .row > :first-of-type,
 .posts-navigation .row > :first-of-type,
-.post-navigation .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type, .infinite-wrapper .row > :first-of-type {
+.post-navigation .row > :first-of-type, .breadcrumbs-and-search .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type, .infinite-wrapper .row > :first-of-type {
   padding-left: 0;
 }
 #main .row > :last-child, .panel .row > :last-child, .comment-navigation .row > :last-child,
 .posts-navigation .row > :last-child,
-.post-navigation .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child, .infinite-wrapper .row > :last-child {
+.post-navigation .row > :last-child, .breadcrumbs-and-search .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child, .infinite-wrapper .row > :last-child {
   padding-right: 0;
 }
 .equal-units#main > :first-of-type, .equal-units.panel > :first-of-type, .equal-units.comment-navigation > :first-of-type,
 .equal-units.posts-navigation > :first-of-type,
-.equal-units.post-navigation > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type, .equal-units.infinite-wrapper > :first-of-type {
+.equal-units.post-navigation > :first-of-type, .equal-units.breadcrumbs-and-search > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type, .equal-units.infinite-wrapper > :first-of-type {
   padding-left: 0.75em;
 }
 .equal-units#main > :last-child, .equal-units.panel > :last-child, .equal-units.comment-navigation > :last-child,
 .equal-units.posts-navigation > :last-child,
-.equal-units.post-navigation > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child, .equal-units.infinite-wrapper > :last-child {
+.equal-units.post-navigation > :last-child, .equal-units.breadcrumbs-and-search > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child, .equal-units.infinite-wrapper > :last-child {
   padding-right: 0.75em;
 }
 
@@ -170,7 +170,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   .posts-navigation .nav-previous,
   .post-navigation .nav-previous, .comment-navigation .nav-next,
   .posts-navigation .nav-next,
-  .post-navigation .nav-next, .widget, .home .post-list, .twocol .col,
+  .post-navigation .nav-next, .widget, .home .post-list, .site-branding, .site-contact, .twocol .col,
   .twocol .column, .parent-post .col,
   .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
   .threecol .column, .related-posts .related-post, .category-intro .category-image, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
@@ -191,7 +191,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 #page {
   position: relative;
-  padding: 0.75em;
+  padding: 0 0.75em;
   margin: 0 auto;
   max-width: 850px;
 }
@@ -1207,16 +1207,6 @@ ul#main-nav li#blog-tab {
   font-size: 1.6em;
 }
 
-/* breadcrumbs */
-.breadcrumbs-and-search {
-  position: relative;
-}
-
-.breadcrumbs {
-  margin: 5px 30px;
-  font-size: 12px;
-}
-
 /* Post navigation */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -1398,16 +1388,71 @@ ul#main-nav li#blog-tab {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-.site-logo {
-  max-width: 350px;
+/* Site logo, title */
+.site-branding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Social media links, contact information, and cart links */
+.site-contact {
+  font-size: 14px;
+  font-size: 1.4rem;
 }
 @media (max-width: 767px) {
-  .site-logo {
-    max-width: 100%;
+  .site-contact {
+    display: none;
   }
+}
+.site-contact img {
+  vertical-align: middle;
+}
+.site-contact img.flower {
+  vertical-align: top;
+}
+@media (max-width: 1023px) {
+  .site-contact img.flower {
+    display: none;
+  }
+}
+.site-contact a {
+  color: #7D7556;
+}
+
+.site-signup {
+  margin-top: 0.5em;
+}
+.site-signup h5, .site-signup h6, .site-signup .comment-navigation,
+.site-signup .posts-navigation,
+.site-signup .post-navigation, .site-signup .sharedaddy h3, .sharedaddy .site-signup h3 {
+  margin-bottom: 0.25em;
+}
+@media (max-width: 1023px) {
+  .site-signup h5 span, .site-signup h6 span, .site-signup .comment-navigation span,
+  .site-signup .posts-navigation span,
+  .site-signup .post-navigation span, .site-signup .sharedaddy h3 span, .sharedaddy .site-signup h3 span {
+    display: none;
+  }
+}
+.site-signup input[type="email"] {
+  width: 70%;
+}
+.site-signup input[type=submit] {
+  margin-left: 1%;
+  width: 28%;
 }
 
 /* Breadcrumbs */
+.breadcrumbs-and-search {
+  position: relative;
+  z-index: 1000;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  font-size: 1.2rem;
+  margin: 5px 30px;
+}
 .breadcrumbs a {
   text-decoration: none;
 }
