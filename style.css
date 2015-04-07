@@ -61,7 +61,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
 .twocol .column, .parent-post .col,
 .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-.threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+.threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
   float: left;
   padding: 0.75em;
 }
@@ -73,7 +73,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-.threecol .column, .short-excerpt .post-thumbnail {
+.threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail {
   width: 33.3332%;
 }
 
@@ -85,29 +85,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   width: 25%;
 }
 
-.panel, .twocol, .threecol, .parent-post section, .sharedaddy {
+.panel, .twocol, .threecol, .parent-post section, .sharedaddy, .related-posts {
   position: relative;
   clear: both;
   display: block;
 }
-.panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after {
+.panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
   clear: both;
 }
-.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after {
+.panel:before, .twocol:before, .threecol:before, .parent-post section:before, .sharedaddy:before, .related-posts:before, .panel:after, .twocol:after, .threecol:after, .parent-post section:after, .sharedaddy:after, .related-posts:after {
   display: table;
   content: "";
   line-height: 0;
 }
-.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type {
+.panel .row > :first-of-type, .twocol .row > :first-of-type, .threecol .row > :first-of-type, .parent-post section .row > :first-of-type, .sharedaddy .row > :first-of-type, .related-posts .row > :first-of-type {
   padding-left: 0;
 }
-.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child {
+.panel .row > :last-child, .twocol .row > :last-child, .threecol .row > :last-child, .parent-post section .row > :last-child, .sharedaddy .row > :last-child, .related-posts .row > :last-child {
   padding-right: 0;
 }
-.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type {
+.equal-units.panel > :first-of-type, .equal-units.twocol > :first-of-type, .equal-units.threecol > :first-of-type, .parent-post section.equal-units > :first-of-type, .equal-units.sharedaddy > :first-of-type, .equal-units.related-posts > :first-of-type {
   padding-left: 0.75em;
 }
-.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child {
+.equal-units.panel > :last-child, .equal-units.twocol > :last-child, .equal-units.threecol > :last-child, .parent-post section.equal-units > :last-child, .equal-units.sharedaddy > :last-child, .equal-units.related-posts > :last-child {
   padding-right: 0.75em;
 }
 
@@ -145,7 +145,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   .panel.twofig p:not(.series-description), .widget, .home .post-list, .twocol .col,
   .twocol .column, .parent-post .col,
   .parent-post .column, .call-to-action .text, .call-to-action .action, .series-navigation .all-posts, .sharedaddy h3, .sharedaddy .sd-content, .long-excerpt, .panel figure:not(.col), .panel.twofig figure, .threecol .col,
-  .threecol .column, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
+  .threecol .column, .related-posts .related-post, .short-excerpt .post-thumbnail, .panel p:not(.series-description), .short-excerpt .entry-content, .home .category, .series-navigation .previous-post, .series-navigation .next-post {
     width: 100%;
     left: 0;
     padding-left: 0;
@@ -193,14 +193,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   pointer-events: none;
 }
 
-.panel figure:not(.col) img, .home .category img, .category-intro img, .post-excerpt img, .entry-content img {
-  background: #fff;
-  padding: 6px;
+.panel figure:not(.col) img, .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
+  border: 6px solid #fff;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .panel figure:not(.col) img, .home .category img, .category-intro img, .post-excerpt img, .entry-content img {
-    padding: 8px;
+  .panel figure:not(.col) img, .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
+    border-width: 8px;
     /* We use a slightly larger border on larger screens */
   }
 }
@@ -524,6 +523,7 @@ h2 {
 }
 
 h3 {
+  color: #93775F;
   font-size: 21px;
   font-size: 2.1rem;
   text-align: center;
@@ -1745,6 +1745,7 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
   margin: 0;
 }
 
+/* Tag list */
 .tags-links {
   background: rgba(255, 255, 255, 0.3);
   padding: 4px 8px;
@@ -1766,31 +1767,21 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
 }
 
 /* YARPP Related Posts */
-.related-posts {
-  clear: both;
+.related-posts .related-post h4 {
+  font-size: 19px;
+  font-size: 1.9rem;
+  margin-top: 0.25em;
 }
-
-.related-posts div {
-  width: 30%;
-  float: left;
-  margin-right: 5%;
+.related-posts .related-post p {
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.4;
 }
-
-.related-posts div:nth-of-type(3) {
-  margin-right: 0;
-}
-
-.related-posts h3 {
-  text-align: left;
-}
-
-.related-posts h4 {
-  text-align: center;
-}
-
-.related-posts .inline-readmore {
-  text-decoration: none;
+.related-posts .related-post .read-more-inline {
   white-space: nowrap;
+}
+.related-posts .related-post .read-more-inline a {
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------

@@ -287,8 +287,7 @@ body:not(.parent-post) .twocol:not(.sourcing) {
 
 } // .sharedaddy
 
-
-// Post tags
+/* Tag list */
 .tags-links {
   background: rgba(255, 255, 255, .3);
   padding: 4px 8px;
@@ -312,23 +311,33 @@ body:not(.parent-post) .twocol:not(.sourcing) {
 
 /* YARPP Related Posts */
 .related-posts {
-  clear: both;
+  @extend %row;
+
+  .related-post {
+    @include unit(third);
+
+    img {
+      @extend %bordered;
+    }
+
+    h4 {
+      @include font-size(19);
+      margin-top: 0.25em;
+    }
+
+    p {
+      @include font-size(14);
+      line-height: 1.4;
+    }
+
+    .read-more-inline {
+      white-space: nowrap;
+
+      a {
+       text-decoration: none;
+      }
+    }
+  }
 }
-.related-posts div {
-  width: 30%;
-  float: left;
-  margin-right: 5%;
-}
-.related-posts div:nth-of-type(3) {
-  margin-right: 0
-}
-.related-posts h3 {
-  text-align: left;
-}
-.related-posts h4 {
-  text-align: center;
-}
-.related-posts .inline-readmore {
-  text-decoration: none;
-  white-space: nowrap;
-}
+
+

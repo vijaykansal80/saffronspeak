@@ -33,4 +33,12 @@
 		<?php safflower_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
+	<?php
+	// Custom YARRP query (https://wordpress.org/plugins/yet-another-related-posts-plugin/faq/)
+	yarpp_related( array(
+    'template' => 'yarpp-template-custom.php',
+    'limit'    => 3,
+  ) );
+	?>
+
 </article><!-- #post-## -->
