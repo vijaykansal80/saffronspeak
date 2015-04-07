@@ -10,11 +10,11 @@
  */
 
 /**
- * Define the featured series by manually entering its category ID below.
- * @todo Implement Jetpack's Featured Content instead to set featured series
- * via the WordPress admin, rather than manually here.
+ * Get the featured series ID from the theme options. This is set
+ * in the WordPress admin, via the Customizer panel. Alternatively,
+ * you can set the featured series by manually entering its category ID below.
  */
-$safflower_featured_series_id = 110;
+$safflower_featured_series_id = get_theme_mod( 'safflower_featured_series' );
 // Fetch the full category object for use.
 $safflower_featured_series = get_term_by( 'id', $safflower_featured_series_id, 'category' );
 

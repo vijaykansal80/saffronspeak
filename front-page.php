@@ -37,26 +37,28 @@ get_header(); ?>
         </div>
     <?php endforeach; ?>
 
-    <header class="section-header">
-    	<h2>Featured series: <?php echo safflower_featured_series_link( $safflower_featured_series->slug ); ?></h2>
-    </header>
+    <?php if ( $safflower_featured_series_id ): ?>
+      <header class="section-header">
+      	<h2>Featured series: <?php echo safflower_featured_series_link( $safflower_featured_series->slug ); ?></h2>
+      </header>
 
-    <section class="featured-series <?php echo safflower_smart_slug( $safflower_featured_series ); ?>">
-	    <?php
-	    /*
-	     * For each series, we want to show a customized panel. Since this panel can be completely
-	     * different in design and content from series to series, we can't automate this process.
-	     * Instead, we store a php file within the /series/{series-slug} directory that contains
-	     * the panel content. So, we're dynamically generating the include path based on the series
-	     * slug and including the file in our output HTML.
-	     */
-					$slug = safflower_smart_slug( $safflower_featured_series );
-			    $dir = plugin_dir_path( __FILE__ );
-			    $template = parse_url( get_bloginfo( 'template_directory' ) );
-			    $path = $template['path']. '/series/' .$slug;
-			    include( $dir. '/series/' .$slug. '/' .$slug. '.php' );
-			?>
-		</section>
+      <section class="featured-series <?php echo safflower_smart_slug( $safflower_featured_series ); ?>">
+  	    <?php
+  	    /*
+  	     * For each series, we want to show a customized panel. Since this panel can be completely
+  	     * different in design and content from series to series, we can't automate this process.
+  	     * Instead, we store a php file within the /series/{series-slug} directory that contains
+  	     * the panel content. So, we're dynamically generating the include path based on the series
+  	     * slug and including the file in our output HTML.
+  	     */
+  					$slug = safflower_smart_slug( $safflower_featured_series );
+  			    $dir = plugin_dir_path( __FILE__ );
+  			    $template = parse_url( get_bloginfo( 'template_directory' ) );
+  			    $path = $template['path']. '/series/' .$slug;
+  			    include( $dir. '/series/' .$slug. '/' .$slug. '.php' );
+  			?>
+  		</section>
+    <?php endif; ?>
 
     <header class="section-header">
       <h2>Read more posts</h2>
