@@ -3,8 +3,7 @@
 /* Drop caps */
 .mothers-day .entry-content > p:first-of-type:first-letter,
 .mothers-day .entry-content p.intro:first-letter,
-.mothers-day p.float-left + h3 + p:first-letter,
-.mothers-day h2 {
+.mothers-day p.float-left + h3 + p:first-letter {
     font-family: 'Rouge Script', cursive;
     color: #8c0038;
     font-size: 146px;

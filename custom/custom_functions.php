@@ -146,7 +146,7 @@ add_filter( 'thesis_img_caption_shortcode', 'cleaner_caption', 10, 3);
 ******************************/
 
 // Set featured category here
-$featured_series = 110;
+$featured_series = 107;
 $featured = get_term_by('id', $featured_series, 'category');
 
 // Return a more logical slug for categories (will relate to folder locations in theme)
