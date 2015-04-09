@@ -2,16 +2,44 @@
 	clear: both;
 	display: block;
 	float: left;
-	font-family: $font__decor;
 	text-align: center;
 	width: 100%;
 
 	ul {
+		display: none; // Hide initially to avoid flash of full menu
+		border: 1px solid lighten($olive, 25%);
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		position: relative;
+		z-index: 1000;
 
+		li {
+			background: saturate(lighten($olive, 35%), 15%);
+			border-bottom: 1px dashed #fff;
+			font-family: $font__main;
+			@include font-size(14);
+			margin: 0;
+			min-width: 200px;
+			padding: 10px 10px;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				color: darken($olive, 5%);
+			}
+
+			&:hover {
+				background: saturate(lighten($olive, 40%), 20%);
+				color: darken($olive, 10%);
+			}
+		} // li
+
+		/* Sub-menu */
 		ul {
+			display: block;
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
@@ -68,26 +96,116 @@
 
 /* Small menu for mobile devices */
 @include mobile {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
+
+	#site-navigation {
+		position: absolute;
+		top: 10px;
+		left: 0px;
 	}
 
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		margin: 0 auto;
-	}
-
-	.main-navigation ul {
+	.nav-menu {
 		display: none;
-
-		li {
-			a {
-				display: block;
-			}
-		}
 	}
-}
+
+	.menu-toggle {
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    line-height: 1.4;
+    margin: 0 0 0 10px;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    width: 25px;
+    z-index: 50;
+
+    &:hover {
+    	background: none;
+    }
+
+    .bar {
+	    display: block;
+	    position: absolute;
+	    height: 3px;
+	    width: 100%;
+	    background: $brown;
+	    opacity: 1;
+	    left: 0;
+	    -webkit-transform: rotate(0deg);
+	    -moz-transform: rotate(0deg);
+	    -o-transform: rotate(0deg);
+	    transform: rotate(0deg);
+	    -webkit-transition: .25s ease-in-out;
+	    -moz-transition: .25s ease-in-out;
+	    -o-transition: .25s ease-in-out;
+	    transition: .25s ease-in-out;
+
+	    &:nth-of-type(1) {
+		    top: 3px;
+		    -webkit-transform-origin: left center;
+		    -moz-transform-origin: left center;
+		    -o-transform-origin: left center;
+		    transform-origin: left center;
+		  }
+
+		  &:nth-of-type(2) {
+		    top: 8px;
+		    -webkit-transform-origin: left center;
+		    -moz-transform-origin: left center;
+		    -o-transform-origin: left center;
+		    transform-origin: left center;
+		  }
+
+		  &:nth-of-type(3) {
+		    top: 13px;
+		    -webkit-transform-origin: left center;
+		    -moz-transform-origin: left center;
+		    -o-transform-origin: left center;
+		    transform-origin: left center;
+		  }
+	  } // .bar
+  } // .menu-toggle
+
+  /* Display menu when clicked, and change menu icon to close icon ("X") */
+	.main-navigation.toggled {
+		.nav-menu {
+			display: block;
+		}
+
+		.bar:nth-of-type(1) {
+	    -webkit-transform: rotate(45deg);
+	    -moz-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	    top: 0;
+	    left: 0;
+	  }
+
+	  .bar:nth-child(2) {
+	    width: 0%;
+	    opacity: 0;
+	  }
+
+	  .bar:nth-child(3) {
+	    -webkit-transform: rotate(-45deg);
+	    -moz-transform: rotate(-45deg);
+	    -o-transform: rotate(-45deg);
+	    transform: rotate(-45deg);
+	    top: 21px;
+	    left: 0;
+	  }
+	} // .main-navigation.toggled
+} // mobile menu
 
 
 /* Large screen menu */
@@ -97,21 +215,29 @@
 	}
 
 	.main-navigation {
-		background: url("images/ribbon.jpg") no-repeat top center;
+		background: url('images/ribbon.jpg') no-repeat top center;
 		height: 78px;
 
-		li {
+		.nav-menu {
+			border: none;
+			display: block;
+		}
+
+		.nav-menu > li {
+			background: url('images/ribbon-stitch.jpg') no-repeat center right;
+			border: none;
 			float: left;
-			vertical-align: middle;
-			padding: 16px 18px 10px 10px;
-			background: url(images/ribbon-stitch.jpg) no-repeat center right;
-			position: relative;
-			text-align: center;
+			font-family: Nuptial;
+			@include font-size(18);
+			height: 58px;
 			line-height: 0.8;
-			font-family: "Nuptial";
 			margin: 10px 0;
 			max-width: 93px;
-			height: 58px;
+			min-width: auto;
+			padding: 16px 18px 10px 10px;
+			position: relative;
+			text-align: center;
+			vertical-align: middle;
 
 			&:first-child {
 				margin-left: 20px;
@@ -120,6 +246,10 @@
 			&:last-child {
 				background: none;
 			}
+
+			&:hover {
+				background-color: transparent;
+			}
 		} // .li
 
 		/* sub nav */
@@ -127,39 +257,8 @@
 			position: absolute;
 			top: 55px;
 			left: -9999px;
-			border: 1px solid #c1b788;
-			background: #ded3b5;
-			min-width: 200px;
 			z-index: 100;
-
-			li {
-				display: block;
-				background: none;
-				font-family: 'Gentium Basic', serif;
-				font-size: 14px;
-				float: none;
-				text-transform: none;
-				text-align: left;
-				width: auto;
-				height: auto;
-				margin: 0;
-				padding: 10px 10px;
-				border-bottom: 1px dashed #fff;
-				max-width: none;
-
-				&:last-child {
-					border-bottom: none;
-				}
-
-				&:hover {
-					text-shadow: none;
-					background: rgba(255,255,255,.25);
-					a {
-						color: #2c310f;
-					}
-				}
-			} // li
-		} // .sub-menu
+		}
 
 	} //.main-navigation
 } // tablet + desktop menu

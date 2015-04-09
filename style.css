@@ -1024,16 +1024,41 @@ a:hover, a:active {
   clear: both;
   display: block;
   float: left;
-  font-family: "Nuptial";
   text-align: center;
   width: 100%;
 }
 .main-navigation ul {
+  display: none;
+  border: 1px solid #b9b399;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  position: relative;
+  z-index: 1000;
+  /* Sub-menu */
+}
+.main-navigation ul li {
+  background: #d7cfaf;
+  border-bottom: 1px dashed #fff;
+  font-family: "Gentium Basic", serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  margin: 0;
+  min-width: 200px;
+  padding: 10px 10px;
+}
+.main-navigation ul li:last-child {
+  border-bottom: none;
+}
+.main-navigation ul li a {
+  color: #6e674c;
+}
+.main-navigation ul li:hover {
+  background: #e2dabd;
+  color: #5f5941;
 }
 .main-navigation ul ul {
+  display: block;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
@@ -1065,21 +1090,103 @@ a:hover, a:active {
 
 /* Small menu for mobile devices */
 @media (max-width: 767px) {
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    display: block;
+  #site-navigation {
+    position: absolute;
+    top: 10px;
+    left: 0px;
   }
 
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    margin: 0 auto;
-  }
-
-  .main-navigation ul {
+  .nav-menu {
     display: none;
   }
-  .main-navigation ul li a {
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
     display: block;
+    height: 25px;
+    line-height: 1.4;
+    margin: 0 0 0 10px;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    width: 25px;
+    z-index: 50;
+  }
+  .menu-toggle:hover {
+    background: none;
+  }
+  .menu-toggle .bar {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #93775F;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  .menu-toggle .bar:nth-of-type(1) {
+    top: 3px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  .menu-toggle .bar:nth-of-type(2) {
+    top: 8px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  .menu-toggle .bar:nth-of-type(3) {
+    top: 13px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+
+  /* Display menu when clicked, and change menu icon to close icon ("X") */
+  .main-navigation.toggled .nav-menu {
+    display: block;
+  }
+  .main-navigation.toggled .bar:nth-of-type(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0;
+    left: 0;
+  }
+  .main-navigation.toggled .bar:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  .main-navigation.toggled .bar:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 21px;
+    left: 0;
   }
 }
 /* Large screen menu */
@@ -1093,58 +1200,41 @@ a:hover, a:active {
     height: 78px;
     /* sub nav */
   }
-  .main-navigation li {
+  .main-navigation .nav-menu {
+    border: none;
+    display: block;
+  }
+  .main-navigation .nav-menu > li {
+    background: url("images/ribbon-stitch.jpg") no-repeat center right;
+    border: none;
     float: left;
-    vertical-align: middle;
-    padding: 16px 18px 10px 10px;
-    background: url(images/ribbon-stitch.jpg) no-repeat center right;
-    position: relative;
-    text-align: center;
+    font-family: Nuptial;
+    font-size: 18px;
+    font-size: 1.8rem;
+    height: 58px;
     line-height: 0.8;
-    font-family: "Nuptial";
     margin: 10px 0;
     max-width: 93px;
-    height: 58px;
+    min-width: auto;
+    padding: 16px 18px 10px 10px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
   }
-  .main-navigation li:first-child {
+  .main-navigation .nav-menu > li:first-child {
     margin-left: 20px;
   }
-  .main-navigation li:last-child {
+  .main-navigation .nav-menu > li:last-child {
     background: none;
+  }
+  .main-navigation .nav-menu > li:hover {
+    background-color: transparent;
   }
   .main-navigation .sub-menu {
     position: absolute;
     top: 55px;
     left: -9999px;
-    border: 1px solid #c1b788;
-    background: #ded3b5;
-    min-width: 200px;
     z-index: 100;
-  }
-  .main-navigation .sub-menu li {
-    display: block;
-    background: none;
-    font-family: 'Gentium Basic', serif;
-    font-size: 14px;
-    float: none;
-    text-transform: none;
-    text-align: left;
-    width: auto;
-    height: auto;
-    margin: 0;
-    padding: 10px 10px;
-    border-bottom: 1px dashed #fff;
-    max-width: none;
-  }
-  .main-navigation .sub-menu li:last-child {
-    border-bottom: none;
-  }
-  .main-navigation .sub-menu li:hover {
-    text-shadow: none;
-    background: rgba(255, 255, 255, 0.25);
-  }
-  .main-navigation .sub-menu li:hover a {
-    color: #2c310f;
   }
 }
 /* nav */
@@ -1393,6 +1483,15 @@ ul#main-nav li#blog-tab {
   padding-top: 0;
   padding-bottom: 0;
 }
+@media (max-width: 767px) {
+  .site-branding {
+    text-align: center;
+  }
+  .site-branding .site-logo {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
 
 /* Social media links, contact information, and cart links */
 .site-contact {
@@ -1445,7 +1544,7 @@ ul#main-nav li#blog-tab {
 /* Breadcrumbs */
 .breadcrumbs-and-search {
   position: relative;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .breadcrumbs {
