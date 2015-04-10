@@ -89,4 +89,15 @@
     }
   } // .twofig
 
+  /* We're going mobile-last here, and revising the styles for mobile */
+  @include mobile {
+    width: calc(100% + 1.5em);
+    margin-left: - $gutters / 2;
+    padding: $gutters / 2;
+
+    img {
+      max-width: 75%;
+      @include center-block;
+    }
+  } // mobile
 } // .panel
