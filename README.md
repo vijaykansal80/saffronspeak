@@ -5,9 +5,12 @@ This is a custom theme for the Saffron Marigold blog, built on  `_s` for a solid
 
 First, you'll want to have a new WordPress install on your local development machine. I recommend using [MAMP](https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP) for a simple, but relatively flexible option.
 
-Once that's done, open up your terminal.
-`cd` into your `/wp-content/themes` directory, then clone the repo:
-`git clone git@github.com:Saffron-Marigold/saffronspeak.git`
+Once that's done, open up your terminal, navigate to your `wp-content/themes/` directory, then clone the repo:
+
+```bash
+cd wp-content/themes/
+git clone git@github.com:Saffron-Marigold/saffronspeak.git
+```
 
 Log into your WordPress admin, change the theme to "Safflower," and now you're cooking with gas!
 
@@ -32,21 +35,23 @@ First, you'll need to [install Compass](http://compass-style.org/install/).
 
 This repo already includes a config file that will compile your stylesheets, so all you need to do is open your Terminal, navigate to the theme directory, and type `compass watch`.
 
-Now, open any .scss file in the `/sass` folder and make a change. (Try changing a few of the colour variables in `/sass/variables-site/colors.scss` for very obvious results.) Refresh your test environment, and you'll see the colours throughout the site have changes!
+Now, open any .scss file in the `sass/` folder and make a change. (Try changing a few of the colour variables in `sass/variables-site/colors.scss` for very obvious results.) Refresh your test environment, and you'll see the colours throughout the site have changed!
 
-Try to keep your Sass as DRY as possible. Variables are set in `/variables-site` and reusable snippets are available in `/mixins`. Use these wherever possible. Try to `@extend` elements rather than rewriting the same blocks of code.
+Try to keep your Sass as DRY as possible. Variables are set in `variables-site/` and reusable snippets are available in `mixins/`. Use these wherever possible. Try to `@extend` elements rather than rewriting the same blocks of code.
 
 # Responsive breakpoints
 
-Breakpoints have been defined within `/sass/variables-site/_breakpoints.scss`. The code has been re-written to be mobile-first as much as possible, and media queries are mixed into the code for easier back-and-forth.
+Breakpoints have been defined within `sass/variables-site/_breakpoints.scss`. The code has been re-written to be mobile-first as much as possible, and media queries are mixed into the code for easier back-and-forth.
 
 You can target a breakpoint like so:
 
-    a
-      @include tablet {
-        color: purple;
-      }
-    }
+```sass
+a
+  @include tablet {
+    color: purple;
+  }
+}
+```
 
 This will make all links purple at tablet size or above.
 
@@ -56,9 +61,11 @@ You can also use the `.hide-mobile` CSS class anywhere within your HTML to selec
 
 We're using [Girder](http://comfypixel.com/Girder) for our grid structure. To keep as much of the presentational markup in the CSS as possible, we're primarily using its mixins for the grid structures, like so:
 
-    .panel {
-      @include unit(half);
-    }
+```sass
+.panel {
+  @include unit(half);
+}
+```
 
 Consult the [documentation](http://comfypixel.com/Girder/guide.html) for more in-depth usage.
 
@@ -70,15 +77,18 @@ Generally speaking, I'd recommend working on changes in a feature branch. This w
 
 To test your changes on the test server, log in via SSH and pull the branch:
 
-    ssh ssarwate@ssarwate.mail.pairserver.com
-    cd public_html/blog/wp-content/themes/safflower
-    git fetch origin
-    git checkout -b [branch-name] origin/[branch-name]
+```bash
+ssh ssarwate@ssarwate.mail.pairserver.com
+cd public_html/blog/wp-content/themes/safflower
+git fetch origin
+git checkout -b [branch-name] origin/[branch-name]
+```
 
 Switch between existing branches by checking them out:
 
-    git checkout [branch-name]
-
+```bash
+git checkout [branch-name]
+```
 
 Once you're certain your feature will work as expected, merge the branch to master, and pull to the production machine.
 
