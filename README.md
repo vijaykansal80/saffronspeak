@@ -1,45 +1,83 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+This is a custom theme for the Saffron Marigold blog, built on  `_s` for a solid foundation. 
 
-_s
-===
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+# Get started
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+First, you'll want to have a new WordPress install on your local development machine. I recommend using [MAMP](https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP) for a simple, but relatively flexible option. 
 
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A helpful 404 template.
-* A sample custom header implementation in `inc/custom-header.php` that can be activated by uncommenting one line in `functions.php` and adding the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/extras.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample CSS layouts in `layouts/` for a sidebar on either side of your content.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+Once that's done, open up your terminal.
+`cd` into your `/wp-content/themes` directory, then clone the repo:
+`git clone git@github.com:Saffron-Marigold/saffronspeak.git`
 
-Getting Started
----------------
+Log into your WordPress admin, change the theme to "Safflower," and now you're cooking with gas!
 
-If you want to keep it simple, head over to http://underscores.me and generate your `_s` based theme from there. You just input the name of the theme you want to create, click the "Generate" button, and you get your ready-to-awesomize starter theme.
+# Install some plugins
 
-If you want to set things up manually, download `_s` from GitHub. The first thing you want to do is copy the `_s` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a five-step find and replace on the name in all the templates.
+In order to ensure that you can see and test all the theme features, I recommend installing the following plugins:
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain.
-2. Search for `_s_` to capture all the function names.
-3. Search for `Text Domain: _s` in style.css.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks.
-5. Search for `_s-` to capture prefixed handles.
+- Jetpack
+- Relevanssi
+- Advanced Excerpt
+- WordPress Popular Posts
+- Category Order and Taxonomy Terms Order
+- Yet Another Related Posts Plugin
 
-OR
+# Making changes to your CSS
 
-* Search for: `'_s'` and replace with: `'megatherium'`
-* Search for: `_s_` and replace with: `megatherium_`
-* Search for: `Text Domain: _s` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_s</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_s-` and replace with: `megatherium-`
+While you can adjust the theme's style.css file directly, I'd highly recommend using Sass instead. This will ensure that your code will be much more maintainable in the future, and will make changes far simpler. If you're totally new to Sass, it may help to [read this guide](http://thesassway.com/beginner/getting-started-with-sass-and-compass). Sass uses the same syntax as regular CSS, so it isn't hard to get started with.
 
-Then, update the stylesheet header in `style.css` and the links in `footer.php` with your own information. Next, update or delete this readme.
+## Getting started with Sass
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+First, you'll need to [install Compass](http://compass-style.org/install/). 
 
-Good luck!
+This repo already includes a config file that will compile your stylesheets, so all you need to do is open your Terminal, navigate to the theme directory, and type `compass watch`. 
+
+Now, open any .scss file in the `/sass` folder and make a change. (Try changing a few of the colour variables in `/sass/variables-site/colors.scss` for very obvious results.) Refresh your test environment, and you'll see the colours throughout the site have changes!
+
+Try to keep your Sass as DRY as possible. Variables are set in `/variables-site` and reusable snippets are available in `/mixins`. Use these wherever possible. Try to `@extend` elements rather than rewriting the same blocks of code.
+
+# Responsive breakpoints
+
+Breakpoints have been defined within `/sass/variables-site/_breakpoints.scss`. The code has been re-written to be mobile-first as much as possible, and media queries are mixed into the code for easier back-and-forth.
+
+You can target a breakpoint like so:
+
+    a
+      @include tablet {
+        color: purple;
+      }
+    }
+    
+This will make all links purple at tablet size or above.
+
+## Using the grid
+
+We're using [Girder](http://comfypixel.com/Girder) for our grid structure. To keep as much of the presentational markup in the CSS as possible, we're primarily using its mixins for the grid structures, like so:
+
+    .panel {
+      @include unit(half);
+    }
+    
+Consult the [documentation](http://comfypixel.com/Girder/guide.html) for more in-depth usage.
+
+# Committing your changes
+
+Generally speaking, I'd recommend working on changes in a feature branch. This way, you can test your changes on the test server prior to pushing to the production server.
+
+*Changes should only be pushed to master only once they've been fully tested!* 
+
+To test your changes on the test server, log in via SSH and pull the branch:
+
+    ssh ssarwate@ssarwate.mail.pairserver.com
+    cd public_html/blog/wp-content/themes/safflower
+    git fetch origin
+    git checkout -b [branch-name] origin/[branch-name]
+    
+Switch between existing branches by checking them out:
+
+    git checkout [branch-name]
+    
+    
+Once you're certain your feature will work as expected, merge the branch to master, and pull to the production machine. 
+
+If you're new to feature branches, [read this guide](https://guides.github.com/introduction/flow/) for more information.
