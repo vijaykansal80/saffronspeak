@@ -90,7 +90,8 @@
 }
 
 /* Links */
-.mothers-day .entry-content a {
+.mothers-day .entry-content a,
+.mothers-day .panel a {
     color: #8c0038;
 }
 

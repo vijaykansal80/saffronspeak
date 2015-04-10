@@ -10,7 +10,7 @@
     @include unit(third);
     margin: 0;
 
-    img {
+    img:not(.borderless) {
       @extend %bordered;
     }
   }

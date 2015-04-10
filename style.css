@@ -221,12 +221,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   pointer-events: none;
 }
 
-.panel figure:not(.col) img, .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
+.panel figure:not(.col) img:not(.borderless), .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
   border: 6px solid #fff;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
 }
 @media (min-width: 768px) {
-  .panel figure:not(.col) img, .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
+  .panel figure:not(.col) img:not(.borderless), .home .category img, .related-posts .related-post img, .category-intro img, .post-excerpt img, .entry-content img {
     border-width: 8px;
     /* We use a slightly larger border on larger screens */
   }
@@ -2586,7 +2586,8 @@ body:not(.parent-post) .twocol:not(.sourcing) h4 {
 .entry-content .wp-smiley,
 .post .wp-smiley,
 .entry-content .borderless,
-.post .borderless {
+.post .borderless,
+.panel .borderless {
   background: none;
   border: none;
   box-shadow: none;
