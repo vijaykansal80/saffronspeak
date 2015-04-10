@@ -19,7 +19,6 @@
 			@include font-size(14);
 			margin: 0;
 			min-width: 200px;
-			padding: 10px 10px;
 
 			&:last-child {
 				border-bottom: none;
@@ -27,6 +26,7 @@
 
 			a {
 				color: darken($olive, 5%);
+				padding: 10px 10px;
 			}
 
 			&:hover {
@@ -34,50 +34,7 @@
 				color: darken($olive, 10%);
 			}
 		} // li
-
-		/* Sub-menu */
-		ul {
-			display: block;
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a {
-			}
-
-			a:hover {
-			}
-		}
-
-		li:hover > ul {
-			left: auto;
-		}
-	}
-
-	li {
-		position: relative;
-
-		&:hover > a {
-		}
-	}
+	} // ul
 
 	a {
 		color: darken($green, 15%);
@@ -102,15 +59,21 @@
 		top: 0px;
 		width: 100%;
 
-		ul li {
+		/* Bump up font size and padding for better usability */
+		ul li a {
 			@include font-size(18);
 			padding: 15px;
 		}
-	}
 
-	.nav-menu {
-		clear: right;
-		display: none;
+		/* Sub menus */
+		.sub-menu {
+			border-top: 2px solid $olive;
+
+			li {
+				background: saturate(lighten($olive, 25%), 15%);
+				text-indent: 10px;
+			}
+		} // .sub-menu
 	}
 
 	.menu-toggle {
@@ -183,6 +146,12 @@
 	  } // .bar
   } // .menu-toggle
 
+  /* Make sure the menu clears the toggle */
+	.nav-menu {
+		clear: right;
+		display: none;
+	}
+
   /* Display menu when clicked, and change menu icon to close icon ("X") */
 	.main-navigation.toggled {
 		background: $peach;
@@ -244,10 +213,13 @@
 			margin: 10px 0;
 			max-width: 93px;
 			min-width: auto;
-			padding: 16px 18px 10px 10px;
 			position: relative;
 			text-align: center;
 			vertical-align: middle;
+
+			a {
+				padding: 16px 18px 10px 10px;
+			}
 
 			&:first-child {
 				margin-left: 20px;
@@ -262,18 +234,49 @@
 			}
 		} // .li
 
-		/* sub nav */
+		/* Sub-menus */
 		.sub-menu {
 			position: absolute;
 			top: 55px;
 			left: -9999px;
 			z-index: 100;
+			display: block;
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				&:hover > ul {
+					left: 100%;
+				}
+			} // li
+
+		} // .sub-menu
+
+		/* Show on hover */
+		li:hover > ul {
+			left: auto;
+		}
+
+		li {
+			position: relative;
 		}
 
 	} //.main-navigation
 } // tablet + desktop menu
 
-
+/* Show anything we give the class .menu-visible to! */
+.main-navigation .menu-visible {
+	display: block;
+}
 
 
 /* nav */

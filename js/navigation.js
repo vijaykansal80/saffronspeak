@@ -41,4 +41,12 @@
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
 	};
+
+	/* Open sub-menus if we're using the teeny menu */
+	if ( jQuery( '.menu-toggle' ).is( ':visible' ) ) {
+		jQuery( '.menu-item-has-children > a' ).on( 'click', function() {
+			jQuery( this ).parent().find( '.sub-menu' ).toggleClass( 'menu-visible' );
+			return false;
+		});
+	}
 } )();

@@ -54,8 +54,6 @@
       $searchInput.addClass( 'open' );
     }
 
-    
-
     // Make sure empty searches aren't submitted
     $( '#searchform' ).on( 'submit', function( e ) {
       if ( ! $searchInput.val() ) {
