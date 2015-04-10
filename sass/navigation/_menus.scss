@@ -2,8 +2,6 @@
 	clear: both;
 	display: block;
 	float: left;
-	text-align: center;
-	width: 100%;
 
 	ul {
 		display: none; // Hide initially to avoid flash of full menu
@@ -73,6 +71,7 @@
 			left: auto;
 		}
 	}
+
 	li {
 		position: relative;
 
@@ -97,13 +96,20 @@
 /* Small menu for mobile devices */
 @include mobile {
 
-	#site-navigation {
+	.main-navigation {
 		position: absolute;
-		top: 10px;
-		left: 0px;
+		right: 0px;
+		top: 0px;
+		width: 100%;
+
+		ul li {
+			@include font-size(18);
+			padding: 15px;
+		}
 	}
 
 	.nav-menu {
+		clear: right;
 		display: none;
 	}
 
@@ -113,9 +119,10 @@
     box-shadow: none;
     cursor: pointer;
     display: block;
+    float: right;
     height: 25px;
     line-height: 1.4;
-    margin: 0 0 0 10px;
+    margin: 10px 10px 0px 10px;
     padding: 1.5rem 1.5rem;
     position: relative;
     -webkit-transform: rotate(0deg);
@@ -178,6 +185,8 @@
 
   /* Display menu when clicked, and change menu icon to close icon ("X") */
 	.main-navigation.toggled {
+		background: $peach;
+
 		.nav-menu {
 			display: block;
 		}
@@ -217,6 +226,7 @@
 	.main-navigation {
 		background: url('images/ribbon.jpg') no-repeat top center;
 		height: 78px;
+		width: 100%;
 
 		.nav-menu {
 			border: none;
@@ -268,9 +278,8 @@
 
 /* nav */
 ul#main-nav {
-	list-style-type: none;
-
 	clear: both;
+	list-style-type: none;
 }
 ul#main-nav li {
 	display: -moz-inline-stack;

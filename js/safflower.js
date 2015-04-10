@@ -49,10 +49,12 @@
       }
     } );
 
-    // If we're on the homepage, show the search box expanded by default
-    if ( $( 'body' ).hasClass( 'home' ) ) {
+    // If we're on the homepage and we're not on a mobile device, show the search box expanded by default
+    if ( $( 'body' ).hasClass( 'home' ) && ! $( '.menu-toggle:visible' ).length ) {
       $searchInput.addClass( 'open' );
     }
+
+    
 
     // Make sure empty searches aren't submitted
     $( '#searchform' ).on( 'submit', function( e ) {

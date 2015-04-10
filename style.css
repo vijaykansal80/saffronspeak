@@ -1024,8 +1024,6 @@ a:hover, a:active {
   clear: both;
   display: block;
   float: left;
-  text-align: center;
-  width: 100%;
 }
 .main-navigation ul {
   display: none;
@@ -1090,13 +1088,20 @@ a:hover, a:active {
 
 /* Small menu for mobile devices */
 @media (max-width: 767px) {
-  #site-navigation {
+  .main-navigation {
     position: absolute;
-    top: 10px;
-    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+  }
+  .main-navigation ul li {
+    font-size: 18px;
+    font-size: 1.8rem;
+    padding: 15px;
   }
 
   .nav-menu {
+    clear: right;
     display: none;
   }
 
@@ -1106,9 +1111,10 @@ a:hover, a:active {
     box-shadow: none;
     cursor: pointer;
     display: block;
+    float: right;
     height: 25px;
     line-height: 1.4;
-    margin: 0 0 0 10px;
+    margin: 10px 10px 0px 10px;
     padding: 1.5rem 1.5rem;
     position: relative;
     -webkit-transform: rotate(0deg);
@@ -1165,6 +1171,9 @@ a:hover, a:active {
   }
 
   /* Display menu when clicked, and change menu icon to close icon ("X") */
+  .main-navigation.toggled {
+    background: #FEE6D6;
+  }
   .main-navigation.toggled .nav-menu {
     display: block;
   }
@@ -1198,6 +1207,7 @@ a:hover, a:active {
   .main-navigation {
     background: url("images/ribbon.jpg") no-repeat top center;
     height: 78px;
+    width: 100%;
     /* sub nav */
   }
   .main-navigation .nav-menu {
@@ -1239,8 +1249,8 @@ a:hover, a:active {
 }
 /* nav */
 ul#main-nav {
-  list-style-type: none;
   clear: both;
+  list-style-type: none;
 }
 
 ul#main-nav li {
@@ -1484,12 +1494,9 @@ ul#main-nav li#blog-tab {
   padding-bottom: 0;
 }
 @media (max-width: 767px) {
-  .site-branding {
-    text-align: center;
-  }
   .site-branding .site-logo {
-    width: 75%;
-    margin: 0 auto;
+    margin-left: -0.75em;
+    width: 90%;
   }
 }
 
@@ -1552,6 +1559,11 @@ ul#main-nav li#blog-tab {
   font-size: 1.2rem;
   margin: 5px 30px;
 }
+@media (max-width: 767px) {
+  .breadcrumbs {
+    display: none;
+  }
+}
 .breadcrumbs a {
   text-decoration: none;
 }
@@ -1559,15 +1571,27 @@ ul#main-nav li#blog-tab {
 /* Search bar */
 .search-box {
   position: absolute;
-  right: 0;
-  top: -10px;
+  right: -3px;
+  top: -48px;
+}
+@media (min-width: 768px) {
+  .search-box {
+    right: 0;
+    top: -10px;
+  }
 }
 .search-box .icon-search {
+  color: #93775F;
   cursor: pointer;
   display: inline-block;
-  font-size: 24px;
-  margin-right: 20px;
+  font-size: 29px;
   vertical-align: -7px;
+}
+@media (min-width: 768px) {
+  .search-box .icon-search {
+    font-size: 24px;
+    margin-right: 20px;
+  }
 }
 .search-box .search-form {
   display: inline-block;
@@ -1584,17 +1608,23 @@ ul#main-nav li#blog-tab {
 }
 .search-box .search-field.open {
   opacity: 1;
-  width: 250px;
+  width: 235px;
+}
+@media (min-width: 768px) {
+  .search-box .search-field.open {
+    width: 250px;
+  }
 }
 .search-box .search-submit {
   display: none;
 }
 
-.home .search-box {
-  top: -5px;
-  /* Corrects placement for homepage, where there are no breadcrumbs */
+@media (min-width: 768px) {
+  .home .search-box {
+    top: -5px;
+    /* Corrects placement for homepage, where there are no breadcrumbs */
+  }
 }
-
 .site-footer {
   border-top: 1px solid #b9b399;
   color: #9a916c;

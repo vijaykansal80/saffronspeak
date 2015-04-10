@@ -4,12 +4,10 @@
   padding-top: 0;
   padding-bottom: 0;
 
-  @include mobile {
-    text-align: center;
-
-    .site-logo {
-      width: 75%;
-      margin: 0 auto;
+  .site-logo {
+    @include mobile {
+      margin-left: -$gutters/2;
+      width: 90%;
     }
   }
 }
@@ -74,6 +72,10 @@
   @include font-size(12);
   margin: 5px 30px;
 
+  @include mobile {
+    display: none;
+  }
+
   a {
     text-decoration: none;
   }
@@ -82,15 +84,25 @@
 /* Search bar */
 .search-box {
   position: absolute;
-  right: 0;
-  top: -10px;
+  right: -3px;
+  top: -48px;
+
+  @include tablet {
+    right: 0;
+    top: -10px;
+  }
 
   .icon-search {
+    color: $brown;
     cursor: pointer;
     display: inline-block;
-    font-size: 24px;
-    margin-right: 20px;
+    font-size: 29px;
     vertical-align: -7px;
+
+    @include tablet {
+      font-size: 24px;
+      margin-right: 20px;
+    }
   }
 
   .search-form {
@@ -109,7 +121,11 @@
 
     &.open {
       opacity: 1;
-      width: 250px;
+      width: 235px;
+
+      @include tablet {
+        width: 250px;
+      }
     }
   }
 
@@ -118,6 +134,8 @@
   }
 }
 
-.home .search-box {
-  top: -5px; /* Corrects placement for homepage, where there are no breadcrumbs */
+@include tablet {
+  .home .search-box {
+    top: -5px; /* Corrects placement for homepage, where there are no breadcrumbs */
+  }
 }
