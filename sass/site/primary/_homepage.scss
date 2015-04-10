@@ -65,6 +65,27 @@
       line-height: 1.2;
       text-align: justify;
     }
+
+    /* Adjust a smidge on mobile devices */
+    @include mobile {
+      img {
+        float: left;
+        width: 35%;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        clear: none;
+        width: 70%;
+        float: left;
+        margin: 45px 0 5px -5%;
+      }
+
+      p {
+        @include font-size(16);
+        clear: left;
+      }
+    } // mobile
   } // .category
 
   /* Featured series panel */
@@ -123,4 +144,3 @@
   } // .post-preview
 
 } // .home
-

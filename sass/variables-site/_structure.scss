@@ -19,3 +19,10 @@ $container-max-width: 850px;
 #main {
   @extend %row;
 }
+
+/* Hide elements on mobile devices—useful for too-long strings of text */
+@include mobile {
+  .mobile-hide {
+    display: none;
+  }
+}

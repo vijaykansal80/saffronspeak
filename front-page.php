@@ -39,7 +39,7 @@ get_header(); ?>
 
     <?php if ( $safflower_featured_series_id ): ?>
       <header class="section-header">
-      	<h2>Featured series: <?php echo safflower_featured_series_link( $safflower_featured_series->slug ); ?></h2>
+      	<h2>Featured series<span class="mobile-hide">: <?php echo safflower_featured_series_link( $safflower_featured_series->slug ); ?></span></h2>
       </header>
 
       <section class="featured-series <?php echo safflower_smart_slug( $safflower_featured_series ); ?>">
