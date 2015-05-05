@@ -122,3 +122,15 @@
     width: 65%;
     margin-left: 5%;
 }
+
+.mothers-day .panel .readMore {
+    display: block;
+    margin: 0.6em auto 0;
+    text-align: center;
+}
+
+.mothers-day .panel .readMore > a {
+    /*color: #000;*/
+    font-size: 2.1rem;
+    text-decoration: none;
+}
