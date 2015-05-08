@@ -2,6 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lancelot);
 @import url(http://fonts.googleapis.com/css?family=Almendra:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Almendra+Display);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 @import url("fonts/nuptial.css");
 @import url("fonts/icons.css");
 
@@ -1013,6 +1014,41 @@ p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 	box-sizing: border-box;
 }
 
+.panel.panel-summer {
+	background: url("images/summer.jpg") no-repeat scroll 0 0 #edccb6;
+    border-color: #f28024;
+    padding: 1.7em 2em 0.2em;
+    position: relative;
+}
+.panel.panel-summer p { 
+	color: #8f7154;
+    line-height: 1;
+    margin-bottom: 0px;
+    margin-top: 24px;
+    padding: 0 25px;
+}
+.panel.panel-summer p.inner {
+	margin-top: 0;
+	margin-bottom:10px;
+	line-height: 1.2;
+}
+.panel.panel-summer p b {
+	font-family: 'Clicker Script', cursive;
+	color: #db6c12;
+	font-size:33px;
+	font-weight:normal;
+	line-height: 1;
+}
+
+.panel.panel-summer p b.top{
+	font-size:64px;
+}
+
+.panel.panel-summer p b.more {
+    float: right;
+    margin-bottom: 12px;
+}
+
 .panel figure, .panel figure:not(.col) {
     float: left;
     margin: 0 50px 0 0;
@@ -1021,6 +1057,10 @@ p.intro:first-letter, .featured-series p:first-of-type:first-letter {
 .panel figure img {
     max-width: 280px;
     height: auto;
+}
+
+.panel.panel-summer figure img {
+    max-height: 280px;
 }
 
 figure .circular {
