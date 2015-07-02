@@ -1,8 +1,17 @@
 /* Site logo, title */
+
+header {
+  font-size: 1.4em;
+  line-height: 20px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
 .site-branding {
   @include unit(half);
   padding-top: 0;
   padding-bottom: 0;
+  width: 43%;
 
   .site-logo {
     @include mobile {
@@ -12,6 +21,40 @@
   }
 }
 
+#newsletter-signup {
+  float: left;
+  margin:10px 15px;
+  width: 175px;
+}
+#newsletter-signup h5{
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: capitalize;
+}
+#newsletter-signup h5{
+  color:$color__text-main;
+  font-size: 0.45em;
+  line-height: 16px;
+  text-align: left;
+}
+#newsletter-signup input[type="text"] {
+  margin-right: 0;
+  width: 128px;
+}
+.site-contact{
+  width: 31%;
+}
+#newsletter-signup input[type="email"] {
+  font-size: 13px;
+  height: 23px;
+  padding: 3px 5px;
+  width: 138px;
+  color: #444444;
+}
+#newsletter-signup > input[type="image"] {
+  position: relative;
+  top: 4px;
+}
 /* Social media links, contact information, and cart links */
 .site-contact {
   @include font-size(14);
@@ -114,10 +157,16 @@
     -ms-transition: all 0.125s;
     -o-transition: all 0.125s;
     -webkit-transition: all 0.125s;
-    opacity: 0;
+    opacity: 1;
     overflow: hidden;
     transition: all 0.125s;
-    width: 0;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #867d56;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    margin: 0 6px 0 0;
+    padding: 10px;
+    width: 250px;
 
     &.open {
       opacity: 1;
@@ -133,6 +182,11 @@
     display: none;
   }
 }
+
+header.section-header{
+  margin: 100px 0 0;
+}
+
 
 @include tablet {
   .home .search-box {

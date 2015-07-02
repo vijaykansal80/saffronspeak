@@ -1,51 +1,53 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
+  clear: both;
+  display: block;
+  float: left;
 
-	ul {
-		display: none; // Hide initially to avoid flash of full menu
-		border: 1px solid lighten($olive, 25%);
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-		position: relative;
-		z-index: 1000;
+  ul {
+    display: none; // Hide initially to avoid flash of full menu
+    border: 1px solid lighten($olive, 25%);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    position: relative;
+    z-index: 1000;
 
-		li {
-			background: saturate(lighten($olive, 35%), 15%);
-			border-bottom: 1px dashed #fff;
-			font-family: $font__main;
-			@include font-size(14);
-			margin: 0;
-			min-width: 200px;
+    li {
+      background: saturate(lighten($olive, 35%), 15%);
+      border-bottom: 1px dashed #fff;
+      font-family: $font__main;
+      @include font-size(14);
+      margin: 0;
+      padding: 10px;
+      text-align: left;
 
-			&:last-child {
-				border-bottom: none;
-			}
+      &:last-child {
+        border-bottom: none;
+      }
 
-			a {
-				color: darken($olive, 5%);
-				padding: 10px 10px;
-			}
+      a {
+        color: darken($olive, 5%);
+        padding: 10px 10px;
+      }
 
-			&:hover {
-				background: saturate(lighten($olive, 40%), 20%);
-				color: darken($olive, 10%);
-			}
-		} // li
-	} // ul
+      &:hover {
+        background: saturate(lighten($olive, 40%), 20%);
+        color: darken($olive, 10%);
 
-	a {
-		color: darken($green, 15%);
-		display: block;
-		text-decoration: none;
-	}
+      }
+    } // li
+  } // ul
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a {
-	}
+  a {
+    color: #454d18;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a {
+  }
 }
 
 
@@ -53,30 +55,30 @@
 /* Small menu for mobile devices */
 @include mobile {
 
-	.main-navigation {
-		position: absolute;
-		right: 0px;
-		top: 0px;
-		width: 100%;
+  .main-navigation {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
 
-		/* Bump up font size and padding for better usability */
-		ul li a {
-			@include font-size(18);
-			padding: 15px;
-		}
+    /* Bump up font size and padding for better usability */
+    ul li a {
+      @include font-size(18);
+      padding: 15px;
+    }
 
-		/* Sub menus */
-		.sub-menu {
-			border-top: 2px solid $olive;
+    /* Sub menus */
+    .sub-menu {
+      border-top: 2px solid $olive;
 
-			li {
-				background: saturate(lighten($olive, 25%), 15%);
-				text-indent: 10px;
-			}
-		} // .sub-menu
-	}
+      li {
+        background: saturate(lighten($olive, 25%), 15%);
+        text-indent: 10px;
+      }
+    } // .sub-menu
+  }
 
-	.menu-toggle {
+  .menu-toggle {
     background: none;
     border: none;
     box-shadow: none;
@@ -100,240 +102,258 @@
     z-index: 50;
 
     &:hover {
-    	background: none;
+      background: none;
     }
 
     .bar {
-	    display: block;
-	    position: absolute;
-	    height: 3px;
-	    width: 100%;
-	    background: $brown;
-	    opacity: 1;
-	    left: 0;
-	    -webkit-transform: rotate(0deg);
-	    -moz-transform: rotate(0deg);
-	    -o-transform: rotate(0deg);
-	    transform: rotate(0deg);
-	    -webkit-transition: .25s ease-in-out;
-	    -moz-transition: .25s ease-in-out;
-	    -o-transition: .25s ease-in-out;
-	    transition: .25s ease-in-out;
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $brown;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
 
-	    &:nth-of-type(1) {
-		    top: 3px;
-		    -webkit-transform-origin: left center;
-		    -moz-transform-origin: left center;
-		    -o-transform-origin: left center;
-		    transform-origin: left center;
-		  }
+      &:nth-of-type(1) {
+        top: 3px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
 
-		  &:nth-of-type(2) {
-		    top: 8px;
-		    -webkit-transform-origin: left center;
-		    -moz-transform-origin: left center;
-		    -o-transform-origin: left center;
-		    transform-origin: left center;
-		  }
+      &:nth-of-type(2) {
+        top: 8px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
 
-		  &:nth-of-type(3) {
-		    top: 13px;
-		    -webkit-transform-origin: left center;
-		    -moz-transform-origin: left center;
-		    -o-transform-origin: left center;
-		    transform-origin: left center;
-		  }
-	  } // .bar
+      &:nth-of-type(3) {
+        top: 13px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+      }
+    } // .bar
   } // .menu-toggle
 
   /* Make sure the menu clears the toggle */
-	.nav-menu {
-		clear: right;
-		display: none;
-	}
+  .nav-menu {
+    clear: right;
+    display: none;
+  }
 
   /* Display menu when clicked, and change menu icon to close icon ("X") */
-	.main-navigation.toggled {
-		background: $peach;
+  .main-navigation.toggled {
+    background: $peach;
 
-		.nav-menu {
-			display: block;
-		}
+    .nav-menu {
+      display: block;
+    }
 
-		.bar:nth-of-type(1) {
-	    -webkit-transform: rotate(45deg);
-	    -moz-transform: rotate(45deg);
-	    -o-transform: rotate(45deg);
-	    transform: rotate(45deg);
-	    top: 0;
-	    left: 0;
-	  }
+    .bar:nth-of-type(1) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 0;
+      left: 0;
+    }
 
-	  .bar:nth-child(2) {
-	    width: 0%;
-	    opacity: 0;
-	  }
+    .bar:nth-child(2) {
+      width: 0%;
+      opacity: 0;
+    }
 
-	  .bar:nth-child(3) {
-	    -webkit-transform: rotate(-45deg);
-	    -moz-transform: rotate(-45deg);
-	    -o-transform: rotate(-45deg);
-	    transform: rotate(-45deg);
-	    top: 21px;
-	    left: 0;
-	  }
-	} // .main-navigation.toggled
+    .bar:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: 21px;
+      left: 0;
+    }
+  } // .main-navigation.toggled
 } // mobile menu
 
 
 /* Large screen menu */
 @include tablet {
-	.menu-toggle {
-		display: none;
-	}
+  .menu-toggle {
+    display: none;
+  }
 
-	.main-navigation {
-		background: url('images/ribbon.jpg') no-repeat top center;
-		height: 78px;
-		width: 100%;
+  .main-navigation {
+    background: url('images/ribbon.jpg') no-repeat top center;
+    height: 78px;
+    width: 100%;
 
-		.nav-menu {
-			border: none;
-			display: block;
-		}
+    .nav-menu {
+      border: none;
+      display: block;
+    }
 
-		.nav-menu > li {
-			background: url('images/ribbon-stitch.jpg') no-repeat center right;
-			border: none;
-			float: left;
-			font-family: Nuptial;
-			@include font-size(18);
-			height: 58px;
-			line-height: 0.8;
-			margin: 10px 0;
-			max-width: 93px;
-			min-width: auto;
-			position: relative;
-			text-align: center;
-			vertical-align: middle;
+    .nav-menu > li {
+      background: url('images/ribbon-stitch.jpg') no-repeat center right;
+      border: none;
+      //      float: left;
+      font-family: Nuptial;
+      @include font-size(18);
+      //      height: 58px;
+      line-height: 0.8;
+      margin: 9px 0 0;
+//      max-width: 93px;
+//      min-width: auto;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0;
+      display: inline-block;
+      font-size:2.2rem;
+      //      width: 58px;
+      a {
+        padding:16px 18px 10px 10px;
+        color: #454d18;
+      }
 
-			a {
-				padding: 16px 18px 10px 10px;
-			}
+      &:first-child {
+        margin-left: 20px;
+      }
 
-			&:first-child {
-				margin-left: 20px;
-			}
+      &:last-child {
+        background: none;
+      }
 
-			&:last-child {
-				background: none;
-			}
+      &:hover {
+        background: url('images/ribbon-stitch.jpg') no-repeat center right transparent;
+        text-shadow: 0 0 40px #fcf2c6, 0 0 20px #fcf2c6, 0 0 10px #fcf2c6, 0 0 5px #fcf2c6;
+        &:last-child{
+          background: none;
+        }
+      }
 
-			&:hover {
-				background-color: transparent;
-			}
-		} // .li
+    } // .li
 
-		/* Sub-menus */
-		.sub-menu {
-			position: absolute;
-			top: 55px;
-			left: -9999px;
-			z-index: 100;
-			display: block;
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+    /* Sub-menus */
+    .sub-menu {
+      position: absolute;
+      top: 46px;
+      left: -9999px;
+      z-index: 100;
+      display: block;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      width: 200px;
+      /*position: absolute;
+      top: 1.5em;
+      left: -999em;
+      z-index: 99999;
+*/
+      ul {
+        left: -999em;
+        top: 0;
+      }
 
-			ul {
-				left: -999em;
-				top: 0;
-			}
+      li {
+        padding:10px;
+        a{
+          padding: 0;
+        }
+        &:hover > ul {
+          left: 100%;
+        }
+        &:hover {
+          background:#e6dec8;
+          text-shadow:none;
+        }
+      } // li
 
-			li {
-				&:hover > ul {
-					left: 100%;
-				}
-			} // li
+    } // .sub-menu
 
-		} // .sub-menu
+    /* Show on hover */
+    li:hover > ul {
+      left: auto;
+    }
 
-		/* Show on hover */
-		li:hover > ul {
-			left: auto;
-		}
+    li {
+      position: relative;
+    }
 
-		li {
-			position: relative;
-		}
-
-	} //.main-navigation
+  } //.main-navigation
 } // tablet + desktop menu
 
 /* Show anything we give the class .menu-visible to! */
 .main-navigation .menu-visible {
-	display: block;
+  display: block;
 }
 
 
 /* nav */
 ul#main-nav {
-	clear: both;
-	list-style-type: none;
+  clear: both;
+  list-style-type: none;
 }
 ul#main-nav li {
-	display: -moz-inline-stack;
-	display: inline-block;
-	zoom: 1;
-	*display: inline;
-	text-align: center;
-	font-size: 2em;
-	line-height: 0.8;
-	font-family: "Nuptial";
-	margin: 10px 0;
-	width: 56px;
-	vertical-align: middle;
-	padding: 16px 18px 10px 10px;
-	background: url(images/ribbon-stitch.jpg) no-repeat center right;
-	position: relative;
+  display: -moz-inline-stack;
+  zoom: 1;
+  *display: inline;
+  background: url(images/ribbon-stitch.jpg) no-repeat center right;
+  display: inline-block;
+  font-family: "Nuptial";
+  font-size: 2em;
+  line-height: 0.8;
+  margin: 10px 0;
+  padding: 16px 18px 10px 10px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 56px;
 }
 
 
 ul#main-nav li:hover {
-	text-shadow: 0px 0px 40px #fcf2c6, 0px 0px 20px #fcf2c6, 0px 0px 10px #fcf2c6, 0px 0px 5px #fcf2c6;
+  text-shadow: 0px 0px 40px #fcf2c6, 0px 0px 20px #fcf2c6, 0px 0px 10px #fcf2c6, 0px 0px 5px #fcf2c6;
 }
 ul#main-nav li:hover > a {
-	color: #2c310f;
+  color: #2c310f;
 }
 
 ul#main-nav li.active {
-	background: rgba(252, 242, 198, .3);
-	box-shadow: 0px 0px 9px 10px rgba(252, 242, 198, .3);
-	background: none;
-	box-shadow: none;
+  background: rgba(252, 242, 198, .3);
+  box-shadow: 0px 0px 9px 10px rgba(252, 242, 198, .3);
+  background: none;
+  box-shadow: none;
 }
 ul#main-nav li.active > a {
-	color: #767e49;
+  color: #767e49;
 }
 
 ul#main-nav li#shopby-tab:before {
-	position: absolute;
-	top: -6px;
-	left: 0;
-	width: 100%;
-	height: 15px;
-	content: '';
-	display: block;
-	background: url('images/crown.png') top center no-repeat;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  content: '';
+  display: block;
+  background: url('images/crown.png') top center no-repeat;
 }
 ul#main-nav li#blog-tab {
-	line-height: 1.9;
-	font-family: "Gentium Basic", sans-serif;
-	text-transform: uppercase;
-	font-size: 1.6em;
+  line-height: 1.9;
+  font-family: "Gentium Basic", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.6em;
 }
 
 
@@ -341,41 +361,41 @@ ul#main-nav li#blog-tab {
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-	@extend %row;
-	@extend h5;
+  @extend %row;
+  @extend h5;
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
+  .site-main & {
+    margin: 0 0 1.5em;
+    overflow: hidden;
+  }
 
-	a {
-		text-decoration: none;
-	}
+  a {
+    text-decoration: none;
+  }
 
-	& .nav-previous {
-		@include unit(half);
-		text-align: left;
-		@include mobile {
-			text-align: center;
-		}
+  & .nav-previous {
+    @include unit(half);
+    text-align: left;
+    @include mobile {
+      text-align: center;
+    }
 
-		&:before {
-			content: '\00ab';
-			padding-right: 5px;
-		}
-	}
+    &:before {
+      content: '\00ab';
+      padding-right: 5px;
+    }
+  }
 
-	& .nav-next {
-		@include unit(half);
-		text-align: right;
-		@include mobile {
-			text-align: center;
-		}
+  & .nav-next {
+    @include unit(half);
+    text-align: right;
+    @include mobile {
+      text-align: center;
+    }
 
-		&::after {
-			content: '\00bb';
-			padding-left: 5px;
-		}
-	}
+    &::after {
+      content: '\00bb';
+      padding-left: 5px;
+    }
+  }
 }

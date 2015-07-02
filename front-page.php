@@ -54,8 +54,8 @@ get_header(); ?>
   					$slug = safflower_smart_slug( $safflower_featured_series );
   			    $dir = plugin_dir_path( __FILE__ );
   			    $template = parse_url( get_template_directory_uri() );
-  			    $path = $template['path']. '/series/' .$slug;
-  			    include( $dir. '/series/' .$slug. '/' .$slug. '.php' );
+  			    $path = $template['path'].  'series'.DIRECTORY_SEPARATOR .$slug;
+  			    include( $dir. DIRECTORY_SEPARATOR.'series'.DIRECTORY_SEPARATOR .$slug. DIRECTORY_SEPARATOR .$slug. '.php' );
   			?>
   		</section>
     <?php endif; ?>

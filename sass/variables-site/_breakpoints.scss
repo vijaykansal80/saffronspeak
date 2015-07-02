@@ -1,11 +1,6 @@
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
-@mixin mobile {
-  @media (max-width: #{$tablet-width - 1px}) {
-    @content;
-  }
-}
 
 @mixin tablet {
   @media (min-width: #{$tablet-width}) {
@@ -28,5 +23,23 @@ $desktop-width: 1024px;
 @mixin portrait {
   @media (orientation : portrait) {
     @content;
+  }
+}
+
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+
+    .site-branding{
+      margin: 0 0 0 15px;
+      width: 75%;
+    }
+    .search-box {
+      position: relative;
+      right: 0;
+      top: 0;
+    }
+
   }
 }
