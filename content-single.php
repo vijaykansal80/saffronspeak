@@ -35,7 +35,7 @@ endif;
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 
-	<div class="entry-content">
+	<div class="entry-content format_text">
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

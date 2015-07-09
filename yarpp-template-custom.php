@@ -12,7 +12,7 @@
     <?php if ( have_posts() ): ?>
       <?php while ( have_posts() ) : the_post(); ?>
       <div class="related-post">
-            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+            <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="saffron-related-thumb">
                 <?php the_post_thumbnail( 'yarpp-thumbnail' ); ?></a>
             <h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
             <p><?php echo get_the_excerpt(); ?>  <span class="read-more-inline">(<a href="<?php the_permalink(); ?>">Read more &raquo;</a>)</span></p>

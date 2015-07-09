@@ -167,7 +167,7 @@ function the_posts_navigation() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'safflower' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( 'Previous Entires', 'safflower' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>

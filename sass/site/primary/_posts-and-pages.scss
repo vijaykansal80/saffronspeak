@@ -17,8 +17,8 @@
   color: $green;
   display: inline-block;
   font-style: italic;
-  margin: .75em auto 1em;
-  padding: .4em 10px;
+  margin:0.75em auto 0.9em;
+  padding: 0.25em 10px;
   word-spacing: 1px;
 
   &::before,
@@ -30,7 +30,7 @@
 
   abbr, a {
     color: #707956;
-    font-size: .85em;
+    font-size: .75em;
     font-style: normal;
     letter-spacing: 2px;
     text-decoration: none;
@@ -57,7 +57,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-  margin: 1.5em 0 0;
+  margin: 0;
 }
 
 .page-links {
@@ -66,18 +66,22 @@
 }
 
 /* Emphasize first paragraph */
-.single-post .entry-content > p:first-of-type,
+.single-post .headline_area{
+  margin: 0;
+}
+.single-post .entry-content  p:first-of-type,
 p.intro,
-.featured-series > p:first-of-type {
+.featured-series  p:first-of-type {
   color: #7D7556;
-  font-size: 1.2em;
-  line-height: 1.4;
-  margin: 1em 0;
+//  font-size: 1.4em;
+//  line-height: 1.4;
+//  margin:2em;
 
   @include tablet {
-    margin: 2em 2em;
+//    margin: 2em;
   }
 }
+
 
 /* Columns, as defined within actual page content itself */
 .twocol {
@@ -93,33 +97,18 @@ p.intro,
   }
 }
 
-.threecol {
-  @extend %row;
-
-  .col,
-  .column {
-    @include unit(third);
-
-    &:nth-of-type(3n+1) {
-      clear: left;
-    }
-  }
-}
 
 /* Parent posts */
 .parent-post {
   section {
     @extend %row;
   }
-
   .col,
   .column {
     @include unit(half);
-
     &:nth-of-type(odd) {
       clear: left;
     }
-
     p:not(.read-more) {
       @include font-size(18);
       //font-style: italic;
@@ -128,6 +117,30 @@ p.intro,
   }
 } // .parent-post
 
+
+.threecol {
+  @extend %row;
+  .col,
+  .column {
+    //    @include unit(third);
+    display: block;
+    width: 100%;
+    &:nth-of-type(odd) {
+      clear: none !important;
+    }
+  }
+  .col{
+    margin-bottom: 2%;
+    margin-right: 3%;
+    padding: 0;
+    width: 31.3333%;
+    float: left;
+    &:nth-of-type(3n) {
+      clear: none;
+      margin-right: 0;
+    }
+  }
+}
 
 /* Multi-sectioned parent posts (Holiday series, as of now) */
 .parent-expander-link:after,
@@ -192,14 +205,14 @@ p.intro,
 /* Adjust headings for specific layout (example: http://www.saffronmarigold.com/blog/ideas-for-a-fresh-and-feminine-mothers-day-brunch-2015/) */
 body:not(.parent-post) .twocol:not(.sourcing) {
   h5 {
-    margin-top: 3em;
+    margin-top: 2em;
   }
 
   h4 {
     margin: 0.25em 0 1em;
     padding: .25em 0 .5em;
     border-bottom: 0;
-    border-top: 1px solid lighten($brown, 25%);
+    border-top: 1px solid lighten($brown, 1%);
   }
 }
 
@@ -247,6 +260,34 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   }
 }
 
+.summer{
+  .format_text{
+    h3, &.entry-content p span{
+      color: #1b86d6;
+      font-family: "Fredericka the Great",cursive;
+      font-size: 26px;
+    }
+  }
+  figure{
+    width: inherit !important;
+    img{
+      height: 195px;
+      width: 195px;
+    }
+  }
+
+  .format_text{
+    &.entry-content {
+      p:first-of-type {
+        margin: 0 !important;
+      }
+    }
+  }
+  .entry-header{
+   margin-bottom: 2.4em;
+  }
+}
+
 /* Sharedaddy panel */
 .sharedaddy {
   @extend %row;
@@ -254,6 +295,7 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   border-bottom: 2px solid lighten($brown, 25%);
   overflow: auto;
   padding: 5px 0 0;
+  margin-bottom: 7px;
 
   h3 {
     @extend h5;
@@ -261,10 +303,31 @@ body:not(.parent-post) .twocol:not(.sourcing) {
     padding-bottom: 5px;
     padding-top: 5px;
     text-align: center;
+    width: 30%;
 
     @include tablet {
       padding-bottom: 0;
       padding-top: 7px;
+    }
+
+    &.sd-title{
+      color: #7d7556;
+      font-family: $font__main;
+      text-transform: inherit;
+      font-style: italic;
+      display: inline-block;
+      font-size: 9pt;
+      font-weight: 700;
+      margin: 0 0 1em;
+      letter-spacing: 0;
+      &:before{
+        border-top: medium none;
+        content: "";
+        display: block;
+        margin-bottom: 1em;
+        min-width: 30px;
+        width: 100%;
+      }
     }
   }
 
@@ -277,16 +340,23 @@ body:not(.parent-post) .twocol:not(.sourcing) {
     @include unit(half);
     padding-top: 5px;
     padding-bottom: 0;
-    text-align: center;
+    text-align: left;
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+    width: 65%;
 
     ul {
-      margin: 0;
+      margin: 0 0 0.7em !important;
+      display: inline-block;
+      widows: 100%;
     }
 
     li {
-      display: inline-block;
-      list-style-type: none;
-      margin: 0;
+      display: block;
+      float: left;
+      height: 25px;
+      margin: 0 10px 5px 0 !important;
     }
   } // .sd-content
 
@@ -297,26 +367,58 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   background: rgba(255, 255, 255, .3);
   padding: 4px 8px;
   color: #8c927b;
-  @include font-size(14);
+  @include font-size(16);
   margin: 2em auto 2.5em;
-
   span {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: .9em;
   }
-
-  a {
-    margin: 0 5px;
+  a{
+    margin: 0 7px;
     font-style: italic;
     text-transform: lowercase;
     text-decoration: none;
+    color: #a15928;
   }
 }
 
 /* YARPP Related Posts */
 .related-posts {
   @extend %row;
+
+  div.related-post{
+    float: left;
+    margin-right: 3.3%;
+    width: 30%;
+    padding: 0;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  .saffron-related-thumb{
+//    display: block;
+    height: 351px;
+    overflow: hidden;
+    width: 100%;
+    /*img{
+      width: 100%;
+      height: 100%;
+    }*/
+  }
+
+
+
+
+  h3{
+    text-align: left;
+    color: #7d7556 !important;
+    font-family: $font__main !important;
+    font-size: 1.8em;
+    line-height: 1.2em;
+    margin: 1.2em 0 0.6em
+  }
 
   .related-post {
     @include unit(third);
@@ -328,21 +430,168 @@ body:not(.parent-post) .twocol:not(.sourcing) {
     h4 {
       @include font-size(19);
       margin-top: 0.25em;
+      min-height: 55px;
     }
 
     p {
-      @include font-size(14);
-      line-height: 1.4;
+      @include font-size(16);
+      line-height: 1.5;
     }
 
     .read-more-inline {
       white-space: nowrap;
 
       a {
-       text-decoration: none;
+        text-decoration: none;
       }
     }
   }
 }
 
 
+
+
+/*sun-kissed-summer-table*/
+
+.entry-content{
+
+  /*p{
+    margin: 1.5em 0 !important;
+  }*/
+
+  span.summer-text-f{
+    color: #1b86d6;
+    font-family: "Fredericka the Great",cursive;
+    font-size: 24px;
+  }
+  .panel{
+
+    background:#fee6d6 url("images/post-page-swatch-panel.jpg") no-repeat ;
+    /* border-bottom: medium none;
+     border-top: medium none;*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 3em 1em 2em;
+    h3{
+      color: #1b86d6;
+      font-family: "Fredericka the Great",cursive;
+      font-size: 26px;
+    }
+    p{
+      color: #566e88;
+      font-size: 18px;
+      margin-bottom: 0;
+      margin-top: 24px;
+      padding: 0 25px;
+      span{
+        color: #1b86d6;
+        font-family: "Fredericka the Great",cursive;
+        font-size: 24px;
+      }
+      &:not(.series-description) {
+        padding-left: 3.8em;
+      }
+      &.series-description:empty {
+        display: none;
+      }
+    }
+    &.series-navigation {
+      background: #edccb6 url("images/featured_summer_background.jpg") no-repeat scroll 0 0 / 100% auto;
+      border-bottom: 2px solid #2299ff;
+      border-color: #2299ff;
+      border-top: 1px solid #2299ff;
+      padding: 1.7em 2em;
+      p{
+        color: #566e88;
+        font-size: 18px;
+        padding: 26px 80px;
+      }
+    }
+  }
+}//end panel
+
+.format_text{
+  h2, h3{
+    font-size: 1.25em;
+    line-height: 1.2em;
+    margin: 1.8em 0 0.6em;
+  }
+}
+
+
+
+/*content-area*/
+
+.content-area{
+  margin:-0.8em 0em 2.4em 1em;
+}
+
+.twocol h4 a,
+.twocol h2,
+.previous-post a,
+.next-post a,
+.all-posts a {
+  color: #566e88;
+}
+h5 {
+  color: #1b86d6;
+}
+
+a.saffron-thumb{
+  width: 390px;
+  height: 320px;
+  overflow: hidden;
+  display: inline-block;
+  /*img{
+    width: 100%;
+    height: 100%;
+  }*/
+}
+
+/*leave a comment css*/
+#comments{
+  h3{
+    &.comment-reply-title{
+      text-align: left;
+      padding-bottom:1.2rem;
+      padding-left:1.2rem;
+      font-size: 1.9rem;
+      line-height: 1.263em;
+      color: #555;
+      font-family: $font__main;
+      border-bottom: 1px dotted #bbb;
+    }
+  }
+  p{
+    input{
+      float: left;
+    }
+    label {
+      padding: 0 0 0 10px;
+      position: relative;
+      top: -2px;
+    }
+    &.comment-form-comment{
+      label{
+        display: none;
+      }
+    }
+    &.form-allowed-tags{
+      display: none;
+    }
+    &.form-submit {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+h1.entry-title,
+h2.entry-title {
+  font-size: 2.15em;
+  line-height: 1.2;
+  margin: 0 auto;
+}
+.content-area .post{
+  padding:19px 0 0;
+}

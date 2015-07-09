@@ -43,6 +43,10 @@
     line-height: 1.8;
     text-align: left;
   }
+
+  a{
+    text-decoration: none;
+  }
 } // .category-intro
 
 
@@ -347,7 +351,7 @@
   text-align: center;
 
   .search-form {
-    margin: 0 auto;
+    margin: 0 auto 30px;
     max-width: 400px;
   }
 

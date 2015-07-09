@@ -32,18 +32,20 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div><!-- .site-branding -->
         <form class="site-signup" id="newsletter-signup" name="emailSignUp" method="post" action="http://www.saffronmarigold.com/catalog/email_signup.php">
-            <h5>Sign up for <span>exclusive</span> savings &amp; announcements</h5>
+            Sign up for <span>exclusive</span> savings &amp; announcements
             <input name="emailAddress" type="email" value="Email Address" placeholder="Email address" maxlength="100" />
             <input type="image" value="Go" src="<?php echo get_bloginfo('template_url')?>/images/gosign_up.gif"/>
         </form><!-- .site-signup -->
 		<div class="site-contact">
             <img class="flower" src="http://saffronmarigold.com/catalog/images/saffronmarigold_small_dark.gif" width="20" height="20">
             <span>Contact us:</span>
-			<strong>877-749-9948</strong> &middot; <a href="http://www.saffronmarigold.com/catalog/contact_us.php">email</a><br/>
+			<strong>877-749-9948</strong> <!--&middot;--> or <a href="http://www.saffronmarigold.com/catalog/contact_us.php">email</a><br/>
     	<img class="flower" src="http://saffronmarigold.com/catalog/images/saffronmarigold_small_light.gif" width="20" height="20">
     	<a href="http://www.saffronmarigold.com/catalog/account.php">Sign in</a>
+            |
     	<img src="http://saffronmarigold.com/catalog/images/shopping_bag_small.gif">
     	<a href="http://www.saffronmarigold.com/catalog/shopping_cart.php">Shopping Bag</a>
+            |
     	<a href="http://www.facebook.com/SaffronMarigold" rel="nofollow" target="_blank"><img src="http://saffronmarigold.com/catalog/images/icons/facebook.gif" /></a>
   		<a href="http://twitter.com/saffronmarigold" rel="nofollow" target="_blank"><img src="http://saffronmarigold.com/catalog/images/icons/twitter.gif" /></a>
 

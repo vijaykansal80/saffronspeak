@@ -30,6 +30,7 @@
   .category.category-#{$slug} .prev_next a,
   .category.category-#{$slug} .entry-content p:not(.read-more) a {
     color: $color;
+    text-decoration: none;
   }
 
   .category-intro.#{$slug} a:hover,
@@ -37,6 +38,7 @@
   .category.category-#{$slug} .prev_next a:hover,
   .category.category-#{$slug} .entry-content p:not(.read-more) a:hover {
     color: darken($color, 10%);
+    text-decoration: none;
   }
 
   .category.category-#{$slug} .read-more a {

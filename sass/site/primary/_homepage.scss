@@ -4,7 +4,7 @@
   .section-header {
     h2 {
       color: $brown;
-      margin: 2em auto 1em;
+      margin: 2.5em auto 0.75em;
       position: relative;
       text-align: center;
 
@@ -40,14 +40,21 @@
 
   /* Category introductions */
   .category {
-    @include unit(fourth);
+    //    @include unit(fourth);
+    float: left;
+    margin: 1em 2% 2.5em 0;
     text-align: center;
-
+    width: 23.5%;
+    &:nth-of-type(4) {
+      margin-right: 0;
+    }
     img {
-      @extend %bordered;
+      background: #fff;
+      //      @extend %bordered;
       border-radius: 50%;
-      border-width: 6px;
-      max-width: 85%;
+      //      border-width: 6px;
+      padding: 6px;
+      max-width: 78%;
       position: relative;
       z-index: 10;
     }
@@ -55,9 +62,10 @@
     h3 {
       @extend %boxed-text;
       @include font-size(13);
-      margin: -17px auto 1em;
-      padding-top: 7px;
-      padding-bottom: 5px;
+      margin: -1.2em 0 1.25em;
+      padding-bottom: 0.5em;
+      padding-top: 0.75em;
+      font-family:$font__main;
     }
 
     p {
@@ -65,6 +73,9 @@
       font-style: italic;
       line-height: 1.2;
       text-align: justify;
+    }
+    a{
+      text-decoration: none;
     }
 
     /* Adjust a smidge on mobile devices */
@@ -100,23 +111,25 @@
         border-color: #2299ff;
         padding: 1.7em 2em;
         position: relative;
+
         p{
-          margin: 0;
+          color: #566e88;
+          font-size: 18px;
+          margin-bottom: 0;
+          margin-top: 24px;
+          padding: 0 25px;
           span{
             color: #1b86d6;
             font-family: 'Fredericka the Great', cursive;
             font-size: 24px;
           }
         }
+
         figcaption{
           display: none;
         }
         p.read-more{
-          padding: 0;
-          margin: 0;
           text-align: right;
-          position: relative;
-
           a{
             background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
             border: medium none;
@@ -131,14 +144,14 @@
             position: relative;
             &:after{
               display: inline-block;
-             /* background:url("image/arrow.png") no-repeat;
-              content: " ";
-              display: block;
-              height: 20px;
-              position: absolute;
-              right: -23px;
-              top: 10px;
-              width: 25px;*/
+              /* background:url("image/arrow.png") no-repeat;
+               content: " ";
+               display: block;
+               height: 20px;
+               position: absolute;
+               right: -23px;
+               top: 10px;
+               width: 25px;*/
             }
           }
         }
@@ -167,8 +180,8 @@
       background: #fff;
       padding: 4px;
       box-shadow: 1px 1px 2px 1px rgba(0,0,0,.25);
-      max-width: 100px;
-      max-height: 100px;
+      width: 100px;
+      height: 100px;
     }
 
     &:nth-of-type(odd) img {
@@ -178,7 +191,7 @@
 
     h4 {
       clear: none;
-//      border-color: desaturate($brown, 25%);
+      //      border-color: desaturate($brown, 25%);
       @include font-size(21);
       font-weight: normal;
       line-height: 1;

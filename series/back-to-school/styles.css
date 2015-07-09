@@ -20,7 +20,7 @@ Custom styles for Dorm Decor series
     color: #213164;
 }
 .back-to-school .panel {
-    background: url('flowers.png');
+    background: url('flowers.png') !important;
     background-size: 177px 102px;
     border-color: #447e94;
 }

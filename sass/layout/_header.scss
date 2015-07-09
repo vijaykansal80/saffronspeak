@@ -1,17 +1,18 @@
 /* Site logo, title */
 
 header {
-  font-size: 1.4em;
+  font-size: 1.4rem;
   line-height: 20px;
   margin: 10px 0 0;
   padding: 0;
+
 }
 
 .site-branding {
   @include unit(half);
-  padding-top: 0;
-  padding-bottom: 0;
-  width: 43%;
+  padding: 0;
+  width: auto;
+  float: left;
 
   .site-logo {
     @include mobile {
@@ -23,37 +24,40 @@ header {
 
 #newsletter-signup {
   float: left;
-  margin:10px 15px;
-  width: 175px;
-}
-#newsletter-signup h5{
-  font-size: 1.2rem;
-  font-weight: normal;
-  text-transform: capitalize;
-}
-#newsletter-signup h5{
-  color:$color__text-main;
-  font-size: 0.45em;
-  line-height: 16px;
-  text-align: left;
-}
-#newsletter-signup input[type="text"] {
-  margin-right: 0;
-  width: 128px;
+  margin:10px 45px;
+  width:160px;
+  h5{
+    font-weight: normal;
+    color:$color__text-main;
+    font-size: 0.6em;
+    line-height: 20px;
+    letter-spacing:0.87px;
+    text-align: left;
+    text-transform: none;
+  }
+  input[type="text"]{
+    margin-right: 0;
+    width: 128px;
+    font-size:12px;
+  }
 }
 .site-contact{
-  width: 31%;
+  float: left;
+  margin: 10px 0;
+  width: 249px;
+  padding: 0;
 }
 #newsletter-signup input[type="email"] {
-  font-size: 13px;
-  height: 23px;
-  padding: 3px 5px;
-  width: 138px;
   color: #444444;
+  font-size: 12px;
+  height: 23px;
+  padding: 3px 4px;
+  width: 138px;
 }
 #newsletter-signup > input[type="image"] {
   position: relative;
-  top: 4px;
+  right: -3px;
+  top: 5px;
 }
 /* Social media links, contact information, and cart links */
 .site-contact {
@@ -68,7 +72,7 @@ header {
     vertical-align: middle;
 
     &.flower {
-      vertical-align: top;
+//      vertical-align: top;
       @include desktop-max {
         display: none;
       }
@@ -109,11 +113,12 @@ header {
   @extend %row;
   position: relative;
   z-index: 100;
+  margin: -6px 0 0 0;
 }
 
 .breadcrumbs {
   @include font-size(12);
-  margin: 5px 30px;
+  margin: 2px 30px 5px;
 
   @include mobile {
     display: none;
@@ -132,11 +137,11 @@ header {
 
   @include tablet {
     right: 0;
-    top: -10px;
+    top: -4px;
   }
 
   .icon-search {
-    color: $brown;
+    color: $color__text-screen;
     cursor: pointer;
     display: inline-block;
     font-size: 29px;
@@ -153,27 +158,27 @@ header {
   }
 
   .search-field {
-    -moz-transition: all 0.125s;
-    -ms-transition: all 0.125s;
-    -o-transition: all 0.125s;
-    -webkit-transition: all 0.125s;
-    opacity: 1;
+    -webkit-transition:all 0.125s ease 0s;
+    -moz-transition:all 0.125s ease 0s;
+    -ms-transition:all 0.125s ease 0s;
+    -o-transition:all 0.125s ease 0s;
+    transition:all 0.125s ease 0s;
+    opacity: 0;
     overflow: hidden;
-    transition: all 0.125s;
     background: #fff none repeat scroll 0 0;
     border: 1px solid #867d56;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
     font-size: 14px;
     margin: 0 6px 0 0;
     padding: 10px;
-    width: 250px;
+    width: 0;
 
     &.open {
       opacity: 1;
-      width: 235px;
+      width: 250px;
 
       @include tablet {
-        width: 250px;
+        width: 260px;
       }
     }
   }
