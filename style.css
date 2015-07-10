@@ -1298,7 +1298,7 @@ a:hover, a:active {
     text-shadow: none;
   }
   .main-navigation li:hover > ul {
-    left: auto;
+    left: -7px;
   }
   .main-navigation li {
     position: relative;
@@ -1959,7 +1959,7 @@ header.section-header {
 /* Headers */
 .entry-header,
 .page-header {
-  margin-top: 1em;
+  margin-bottom: 2.4em;
   text-align: center;
 }
 
@@ -2023,10 +2023,17 @@ header.section-header {
   margin: 0;
 }
 
-.single-post .entry-content p:first-of-type,
+.single-post .entry-content > p:first-of-type,
 p.intro,
-.featured-series p:first-of-type {
-  color: #7D7556;
+.featured-series > p:first-of-type {
+  color: #7d7556;
+  font-size: 1.4em;
+  line-height: 1.4;
+  margin: 2em;
+}
+
+.valentines-day .entry-content .panel > p:first-of-type {
+  color: #4c1617;
 }
 
 /* Columns, as defined within actual page content itself */
@@ -2039,12 +2046,6 @@ p.intro,
 .parent-post .col:nth-of-type(odd),
 .parent-post .column:nth-of-type(odd) {
   clear: left;
-}
-.parent-post .col p:not(.read-more),
-.parent-post .column p:not(.read-more) {
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 1.4;
 }
 
 .threecol .col,
@@ -2404,17 +2405,6 @@ h5, h6, .comment-navigation,
   color: #1b86d6;
 }
 
-a.saffron-thumb {
-  width: 390px;
-  height: 320px;
-  overflow: hidden;
-  display: inline-block;
-  /*img{
-    width: 100%;
-    height: 100%;
-  }*/
-}
-
 /*leave a comment css*/
 #comments h3.comment-reply-title {
   text-align: left;
@@ -2453,7 +2443,43 @@ h2.entry-title {
 }
 
 .content-area .post {
-  padding: 19px 0 0;
+  padding-top: 2.3em;
+}
+
+.group-blog .content-area .post-excerpt {
+  padding: 0;
+  float: left;
+  text-align: center;
+  width: 48%;
+}
+
+.group-blog .content-area .post-excerpt:nth-of-type(2n+1) {
+  clear: left;
+  margin-right: 4%;
+}
+
+.column {
+  float: left;
+  text-align: center;
+  width: 47% !important;
+  padding: 0;
+}
+.column:nth-of-type(2n+1) {
+  clear: left;
+  margin: 0 5% 2em 0;
+}
+.column .parent-intro {
+  color: #718295;
+  font-family: "Sacramento",cursive;
+  font-size: 2.4em;
+  font-style: normal;
+  line-height: 1.2em;
+  text-align: center;
+  margin: 0;
+}
+
+.entry-content .mothers-day .panel {
+  background: rgba(255, 255, 255, 0.75);
 }
 
 /*--------------------------------------------------------------
@@ -2897,7 +2923,7 @@ h2.entry-title {
   margin: 1em 0;
 }
 .subcategory-expander section:first-of-type {
-  margin-right: 2.99em;
+  margin-right: 2.79em;
 }
 .subcategory-expander h2 {
   padding: .25em;

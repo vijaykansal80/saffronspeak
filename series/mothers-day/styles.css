@@ -30,8 +30,8 @@
 
 
 /* Panels */
-.mothers-day .panel {
-    background: url('damask.png');
+.mothers-day .entry-content .panel {
+    background: url('damask.png') !important;
     border-color: #93765e;
 }
 

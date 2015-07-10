@@ -6,7 +6,7 @@
 /* Headers */
 .entry-header,
 .page-header {
-  margin-top: 1em;
+  margin-bottom: 2.4em;
   text-align: center;
 }
 
@@ -69,19 +69,19 @@
 .single-post .headline_area{
   margin: 0;
 }
-.single-post .entry-content  p:first-of-type,
-p.intro,
-.featured-series  p:first-of-type {
-  color: #7D7556;
-//  font-size: 1.4em;
-//  line-height: 1.4;
-//  margin:2em;
 
-  @include tablet {
-//    margin: 2em;
-  }
+.single-post .entry-content > p:first-of-type,
+p.intro,
+.featured-series > p:first-of-type {
+  color: #7d7556;
+  font-size: 1.4em;
+  line-height: 1.4;
+  margin: 2em;
 }
 
+.valentines-day .entry-content .panel > p:first-of-type{
+  color: #4c1617;
+}
 
 /* Columns, as defined within actual page content itself */
 .twocol {
@@ -110,9 +110,9 @@ p.intro,
       clear: left;
     }
     p:not(.read-more) {
-      @include font-size(18);
+//      @include font-size(18);
       //font-style: italic;
-      line-height: 1.4;
+//      line-height: 1.4;
     }
   }
 } // .parent-post
@@ -141,6 +141,9 @@ p.intro,
     }
   }
 }
+
+
+
 
 /* Multi-sectioned parent posts (Holiday series, as of now) */
 .parent-expander-link:after,
@@ -284,7 +287,7 @@ body:not(.parent-post) .twocol:not(.sourcing) {
     }
   }
   .entry-header{
-   margin-bottom: 2.4em;
+    margin-bottom: 2.4em;
   }
 }
 
@@ -398,7 +401,7 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   }
 
   .saffron-related-thumb{
-//    display: block;
+    //    display: block;
     height: 351px;
     overflow: hidden;
     width: 100%;
@@ -447,9 +450,6 @@ body:not(.parent-post) .twocol:not(.sourcing) {
     }
   }
 }
-
-
-
 
 /*sun-kissed-summer-table*/
 
@@ -510,6 +510,7 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   }
 }//end panel
 
+
 .format_text{
   h2, h3{
     font-size: 1.25em;
@@ -518,14 +519,11 @@ body:not(.parent-post) .twocol:not(.sourcing) {
   }
 }
 
-
-
 /*content-area*/
 
 .content-area{
   margin:-0.8em 0em 2.4em 1em;
 }
-
 .twocol h4 a,
 .twocol h2,
 .previous-post a,
@@ -533,19 +531,9 @@ body:not(.parent-post) .twocol:not(.sourcing) {
 .all-posts a {
   color: #566e88;
 }
+
 h5 {
   color: #1b86d6;
-}
-
-a.saffron-thumb{
-  width: 390px;
-  height: 320px;
-  overflow: hidden;
-  display: inline-block;
-  /*img{
-    width: 100%;
-    height: 100%;
-  }*/
 }
 
 /*leave a comment css*/
@@ -593,5 +581,40 @@ h2.entry-title {
   margin: 0 auto;
 }
 .content-area .post{
-  padding:19px 0 0;
+  padding-top:2.3em;
+}
+
+.group-blog .content-area .post-excerpt {
+  padding:0;
+  float: left;
+  text-align: center;
+  width: 48%;
+}
+.group-blog .content-area .post-excerpt:nth-of-type(2n+1) {
+  clear: left;
+  margin-right: 4%;
+}
+
+.column{
+  float: left;
+  text-align: center;
+  width: 47% !important;
+  padding: 0;
+  &:nth-of-type(2n+1) {
+    clear: left;
+    margin: 0 5% 2em 0;
+  }
+  .parent-intro{
+    color: #718295;
+    font-family: "Sacramento",cursive;
+    font-size: 2.4em;
+    font-style: normal;
+    line-height: 1.2em;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.entry-content .mothers-day .panel{
+  background: rgba(255, 255, 255, .75);
 }
